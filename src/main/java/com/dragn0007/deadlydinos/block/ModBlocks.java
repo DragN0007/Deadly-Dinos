@@ -10,6 +10,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -40,16 +41,15 @@ public class ModBlocks {
             () -> new RotatedPillarBlock(Block.Properties.of(Material.WOOD)
                     .strength(2.0F, 3.0F)));
     public static final RegistryObject<Block> CONIFERPLANKS = registerBlock("conifer_planks",
-            () -> new Block(Block.Properties.of(Material.WOOD)
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)
                     .strength(2.0F, 3.0F)));
     public static final RegistryObject<Block> CONIFERLEAVES = registerBlock("conifer_leaves",
             () -> new LeavesBlock(Block.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<Block> CONIFERSAPLING = registerBlock("conifer_sapling",
             () -> new SaplingBlock(new ConiferTreeGrower(), Block.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
-
     public static final RegistryObject<Block> RCONIFERPLANKS = registerBlock("rconifer_planks",
-            () -> new Block(Block.Properties.of(Material.WOOD)
-                    .strength(2.0F, 4.0F)));
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(2.0F, 2.0F)));
     public static final RegistryObject<Block> CONIFERSTAIRS = registerBlock("conifer_stairs",
             () -> new StairBlock(CONIFERPLANKS.get().defaultBlockState(), Block.Properties.copy(CONIFERPLANKS.get())));
     public static final RegistryObject<Block> CONIFERSLAB = registerBlock("conifer_slab",
@@ -69,8 +69,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> YEWSAPLING = registerBlock("yew_sapling",
             () -> new SaplingBlock(new YewTreeGrower(), Block.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
     public static final RegistryObject<Block> RYEWPLANKS = registerBlock("ryew_planks",
-            () -> new Block(Block.Properties.of(Material.WOOD)
-                    .strength(2.0F, 4.0F)));
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(2.0F, 2.0F)));
     public static final RegistryObject<Block> YEWSTAIRS = registerBlock("yew_stairs",
             () -> new StairBlock(YEWPLANKS.get().defaultBlockState(), Block.Properties.copy(CONIFERPLANKS.get())));
     public static final RegistryObject<Block> YEWSLAB = registerBlock("yew_slab",
@@ -90,8 +90,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> SEQUOIASAPLING = registerBlock("sequoia_sapling",
             () -> new SaplingBlock(new SequoiaTreeGrower(), Block.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.GRASS)));
     public static final RegistryObject<Block> RSEQUOIAPLANKS = registerBlock("rsequoia_planks",
-            () -> new Block(Block.Properties.of(Material.WOOD)
-                    .strength(2.0F, 4.0F)));
+            () -> new Block(BlockBehaviour.Properties.of(Material.WOOD)
+                    .strength(2.0F, 2.0F)));
     public static final RegistryObject<Block> SEQUOIASTAIRS = registerBlock("sequoia_stairs",
             () -> new StairBlock(SEQUOIAPLANKS.get().defaultBlockState(), Block.Properties.copy(CONIFERPLANKS.get())));
     public static final RegistryObject<Block> SEQUOIASLAB = registerBlock("sequoia_slab",
