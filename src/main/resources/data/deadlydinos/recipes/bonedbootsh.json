@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AD ",
+    "BC ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:diamond_boots"
+    },
+    "B": {
+      "item": "deadlydinos:largeherbiclaw"
+    },
+    "C": {
+      "item": "deadlydinos:largeherbiribs"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+
+  },
+  "result": {
+    "item": "deadlydinos:bonediamond_boots",
+    "count": 1
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    " BC",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:bread"
+    },
+    "B": {
+      "item": "deadlydinos:yew_plum_jam"
+    },
+    "C": {
+      "item": "deadlydinos:tiger_nut_butter"
+    }
+
+  },
+  "result": {
+    "item": "deadlydinos:pbj",
+    "count": 1
+  }
+}

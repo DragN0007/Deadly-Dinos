@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    " B ",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:stick"
+    },
+    "B": {
+      "item": "deadlydinos:medcarnitooth"
+    },
+    "C": {
+      "item": "deadlydinos:medraptorclaw"
+    }
+
+  },
+  "result": {
+    "item": "deadlydinos:mediumbone_sword",
+    "count": 1
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AD ",
+    "BC ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:golden_boots"
+    },
+    "B": {
+      "item": "deadlydinos:medcarniclaw"
+    },
+    "C": {
+      "item": "deadlydinos:medcarniribs"
+    },
+    "D": {
+      "item": "minecraft:gold_ingot"
+    }
+
+  },
+  "result": {
+    "item": "deadlydinos:bonegold_boots",
+    "count": 1
+  }
+}

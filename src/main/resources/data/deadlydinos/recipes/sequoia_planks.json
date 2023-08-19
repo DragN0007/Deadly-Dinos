@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "deadlydinos:sequoia_log"
+    }
+  ],
+  "result": {
+    "item": "deadlydinos:sequoia_planks",
+    "count": 4
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "deadlydinos:rawlargemeat"
+  },
+  "result": "deadlydinos:cookedlargemeat",
+  "experience": 0.80,
+  "cookingtime": 160
+}

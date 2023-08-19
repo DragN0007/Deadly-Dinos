@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "deadlydinos:block/conifer_slab"
+    },
+    "type=double": {
+      "model": "deadlydinos:block/conifer_planks"
+    },
+    "type=top": {
+      "model": "deadlydinos:block/conifer_slab_top"
+    }
+  }
+}

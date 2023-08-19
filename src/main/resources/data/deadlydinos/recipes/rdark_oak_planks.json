@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AB ",
+    "B  ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:dark_oak_planks"
+    },
+    "B": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+    "result": {
+      "item": "deadlydinos:rdark_oak_planks",
+      "count": 1
+    }
+  }

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AB ",
+    "B  ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:jungle_planks"
+    },
+    "B": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+    "result": {
+      "item": "deadlydinos:rjungle_planks",
+      "count": 1
+    }
+  }

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "deadlydinos:rawmediummeat"
+  },
+  "result": "deadlydinos:cookedmediummeat",
+  "experience": 0.60,
+  "cookingtime": 200
+}

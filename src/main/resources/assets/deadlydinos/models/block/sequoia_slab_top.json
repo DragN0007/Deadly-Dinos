@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "deadlydinos:block/sequoia_planks",
+    "top": "deadlydinos:block/sequoia_planks",
+    "side": "deadlydinos:block/sequoia_planks"
+  }
+}

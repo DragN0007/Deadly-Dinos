@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "deadlydinos:conifer_log"
+    }
+  ],
+  "result": {
+    "item": "deadlydinos:conifer_planks",
+    "count": 4
+  }
+}

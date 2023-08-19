@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CB ",
+    " A ",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:stick"
+    },
+    "B": {
+      "item": "deadlydinos:largeherbitail"
+    },
+    "C": {
+      "item": "deadlydinos:largeherbitooth"
+    }
+
+  },
+  "result": {
+    "item": "deadlydinos:largebone_hoe",
+    "count": 1
+  }
+}

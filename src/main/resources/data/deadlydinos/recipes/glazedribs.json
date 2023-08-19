@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AB ",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "deadlydinos:yew_plum_jam"
+    },
+    "B": {
+      "item": "deadlydinos:cookedmediummeat"
+    }
+  },
+  "result": {
+    "item": "deadlydinos:glazed_ribs",
+    "count": 1
+  }
+}

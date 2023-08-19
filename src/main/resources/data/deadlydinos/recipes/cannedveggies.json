@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    " BC",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:iron_nugget"
+    },
+    "B": {
+      "item": "minecraft:carrot"
+    },
+    "C": {
+      "item": "minecraft:potato"
+    }
+
+  },
+  "result": {
+    "item": "deadlydinos:cannedveggies",
+    "count": 1
+  }
+}

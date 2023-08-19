@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AD ",
+    "BC ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:iron_leggings"
+    },
+    "B": {
+      "item": "deadlydinos:medcarnileg"
+    },
+    "C": {
+      "item": "deadlydinos:medcarnitail"
+    },
+    "D": {
+      "item": "minecraft:iron_ingot"
+    }
+
+  },
+  "result": {
+    "item": "deadlydinos:boneiron_leggings",
+    "count": 1
+  }
+}

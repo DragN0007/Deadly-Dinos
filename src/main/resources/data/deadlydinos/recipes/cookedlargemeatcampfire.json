@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "item": "deadlydinos:rawlargemeat"
+  },
+  "result": "deadlydinos:cookedlargemeat",
+  "experience": 0.80,
+  "cookingtime": 500
+}

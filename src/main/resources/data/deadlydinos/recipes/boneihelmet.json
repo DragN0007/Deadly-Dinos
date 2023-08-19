@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AD ",
+    "BC ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:iron_helmet"
+    },
+    "B": {
+      "item": "deadlydinos:medcarniskull"
+    },
+    "C": {
+      "item": "deadlydinos:medcarnitooth"
+    },
+    "D": {
+      "item": "minecraft:iron_ingot"
+    }
+
+  },
+  "result": {
+    "item": "deadlydinos:boneiron_helmet",
+    "count": 1
+  }
+}

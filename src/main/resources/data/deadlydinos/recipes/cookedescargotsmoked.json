@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "deadlydinos:rawescargot"
+  },
+  "result": "deadlydinos:cookedescargot",
+  "experience": 0.40,
+  "cookingtime": 140
+}

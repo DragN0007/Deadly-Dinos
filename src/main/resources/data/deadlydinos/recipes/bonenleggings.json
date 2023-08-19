@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AD ",
+    "BC ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:netherite_leggings"
+    },
+    "B": {
+      "item": "deadlydinos:largecarnileg"
+    },
+    "C": {
+      "item": "deadlydinos:largecarnitail"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+
+  },
+  "result": {
+    "item": "deadlydinos:bonenetherite_leggings",
+    "count": 1
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CB ",
+    "CA ",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:stick"
+    },
+    "B": {
+      "item": "deadlydinos:largeherbiribs"
+    },
+    "C": {
+      "item": "deadlydinos:largeherbiclaw"
+    }
+
+  },
+  "result": {
+    "item": "deadlydinos:largebone_axe",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "deadlydinos:conifer_stairs",
+    "deadlydinos:sequoia_stairs",
+    "deadlydinos:yew_stairs"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "deadlydinos:block/conifer_planks",
+    "top": "deadlydinos:block/conifer_planks",
+    "side": "deadlydinos:block/conifer_planks"
+  }
+}

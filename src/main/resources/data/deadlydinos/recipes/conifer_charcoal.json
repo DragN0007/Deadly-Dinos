@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "deadlydinos:conifer_log"
+  },
+  "result": "minecraft:charcoal",
+  "experience": 0.40,
+  "cookingtime": 180
+}

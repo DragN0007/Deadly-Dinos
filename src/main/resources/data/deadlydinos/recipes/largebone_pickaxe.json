@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CBC",
+    " A ",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:stick"
+    },
+    "B": {
+      "item": "deadlydinos:largecarnispine"
+    },
+    "C": {
+      "item": "deadlydinos:largecarnitooth"
+    }
+
+  },
+  "result": {
+    "item": "deadlydinos:largebone_pickaxe",
+    "count": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AA ",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "deadlydinos:largeherbiclaw"
+    }
+  },
+  "result": {
+    "item": "minecraft:bone_meal",
+    "count": 4
+  }
+}

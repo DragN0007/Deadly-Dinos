@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AD ",
+    "BC ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:netherite_chestplate"
+    },
+    "B": {
+      "item": "deadlydinos:largecarniribs"
+    },
+    "C": {
+      "item": "deadlydinos:largecarnispine"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+
+  },
+  "result": {
+    "item": "deadlydinos:bonenetherite_chestplate",
+    "count": 1
+  }
+}

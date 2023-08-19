@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    " A ",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:stick"
+    },
+    "B": {
+      "item": "deadlydinos:largeherbiskull"
+    }
+
+  },
+  "result": {
+    "item": "deadlydinos:largebone_shovel",
+    "count": 1
+  }
+}

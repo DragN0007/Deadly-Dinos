@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AD ",
+    "BC ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:golden_chestplate"
+    },
+    "B": {
+      "item": "deadlydinos:medherbiribs"
+    },
+    "C": {
+      "item": "deadlydinos:medherbispine"
+    },
+    "D": {
+      "item": "minecraft:gold_ingot"
+    }
+
+  },
+  "result": {
+    "item": "deadlydinos:bonegold_chestplate",
+    "count": 1
+  }
+}

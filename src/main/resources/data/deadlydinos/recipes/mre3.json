@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " A ",
+    " BC",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "deadlydinos:cracker"
+    },
+    "B": {
+      "item": "minecraft:carrot"
+    },
+    "C": {
+      "item": "minecraft:mutton"
+    }
+
+  },
+  "result": {
+    "item": "deadlydinos:mre",
+    "count": 1
+  }
+}

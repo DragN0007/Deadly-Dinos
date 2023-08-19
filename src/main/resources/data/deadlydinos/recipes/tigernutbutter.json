@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "A  ",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "deadlydinos:tiger_nuts"
+    }
+  },
+  "result": {
+    "item": "deadlydinos:tiger_nut_butter",
+    "count": 2
+  }
+}

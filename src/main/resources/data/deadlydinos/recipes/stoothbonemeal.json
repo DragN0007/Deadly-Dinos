@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AA ",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "deadlydinos:smallcarnitooth"
+    }
+  },
+  "result": {
+    "item": "minecraft:bone_meal"
+  }
+}

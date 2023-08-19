@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "deadlydinos:yew_log"
+    }
+  ],
+  "result": {
+    "item": "deadlydinos:yew_planks",
+    "count": 4
+  }
+}
