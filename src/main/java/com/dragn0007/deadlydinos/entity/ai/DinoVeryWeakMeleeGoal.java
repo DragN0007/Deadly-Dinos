@@ -1,5 +1,6 @@
 package com.dragn0007.deadlydinos.entity.ai;
 
+import com.dragn0007.deadlydinos.config.DeadlyDinosCommonConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -58,9 +59,9 @@ public class DinoVeryWeakMeleeGoal extends MeleeAttackGoal {
         BlockPos base = entity.blockPosition().relative(direction, 1);
 
         // Define the size of the cube to break blocks within
-        int width = 2;
-        int height = 2;
-        int depth = 2;
+        int width = DeadlyDinosCommonConfig.SMALL_DINO_BREAK_WIDTH.get();
+        int height = DeadlyDinosCommonConfig.SMALL_DINO_BREAK_HEIGHT.get();
+        int depth = DeadlyDinosCommonConfig.SMALL_DINO_BREAK_DEPTH.get();
 
         // Calculate the center of the cube, aka the dino's hitbox
         BlockPos center = new BlockPos(base.getX() + (width / 2), base.getY() + (height / 2), base.getZ() + (depth / 2));

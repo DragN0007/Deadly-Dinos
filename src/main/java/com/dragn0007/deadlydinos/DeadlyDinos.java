@@ -1,6 +1,8 @@
 package com.dragn0007.deadlydinos;
 
 import com.dragn0007.deadlydinos.block.ModBlocks;
+import com.dragn0007.deadlydinos.config.DeadlyDinosClientConfig;
+import com.dragn0007.deadlydinos.config.DeadlyDinosCommonConfig;
 import com.dragn0007.deadlydinos.entity.EntityTypes;
 import com.dragn0007.deadlydinos.item.ModItems;
 import com.mojang.logging.LogUtils;
@@ -12,7 +14,9 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
@@ -52,9 +56,11 @@ public class DeadlyDinos
         ModBlocks.register(eventBus);
         // Register Entity Types
         EntityTypes.ENTITY_TYPES.register(eventBus);
-        // GeckoLib
+        //Register GeckoLib
         GeckoLib.initialize();
-
+        //Register Configs
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, DeadlyDinosClientConfig.SPEC, "deadlydinos-client.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DeadlyDinosCommonConfig.SPEC, "deadlydinos-common.toml");
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
