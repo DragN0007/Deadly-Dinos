@@ -1,5 +1,6 @@
 package com.dragn0007.deadlydinos.item;
 
+import com.dragn0007.deadlydinos.config.DeadlyDinosCommonConfig;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -13,7 +14,7 @@ public class TrophyItem extends Item {
     public MobEffectInstance[] effectInstances;
 
     public TrophyItem( MobEffectInstance... effectInstances) {
-        super(new Item.Properties().durability(10).tab(ModItemGroup.DDD_GROUP));
+        super(new Item.Properties().durability(DeadlyDinosCommonConfig.TROPHYITEM_DURABILITY.get()).tab(ModItemGroup.DDD_GROUP));
         this.effectInstances = effectInstances;
     }
 
