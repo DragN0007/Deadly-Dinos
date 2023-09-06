@@ -2,7 +2,6 @@ package com.dragn0007.deadlydinos.entity;
 
 import com.dragn0007.deadlydinos.entity.ai.DestroyPersonalPropertyGoal;
 import com.dragn0007.deadlydinos.entity.ai.DinoVeryWeakMeleeGoal;
-import com.dragn0007.deadlydinos.model.AcroModel;
 import com.dragn0007.deadlydinos.model.TroodonModel;
 import com.google.common.collect.Maps;
 import net.minecraft.Util;

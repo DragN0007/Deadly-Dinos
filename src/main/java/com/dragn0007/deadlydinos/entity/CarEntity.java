@@ -1,6 +1,5 @@
 package com.dragn0007.deadlydinos.entity;
 
-import com.dragn0007.deadlydinos.model.AcroModel;
 import com.dragn0007.deadlydinos.model.CarModel;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;

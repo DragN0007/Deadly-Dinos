@@ -1,6 +1,5 @@
 package com.dragn0007.deadlydinos.entity;
 
-import com.dragn0007.deadlydinos.model.AcroModel;
 import com.dragn0007.deadlydinos.model.MahakalaModel;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;

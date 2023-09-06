@@ -1,7 +1,6 @@
 package com.dragn0007.deadlydinos.entity;
 
 import com.dragn0007.deadlydinos.entity.ai.DestroyCropsGoal;
-import com.dragn0007.deadlydinos.model.AcroModel;
 import com.dragn0007.deadlydinos.model.AvaModel;
 import com.google.common.collect.Sets;
 import net.minecraft.core.BlockPos;

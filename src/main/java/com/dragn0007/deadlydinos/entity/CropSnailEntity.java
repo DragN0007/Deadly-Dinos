@@ -1,7 +1,6 @@
 package com.dragn0007.deadlydinos.entity;
 
 import com.dragn0007.deadlydinos.entity.ai.DestroyFarmGoal;
-import com.dragn0007.deadlydinos.model.AcroModel;
 import com.dragn0007.deadlydinos.model.CropSnailModel;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;

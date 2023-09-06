@@ -1,7 +1,6 @@
 package com.dragn0007.deadlydinos.entity;
 
 import com.dragn0007.deadlydinos.entity.ai.DinoVeryWeakMeleeGoal;
-import com.dragn0007.deadlydinos.model.AcroModel;
 import com.dragn0007.deadlydinos.model.UtahModel;
 import com.google.common.collect.Maps;
 import net.minecraft.Util;
@@ -49,7 +48,6 @@ import java.util.function.Predicate;
 
 
 public class UtahEntity extends Animal implements IAnimatable {
-
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
     protected UtahEntity(EntityType<? extends Animal> entityType, Level level) {
@@ -228,11 +226,26 @@ public class UtahEntity extends Animal implements IAnimatable {
             return PlayState.CONTINUE;
          }
 
+        private PlayState ridingPredicate(AnimationEvent event) {
+            if (event.isMoving()) {
+                if (isVehicle()) {
+                    event.getController().setAnimation(new AnimationBuilder().addAnimation("utahsprint2", ILoopType.EDefaultLoopTypes.LOOP));
+
+                } else
+                    event.getController().setAnimation(new AnimationBuilder().addAnimation("utahwalk", ILoopType.EDefaultLoopTypes.LOOP));
+
+            } else
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("utahidle", ILoopType.EDefaultLoopTypes.LOOP));
+
+            return PlayState.CONTINUE;
+        }
+
 
     @Override
         public void registerControllers (AnimationData data){
             data.addAnimationController(new AnimationController(this, "controller", 3, this::predicate));
             data.addAnimationController(new AnimationController(this, "attackController", 3, this::attackPredicate));
+        data.addAnimationController(new AnimationController(this, "ridingController", 3, this::ridingPredicate));
         }
 
 
@@ -299,5 +312,6 @@ public class UtahEntity extends Animal implements IAnimatable {
         super.defineSynchedData();
         this.entityData.define(VARIANT, 0);
     }
+
 
 }
