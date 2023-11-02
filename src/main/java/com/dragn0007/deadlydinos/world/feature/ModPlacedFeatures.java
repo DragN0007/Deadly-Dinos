@@ -1,7 +1,6 @@
 package com.dragn0007.deadlydinos.world.feature;
 
 import net.minecraft.core.Holder;
-import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.InSquarePlacement;

@@ -1,6 +1,5 @@
 package com.dragn0007.deadlydinos.entity;
 
-import com.dragn0007.deadlydinos.model.AcroModel;
 import com.dragn0007.deadlydinos.model.ArchaeModel;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
@@ -74,7 +73,6 @@ public class ArchaeEntity extends TamableAnimal implements IAnimatable {
                 ;
 
     }
-
 
 
     protected void registerGoals() {

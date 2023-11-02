@@ -1,22 +1,18 @@
 package com.dragn0007.deadlydinos.world.gen;
 
 
-import com.dragn0007.deadlydinos.world.feature.ModConfigFeatures;
 import com.dragn0007.deadlydinos.world.feature.ModPlacedFeatures;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
-import java.util.Random;
 import java.util.Set;
-import java.util.function.Supplier;
 
 public class ModTreeGeneration {
 
