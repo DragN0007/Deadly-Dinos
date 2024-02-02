@@ -21,6 +21,17 @@ public class DDDRecipeMaker extends RecipeProvider implements IConditionBuilder 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
 
+        ShapedRecipeBuilder.shaped(DDDItems.SODA.get())
+                .define('A', Items.SUGAR)
+                .define('B', Items.IRON_NUGGET)
+                .define('C', Items.POTION)
+                .pattern(" B ")
+                .pattern(" AC")
+                .pattern(" B ")
+                .unlockedBy("has_sugar", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.SUGAR).build()))
+                .save(pFinishedRecipeConsumer);
+
         ShapedRecipeBuilder.shaped(DDDItems.MRE.get())
                 .define('A', DDDTags.Items.MEATS)
                 .define('C', DDDTags.Items.VEGETABLES)
