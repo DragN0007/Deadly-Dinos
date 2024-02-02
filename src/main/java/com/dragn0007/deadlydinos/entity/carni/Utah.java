@@ -58,6 +58,17 @@ public class Utah extends Animal implements IAnimatable {
         this.noCulling = true;
     }
 
+    private int animTimer = 0;
+    private int idleAnimCooldown = 0;
+    @Override
+    public void tick() {
+        if (this.level.isClientSide) {
+            animTimer = Math.max(animTimer - 1, 0);
+            idleAnimCooldown = Math.max(idleAnimCooldown - 1, 0);
+        }
+        super.tick();
+    }
+
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 35)
@@ -212,7 +223,6 @@ public class Utah extends Animal implements IAnimatable {
 
                 } else
                     event.getController().setAnimation(new AnimationBuilder().addAnimation("utahwalk", ILoopType.EDefaultLoopTypes.LOOP));
-
             } else
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("utahidle", ILoopType.EDefaultLoopTypes.LOOP));
 
@@ -229,26 +239,10 @@ public class Utah extends Animal implements IAnimatable {
             return PlayState.CONTINUE;
          }
 
-        private PlayState ridingPredicate(AnimationEvent event) {
-            if (event.isMoving()) {
-                if (isVehicle()) {
-                    event.getController().setAnimation(new AnimationBuilder().addAnimation("utahsprint2", ILoopType.EDefaultLoopTypes.LOOP));
-
-                } else
-                    event.getController().setAnimation(new AnimationBuilder().addAnimation("utahwalk", ILoopType.EDefaultLoopTypes.LOOP));
-
-            } else
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("utahidle", ILoopType.EDefaultLoopTypes.LOOP));
-
-            return PlayState.CONTINUE;
-        }
-
-
     @Override
         public void registerControllers (AnimationData data){
             data.addAnimationController(new AnimationController(this, "controller", 3, this::predicate));
             data.addAnimationController(new AnimationController(this, "attackController", 3, this::attackPredicate));
-        data.addAnimationController(new AnimationController(this, "ridingController", 3, this::ridingPredicate));
         }
 
 
