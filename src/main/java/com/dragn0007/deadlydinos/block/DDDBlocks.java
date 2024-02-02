@@ -57,7 +57,6 @@ public class DDDBlocks {
                     .strength(2.0F, 3.0F)));
 
 
-
     public static final RegistryObject<RotatedPillarBlock> YEWLOG = registerBlock("yew_log",
             () -> new RotatedPillarBlock(Block.Properties.of(Material.WOOD)
                     .strength(2.0F, 3.0F)));
@@ -78,7 +77,6 @@ public class DDDBlocks {
                     .strength(2.0F, 3.0F)));
 
 
-
     public static final RegistryObject<RotatedPillarBlock> SEQUOIALOG = registerBlock("sequoia_log",
             () -> new RotatedPillarBlock(Block.Properties.of(Material.WOOD)
                     .strength(2.0F, 3.0F)));
@@ -97,7 +95,6 @@ public class DDDBlocks {
     public static final RegistryObject<Block> SEQUOIASLAB = registerBlock("sequoia_slab",
             () -> new SlabBlock(Block.Properties.of(Material.WOOD)
                     .strength(2.0F, 3.0F)));
-
 
 
     public static final RegistryObject<Block> RACACIAPLANKS = registerBlock("racacia_planks",
@@ -137,11 +134,6 @@ public class DDDBlocks {
             () -> new FlowerBlock(MobEffects.ABSORPTION, 20, Block.Properties.of(Material.PLANT).sound(SoundType.GRASS).noCollission()));
     public static final RegistryObject<TallFlowerBlock> CYCADS = registerBlock("cycads",
             () -> new TallFlowerBlock(Block.Properties.of(Material.REPLACEABLE_PLANT).sound(SoundType.GRASS).noCollission()));
-
-
-
-
-
 
 
 
