@@ -6,7 +6,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class DDDItemGroup {
 
-    public static final CreativeModeTab DDD_GROUP = new CreativeModeTab("dddModTab")
+    public static final CreativeModeTab DDD_GROUP = new CreativeModeTab("dddmodtab")
     {
         @Override
         public ItemStack makeIcon() {
@@ -14,7 +14,7 @@ public class DDDItemGroup {
         }
     };
 
-    public static final CreativeModeTab DINO_GROUP = new CreativeModeTab("dinoModTab")
+    public static final CreativeModeTab DINO_GROUP = new CreativeModeTab("dinomodtab")
     {
         @Override
         public ItemStack makeIcon() {
@@ -22,7 +22,7 @@ public class DDDItemGroup {
         }
     };
 
-    public static final CreativeModeTab FOOD_GROUP = new CreativeModeTab("foodModTab")
+    public static final CreativeModeTab FOOD_GROUP = new CreativeModeTab("foodmodtab")
     {
         @Override
         public ItemStack makeIcon() {
@@ -30,7 +30,7 @@ public class DDDItemGroup {
         }
     };
 
-    public static final CreativeModeTab BLOCK_GROUP = new CreativeModeTab("blockModTab")
+    public static final CreativeModeTab BLOCK_GROUP = new CreativeModeTab("blockmodtab")
     {
         @Override
         public ItemStack makeIcon() {
