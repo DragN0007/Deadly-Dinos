@@ -1,6 +1,6 @@
 package com.dragn0007.deadlydinos.entity.ai;
 
-import com.dragn0007.deadlydinos.config.DeadlyDinosCommonConfig;
+import com.dragn0007.deadlydinos.util.config.DeadlyDinosCommonConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;

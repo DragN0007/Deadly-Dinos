@@ -1,8 +1,8 @@
 package com.dragn0007.deadlydinos.event;
 
 
-import com.dragn0007.deadlydinos.config.DeadlyDinosCommonConfig;
-import com.dragn0007.deadlydinos.entity.EntityTypes;
+import com.dragn0007.deadlydinos.entity.util.EntityTypes;
+import com.dragn0007.deadlydinos.util.config.DeadlyDinosCommonConfig;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
