@@ -2,13 +2,9 @@
   "replace": false,
   "values": [
     "minecraft:chicken",
-    "medievalembroidery:cornish_hen",
-    "medievalembroidery:turkey_leg",
     "minecraft:beef",
     "minecraft:porkchop",
     "minecraft:mutton",
-    "minecraft:rabbit",
-    "medievalembroidery:elk",
-    "medievalembroidery:yak"
+    "minecraft:rabbit"
   ]
 }

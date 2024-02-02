@@ -1,24 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " C ",
-    "BAB",
-    " C "
+    " B ",
+    " AC",
+    " B "
   ],
   "key": {
     "A": {
       "item": "deadlydinos:cookedmediummeat"
     },
-    "B": {
-      "tag": "forge:crops/beetroot"
-    },
     "C": {
+      "tag": "forge:vegetables"
+    },
+    "B": {
       "item": "minecraft:bread"
     }
-
   },
   "result": {
-    "item": "deadlydinos:dinosandwich",
-    "count": 1
+    "item": "deadlydinos:dinosandwich"
   }
 }

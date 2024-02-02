@@ -2,13 +2,9 @@
   "replace": false,
   "values": [
     "minecraft:cooked_chicken",
-    "medievalembroidery:cooked_cornish_hen",
-    "medievalembroidery:cooked_turkey",
     "minecraft:cooked_beef",
     "minecraft:cooked_porkchop",
     "minecraft:cooked_mutton",
-    "minecraft:cooked_rabbit",
-    "medievalembroidery:cooked_elk",
-    "medievalembroidery:cooked_yak"
+    "minecraft:cooked_rabbit"
   ]
 }

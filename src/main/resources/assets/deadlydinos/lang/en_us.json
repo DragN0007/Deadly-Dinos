@@ -1,126 +1,71 @@
 {
-
+  "itemGroup.blockmodtab": "Deadly Dinos Blocks",
+  "itemGroup.foodmodtab": "Deadly Dinos Food",
+  "itemGroup.dinomodtab": "Deadly Dinos Entities",
+  "itemGroup.dddmodtab": "Deadly Dinos Items",
 
   "item.deadlydinos.acro_spawn_egg": "Acrocanthrosaurus Spawn Egg",
-
   "item.deadlydinos.alberto_spawn_egg": "Albertosaurus Spawn Egg",
-
   "item.deadlydinos.archae_spawn_egg": "Archaeopteryx Spawn Egg",
-
   "item.deadlydinos.austro_spawn_egg": "Austroraptor Spawn Egg",
-
   "item.deadlydinos.carno_spawn_egg": "Carnotaurus Spawn Egg",
-
   "item.deadlydinos.cerato_spawn_egg": "Ceratosaurus Spawn Egg",
-
   "item.deadlydinos.compy_spawn_egg": "Compsognathus Spawn Egg",
-
   "item.deadlydinos.deinon_spawn_egg": "Deinonychus Spawn Egg",
-
   "item.deadlydinos.giga_spawn_egg": "Giganotosaurus Spawn Egg",
-
   "item.deadlydinos.mahakala_spawn_egg": "Mahakala Spawn Egg",
-
   "item.deadlydinos.majunga_spawn_egg": "Majungasaurus Spawn Egg",
-
   "item.deadlydinos.spino_spawn_egg": "Spinosaurus Spawn Egg",
-
   "item.deadlydinos.tarbo_spawn_egg": "Tarbosaurus Spawn Egg",
-
   "item.deadlydinos.troodon_spawn_egg": "Troodon Spawn Egg",
-
   "item.deadlydinos.rex_spawn_egg": "Tyrannosaurus Spawn Egg",
-
   "item.deadlydinos.utah_spawn_egg": "Utahraptor Spawn Egg",
 
-
-
+  
   "item.deadlydinos.amarga_spawn_egg": "Amargasaurus Spawn Egg",
-
   "item.deadlydinos.cropsnail_spawn_egg": "Giant Crop Snail Spawn Egg",
-
   "item.deadlydinos.para_spawn_egg": "Parasaurolophus Spawn Egg",
-
   "item.deadlydinos.theri_spawn_egg": "Therizinosaurus Spawn Egg",
-
   "item.deadlydinos.deinoch_spawn_egg": "Deinocherius Spawn Egg",
-
   "item.deadlydinos.stego_spawn_egg": "Stegosaurus Spawn Egg",
-
   "item.deadlydinos.shant_spawn_egg": "Shantungosaurus Spawn Egg",
-
   "item.deadlydinos.galli_spawn_egg": "Gallimimus Spawn Egg",
-
   "item.deadlydinos.sauro_spawn_egg": "Sauroposeidon Spawn Egg",
-
   "item.deadlydinos.anky_spawn_egg": "Ankylosaurus Spawn Egg",
-
   "item.deadlydinos.ava_spawn_egg": "Avaceratops Spawn Egg",
-
-
-
-
+  
 
   "entity.deadlydinos.acro_entity": "Acrocanthosaurus",
-
   "entity.deadlydinos.alberto_entity": "Albertosaurus",
-
   "entity.deadlydinos.archae_entity": "Archaeopteryx",
-
   "entity.deadlydinos.austro_entity": "Austroraptor",
-
   "entity.deadlydinos.carno_entity": "Carnotaurus",
-
   "entity.deadlydinos.cerato_entity": "Ceratosaurus",
-
   "entity.deadlydinos.compy_entity": "Compsognathus",
-
   "entity.deadlydinos.deinon_entity": "Deinonychus",
-
   "entity.deadlydinos.giga_entity": "Giganotosaurus",
-
   "entity.deadlydinos.mahakala_entity": "Mahakala",
-
   "entity.deadlydinos.majunga_entity": "Majungasaurus",
-
   "entity.deadlydinos.spino_entity": "Spinosaurus",
-
   "entity.deadlydinos.tarbo_entity": "Tarbosaurus",
-
   "entity.deadlydinos.troodon_entity": "Troodon",
-
   "entity.deadlydinos.rex_entity": "Tyrannosaurus",
-
   "entity.deadlydinos.utah_entity": "Utahraptor",
-
-
+  
 
   "entity.deadlydinos.amarga_entity": "Amargasaurus",
-
   "entity.deadlydinos.cropsnail_entity": "Giant Crop Snail",
-
   "entity.deadlydinos.para_entity": "Parasaurolophus",
-
   "entity.deadlydinos.theri_entity": "Therizinosaurus",
-
   "entity.deadlydinos.deinoch_entity": "Deinocherius",
-
   "entity.deadlydinos.stego_entity": "Stegosaurus",
-
   "entity.deadlydinos.shant_entity": "Shantungosaurus",
-
   "entity.deadlydinos.galli_entity": "Gallimimus",
-
   "entity.deadlydinos.sauro_entity": "Sauroposeidon",
-
   "entity.deadlydinos.anky_entity": "Ankylosaurus",
-
   "entity.deadlydinos.ava_entity": "Avaceratops",
 
-
-
-
-
+  
   "item.deadlydinos.acrotrophy": "Acro Tooth Trophy",
   "item.deadlydinos.albertotrophy": "Alberto Tooth Trophy",
   "item.deadlydinos.archaetrophy": "Archae Feather Trophy",
@@ -149,9 +94,7 @@
   "item.deadlydinos.stegotrophy": "Stego Plate Trophy",
   "item.deadlydinos.theritrophy": "Theri Claw Trophy",
 
-
-
-
+  
   "item.deadlydinos.rawsmallmeat": "Raw Small Dino Meat",
   "item.deadlydinos.cookedsmallmeat": "Cooked Small Dino Meat",
   "item.deadlydinos.rawmediummeat": "Raw Medium Dino Meat",
@@ -175,9 +118,7 @@
   "item.deadlydinos.rawescargot": "Raw Giant Escargot",
   "item.deadlydinos.cookedescargot": "Cooked Giant Escargot",
 
-
-
-
+  
   "item.deadlydinos.smallcarnitooth": "Small Carni Tooth",
   "item.deadlydinos.smallcarniskull": "Small Carni Skull",
   "item.deadlydinos.smallcarniribs": "Small Carni Ribs",
@@ -186,9 +127,8 @@
   "item.deadlydinos.smallraptorclaw": "Small Raptor Claw",
   "item.deadlydinos.smallcarnispine": "Small Carni Spine",
   "item.deadlydinos.smallcarnileg": "Small Carni Leg",
-
-
-
+  
+  
   "item.deadlydinos.medcarnitooth": "Medium Carni Tooth",
   "item.deadlydinos.medcarniskull": "Medium Carni Skull",
   "item.deadlydinos.medcarniribs": "Medium Carni Ribs",
@@ -198,9 +138,7 @@
   "item.deadlydinos.medcarnispine": "Medium Carni Spine",
   "item.deadlydinos.medcarnileg": "Medium Carni Leg",
 
-
-
-
+  
   "item.deadlydinos.largecarnitooth": "Large Carni Tooth",
   "item.deadlydinos.largecarniskull": "Large Carni Skull",
   "item.deadlydinos.largecarniribs": "Large Carni Ribs",
@@ -209,9 +147,7 @@
   "item.deadlydinos.largecarnispine": "Large Carni Spine",
   "item.deadlydinos.largecarnileg": "Large Carni Leg",
 
-
-
-
+  
   "item.deadlydinos.smallherbitooth": "Small Herbi Tooth",
   "item.deadlydinos.smallherbiskull": "Small Herbi Skull",
   "item.deadlydinos.smallherbiribs": "Small Herbi Ribs",
@@ -219,9 +155,8 @@
   "item.deadlydinos.smallherbitail": "Small Herbi Tail",
   "item.deadlydinos.smallherbispine": "Small Herbi Spine",
   "item.deadlydinos.smallherbileg": "Small Herbi Leg",
-
-
-
+  
+  
   "item.deadlydinos.medherbitooth": "Medium Herbi Teeth",
   "item.deadlydinos.medherbiskull": "Medium Herbi Skull",
   "item.deadlydinos.medherbiribs": "Medium Herbi Ribs",
@@ -230,9 +165,7 @@
   "item.deadlydinos.medherbispine": "Medium Herbi Spine",
   "item.deadlydinos.medherbileg": "Medium Herbi Leg",
 
-
-
-
+  
   "item.deadlydinos.largeherbitooth": "Large Herbi Teeth",
   "item.deadlydinos.largeherbiskull": "Large Herbi Skull",
   "item.deadlydinos.largeherbiribs": "Large Herbi Ribs",
@@ -241,9 +174,7 @@
   "item.deadlydinos.largeherbispine": "Large Herbi Spine",
   "item.deadlydinos.largeherbileg": "Large Herbi Leg",
 
-
-
-
+  
   "item.deadlydinos.smallbone_sword": "Small Bone Sword",
   "item.deadlydinos.smallbone_pickaxe": "Small Bone Pickaxe",
   "item.deadlydinos.smallbone_axe": "Small Bone Axe",
@@ -265,9 +196,7 @@
   "item.deadlydinos.largebone_hoe": "Large Bone Hoe",
   "item.deadlydinos.largebone_club": "Large Bone Club",
 
-
-
-
+  
   "item.deadlydinos.bonenetherite_helmet": "Bone-Infused Netherite Helmet",
   "item.deadlydinos.bonenetherite_chestplate": "Bone-Infused Netherite Chestplate",
   "item.deadlydinos.bonenetherite_leggings": "Bone-Infused Netherite Leggings",
@@ -291,9 +220,7 @@
   "item.deadlydinos.boneiron_leggings": "Bone-Infused Iron Leggings",
   "item.deadlydinos.boneiron_boots": "Bone-Infused Iron Boots",
 
-
-
-
+  
   "block.deadlydinos.sequoia_planks": "Grand Sequoia Planks",
   "block.deadlydinos.rsequoia_planks": "Reinforced Grand Sequoia Planks",
   "block.deadlydinos.sequoia_log": "Grand Sequoia Log",
@@ -327,25 +254,15 @@
   "block.deadlydinos.rwarped_planks": "Reinforced Warped Planks",
   "block.deadlydinos.rcobblestone": "Reinforced Cobblestone",
 
-
-
-
+  
   "block.deadlydinos.cycas": "Cycas",
   "block.deadlydinos.cycads": "Cycads",
   "block.deadlydinos.zoster": "Zosterophyllum",
   "block.deadlydinos.cyperus": "Cyperus",
   "block.deadlydinos.cooksonia": "Cooksonia",
 
-
-
-
+  
   "entity.deadlydinos.car_entity": "Car",
   "entity.deadlydinos.carside_entity": "Car",
-  "entity.deadlydinos.carflipped_entity": "Car",
-
-
-  "itemGroup.blockModTab": "Deadly Dinos Blocks",
-  "itemGroup.foodModTab": "Deadly Dinos Food",
-  "itemGroup.dinoModTab": "Deadly Dinos Entities",
-  "itemGroup.dddModTab": "Deadly Dinos Items"
+  "entity.deadlydinos.carflipped_entity": "Car"
 }
