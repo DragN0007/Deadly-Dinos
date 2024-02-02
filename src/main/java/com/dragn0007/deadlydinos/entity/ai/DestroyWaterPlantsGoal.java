@@ -28,8 +28,6 @@ public class DestroyWaterPlantsGoal extends Goal {
                 || state.is(Blocks.MELON)
                 || state.is(Blocks.PUMPKIN)
                 || state.is(Blocks.HAY_BLOCK);
-
-
     }
 
     private final Animal entity;
