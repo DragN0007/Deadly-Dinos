@@ -1,6 +1,7 @@
 package com.dragn0007.deadlydinos;
 
 import com.dragn0007.deadlydinos.block.DDDBlocks;
+import com.dragn0007.deadlydinos.block.DDDBlocksDataGen;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.util.config.DeadlyDinosCommonConfig;
@@ -42,6 +43,7 @@ public class DeadlyDinos
 
         DDDItems.register(eventBus);
         DDDBlocks.register(eventBus);
+        DDDBlocksDataGen.register(eventBus);
         EntityTypes.ENTITY_TYPES.register(eventBus);
         GeckoLib.initialize();
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DeadlyDinosCommonConfig.SPEC, "deadlydinos-common.toml");
