@@ -1,5 +1,6 @@
-package com.dragn0007.deadlydinos.item.util;
+package com.dragn0007.deadlydinos.item.custom;
 
+import com.dragn0007.deadlydinos.item.util.DDDItemGroup;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
