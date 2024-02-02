@@ -6,6 +6,7 @@ import com.dragn0007.deadlydinos.item.custom.TrophyItem;
 import com.dragn0007.deadlydinos.item.util.DDDArmorMaterial;
 import com.dragn0007.deadlydinos.item.util.DDDItemGroup;
 import com.dragn0007.deadlydinos.item.util.DDDItemTier;
+import com.dragn0007.deadlydinos.item.util.SodaItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -110,10 +111,13 @@ public class DDDItems {
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
     public static final RegistryObject<Item> MRE = ITEMS.register("mre",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
-    public static final RegistryObject<Item> ALCOHOL = ITEMS.register("alcohol",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
+//    public static final RegistryObject<Item> ALCOHOL = ITEMS.register("alcohol",
+//            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
     public static final RegistryObject<Item> SODA = ITEMS.register("soda",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
+        () -> new SodaItem(
+                new MobEffectInstance(MobEffects.DIG_SPEED, 2880, 1, true, false),
+                new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2880, 1, true, false)
+        ));
     public static final RegistryObject<Item> TIGER_NUTS = ITEMS.register("tiger_nuts",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
     public static final RegistryObject<Item> YEW_PLUM = ITEMS.register("yew_plum",
