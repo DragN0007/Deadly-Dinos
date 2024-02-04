@@ -1,0 +1,10 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/simple_dungeon"
+    }
+  ],
+  "addition": "deadlydinos:dino_gift_box",
+  "type": "deadlydinos:dino_gift_box_dungeon"
+}

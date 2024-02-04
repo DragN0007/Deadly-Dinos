@@ -65,6 +65,9 @@
   "entity.deadlydinos.anky_entity": "Ankylosaurus",
   "entity.deadlydinos.ava_entity": "Avaceratops",
 
+
+  "item.deadlydinos.archae_harness": "Archaeopteryx Pack Harness",
+
   
   "item.deadlydinos.acrotrophy": "Acro Tooth Trophy",
   "item.deadlydinos.albertotrophy": "Alberto Tooth Trophy",
@@ -219,6 +222,11 @@
   "item.deadlydinos.boneiron_chestplate": "Bone-Infused Iron Chestplate",
   "item.deadlydinos.boneiron_leggings": "Bone-Infused Iron Leggings",
   "item.deadlydinos.boneiron_boots": "Bone-Infused Iron Boots",
+
+
+  "block.deadlydinos.dino_gift_box": "Dino Gift Box",
+  "block.deadlydinos.para_plushy_1": "Female Parasaurolophus Plushy",
+  "block.deadlydinos.para_plushy_2": "Male Parasaurolophus Plushy",
 
   
   "block.deadlydinos.sequoia_planks": "Grand Sequoia Planks",
