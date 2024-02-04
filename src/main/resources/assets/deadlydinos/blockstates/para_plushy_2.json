@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "deadlydinos:block/plushy/para_plushy_2",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "deadlydinos:block/plushy/para_plushy_2"
+    },
+    "facing=south": {
+      "model": "deadlydinos:block/plushy/para_plushy_2",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "deadlydinos:block/plushy/para_plushy_2",
+      "y": 270
+    }
+  }
+}
