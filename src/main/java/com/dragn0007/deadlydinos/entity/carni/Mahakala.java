@@ -4,6 +4,7 @@ import com.dragn0007.deadlydinos.client.model.MahakalaModel;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
+import com.dragn0007.deadlydinos.item.DDDItems;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import net.minecraft.Util;
@@ -251,7 +252,8 @@ public class Mahakala extends TamableAnimal implements IAnimatable {
 
 
     //Tameable Entity
-    private static final Set<Item> TAME_FOOD = Sets.newHashSet(Items.MUTTON, Items.PORKCHOP, Items.CHICKEN, Items.BEEF);
+    private static final Set<Item> TAME_FOOD = Sets.newHashSet(Items.MUTTON, Items.PORKCHOP, Items.CHICKEN, Items.BEEF, DDDItems.RAWSMALLMEAT.get(), DDDItems.RAWMEDIUMMEAT.get(), DDDItems.RAWLARGEMEAT.get());
+
 
 
     public InteractionResult mobInteract(Player p_230254_1_, InteractionHand p_230254_2_) {

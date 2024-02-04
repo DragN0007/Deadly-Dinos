@@ -2,6 +2,7 @@ package com.dragn0007.deadlydinos.client.model;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
 import com.dragn0007.deadlydinos.entity.carni.Utah;
+import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
@@ -29,6 +30,8 @@ public class UtahModel extends AnimatedGeoModel<Utah> {
     public static final ResourceLocation model = new ResourceLocation(DeadlyDinos.MODID, "geo/utah.geo.json");
     public static final ResourceLocation animation = new ResourceLocation(DeadlyDinos.MODID, "animations/utah.animation.json");
 
+//    public static final ModelLayerLocation nightEyes = new ModelLayerLocation(DeadlyDinos.MODID, "textures/entity/night_eyes/utah_night_eyes.png");
+
 
 
     @Override
@@ -39,6 +42,7 @@ public class UtahModel extends AnimatedGeoModel<Utah> {
     @Override
     public ResourceLocation getTextureLocation(Utah object) {
         return object.getTextureLocation();
+
     }
 
     @Override

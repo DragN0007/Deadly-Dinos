@@ -24,6 +24,7 @@ import software.bernie.example.GeckoLibMod;
 import software.bernie.geckolib3.GeckoLib;
 
 import static com.dragn0007.deadlydinos.DeadlyDinos.MODID;
+import static com.dragn0007.deadlydinos.entity.util.Serializers.RESOURCE_SERIALIZER_REGISTER;
 
 @Mod(MODID)
 public class DeadlyDinos
@@ -40,6 +41,8 @@ public class DeadlyDinos
 
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.addListener(this::setup);
+
+        RESOURCE_SERIALIZER_REGISTER.register(eventBus);
 
         DDDItems.register(eventBus);
         DDDBlocks.register(eventBus);

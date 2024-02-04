@@ -360,6 +360,11 @@ public class DDDItems {
             () -> new Item(new Item.Properties().tab(DDDItemGroup.DDD_GROUP)));
 
 
+    //TODO;
+//    public static final RegistryObject<Item> ARCHAE_HARNESS = ITEMS.register("archae_harness",
+//            () -> new Item(new Item.Properties().tab(DDDItemGroup.DDD_GROUP)));
+
+
     //TROPHIES
     public static final RegistryObject<TrophyItem> ACROTROPHY = ITEMS.register("acrotrophy",
             () -> new TrophyItem(

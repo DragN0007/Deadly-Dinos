@@ -1,6 +1,7 @@
 package com.dragn0007.deadlydinos.block;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
+import com.dragn0007.deadlydinos.block.plushy.ParaPlushy;
 import com.dragn0007.deadlydinos.item.util.DDDItemGroup;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.world.feature.tree.ConiferTreeGrower;
@@ -23,6 +24,9 @@ public class DDDBlocks {
     public static final DeferredRegister<Block> BLOCKS
             = DeferredRegister.create(ForgeRegistries.BLOCKS, DeadlyDinos.MODID);
 
+    //Toy Box
+    public static final RegistryObject<Block> DINO_GIFT_BOX = registerBlock("dino_gift_box",
+            () -> new RotatedPillarBlock(Block.Properties.of(Material.WOOL).sound(SoundType.WOOL).strength(0.3F)));
 
     //BLOCKS
     public static final RegistryObject<Block> RGLASS = registerBlock("rglass",

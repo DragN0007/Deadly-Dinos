@@ -1,6 +1,7 @@
 package com.dragn0007.deadlydinos.block;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
+import com.dragn0007.deadlydinos.block.plushy.ParaPlushy;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.item.util.DDDItemGroup;
 import com.dragn0007.deadlydinos.world.feature.tree.ConiferTreeGrower;
@@ -24,9 +25,10 @@ public class DDDBlocksDataGen {
             = DeferredRegister.create(ForgeRegistries.BLOCKS, DeadlyDinos.MODID);
 
 
-
-
-
+    public static final RegistryObject<Block> PARA_PLUSHY_1 = registerBlock("para_plushy_1",
+            () -> new ParaPlushy());
+    public static final RegistryObject<Block> PARA_PLUSHY_2 = registerBlock("para_plushy_2",
+            () -> new ParaPlushy());
 
 
 
