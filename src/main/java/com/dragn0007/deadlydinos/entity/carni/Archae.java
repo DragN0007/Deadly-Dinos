@@ -4,6 +4,7 @@ import com.dragn0007.deadlydinos.client.model.ArchaeModel;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
+import com.dragn0007.deadlydinos.item.DDDItems;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import net.minecraft.Util;
@@ -16,9 +17,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.*;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -29,6 +29,8 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.animal.Dolphin;
 import net.minecraft.world.entity.animal.Squid;
+import net.minecraft.world.entity.animal.horse.AbstractChestedHorse;
+import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.Creeper;
@@ -38,6 +40,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -50,10 +53,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Predicate;
 
 
@@ -150,7 +150,7 @@ public class Archae extends TamableAnimal implements IAnimatable {
 
 
     //Tameable Entity
-    private static final Set<Item> TAME_FOOD = Sets.newHashSet(Items.MUTTON, Items.PORKCHOP, Items.CHICKEN, Items.BEEF);
+    private static final Set<Item> TAME_FOOD = Sets.newHashSet(Items.MUTTON, Items.PORKCHOP, Items.CHICKEN, Items.BEEF, DDDItems.RAWSMALLMEAT.get(), DDDItems.RAWMEDIUMMEAT.get(), DDDItems.RAWLARGEMEAT.get());
 
 
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
@@ -170,8 +170,22 @@ public class Archae extends TamableAnimal implements IAnimatable {
                     this.level.broadcastEntityEvent(this, (byte)7);
                 } else {
                     this.level.broadcastEntityEvent(this, (byte)6);
+
                 }
             }
+
+//            if (!this.isTame()) {
+//                return InteractionResult.sidedSuccess(this.level.isClientSide);
+//            }
+//
+//            if (!this.hasHarness() && itemstack.is(Blocks.CHEST.asItem())) {
+//                this.setHarness(true);
+//                this.playChestEquipsSound();
+//                if (!player.getAbilities().instabuild) {
+//                    itemstack.shrink(1);
+//                }
+//            }
+
 
             return InteractionResult.sidedSuccess(this.level.isClientSide);
         } else if (!this.isAggressive() && this.isTame() && this.isOwnedBy(player)) {
@@ -184,6 +198,26 @@ public class Archae extends TamableAnimal implements IAnimatable {
             return super.mobInteract(player, hand);
         }
     }
+//    private static final EntityDataAccessor<Boolean> DATA_ID_HARNESS = SynchedEntityData.defineId(Archae.class, EntityDataSerializers.BOOLEAN);
+//    protected void playChestEquipsSound() {
+//        this.playSound(SoundEvents.DONKEY_CHEST, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+//    }
+//    public boolean hasHarness() {
+//        return this.entityData.get(DATA_ID_HARNESS);
+//    }
+//    public void setHarness(boolean p_30505_) {
+//        this.entityData.set(DATA_ID_HARNESS, p_30505_);
+//    }
+//    protected void dropEquipment() {
+//        super.dropEquipment();
+//        if (this.hasHarness()) {
+//            if (!this.level.isClientSide) {
+//                this.spawnAtLocation(DDDItems.ARCHAE_HARNESS.get());
+//            }
+//            this.setHarness(false);
+//        }
+//    }
+
 
     //Sound
     private static final Predicate<Mob> NOT_MAHAKALA_PREDICATE = new Predicate<Mob>() {
@@ -288,13 +322,13 @@ public class Archae extends TamableAnimal implements IAnimatable {
 
         if (event.isMoving()) {
             if (isAggressive()) {
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("archaesprint", ILoopType.EDefaultLoopTypes.LOOP));
-
-                } else
-                    event.getController().setAnimation(new AnimationBuilder().addAnimation("archaewalk", ILoopType.EDefaultLoopTypes.LOOP));
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("sprint", ILoopType.EDefaultLoopTypes.LOOP));
 
             } else
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("archaeidle", ILoopType.EDefaultLoopTypes.LOOP));
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", ILoopType.EDefaultLoopTypes.LOOP));
+
+        } else
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", ILoopType.EDefaultLoopTypes.LOOP));
 
 
             return PlayState.CONTINUE;
@@ -364,11 +398,9 @@ public class Archae extends TamableAnimal implements IAnimatable {
         return null;
     }
 
-
     @Override
     protected void defineSynchedData(){
         super.defineSynchedData();
         this.entityData.define(VARIANT, 0);
     }
-
 }
