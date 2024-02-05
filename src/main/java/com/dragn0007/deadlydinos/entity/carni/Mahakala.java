@@ -82,12 +82,11 @@ public class Mahakala extends TamableAnimal implements IAnimatable {
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
-        this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));;
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.9, true));
         this.goalSelector.addGoal(0, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(1, new FollowOwnerGoal(this, 1.0D, 5.0F, 1.0F, true));
-        this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1));
+        this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1));
         this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.7f));
         this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override

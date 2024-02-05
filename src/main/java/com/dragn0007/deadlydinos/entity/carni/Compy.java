@@ -78,11 +78,10 @@ public class Compy extends Animal implements IAnimatable {
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
-        this.goalSelector.addGoal(0, new RandomStrollGoal(this, 1));
-        this.goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, true, LivingEntity::attackable));
+        this.goalSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, Player.class, 10, true, true, LivingEntity::attackable));
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.5, true));
         this.goalSelector.addGoal(3, new FloatGoal(this));
-        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1));
+        this.goalSelector.addGoal(1, new WaterAvoidingRandomStrollGoal(this, 1));
 
         this.goalSelector.addGoal(0, new AvoidEntityGoal<>(this, LivingEntity.class, 15.0F, 2.0D, 2.0D, livingEntity
                 -> livingEntity instanceof Austro

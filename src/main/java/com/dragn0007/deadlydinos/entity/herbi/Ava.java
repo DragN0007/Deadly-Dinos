@@ -79,13 +79,12 @@ public class Ava extends TamableAnimal implements IAnimatable {
 
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));;
         this.goalSelector.addGoal(1, new FloatGoal(this));
         this.goalSelector.addGoal(2, new DestroyCropsGoal(this));
         this.goalSelector.addGoal(0, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(3, new TemptGoal(this, 1.25D, Ingredient.of(Items.BEETROOT, Items.WHEAT, Items.CARROT, Items.POTATO), false));
         this.goalSelector.addGoal(1, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
-        this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1));
+        this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1));
 
     }
 

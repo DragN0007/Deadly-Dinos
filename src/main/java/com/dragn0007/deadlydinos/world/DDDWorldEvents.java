@@ -17,7 +17,5 @@ public class DDDWorldEvents {
 
     DDDFlowerGeneration.generateFlowers(event);
     DDDTreeGeneration.generateTrees(event);
-
-
     }
 }

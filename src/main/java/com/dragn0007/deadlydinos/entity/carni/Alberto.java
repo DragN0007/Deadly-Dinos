@@ -88,11 +88,10 @@ public class Alberto extends Animal implements IAnimatable {
         super.registerGoals();
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(0, new NearestAttackableTargetGoal<Player>(this, Player.class, 35, true, true, LivingEntity::attackable));
-        this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1));
         this.goalSelector.addGoal(0, new DinoMeleeGoal(this, 1.9, true));
         this.goalSelector.addGoal(3, new BreakDoorGoal(this, (x) -> x == Difficulty.EASY || x == Difficulty.NORMAL || x == Difficulty.HARD));
         this.goalSelector.addGoal(4, new FloatGoal(this));
-        this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1));
+        this.goalSelector.addGoal(1, new WaterAvoidingRandomStrollGoal(this, 1));
         this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {

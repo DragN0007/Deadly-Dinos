@@ -141,13 +141,12 @@ public class Troodon extends Animal implements IAnimatable {
         super.registerGoals();
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, Player.class, 30, true, true, LivingEntity::attackable));
-        this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1));
         this.goalSelector.addGoal(0, new DinoVeryWeakMeleeGoal(this, 3.5, true));
         this.goalSelector.addGoal(3, new BreakDoorGoal(this, (x) -> x == Difficulty.EASY || x == Difficulty.NORMAL || x == Difficulty.HARD));
         this.goalSelector.addGoal(3, new FloatGoal(this));
         this.goalSelector.addGoal(1, new LeapAtTargetGoal(this, 0.4F));
         this.goalSelector.addGoal(6, new DestroyPersonalPropertyGoal(this));
-        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1));
+        this.goalSelector.addGoal(1, new WaterAvoidingRandomStrollGoal(this, 1));
 
         this.goalSelector.addGoal(0, new AvoidEntityGoal<>(this, LivingEntity.class, 15.0F, 2.0D, 2.0D, livingEntity
                 -> livingEntity instanceof Austro

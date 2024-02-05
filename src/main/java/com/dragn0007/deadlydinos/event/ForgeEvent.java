@@ -61,7 +61,6 @@ public class ForgeEvent {
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.TROODON_ENTITY.get(), DeadlyDinosCommonConfig.TROODON_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.COMPY_ENTITY.get(), DeadlyDinosCommonConfig.COMPY_WEIGHT.get(), 2, 6));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.REX_ENTITY.get(), DeadlyDinosCommonConfig.REX_WEIGHT.get(), 1, 1));
-                event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.AUSTRO_ENTITY.get(), DeadlyDinosCommonConfig.AUSTRO_WEIGHT.get(), 1, 5));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.CERATO_ENTITY.get(), DeadlyDinosCommonConfig.CERATO_WEIGHT.get(), 1, 3));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.SPINO_ENTITY.get(), DeadlyDinosCommonConfig.SPINO_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.DEINOCH_ENTITY.get(), DeadlyDinosCommonConfig.DEINOCH_WEIGHT.get(), 1, 1));
@@ -75,6 +74,7 @@ public class ForgeEvent {
 
             case TAIGA:
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.ARCHAE_ENTITY.get(), DeadlyDinosCommonConfig.ARCHAE_WEIGHT.get(), 1, 2));
+                event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.AUSTRO_ENTITY.get(), DeadlyDinosCommonConfig.AUSTRO_WEIGHT.get(), 2, 4));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.TROODON_ENTITY.get(), DeadlyDinosCommonConfig.TROODON_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.COMPY_ENTITY.get(), DeadlyDinosCommonConfig.COMPY_WEIGHT.get(), 2, 6));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.GIGA_ENTITY.get(), DeadlyDinosCommonConfig.GIGA_WEIGHT.get(), 1, 1));
@@ -92,6 +92,7 @@ public class ForgeEvent {
 
 
             case EXTREME_HILLS:
+                event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.AUSTRO_ENTITY.get(), DeadlyDinosCommonConfig.AUSTRO_WEIGHT.get(), 2, 4));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.TROODON_ENTITY.get(), DeadlyDinosCommonConfig.TROODON_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.COMPY_ENTITY.get(), DeadlyDinosCommonConfig.COMPY_WEIGHT.get(), 2, 6));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.ALBERTO_ENTITY.get(), DeadlyDinosCommonConfig.ALBERTO_WEIGHT.get(), 1, 1));
@@ -109,7 +110,6 @@ public class ForgeEvent {
             case BEACH:
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.TROODON_ENTITY.get(), DeadlyDinosCommonConfig.TROODON_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.COMPY_ENTITY.get(), DeadlyDinosCommonConfig.COMPY_WEIGHT.get(), 2, 6));
-                event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.AUSTRO_ENTITY.get(), DeadlyDinosCommonConfig.AUSTRO_WEIGHT.get(), 1, 5));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.DEINON_ENTITY.get(), DeadlyDinosCommonConfig.DEINON_WEIGHT.get(), 1, 5));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.MAHAKALA_ENTITY.get(), DeadlyDinosCommonConfig.MAHAKALA_WEIGHT.get(), 1, 4));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.SPINO_ENTITY.get(), DeadlyDinosCommonConfig.SPINO_WEIGHT.get(), 1, 1));
@@ -185,8 +185,8 @@ public class ForgeEvent {
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.COMPY_ENTITY.get(), DeadlyDinosCommonConfig.COMPY_WEIGHT.get(), 2, 6));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.CERATO_ENTITY.get(), DeadlyDinosCommonConfig.CERATO_WEIGHT.get(), 1, 3));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.MAJUNGA_ENTITY.get(), DeadlyDinosCommonConfig.MAJUNGA_WEIGHT.get(), 1, 1));
+                event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.ACRO_ENTITY.get(), DeadlyDinosCommonConfig.ACRO_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.DEINON_ENTITY.get(), DeadlyDinosCommonConfig.DEINON_WEIGHT.get(), 1, 5));
-                event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.AUSTRO_ENTITY.get(), DeadlyDinosCommonConfig.AUSTRO_WEIGHT.get(), 1, 5));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.CAR_ENTITY.get(), 2, 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.CARFLIPPED_ENTITY.get(), 2, 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.CARSIDE_ENTITY.get(), 2, 1, 1));

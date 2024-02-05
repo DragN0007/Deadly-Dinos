@@ -50,9 +50,8 @@ public class CropSnail extends Animal implements IAnimatable {
 
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(0, new RandomStrollGoal(this, 1));
-        this.goalSelector.addGoal(1, new WaterAvoidingRandomStrollGoal(this, 1));
-        this.goalSelector.addGoal(2, new DestroyFarmGoal(this));
+        this.goalSelector.addGoal(0, new WaterAvoidingRandomStrollGoal(this, 1));
+        this.goalSelector.addGoal(1, new DestroyFarmGoal(this));
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
