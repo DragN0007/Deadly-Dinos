@@ -2,11 +2,11 @@ package com.dragn0007.deadlydinos.item;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
+import com.dragn0007.deadlydinos.item.custom.SodaItem;
 import com.dragn0007.deadlydinos.item.custom.TrophyItem;
 import com.dragn0007.deadlydinos.item.util.DDDArmorMaterial;
 import com.dragn0007.deadlydinos.item.util.DDDItemGroup;
 import com.dragn0007.deadlydinos.item.util.DDDItemTier;
-import com.dragn0007.deadlydinos.item.custom.SodaItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;

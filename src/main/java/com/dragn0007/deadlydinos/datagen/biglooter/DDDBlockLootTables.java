@@ -1,6 +1,5 @@
 package com.dragn0007.deadlydinos.datagen.biglooter;
 
-import com.dragn0007.deadlydinos.block.DDDBlocks;
 import com.dragn0007.deadlydinos.block.DDDBlocksDataGen;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.level.block.Block;

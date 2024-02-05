@@ -38,7 +38,7 @@ public class DinoExtremeMeleeGoal extends MeleeAttackGoal {
                         || state.is(Blocks.PINK_STAINED_GLASS_PANE)
                         || state.is(Blocks.GRAY_STAINED_GLASS_PANE)
                         || state.is(Blocks.LIGHT_GRAY_STAINED_GLASS_PANE)
-                        || state.is( Blocks.CYAN_STAINED_GLASS_PANE)
+                        || state.is(Blocks.CYAN_STAINED_GLASS_PANE)
                         || state.is(Blocks.PURPLE_STAINED_GLASS_PANE)
                         || state.is(Blocks.BLUE_STAINED_GLASS_PANE)
                         || state.is(Blocks.BROWN_STAINED_GLASS_PANE)
@@ -65,6 +65,9 @@ public class DinoExtremeMeleeGoal extends MeleeAttackGoal {
         int height = DeadlyDinosCommonConfig.BIG_DINO_BREAK_HEIGHT.get();
         int depth = DeadlyDinosCommonConfig.BIG_DINO_BREAK_DEPTH.get();
 
+        // Define the maximum reach distance
+        int maxReachDistance = 8;
+
         // Calculate the center of the cube, aka the dino's hitbox
         BlockPos center = new BlockPos(base.getX() + (width / 2), base.getY() + (height / 2), base.getZ() + (depth / 2));
 
@@ -83,17 +86,26 @@ public class DinoExtremeMeleeGoal extends MeleeAttackGoal {
                         for (ItemStack drop : drops) {
                             entity.level.addFreshEntity(new ItemEntity(entity.level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, drop));
                         }
-                        entity.level.setBlock(pos, Blocks.AIR.defaultBlockState(), 10);
-                        numBlocksBroken++;
-                        // If the dino has broken enough blocks, stop breaking them
-                        if (numBlocksBroken >= 25) { // 5x5x5 cube has 125 blocks, so we need to break 25 to get a large enough hole
-                            break;
+
+                        // Check if the block is within the maximum reach distance
+                        if (center.distManhattan(pos) <= maxReachDistance) {
+                            if (checkState(state)) {
+                                // Break the block and drop any items
+                                entity.level.destroyBlock(pos, true, entity);
+
+                                entity.level.setBlock(pos, Blocks.AIR.defaultBlockState(), 10);
+                                numBlocksBroken++;
+                                // If the dino has broken enough blocks, stop breaking them
+                                if (numBlocksBroken >= 25) { // 5x5x5 cube has 125 blocks, so we need to break 25 to get a large enough hole
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
+                super.checkAndPerformAttack(entity, distance);
             }
         }
-        super.checkAndPerformAttack(entity, distance);
     }
 }
 

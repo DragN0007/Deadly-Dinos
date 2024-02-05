@@ -1,9 +1,8 @@
 package com.dragn0007.deadlydinos.block;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
-import com.dragn0007.deadlydinos.block.plushy.ParaPlushy;
-import com.dragn0007.deadlydinos.item.util.DDDItemGroup;
 import com.dragn0007.deadlydinos.item.DDDItems;
+import com.dragn0007.deadlydinos.item.util.DDDItemGroup;
 import com.dragn0007.deadlydinos.world.feature.tree.ConiferTreeGrower;
 import com.dragn0007.deadlydinos.world.feature.tree.SequoiaTreeGrower;
 import com.dragn0007.deadlydinos.world.feature.tree.YewTreeGrower;

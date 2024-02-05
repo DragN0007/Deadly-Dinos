@@ -1,10 +1,10 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
 import com.dragn0007.deadlydinos.client.model.AustroModel;
+import com.dragn0007.deadlydinos.entity.ai.DinoVeryWeakMeleeGoal;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
-import com.dragn0007.deadlydinos.entity.ai.DinoVeryWeakMeleeGoal;
 import com.google.common.collect.Maps;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -22,6 +22,7 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.animal.Animal;
@@ -168,6 +169,7 @@ public class Austro extends Animal implements IAnimatable {
 
     protected void registerGoals() {
         super.registerGoals();
+        this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(0, new OpenDoorGoal(this, true));
         this.goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 25, true, true, LivingEntity::attackable));
         this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));

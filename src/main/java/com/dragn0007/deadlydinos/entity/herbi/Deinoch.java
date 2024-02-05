@@ -1,11 +1,11 @@
 package com.dragn0007.deadlydinos.entity.herbi;
 
 import com.dragn0007.deadlydinos.client.model.DeinochModel;
+import com.dragn0007.deadlydinos.entity.ai.DestroyWaterPlantsGoal;
+import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
-import com.dragn0007.deadlydinos.entity.ai.DestroyWaterPlantsGoal;
-import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
