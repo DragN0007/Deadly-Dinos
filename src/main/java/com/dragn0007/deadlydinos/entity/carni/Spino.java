@@ -74,9 +74,9 @@ public class Spino extends Animal implements IAnimatable {
         this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 1.0D, 10));
         this.goalSelector.addGoal(2, new FloatGoal(this));
         this.goalSelector.addGoal(4, new FollowBoatGoal(this));
-        this.goalSelector.addGoal(5, new DinoMeleeGoal(this, 1.2, true));
+        this.goalSelector.addGoal(0, new DinoMeleeGoal(this, 1.2, true));
         this.goalSelector.addGoal(6, new RandomStrollGoal(this, 1));
-        this.targetSelector.addGoal(7, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
+        this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
                 if (livingEntity instanceof Mahakala)

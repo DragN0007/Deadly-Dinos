@@ -23,8 +23,8 @@ public class DinoMeleeGoal extends MeleeAttackGoal {
     private boolean checkState(BlockState state) {
         return
                 state.is(BlockTags.WOODEN_BUTTONS) || state.is(BlockTags.PLANKS) || state.is(BlockTags.LOGS) || state.is(BlockTags.WOODEN_FENCES) || state.is(BlockTags.FENCE_GATES)
-                || state.is(BlockTags.WOODEN_DOORS) || state.is(BlockTags.BASE_STONE_OVERWORLD) || state.is(BlockTags.BEDS) || state.is(BlockTags.FLOWER_POTS)
-                || state.is(BlockTags.LEAVES) || state.is(BlockTags.WOODEN_SLABS) || state.is(BlockTags.WOODEN_STAIRS) || state.is(BlockTags.WOOL) || state.is(BlockTags.SAND) || state.is(BlockTags.IMPERMEABLE)
+                        || state.is(BlockTags.WOODEN_DOORS) || state.is(BlockTags.BASE_STONE_OVERWORLD) || state.is(BlockTags.BEDS) || state.is(BlockTags.FLOWER_POTS)
+                        || state.is(BlockTags.LEAVES) || state.is(BlockTags.WOODEN_SLABS) || state.is(BlockTags.WOODEN_STAIRS) || state.is(BlockTags.WOOL) || state.is(BlockTags.SAND) || state.is(BlockTags.IMPERMEABLE)
                         || state.is(Blocks.DIRT)
                         || state.is(Blocks.GRASS_BLOCK)
                         || state.is(Blocks.GLASS_PANE)
@@ -37,7 +37,7 @@ public class DinoMeleeGoal extends MeleeAttackGoal {
                         || state.is(Blocks.PINK_STAINED_GLASS_PANE)
                         || state.is(Blocks.GRAY_STAINED_GLASS_PANE)
                         || state.is(Blocks.LIGHT_GRAY_STAINED_GLASS_PANE)
-                        || state.is( Blocks.CYAN_STAINED_GLASS_PANE)
+                        || state.is(Blocks.CYAN_STAINED_GLASS_PANE)
                         || state.is(Blocks.PURPLE_STAINED_GLASS_PANE)
                         || state.is(Blocks.BLUE_STAINED_GLASS_PANE)
                         || state.is(Blocks.BROWN_STAINED_GLASS_PANE)
@@ -63,6 +63,9 @@ public class DinoMeleeGoal extends MeleeAttackGoal {
         int height = DeadlyDinosCommonConfig.BIG_DINO_BREAK_HEIGHT.get();
         int depth = DeadlyDinosCommonConfig.BIG_DINO_BREAK_DEPTH.get();
 
+        // Define the maximum reach distance
+        int maxReachDistance = 8;
+
         // Calculate the center of the cube, aka the dino's hitbox
         BlockPos center = new BlockPos(base.getX() + (width / 2), base.getY() + (height / 2), base.getZ() + (depth / 2));
 
@@ -82,16 +85,25 @@ public class DinoMeleeGoal extends MeleeAttackGoal {
                             entity.level.addFreshEntity(new ItemEntity(entity.level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, drop));
                         }
                         entity.level.setBlock(pos, Blocks.AIR.defaultBlockState(), 10);
-                        numBlocksBroken++;
-                        // If the dino has broken enough blocks, stop breaking them
-                        if (numBlocksBroken >= 25) { // 5x5x5 cube has 125 blocks, so we need to break 25 to get a large enough hole
-                            break;
+
+                        // Check if the block is within the maximum reach distance
+                        if (center.distManhattan(pos) <= maxReachDistance) {
+                            if (checkState(state)) {
+                                // Break the block and drop any items
+                                entity.level.destroyBlock(pos, true, entity);
+
+                                numBlocksBroken++;
+                                // If the dino has broken enough blocks, stop breaking them
+                                if (numBlocksBroken >= 25) { // 5x5x5 cube has 125 blocks, so we need to break 25 to get a large enough hole
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
+                super.checkAndPerformAttack(entity, distance);
             }
         }
-        super.checkAndPerformAttack(entity, distance);
     }
 }
 

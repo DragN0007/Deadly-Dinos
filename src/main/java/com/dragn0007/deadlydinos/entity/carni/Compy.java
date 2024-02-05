@@ -86,32 +86,16 @@ public class Compy extends Animal implements IAnimatable {
         this.goalSelector.addGoal(3, new FloatGoal(this));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1));
 
-        this.goalSelector.addGoal(5, new AvoidEntityGoal<>(this, LivingEntity.class, 15.0F, 2.0D, 2.0D, new Predicate<LivingEntity>() {
-            @Override
-            public boolean test(LivingEntity livingEntity) {
-                if (livingEntity instanceof Acro)
-                    return false;
-                if (livingEntity instanceof Rex)
-                    return false;
-                if (livingEntity instanceof Alberto)
-                    return false;
-                if (livingEntity instanceof Spino)
-                    return false;
-                if (livingEntity instanceof Giga)
-                    return false;
-                if (livingEntity instanceof ArmorStand)
-                    return false;
-                if (livingEntity instanceof AbstractFish)
-                    return false;
-                if (livingEntity instanceof Squid)
-                    return false;
-                if (livingEntity instanceof Dolphin)
-                    return false;
-                return true;
-            }
-        }));
+        this.goalSelector.addGoal(0, new AvoidEntityGoal<>(this, LivingEntity.class, 15.0F, 2.0D, 2.0D, livingEntity
+                -> livingEntity instanceof Austro
+                || livingEntity instanceof Acro
+                || livingEntity instanceof Alberto
+                || livingEntity instanceof Giga
+                || livingEntity instanceof Rex
+                || livingEntity instanceof Spino
+        ));
 
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
+        this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
                 if (livingEntity instanceof Compy)
@@ -142,7 +126,7 @@ public class Compy extends Animal implements IAnimatable {
     private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event) {
 
         if (event.isMoving()) {
-            if (isAggressive()) {
+            if (isAggressive() || isSprinting()) {
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("compysprint", ILoopType.EDefaultLoopTypes.LOOP));
 
             } else

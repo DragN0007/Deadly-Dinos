@@ -86,14 +86,12 @@ public class Deinoch extends Animal implements IAnimatable {
         this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1));
         this.goalSelector.addGoal(2, new BreakDoorGoal(this, (x) -> x == Difficulty.EASY || x == Difficulty.NORMAL || x == Difficulty.HARD));
         this.goalSelector.addGoal(2, new DestroyWaterPlantsGoal(this));
-        this.goalSelector.addGoal(3, new DinoMeleeGoal(this, 1.4, true));
+        this.goalSelector.addGoal(0, new DinoMeleeGoal(this, 1.4, true));
         this.goalSelector.addGoal(4, new FloatGoal(this));
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
+        this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
-                if (livingEntity instanceof Deinoch)
-                    return false;
                 if (livingEntity instanceof CarSide)
                     return false;
                 if (livingEntity instanceof Car)

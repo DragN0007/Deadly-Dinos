@@ -42,6 +42,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -84,36 +85,21 @@ public class Archae extends TamableAnimal implements IAnimatable {
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 2, true));
         this.goalSelector.addGoal(3, new FloatGoal(this));
+        this.goalSelector.addGoal(4, new LeapAtTargetGoal(this, 0.4F));
         this.goalSelector.addGoal(0, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(1, new FollowOwnerGoal(this, 1.0D, 5.0F, 1.0F, true));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1));
 
-        this.goalSelector.addGoal(5, new AvoidEntityGoal<>(this, LivingEntity.class, 15.0F, 2.0D, 2.0D, new Predicate<LivingEntity>() {
-            @Override
-            public boolean test(LivingEntity livingEntity) {
-                if (livingEntity instanceof Acro)
-                    return false;
-                if (livingEntity instanceof Rex)
-                    return false;
-                if (livingEntity instanceof Alberto)
-                    return false;
-                if (livingEntity instanceof Spino)
-                    return false;
-                if (livingEntity instanceof Giga)
-                    return false;
-                if (livingEntity instanceof ArmorStand)
-                    return false;
-                if (livingEntity instanceof AbstractFish)
-                    return false;
-                if (livingEntity instanceof Squid)
-                    return false;
-                if (livingEntity instanceof Dolphin)
-                    return false;
-                return true;
-            }
-        }));
+        this.goalSelector.addGoal(0, new AvoidEntityGoal<>(this, LivingEntity.class, 15.0F, 2.0D, 2.0D, livingEntity
+                -> livingEntity instanceof Austro
+                || livingEntity instanceof Acro
+                || livingEntity instanceof Alberto
+                || livingEntity instanceof Giga
+                || livingEntity instanceof Rex
+                || livingEntity instanceof Spino
+        ));
 
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
+        this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
                 if (livingEntity instanceof Archae)
@@ -321,26 +307,31 @@ public class Archae extends TamableAnimal implements IAnimatable {
     private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event) {
 
         if (event.isMoving()) {
-            if (isAggressive()) {
+            if (isAggressive() || isSprinting()) {
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("sprint", ILoopType.EDefaultLoopTypes.LOOP));
 
             } else
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", ILoopType.EDefaultLoopTypes.LOOP));
-
         } else
             event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", ILoopType.EDefaultLoopTypes.LOOP));
 
+        return PlayState.CONTINUE;
+    }
 
-            return PlayState.CONTINUE;
-
+    private PlayState attackPredicate(AnimationEvent event) {
+        if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
+            event.getController().markNeedsReload();
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("attack", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
+            this.swinging = false;
         }
 
-
-
+        return PlayState.CONTINUE;
+    }
 
     @Override
-    public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController(this,"controller",5,this::predicate));
+    public void registerControllers (AnimationData data){
+        data.addAnimationController(new AnimationController(this, "controller", 3, this::predicate));
+        data.addAnimationController(new AnimationController(this, "attackController", 3, this::attackPredicate));
     }
 
     @Override

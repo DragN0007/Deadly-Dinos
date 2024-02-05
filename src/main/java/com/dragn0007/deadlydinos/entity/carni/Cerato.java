@@ -89,12 +89,10 @@ public class Cerato extends Animal implements IAnimatable {
         this.goalSelector.addGoal(3, new DinoWeakMeleeGoal(this, 1.8, true));
         this.goalSelector.addGoal(4, new FloatGoal(this));
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
+        this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
                 if (livingEntity instanceof Mahakala)
-                    return false;
-                if (livingEntity instanceof Cerato)
                     return false;
                 if (livingEntity instanceof Cerato)
                     return false;

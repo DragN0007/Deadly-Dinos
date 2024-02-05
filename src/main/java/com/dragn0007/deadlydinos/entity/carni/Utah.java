@@ -84,12 +84,12 @@ public class Utah extends Animal implements IAnimatable {
         super.registerGoals();
         this.goalSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, Player.class, 30, true, true, LivingEntity::attackable));
         this.goalSelector.addGoal(1, new OpenDoorGoal(this, true));
-        this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.7f));
+        this.goalSelector.addGoal(1, new LeapAtTargetGoal(this, 0.7f));
         this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
-        this.goalSelector.addGoal(3, new DinoVeryWeakMeleeGoal(this, 2.7, true));
+        this.goalSelector.addGoal(0, new DinoVeryWeakMeleeGoal(this, 2.7, true));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1));
         this.goalSelector.addGoal(5, new FloatGoal(this));
-        this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
+        this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
                 if (livingEntity instanceof Utah)

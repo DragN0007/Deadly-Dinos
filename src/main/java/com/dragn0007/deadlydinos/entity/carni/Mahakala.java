@@ -87,7 +87,7 @@ public class Mahakala extends TamableAnimal implements IAnimatable {
         this.goalSelector.addGoal(1, new FollowOwnerGoal(this, 1.0D, 5.0F, 1.0F, true));
         this.goalSelector.addGoal(3, new WaterAvoidingRandomStrollGoal(this, 1));
         this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.7f));
-        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
+        this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
                 if (livingEntity instanceof Mahakala)
