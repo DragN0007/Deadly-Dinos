@@ -42,6 +42,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -293,26 +294,35 @@ public class Mahakala extends TamableAnimal implements IAnimatable {
 
 
 
+    //Animation
     private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event) {
 
         if (event.isMoving()) {
-            if (isAggressive()) {
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("mahakalasprint", ILoopType.EDefaultLoopTypes.LOOP));
+            if (isAggressive() || isSprinting()) {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("sprint", ILoopType.EDefaultLoopTypes.LOOP));
 
             } else
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("mahakalawalk", ILoopType.EDefaultLoopTypes.LOOP));
-
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", ILoopType.EDefaultLoopTypes.LOOP));
         } else
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("mahakalaidle", ILoopType.EDefaultLoopTypes.LOOP));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", ILoopType.EDefaultLoopTypes.LOOP));
 
         return PlayState.CONTINUE;
     }
 
+    private PlayState attackPredicate(AnimationEvent event) {
+        if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
+            event.getController().markNeedsReload();
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("attack", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
+            this.swinging = false;
+        }
 
+        return PlayState.CONTINUE;
+    }
 
     @Override
-    public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController(this,"controller",5,this::predicate));
+    public void registerControllers (AnimationData data){
+        data.addAnimationController(new AnimationController(this, "controller", 3, this::predicate));
+        data.addAnimationController(new AnimationController(this, "attackController", 3, this::attackPredicate));
     }
 
     @Override
