@@ -8,7 +8,5 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 public class UtahRender extends GeoEntityRenderer<Utah> {
     public UtahRender(EntityRendererProvider.Context renderManager) {
         super(renderManager, new UtahModel());
-//        super(renderManager, new UtahModel<>(renderManager.bakeLayer(UtahModel.nightEyes)), 0.5F);
-//        this.addLayer(new UtahNightEyes<>(this));
     }
 }

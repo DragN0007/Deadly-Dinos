@@ -66,7 +66,7 @@ public class DDDConfigFeatures {
     public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> CONIFER_SPAWN =
             FeatureUtils.register("conifer_spawn", Feature.RANDOM_SELECTOR,
                     new RandomFeatureConfiguration(List.of(
-                    new WeightedPlacedFeature(CONIFER_CHECKED, 0.5F)), CONIFER_CHECKED));
+                    new WeightedPlacedFeature(CONIFER_CHECKED, 0.1F)), CONIFER_CHECKED));
 
 
     //YEW
@@ -82,7 +82,7 @@ public class DDDConfigFeatures {
     public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> YEW_SPAWN =
             FeatureUtils.register("yew_spawn", Feature.RANDOM_SELECTOR,
                     new RandomFeatureConfiguration(List.of(
-                            new WeightedPlacedFeature(YEW_CHECKED, 0.5F)), YEW_CHECKED));
+                            new WeightedPlacedFeature(YEW_CHECKED, 0.3F)), YEW_CHECKED));
 
 
     //SEQUOIA
@@ -99,7 +99,7 @@ public class DDDConfigFeatures {
     public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> SEQUOIA_SPAWN =
             FeatureUtils.register("sequoia_spawn", Feature.RANDOM_SELECTOR,
                     new RandomFeatureConfiguration(List.of(
-                            new WeightedPlacedFeature(SEQUOIA_CHECKED, 0.5F)), SEQUOIA_CHECKED));
+                            new WeightedPlacedFeature(SEQUOIA_CHECKED, 0.1F)), SEQUOIA_CHECKED));
 
 }
 

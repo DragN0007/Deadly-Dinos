@@ -5,6 +5,9 @@ import com.dragn0007.deadlydinos.entity.ai.DinoVeryWeakMeleeGoal;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
+import com.dragn0007.deadlydinos.item.DDDItems;
+import com.dragn0007.deadlydinos.util.DDDTags;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
@@ -29,7 +32,11 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Dolphin;
 import net.minecraft.world.entity.animal.Squid;
 import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
@@ -48,11 +55,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 import java.util.function.Predicate;
 
 
 public class Austro extends Animal implements IAnimatable {
-
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
     public Austro(EntityType<? extends Animal> entityType, Level level) {
