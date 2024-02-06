@@ -30,12 +30,12 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -76,6 +76,7 @@ public class Archae extends TamableAnimal implements IAnimatable {
     }
 
 
+
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
@@ -84,6 +85,7 @@ public class Archae extends TamableAnimal implements IAnimatable {
         this.goalSelector.addGoal(3, new FloatGoal(this));
         this.goalSelector.addGoal(4, new LeapAtTargetGoal(this, 0.4F));
         this.goalSelector.addGoal(0, new SitWhenOrderedToGoal(this));
+        this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
         this.goalSelector.addGoal(1, new FollowOwnerGoal(this, 1.0D, 5.0F, 1.0F, true));
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1));
 
@@ -134,72 +136,47 @@ public class Archae extends TamableAnimal implements IAnimatable {
 
     //Tameable Entity
     private static final Set<Item> TAME_FOOD = Sets.newHashSet(Items.MUTTON, Items.PORKCHOP, Items.CHICKEN, Items.BEEF, DDDItems.RAWSMALLMEAT.get(), DDDItems.RAWMEDIUMMEAT.get(), DDDItems.RAWLARGEMEAT.get());
+    private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.MUTTON, Items.PORKCHOP, Items.CHICKEN, Items.BEEF, DDDItems.RAWSMALLMEAT.get(), DDDItems.RAWMEDIUMMEAT.get(), DDDItems.RAWLARGEMEAT.get());
 
+    public InteractionResult mobInteract(Player p_30412_, InteractionHand p_30413_) {
+        ItemStack itemstack = p_30412_.getItemInHand(p_30413_);
+        Item item = itemstack.getItem();
+        if (this.level.isClientSide) {
+            boolean flag = this.isOwnedBy(p_30412_) || this.isTame() || TAME_FOOD.contains(itemstack.getItem()) && !this.isTame();
+            return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
+        } else {
+            if (this.isTame()) {
+                if ((TAME_FOOD.contains(itemstack.getItem())) && this.getHealth() < this.getMaxHealth()) {
+                    this.heal((float)itemstack.getFoodProperties(this).getNutrition());
+                    if (!p_30412_.getAbilities().instabuild) {
+                        itemstack.shrink(1);
+                    }
 
-    public InteractionResult mobInteract(Player player, InteractionHand hand) {
-        ItemStack itemstack = player.getItemInHand(hand);
-        if (!this.isTame() && TAME_FOOD.contains(itemstack.getItem())) {
-            if (!player.getAbilities().instabuild) {
-                itemstack.shrink(1);
-            }
+                    this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
+                    return InteractionResult.SUCCESS;
+                }
 
-            if (!this.isSilent()) {
-                this.level.playSound((Player) null, this.getX(), this.getY(), this.getZ(), SoundEvents.PARROT_EAT, this.getSoundSource(), 1.0F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
-            }
+            } else if (TAME_FOOD.contains(itemstack.getItem())) {
+                if (!p_30412_.getAbilities().instabuild) {
+                    itemstack.shrink(1);
+                }
 
-            if (!this.level.isClientSide) {
-                if (this.random.nextInt(10) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, player)) {
-                    this.tame(player);
+                if (this.random.nextInt(3) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, p_30412_)) {
+                    this.tame(p_30412_);
+                    this.navigation.stop();
+                    this.setTarget((LivingEntity)null);
+                    this.setOrderedToSit(true);
                     this.level.broadcastEntityEvent(this, (byte)7);
                 } else {
                     this.level.broadcastEntityEvent(this, (byte)6);
-
                 }
+
+                return InteractionResult.SUCCESS;
             }
 
-//            if (!this.isTame()) {
-//                return InteractionResult.sidedSuccess(this.level.isClientSide);
-//            }
-//
-//            if (!this.hasHarness() && itemstack.is(Blocks.CHEST.asItem())) {
-//                this.setHarness(true);
-//                this.playChestEquipsSound();
-//                if (!player.getAbilities().instabuild) {
-//                    itemstack.shrink(1);
-//                }
-//            }
-
-
-            return InteractionResult.sidedSuccess(this.level.isClientSide);
-        } else if (!this.isAggressive() && this.isTame() && this.isOwnedBy(player)) {
-            if (!this.level.isClientSide) {
-                this.setOrderedToSit(!this.isOrderedToSit());
-            }
-
-            return InteractionResult.sidedSuccess(this.level.isClientSide);
-        } else {
-            return super.mobInteract(player, hand);
+            return super.mobInteract(p_30412_, p_30413_);
         }
     }
-//    private static final EntityDataAccessor<Boolean> DATA_ID_HARNESS = SynchedEntityData.defineId(Archae.class, EntityDataSerializers.BOOLEAN);
-//    protected void playChestEquipsSound() {
-//        this.playSound(SoundEvents.DONKEY_CHEST, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-//    }
-//    public boolean hasHarness() {
-//        return this.entityData.get(DATA_ID_HARNESS);
-//    }
-//    public void setHarness(boolean p_30505_) {
-//        this.entityData.set(DATA_ID_HARNESS, p_30505_);
-//    }
-//    protected void dropEquipment() {
-//        super.dropEquipment();
-//        if (this.hasHarness()) {
-//            if (!this.level.isClientSide) {
-//                this.spawnAtLocation(DDDItems.ARCHAE_HARNESS.get());
-//            }
-//            this.setHarness(false);
-//        }
-//    }
 
 
     //Sound

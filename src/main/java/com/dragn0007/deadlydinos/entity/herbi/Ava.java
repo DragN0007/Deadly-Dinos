@@ -2,6 +2,7 @@ package com.dragn0007.deadlydinos.entity.herbi;
 
 import com.dragn0007.deadlydinos.client.model.AvaModel;
 import com.dragn0007.deadlydinos.entity.ai.DestroyCropsGoal;
+import com.dragn0007.deadlydinos.item.DDDItems;
 import com.google.common.collect.Sets;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -28,6 +29,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -84,6 +86,7 @@ public class Ava extends TamableAnimal implements IAnimatable {
         this.goalSelector.addGoal(0, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(3, new TemptGoal(this, 1.25D, Ingredient.of(Items.BEETROOT, Items.WHEAT, Items.CARROT, Items.POTATO), false));
         this.goalSelector.addGoal(1, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
+        this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1));
 
     }
@@ -91,36 +94,45 @@ public class Ava extends TamableAnimal implements IAnimatable {
 
     //Tameable Entity
     private static final Set<Item> TAME_FOOD = Sets.newHashSet(Items.BEETROOT, Items.WHEAT, Items.CARROT, Items.POTATO);
+    private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.BEETROOT, Items.WHEAT, Items.CARROT, Items.POTATO);
 
-    public InteractionResult mobInteract(Player p_230254_1_, InteractionHand p_230254_2_) {
-        ItemStack itemstack = p_230254_1_.getItemInHand(p_230254_2_);
-        if (!this.isTame() && TAME_FOOD.contains(itemstack.getItem())) {
-            if (!p_230254_1_.getAbilities().instabuild) {
-                itemstack.shrink(1);
-            }
+    public InteractionResult mobInteract(Player p_30412_, InteractionHand p_30413_) {
+        ItemStack itemstack = p_30412_.getItemInHand(p_30413_);
+        Item item = itemstack.getItem();
+        if (this.level.isClientSide) {
+            boolean flag = this.isOwnedBy(p_30412_) || this.isTame() || TAME_FOOD.contains(itemstack.getItem()) && !this.isTame();
+            return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
+        } else {
+            if (this.isTame()) {
+                if ((TAME_FOOD.contains(itemstack.getItem())) && this.getHealth() < this.getMaxHealth()) {
+                    this.heal((float)itemstack.getFoodProperties(this).getNutrition());
+                    if (!p_30412_.getAbilities().instabuild) {
+                        itemstack.shrink(1);
+                    }
 
-            if (!this.isSilent()) {
-                this.level.playSound((Player) null, this.getX(), this.getY(), this.getZ(), SoundEvents.PARROT_EAT, this.getSoundSource(), 1.0F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
-            }
+                    this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
+                    return InteractionResult.SUCCESS;
+                }
 
-            if (!this.level.isClientSide) {
-                if (this.random.nextInt(10) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, p_230254_1_)) {
-                    this.tame(p_230254_1_);
+            } else if (TAME_FOOD.contains(itemstack.getItem())) {
+                if (!p_30412_.getAbilities().instabuild) {
+                    itemstack.shrink(1);
+                }
+
+                if (this.random.nextInt(3) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, p_30412_)) {
+                    this.tame(p_30412_);
+                    this.navigation.stop();
+                    this.setTarget((LivingEntity)null);
+                    this.setOrderedToSit(true);
                     this.level.broadcastEntityEvent(this, (byte)7);
                 } else {
                     this.level.broadcastEntityEvent(this, (byte)6);
                 }
+
+                return InteractionResult.SUCCESS;
             }
 
-            return InteractionResult.sidedSuccess(this.level.isClientSide);
-        } else if (!this.isAggressive() && this.isTame() && this.isOwnedBy(p_230254_1_)) {
-            if (!this.level.isClientSide) {
-                this.setOrderedToSit(!this.isOrderedToSit());
-            }
-
-            return InteractionResult.sidedSuccess(this.level.isClientSide);
-        } else {
-            return super.mobInteract(p_230254_1_, p_230254_2_);
+            return super.mobInteract(p_30412_, p_30413_);
         }
     }
 
