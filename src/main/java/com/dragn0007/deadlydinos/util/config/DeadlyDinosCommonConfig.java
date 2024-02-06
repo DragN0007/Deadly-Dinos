@@ -112,8 +112,8 @@ public class DeadlyDinosCommonConfig {
         CROPSNAIL_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 7.")
                 .define("CROPSNAIL Spawn Weight", 7);
 
-        DEINOCH_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
-                .define("DEINOCH Spawn Weight", 3);
+        DEINOCH_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
+                .define("DEINOCH Spawn Weight", 1);
 
         DEINON_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
                 .define("DEINON Spawn Weight", 4);
@@ -142,8 +142,8 @@ public class DeadlyDinosCommonConfig {
         SHANT_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
                 .define("SHANT Spawn Weight", 4);
 
-        SPINO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
-                .define("SPINO Spawn Weight", 2);
+        SPINO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
+                .define("SPINO Spawn Weight", 1);
 
         STEGO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 5.")
                 .define("STEGO Spawn Weight", 5);
