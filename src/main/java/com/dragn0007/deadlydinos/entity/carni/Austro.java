@@ -160,16 +160,16 @@ public class Austro extends Animal implements IAnimatable {
     public static float getPitch(Random p_192000_0_) {
         return (p_192000_0_.nextFloat() - p_192000_0_.nextFloat()) * 0.5F + 1.0F;
     }
-
     protected SoundEvent getAmbientSound() {
         return SoundEvents.CHICKEN_AMBIENT;
     }
-
+    protected SoundEvent getDeathSound () {
+        return SoundEvents.PHANTOM_DEATH;
+    }
     @Nullable
     protected SoundEvent getHurtSound(DamageSource p_184601_1_) {
         return SoundEvents.CAT_HISS;
     }
-
     protected void playStepSound(BlockPos p_180429_1_, BlockState p_180429_2_) {
         this.playSound(SoundEvents.WOLF_STEP, 0.15F, 1.0F);
     }

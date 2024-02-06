@@ -142,12 +142,12 @@ public class Deinon extends Animal implements IAnimatable {
     private static SoundEvent getImitatedSound(EntityType<?> p_200610_0_) {
         return MOB_SOUND_MAP.getOrDefault(p_200610_0_, SoundEvents.CHICKEN_AMBIENT);
     }
-
     public float getVoicePitch() {
         return getPitch(this.random);
     }
-
-
+    protected SoundEvent getDeathSound () {
+        return SoundEvents.PHANTOM_DEATH;
+    }
     public static float getPitch(Random p_192000_0_) {
         return (p_192000_0_.nextFloat() - p_192000_0_.nextFloat()) * 0.7F + 1.0F;
     }

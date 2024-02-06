@@ -198,15 +198,15 @@ public class Utah extends Animal implements IAnimatable {
     public float getVoicePitch() {
         return getPitch(this.random);
     }
-
     public static float getPitch(Random p_192000_0_) {
         return (p_192000_0_.nextFloat() - p_192000_0_.nextFloat()) * 0.2F + 1.0F;
     }
-
     protected SoundEvent getAmbientSound() {
         return SoundEvents.CHICKEN_AMBIENT;
     }
-
+    protected SoundEvent getDeathSound () {
+        return SoundEvents.PHANTOM_DEATH;
+    }
     @Nullable
     protected SoundEvent getHurtSound(DamageSource p_184601_1_) {
         return SoundEvents.PHANTOM_HURT;

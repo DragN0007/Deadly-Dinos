@@ -126,6 +126,9 @@ public class Troodon extends Animal implements IAnimatable {
     protected SoundEvent getAmbientSound() {
         return SoundEvents.PARROT_AMBIENT;
     }
+    protected SoundEvent getDeathSound () {
+        return SoundEvents.PARROT_DEATH;
+    }
     @Nullable
     protected SoundEvent getHurtSound(DamageSource p_184601_1_) {
         return SoundEvents.PARROT_HURT;

@@ -64,12 +64,13 @@ public class Compy extends Animal implements IAnimatable {
         return SoundEvents.PARROT_AMBIENT;
 
     }
-
     @Nullable
     protected SoundEvent getHurtSound(DamageSource p_184601_1_) {
         return SoundEvents.PARROT_HURT;
     }
-
+    protected SoundEvent getDeathSound () {
+        return SoundEvents.PARROT_DEATH;
+    }
     protected void playStepSound(BlockPos p_180429_1_, BlockState p_180429_2_) {
         this.playSound(SoundEvents.CHICKEN_STEP, 0.15F, 1.0F);
     }

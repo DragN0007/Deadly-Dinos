@@ -279,11 +279,12 @@ public class Archae extends TamableAnimal implements IAnimatable {
     public float getVoicePitch() {
         return getPitch(this.random);
     }
-
+    protected SoundEvent getDeathSound () {
+        return SoundEvents.PARROT_DEATH;
+    }
     public static float getPitch(Random p_192000_0_) {
         return (p_192000_0_.nextFloat() - p_192000_0_.nextFloat()) * 0.9F + 1.0F;
     }
-
     protected SoundEvent getAmbientSound() {
         return SoundEvents.PARROT_AMBIENT;
 
