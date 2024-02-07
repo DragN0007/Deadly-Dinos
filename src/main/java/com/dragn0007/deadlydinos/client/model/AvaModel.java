@@ -21,17 +21,22 @@ public class AvaModel extends AnimatedGeoModel<Ava> {
     }
 
     public static final ResourceLocation model = new ResourceLocation(DeadlyDinos.MODID, "geo/ava.geo.json");
+    public static final ResourceLocation babyModel = new ResourceLocation(DeadlyDinos.MODID, "geo/ava.geo.json");
     public static final ResourceLocation animation = new ResourceLocation(DeadlyDinos.MODID, "animations/ava.animation.json");
 
 
 
     @Override
     public ResourceLocation getModelLocation(Ava object) {
+        if(object.isBaby())
+            return babyModel;
         return model;
     }
 
     @Override
     public ResourceLocation getTextureLocation(Ava object) {
+        if(object.isBaby())
+            return (new ResourceLocation(DeadlyDinos.MODID, "textures/entity/avafemale.png"));
         return object.getTextureLocation();
     }
 

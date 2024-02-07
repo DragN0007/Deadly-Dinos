@@ -23,17 +23,22 @@ public class MahakalaModel extends AnimatedGeoModel<Mahakala> {
     }
 
     public static final ResourceLocation model = new ResourceLocation(DeadlyDinos.MODID, "geo/mahakala.geo.json");
+    public static final ResourceLocation babyModel = new ResourceLocation(DeadlyDinos.MODID, "geo/baby_mahakala.geo.json");
     public static final ResourceLocation animation = new ResourceLocation(DeadlyDinos.MODID, "animations/mahakala.animation.json");
 
 
 
     @Override
     public ResourceLocation getModelLocation(Mahakala object) {
+        if(object.isBaby())
+            return babyModel;
         return model;
     }
 
     @Override
     public ResourceLocation getTextureLocation(Mahakala object) {
+        if(object.isBaby())
+            return (new ResourceLocation(DeadlyDinos.MODID, "textures/entity/mahakalafemale.png"));
         return object.getTextureLocation();
     }
 

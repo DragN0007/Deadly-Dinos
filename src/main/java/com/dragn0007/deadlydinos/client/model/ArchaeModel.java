@@ -22,17 +22,22 @@ public class ArchaeModel extends AnimatedGeoModel<Archae> {
     }
 
     public static final ResourceLocation model = new ResourceLocation(DeadlyDinos.MODID, "geo/archae.geo.json");
+    public static final ResourceLocation babyModel = new ResourceLocation(DeadlyDinos.MODID, "geo/baby_archae.geo.json");
     public static final ResourceLocation animation = new ResourceLocation(DeadlyDinos.MODID, "animations/archae.animation.json");
 
 
 
     @Override
     public ResourceLocation getModelLocation(Archae object) {
+        if(object.isBaby())
+            return babyModel;
         return model;
     }
 
     @Override
     public ResourceLocation getTextureLocation(Archae object) {
+        if(object.isBaby())
+            return (new ResourceLocation(DeadlyDinos.MODID, "textures/entity/archaefemale.png"));
         return object.getTextureLocation();
     }
 

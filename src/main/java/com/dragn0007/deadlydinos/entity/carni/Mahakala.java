@@ -1,9 +1,11 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
 import com.dragn0007.deadlydinos.client.model.MahakalaModel;
+import com.dragn0007.deadlydinos.entity.herbi.Ava;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
+import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
@@ -36,6 +38,7 @@ import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -92,12 +95,19 @@ public class Mahakala extends TamableAnimal implements IAnimatable {
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1));
         this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
         this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.7f));
+
+        this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
+        this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
+        this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25D));
+
         this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
                 if (livingEntity instanceof Mahakala)
                     return false;
                 if (livingEntity instanceof Acro)
+                    return false;
+                if (livingEntity instanceof Ava)
                     return false;
                 if (livingEntity instanceof Alberto)
                     return false;
@@ -261,6 +271,9 @@ public class Mahakala extends TamableAnimal implements IAnimatable {
     //Tameable Entity
     private static final Set<Item> TAME_FOOD = Sets.newHashSet(Items.MUTTON, Items.PORKCHOP, Items.CHICKEN, Items.BEEF, DDDItems.RAWSMALLMEAT.get(), DDDItems.RAWMEDIUMMEAT.get(), DDDItems.RAWLARGEMEAT.get());
     private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.MUTTON, Items.PORKCHOP, Items.CHICKEN, Items.BEEF, DDDItems.RAWSMALLMEAT.get(), DDDItems.RAWMEDIUMMEAT.get(), DDDItems.RAWLARGEMEAT.get());
+    public boolean isFood(ItemStack p_28271_) {
+        return FOOD_ITEMS.test(p_28271_);
+    }
 
     public InteractionResult mobInteract(Player p_30412_, InteractionHand p_30413_) {
         ItemStack itemstack = p_30412_.getItemInHand(p_30413_);
@@ -270,7 +283,7 @@ public class Mahakala extends TamableAnimal implements IAnimatable {
             return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
         } else {
             if (this.isTame()) {
-                if ((TAME_FOOD.contains(itemstack.getItem())) && this.getHealth() < this.getMaxHealth()) {
+                if (this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
                     this.heal((float)itemstack.getFoodProperties(this).getNutrition());
                     if (!p_30412_.getAbilities().instabuild) {
                         itemstack.shrink(1);
@@ -278,6 +291,19 @@ public class Mahakala extends TamableAnimal implements IAnimatable {
 
                     this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
                     return InteractionResult.SUCCESS;
+                }
+
+                if (!(item instanceof DyeItem)) {
+                    InteractionResult interactionresult = super.mobInteract(p_30412_, p_30413_);
+                    if ((!interactionresult.consumesAction() || this.isBaby()) && this.isOwnedBy(p_30412_)) {
+                        this.setOrderedToSit(!this.isOrderedToSit());
+                        this.jumping = false;
+                        this.navigation.stop();
+                        this.setTarget((LivingEntity)null);
+                        return InteractionResult.SUCCESS;
+                    }
+
+                    return interactionresult;
                 }
 
             } else if (TAME_FOOD.contains(itemstack.getItem())) {
@@ -384,10 +410,22 @@ public class Mahakala extends TamableAnimal implements IAnimatable {
         return super.finalizeSpawn(levelAccessor, difficultyInstance, mobSpawnType, spawnGroupData, compoundTag);
     }
 
-    @Nullable
+    public boolean canBeParent() {
+        return !this.isBaby() && this.getHealth() >= this.getMaxHealth() && this.isInLove();
+    }
+
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel p_241840_1_, AgeableMob p_241840_2_) {
-        return null;
+    public boolean canMate(Animal animal) {
+        if (animal == this || !(animal instanceof Mahakala)) {
+            return false;
+        } else {
+            return this.canBeParent() && ((Mahakala)animal).canBeParent();
+        }
+    }
+
+    @Override
+    public Mahakala getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
+        return EntityTypes.MAHAKALA_ENTITY.get().create(level);
     }
 
 
