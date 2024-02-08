@@ -22,6 +22,14 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.DINO_NUGGET_1.get());
         simpleItem(DDDItems.DINO_NUGGET_2.get());
         simpleItem(DDDItems.DINO_NUGGET_3.get());
+        simpleItem(DDDItems.HEARTY_SALAD.get());
+        simpleItem(DDDItems.SMOOTHIE.get());
+        simpleItem(DDDItems.DINO_DUMPLING.get());
+        simpleItem(DDDItems.DOUGH.get());
+        simpleItem(DDDItems.BROTH.get());
+        simpleItem(DDDItems.BONE_MARROW.get());
+        simpleItem(DDDItems.CHICKEN_NOODLE_SOUP.get());
+        simpleItem(DDDItems.DINO_ROAST.get());
 
     }
 
