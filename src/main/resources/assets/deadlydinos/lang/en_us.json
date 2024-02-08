@@ -120,6 +120,9 @@
   "item.deadlydinos.glazed_ribs": "Plum Glazed Dino Ribs",
   "item.deadlydinos.rawescargot": "Raw Giant Escargot",
   "item.deadlydinos.cookedescargot": "Cooked Giant Escargot",
+  "item.deadlydinos.dino_nugget_1": "Stegosaurus Dino Nugget",
+  "item.deadlydinos.dino_nugget_2": "Sauroposeidon Dino Nugget",
+  "item.deadlydinos.dino_nugget_3": "T-Rex Dino Nugget",
 
   
   "item.deadlydinos.smallcarnitooth": "Small Carni Tooth",
@@ -227,6 +230,9 @@
   "block.deadlydinos.dino_gift_box": "Dino Gift Box",
   "block.deadlydinos.para_plushy_1": "Female Parasaurolophus Plushy",
   "block.deadlydinos.para_plushy_2": "Male Parasaurolophus Plushy",
+
+
+  "block.deadlydinos.dino_nuggets_box": "Box of Dino Nuggets",
 
   
   "block.deadlydinos.sequoia_planks": "Grand Sequoia Planks",

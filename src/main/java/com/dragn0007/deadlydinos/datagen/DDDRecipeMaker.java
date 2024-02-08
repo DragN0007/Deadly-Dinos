@@ -1,5 +1,6 @@
 package com.dragn0007.deadlydinos.datagen;
 
+import com.dragn0007.deadlydinos.block.DDDBlocks;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import net.minecraft.advancements.critereon.ItemPredicate;
@@ -19,6 +20,18 @@ public class DDDRecipeMaker extends RecipeProvider implements IConditionBuilder 
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
+
+
+        ShapedRecipeBuilder.shaped(DDDBlocks.DINO_NUGGETS_BOX.get())
+                .define('A', DDDTags.Items.RAW_CHICKEN)
+                .define('B', Items.PAPER)
+                .define('C', Items.BREAD)
+                .pattern("BBB")
+                .pattern("AAA")
+                .pattern("CCC")
+                .unlockedBy("has_chicken", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(DDDTags.Items.RAW_CHICKEN).build()))
+                .save(pFinishedRecipeConsumer);
 
         ShapedRecipeBuilder.shaped(DDDItems.SODA.get())
                 .define('A', Items.SUGAR)

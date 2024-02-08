@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "AAA",
+    "CCC"
+  ],
+  "key": {
+    "A": {
+      "tag": "forge:raw_chicken"
+    },
+    "B": {
+      "item": "minecraft:paper"
+    },
+    "C": {
+      "item": "minecraft:bread"
+    }
+  },
+  "result": {
+    "item": "deadlydinos:dino_nuggets_box"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "deadlydinos:block/dino_nuggets_box",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "deadlydinos:block/dino_nuggets_box"
+    },
+    "facing=south": {
+      "model": "deadlydinos:block/dino_nuggets_box",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "deadlydinos:block/dino_nuggets_box",
+      "y": 270
+    }
+  }
+}

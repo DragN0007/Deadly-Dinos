@@ -12,6 +12,8 @@ public class DDDTags {
         public static final TagKey<Item> RAW_MEATS = forgeTag("raw_meats");
         public static final TagKey<Item> COOKED_MEATS = forgeTag("cooked_meats");
 
+        public static final TagKey<Item> RAW_CHICKEN = forgeTag("raw_chicken");
+
         public static final TagKey<Item> RAW_DINO_MEATS = forgeTag("raw_dino_meats");
         public static final TagKey<Item> COOKED_DINO_MEATS = forgeTag("cooked_dino_meats");
 
