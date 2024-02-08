@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "deadlydinos:dough"
+  },
+  "result": "minecraft:bread",
+  "experience": 0.35,
+  "cookingtime": 200
+}

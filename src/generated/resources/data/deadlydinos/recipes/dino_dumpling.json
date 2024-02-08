@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:meats"
+    },
+    {
+      "tag": "forge:vegetables"
+    },
+    {
+      "tag": "forge:dough"
+    }
+  ],
+  "result": {
+    "item": "deadlydinos:dino_dumpling"
+  }
+}

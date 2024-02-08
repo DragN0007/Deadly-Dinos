@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:vegetables"
+    },
+    {
+      "tag": "forge:vegetables"
+    },
+    {
+      "item": "deadlydinos:cooksonia"
+    },
+    {
+      "item": "deadlydinos:tiger_nuts"
+    }
+  ],
+  "result": {
+    "item": "deadlydinos:hearty_salad"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "deadlydinos:tiger_nuts"
+    },
+    {
+      "item": "deadlydinos:yew_plum"
+    }
+  ],
+  "result": {
+    "item": "deadlydinos:smoothie"
+  }
+}

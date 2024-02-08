@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "deadlydinos:broth"
+    ]
+  },
+  "criteria": {
+    "has_bone_marrow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "deadlydinos:bone_marrow"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "deadlydinos:broth"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_bone_marrow",
+      "has_the_recipe"
+    ]
+  ]
+}

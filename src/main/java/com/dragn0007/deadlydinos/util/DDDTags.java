@@ -20,9 +20,8 @@ public class DDDTags {
         public static final TagKey<Item> MEATS = forgeTag("meats");
         public static final TagKey<Item> VEGETABLES = forgeTag("vegetables");
 
-        public static final TagKey<Item> SMALL_BONES = forgeTag("small_bones");
-        public static final TagKey<Item> MEDIUM_BONES = forgeTag("medium_bones");
-        public static final TagKey<Item> LARGE_BONES = forgeTag("large_bones");
+        public static final TagKey<Item> BONES = forgeTag("bones");
+        public static final TagKey<Item> DOUGH = forgeTag("dough");
 
 
         private static TagKey<Item> tag (String name) {

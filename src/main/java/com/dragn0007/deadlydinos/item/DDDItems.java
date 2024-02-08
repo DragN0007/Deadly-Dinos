@@ -127,9 +127,9 @@ public class DDDItems {
     public static final RegistryObject<Item> YEW_PLUM_JAM = ITEMS.register("yew_plum_jam",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
     public static final RegistryObject<Item> PBJ = ITEMS.register("pbj",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(18).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
-    public static final RegistryObject<Item> GLAZED_RIBS = ITEMS.register("glazed_ribs",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(14).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> GLAZED_RIBS = ITEMS.register("glazed_ribs",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
     public static final RegistryObject<Item> RAWESCARGOT = ITEMS.register("rawescargot",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0).meat().effect(() -> new MobEffectInstance(MobEffects.HUNGER, 250, 4) ,0.75F).build()).tab(DDDItemGroup.FOOD_GROUP)));
     public static final RegistryObject<Item> COOKEDESCARGOT = ITEMS.register("cookedescargot",
@@ -140,6 +140,22 @@ public class DDDItems {
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(1).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
     public static final RegistryObject<Item> DINO_NUGGET_3 = ITEMS.register("dino_nugget_3",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(1).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> HEARTY_SALAD = ITEMS.register("hearty_salad",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> SMOOTHIE = ITEMS.register("smoothie",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> DINO_DUMPLING = ITEMS.register("dino_dumpling",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> CHICKEN_NOODLE_SOUP = ITEMS.register("chicken_noodle_soup",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(8).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> DINO_ROAST = ITEMS.register("dino_roast",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(16).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> BONE_MARROW = ITEMS.register("bone_marrow",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(1).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> BROTH = ITEMS.register("broth",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> DOUGH = ITEMS.register("dough",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
 
 
 

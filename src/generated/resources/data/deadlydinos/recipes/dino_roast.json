@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:meats"
+    },
+    {
+      "tag": "forge:vegetables"
+    },
+    {
+      "tag": "forge:vegetables"
+    },
+    {
+      "item": "deadlydinos:cyperus"
+    },
+    {
+      "item": "deadlydinos:bone_marrow"
+    }
+  ],
+  "result": {
+    "item": "deadlydinos:dino_roast"
+  }
+}
