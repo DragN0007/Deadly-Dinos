@@ -31,6 +31,8 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.CHICKEN_NOODLE_SOUP.get());
         simpleItem(DDDItems.DINO_ROAST.get());
 
+        handheldItem(DDDItems.BOWIE_KNIFE.get());
+        handheldItem(DDDItems.CROWBAR.get());
     }
 
     private ItemModelBuilder simpleSpriteBlockItem(Block block) {

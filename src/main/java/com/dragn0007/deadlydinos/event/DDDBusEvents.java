@@ -2,6 +2,8 @@ package com.dragn0007.deadlydinos.event;
 
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
+import com.dragn0007.deadlydinos.event.loot.AddBowieKnifeToDungeonChest;
+import com.dragn0007.deadlydinos.event.loot.AddCrowbarToDungeonChest;
 import com.dragn0007.deadlydinos.event.loot.AddDinoGiftBoxToDungeonChest;
 import com.dragn0007.deadlydinos.event.loot.AddDinoGiftBoxToMineshaft;
 import net.minecraft.resources.ResourceLocation;
@@ -21,7 +23,11 @@ public class DDDBusEvents {
                 new AddDinoGiftBoxToDungeonChest.Serializer().setRegistryName
                         (new ResourceLocation(DeadlyDinos.MODID, "dino_gift_box_dungeon")),
                 new AddDinoGiftBoxToMineshaft.Serializer().setRegistryName
-                        (new ResourceLocation(DeadlyDinos.MODID, "dino_gift_box_mineshaft"))
+                        (new ResourceLocation(DeadlyDinos.MODID, "dino_gift_box_mineshaft")),
+                new AddBowieKnifeToDungeonChest.Serializer().setRegistryName
+                        (new ResourceLocation(DeadlyDinos.MODID, "bowie_knife_dungeon")),
+                new AddCrowbarToDungeonChest.Serializer().setRegistryName
+                        (new ResourceLocation(DeadlyDinos.MODID, "crowbar_dungeon"))
         );
     }
 }

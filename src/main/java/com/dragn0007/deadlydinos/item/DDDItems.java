@@ -269,6 +269,14 @@ public class DDDItems {
                     new Item.Properties().tab(DDDItemGroup.DDD_GROUP)));
 
 
+    public static final RegistryObject<Item> BOWIE_KNIFE = ITEMS.register("bowie_knife",
+            () -> new SwordItem(Tiers.IRON, 2, -1.4F,
+                    new Item.Properties().tab(DDDItemGroup.DDD_GROUP)));
+    public static final RegistryObject<Item> CROWBAR = ITEMS.register("crowbar",
+            () -> new SwordItem(Tiers.IRON, 2, -2.4F,
+                    new Item.Properties().tab(DDDItemGroup.DDD_GROUP)));
+
+
 
     //ARMOR
     public static final RegistryObject<Item> BONENETHERITE_HELMET = ITEMS.register("bonenetherite_helmet",
