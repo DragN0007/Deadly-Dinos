@@ -1,4 +1,4 @@
-package com.dragn0007.deadlydinos.util.config;
+package com.dragn0006.deadlydinos.util.config;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
@@ -57,7 +57,7 @@ public class DeadlyDinosCommonConfig {
         BUILDER.comment("<<GRIEF CONFIG HELPER>> Dino block-destroy configs have 3 integers: Width, Height, and Depth. You can play with these numbers to get the perfect block-break range for you. Set all to 0 to stop dinos from breaking blocks entirely.");
 
         GRIEFCONFIGHELPER = BUILDER.comment("Dino block-destroy configs have 3 integers: Width, Height, and Depth. You can play with these numbers to get the perfect block-break range for you. Set all to 0 to stop dinos from breaking blocks entirely.")
-                .define("<<GRIEF CONFIG HELPER>> - Look here ^ for help!", 7777);
+                .define("<<GRIEF CONFIG HELPER>> - Look here ^ for help!", 6666);
 
         //Large Dinos - How many blocks should they break?
         BIG_DINO_BREAK_WIDTH = BUILDER.comment("What should the width be that Large Deadly Dinos can destroy when attacking? 5 Blocks is Default.")
@@ -77,17 +77,17 @@ public class DeadlyDinosCommonConfig {
 
 
         SPAWNCONFIGHELPER = BUILDER.comment("Dino spawn configs have 1 integer: Weight. You can play with this number to get the perfect spawn rate for you. Set it to 0 to stop a certain dino from spawning entirely.")
-                .define("<<SPAWN CONFIG HELPER>> - Look here ^ for help!", 7777);
+                .define("<<SPAWN CONFIG HELPER>> - Look here ^ for help!", 6666);
 
 
-        ACRO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 6.")
-                .define("ACRO Spawn Weight", 6);
+        ACRO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 5.")
+                .define("ACRO Spawn Weight", 5);
 
-        ALBERTO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
-                .define("ALBERTO Spawn Weight", 4);
+        ALBERTO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
+                .define("ALBERTO Spawn Weight", 3);
 
-        ANDAL_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
-                .define("ANDAL Spawn Weight", 4);
+        ANDAL_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 5.")
+                .define("ANDAL Spawn Weight", 5);
 
         AMARGA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
                 .define("AMARGA Spawn Weight", 2);
@@ -95,74 +95,74 @@ public class DeadlyDinosCommonConfig {
         ANKY_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
                 .define("ANKY Spawn Weight", 2);
 
-        ARCHAE_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 5.")
-                .define("ARCHAE Spawn Weight", 5);
+        ARCHAE_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
+                .define("ARCHAE Spawn Weight", 4);
 
-        AUSTRO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
-                .define("AUSTRO Spawn Weight", 4);
+        AUSTRO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
+                .define("AUSTRO Spawn Weight", 3);
 
-        AVA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
-                .define("AVA Spawn Weight", 3);
+        AVA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
+                .define("AVA Spawn Weight", 2);
 
-        CARNO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 8.")
-                .define("CARNO Spawn Weight", 8);
+        CARNO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 7.")
+                .define("CARNO Spawn Weight", 7);
 
-        CERATO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 7.")
-                .define("CERATO Spawn Weight", 7);
+        CERATO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 6.")
+                .define("CERATO Spawn Weight", 6);
 
-        COMPY_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
-                .define("COMPY Spawn Weight", 4);
+        COMPY_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
+                .define("COMPY Spawn Weight", 3);
 
-        CROPSNAIL_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 7.")
-                .define("CROPSNAIL Spawn Weight", 7);
+        CROPSNAIL_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 6.")
+                .define("CROPSNAIL Spawn Weight", 6);
 
         DEINOCH_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
                 .define("DEINOCH Spawn Weight", 1);
 
-        DEINON_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
-                .define("DEINON Spawn Weight", 4);
+        DEINON_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
+                .define("DEINON Spawn Weight", 3);
 
-        GALLI_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
-                .define("GALLI Spawn Weight", 3);
+        GALLI_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
+                .define("GALLI Spawn Weight", 2);
 
-        GIGA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 6.")
-                .define("GIGA Spawn Weight", 6);
+        GIGA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 5.")
+                .define("GIGA Spawn Weight", 5);
 
-        MAHAKALA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 10.")
-                .define("MAHAKALA Spawn Weight", 10);
+        MAHAKALA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 8.")
+                .define("MAHAKALA Spawn Weight", 8);
 
-        MAJUNGA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 8.")
-                .define("MAJUNGA Spawn Weight", 8);
+        MAJUNGA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 7.")
+                .define("MAJUNGA Spawn Weight", 7);
 
-        PARA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
-                .define("PARA Spawn Weight", 4);
+        PARA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
+                .define("PARA Spawn Weight", 3);
 
-        REX_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 6.")
-                .define("REX Spawn Weight", 6);
+        REX_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 5.")
+                .define("REX Spawn Weight", 5);
 
         SAURO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
                 .define("SAURO Spawn Weight", 1);
 
-        SHANT_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
-                .define("SHANT Spawn Weight", 4);
+        SHANT_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
+                .define("SHANT Spawn Weight", 3);
 
         SPINO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
                 .define("SPINO Spawn Weight", 1);
 
-        STEGO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 5.")
-                .define("STEGO Spawn Weight", 5);
+        STEGO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
+                .define("STEGO Spawn Weight", 4);
 
-        TARBO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
-                .define("TARBO Spawn Weight", 3);
+        TARBO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
+                .define("TARBO Spawn Weight", 2);
 
-        THERI_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
-                .define("THERI Spawn Weight", 3);
+        THERI_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
+                .define("THERI Spawn Weight", 2);
 
-        TROODON_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
-                .define("TROODON Spawn Weight", 4);
+        TROODON_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
+                .define("TROODON Spawn Weight", 3);
 
-        UTAH_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 6.")
-                .define("UTAH Spawn Weight", 6);
+        UTAH_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 5.")
+                .define("UTAH Spawn Weight", 5);
 
 
 
