@@ -1,4 +1,4 @@
-package com.dragn0006.deadlydinos.util.config;
+package com.dragn0007.deadlydinos.util.config;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 

@@ -79,7 +79,7 @@ public class Andal extends TamableAnimal implements IAnimatable {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20)
                 .add(Attributes.ATTACK_DAMAGE, 8)
-                .add(Attributes.MOVEMENT_SPEED, 0.20)
+                .add(Attributes.MOVEMENT_SPEED, 0.17)
                 .add(Attributes.JUMP_STRENGTH, 1)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.4)
                 ;

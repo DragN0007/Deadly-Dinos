@@ -216,35 +216,37 @@ public class Utah extends Animal implements IAnimatable {
         this.playSound(SoundEvents.WOLF_STEP, 0.15F, 1.0F);
     }
 
-        private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event) {
 
-            if (event.isMoving()) {
-                if (isAggressive()) {
-                    event.getController().setAnimation(new AnimationBuilder().addAnimation("utahsprint2", ILoopType.EDefaultLoopTypes.LOOP));
+    //Animation
+    private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event) {
 
-                } else
-                    event.getController().setAnimation(new AnimationBuilder().addAnimation("utahwalk", ILoopType.EDefaultLoopTypes.LOOP));
+        if (event.isMoving()) {
+            if (isAggressive() || isSprinting()) {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("sprint", ILoopType.EDefaultLoopTypes.LOOP));
+
             } else
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("utahidle", ILoopType.EDefaultLoopTypes.LOOP));
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", ILoopType.EDefaultLoopTypes.LOOP));
+        } else
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", ILoopType.EDefaultLoopTypes.LOOP));
 
-            return PlayState.CONTINUE;
+        return PlayState.CONTINUE;
+    }
+
+    private PlayState attackPredicate(AnimationEvent event) {
+        if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
+            event.getController().markNeedsReload();
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("attack", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
+            this.swinging = false;
         }
 
-        private PlayState attackPredicate(AnimationEvent event) {
-            if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
-                event.getController().markNeedsReload();
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("utahattack", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
-                this.swinging = false;
-            }
-
-            return PlayState.CONTINUE;
-         }
+        return PlayState.CONTINUE;
+    }
 
     @Override
-        public void registerControllers (AnimationData data){
-            data.addAnimationController(new AnimationController(this, "controller", 3, this::predicate));
-            data.addAnimationController(new AnimationController(this, "attackController", 3, this::attackPredicate));
-        }
+    public void registerControllers (AnimationData data){
+        data.addAnimationController(new AnimationController(this, "controller", 3, this::predicate));
+        data.addAnimationController(new AnimationController(this, "attackController", 3, this::attackPredicate));
+    }
 
 
 

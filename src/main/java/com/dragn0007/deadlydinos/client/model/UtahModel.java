@@ -9,13 +9,7 @@ public class UtahModel extends AnimatedGeoModel<Utah> {
 
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/utahmale.png")),
-        MALEGREEN(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/utahmalegreen.png")),
-        MALEBLUE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/utahmaleblue.png")),
-        MALEYELLOW(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/utahmaleyellow.png")),
-        FEMALE1(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/utahfemale.png")),
-        FEMALE2(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/utahfemale2.png")),
-        FEMALE3(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/utahfemale3.png")),
-        MIDNIGHT(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/utahmidnight.png"));
+        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/utahfemale.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {
@@ -28,8 +22,6 @@ public class UtahModel extends AnimatedGeoModel<Utah> {
 
     public static final ResourceLocation model = new ResourceLocation(DeadlyDinos.MODID, "geo/utah.geo.json");
     public static final ResourceLocation animation = new ResourceLocation(DeadlyDinos.MODID, "animations/utah.animation.json");
-
-//    public static final ModelLayerLocation nightEyes = new ModelLayerLocation(DeadlyDinos.MODID, "textures/entity/night_eyes/utah_night_eyes.png");
 
 
 
