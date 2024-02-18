@@ -29,6 +29,8 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
 import net.minecraft.world.entity.animal.*;
 import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.entity.decoration.ArmorStand;
@@ -66,11 +68,11 @@ import java.util.Set;
 import java.util.function.Predicate;
 
 
-public class Mahakala extends TamableAnimal implements IAnimatable {
+public class Mahakala extends ShoulderRidingEntity implements IAnimatable {
 
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
-    public Mahakala(EntityType<? extends TamableAnimal> entityType, Level level) {
+    public Mahakala(EntityType<? extends ShoulderRidingEntity> entityType, Level level) {
         super(entityType, level);
         this.noCulling = true;
     }
@@ -95,6 +97,8 @@ public class Mahakala extends TamableAnimal implements IAnimatable {
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1));
         this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
         this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.7f));
+        this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
+        this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
 
         this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
