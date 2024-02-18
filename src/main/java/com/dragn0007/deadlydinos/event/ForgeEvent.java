@@ -21,6 +21,7 @@ public class ForgeEvent {
         switch (event.getCategory()) {
 
             case MESA:
+                event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.ANDAL_ENTITY.get(), DeadlyDinosCommonConfig.ANDAL_WEIGHT.get(), 1, 4));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.COMPY_ENTITY.get(), DeadlyDinosCommonConfig.COMPY_WEIGHT.get(), 2, 6));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.GIGA_ENTITY.get(), DeadlyDinosCommonConfig.GIGA_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.CERATO_ENTITY.get(), DeadlyDinosCommonConfig.CERATO_WEIGHT.get(), 1, 3));
@@ -145,6 +146,7 @@ public class ForgeEvent {
                 break;
 
             case DESERT:
+                event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.ANDAL_ENTITY.get(), DeadlyDinosCommonConfig.ANDAL_WEIGHT.get(), 1, 4));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.TARBO_ENTITY.get(), DeadlyDinosCommonConfig.TARBO_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.TROODON_ENTITY.get(), DeadlyDinosCommonConfig.TROODON_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.COMPY_ENTITY.get(), DeadlyDinosCommonConfig.COMPY_WEIGHT.get(), 2, 6));
@@ -158,6 +160,7 @@ public class ForgeEvent {
                 break;
 
             case SAVANNA:
+                event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.ANDAL_ENTITY.get(), DeadlyDinosCommonConfig.ANDAL_WEIGHT.get(), 1, 4));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.TARBO_ENTITY.get(), DeadlyDinosCommonConfig.TARBO_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.TROODON_ENTITY.get(), DeadlyDinosCommonConfig.TROODON_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.COMPY_ENTITY.get(), DeadlyDinosCommonConfig.COMPY_WEIGHT.get(), 2, 6));

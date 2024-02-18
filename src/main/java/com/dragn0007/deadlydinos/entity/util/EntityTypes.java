@@ -70,7 +70,7 @@ public class EntityTypes {
     public static final RegistryObject<EntityType<Mahakala>> MAHAKALA_ENTITY = ENTITY_TYPES.register("mahakala_entity",
             () -> EntityType.Builder.of(Mahakala::new,
                             MobCategory.CREATURE)
-                    .sized(0.3f,0.3f)
+                    .sized(0.4f,0.4f)
                     .build(new ResourceLocation(MODID,"mahakala").toString()));
 
     public static final RegistryObject<EntityType<Austro>> AUSTRO_ENTITY = ENTITY_TYPES.register("austro_entity",
@@ -114,6 +114,12 @@ public class EntityTypes {
                             MobCategory.CREATURE)
                     .sized(3f,3f)
                     .build(new ResourceLocation(MODID,"tarbo").toString()));
+
+    public static final RegistryObject<EntityType<Andal>> ANDAL_ENTITY = ENTITY_TYPES.register("andal_entity",
+            () -> EntityType.Builder.of(Andal::new,
+                            MobCategory.CREATURE)
+                    .sized(1.5f,1f)
+                    .build(new ResourceLocation(MODID,"andal").toString()));
 
 
 

@@ -410,6 +410,12 @@ public class DDDItems {
                     new MobEffectInstance(MobEffects.ABSORPTION, 2880, 5, true, false)
 
             ));
+    public static final RegistryObject<TrophyItem> ANDALTROPHY = ITEMS.register("andaltrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.DIG_SPEED, 2880, 1,true, false),
+                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2880, 2, true, false)
+
+            ));
     public static final RegistryObject<TrophyItem> ARCHAETROPHY = ITEMS.register("archaetrophy",
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.DIG_SPEED, 2880, 5,true, false),
