@@ -141,6 +141,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
                         SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Andal::checkAnimalSpawnRules);
 
+        SpawnPlacements.register
+                (EntityTypes.SPINO_ENTITY.get(),
+                        SpawnPlacements.Type.ON_GROUND,
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Acro::checkAnimalSpawnRules);
+
 
 
         SpawnPlacements.register
@@ -192,6 +197,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
                 (EntityTypes.AVA_ENTITY.get(),
                         SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Ava::checkAnimalSpawnRules);
+
+        SpawnPlacements.register
+                (EntityTypes.DEINOCH_ENTITY.get(),
+                        SpawnPlacements.Type.ON_GROUND,
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Acro::checkAnimalSpawnRules);
 
 
     }

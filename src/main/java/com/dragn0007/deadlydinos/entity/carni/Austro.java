@@ -244,7 +244,7 @@ public class Austro extends Animal implements IAnimatable {
     @Override
     public void registerControllers (AnimationData data){
         data.addAnimationController(new AnimationController(this, "controller", 3, this::predicate));
-        data.addAnimationController(new AnimationController(this, "attackController", 3, this::attackPredicate));
+        data.addAnimationController(new AnimationController(this, "attackController", 1, this::attackPredicate));
     }
 
 
