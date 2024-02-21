@@ -1,16 +1,13 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
 import com.dragn0007.deadlydinos.client.model.AndalModel;
-import com.dragn0007.deadlydinos.client.model.ArchaeModel;
 import com.dragn0007.deadlydinos.entity.herbi.Ava;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.item.DDDItems;
-import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -54,8 +51,6 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import java.util.function.Predicate;

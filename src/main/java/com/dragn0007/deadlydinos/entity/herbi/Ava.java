@@ -2,9 +2,7 @@ package com.dragn0007.deadlydinos.entity.herbi;
 
 import com.dragn0007.deadlydinos.client.model.AvaModel;
 import com.dragn0007.deadlydinos.entity.ai.DestroyCropsGoal;
-import com.dragn0007.deadlydinos.entity.carni.Archae;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
-import com.dragn0007.deadlydinos.item.DDDItems;
 import com.google.common.collect.Sets;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

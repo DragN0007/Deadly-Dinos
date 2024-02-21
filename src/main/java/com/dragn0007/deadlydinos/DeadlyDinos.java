@@ -6,7 +6,6 @@ import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.util.config.DeadlyDinosCommonConfig;
 import com.mojang.logging.LogUtils;
-import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
