@@ -24,9 +24,8 @@ public class DinoVeryWeakMeleeGoal extends MeleeAttackGoal {
         return
                 state.is(BlockTags.WOODEN_BUTTONS) || state.is(BlockTags.WOODEN_FENCES) || state.is(BlockTags.FENCE_GATES)
                         || state.is(BlockTags.WOODEN_DOORS) || state.is(BlockTags.BEDS) || state.is(BlockTags.FLOWER_POTS)
-                        || state.is(BlockTags.LEAVES) || state.is(BlockTags.SAND) || state.is(BlockTags.IMPERMEABLE)
-                        || state.is(Blocks.DIRT)
-                        || state.is(Blocks.GRASS_BLOCK)
+                        || state.is(BlockTags.LEAVES) || state.is(BlockTags.SAND) || state.is(BlockTags.IMPERMEABLE) || state.is(BlockTags.DIRT)
+
                         || state.is(Blocks.GLASS_PANE)
                         || state.is(Blocks.WHITE_STAINED_GLASS_PANE)
                         || state.is(Blocks.ORANGE_STAINED_GLASS_PANE)

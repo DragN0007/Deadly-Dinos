@@ -25,9 +25,8 @@ public class DinoExtremeMeleeGoal extends MeleeAttackGoal {
                 state.is(BlockTags.BUTTONS) || state.is(BlockTags.PLANKS) || state.is(BlockTags.LOGS) || state.is(BlockTags.FENCES) || state.is(BlockTags.FENCE_GATES)
                         || state.is(BlockTags.DOORS) || state.is(BlockTags.BASE_STONE_OVERWORLD) || state.is(BlockTags.BEDS) || state.is(BlockTags.FLOWER_POTS)
                         || state.is(BlockTags.LEAVES) || state.is(BlockTags.SLABS) || state.is(BlockTags.STAIRS) || state.is(BlockTags.WOOL) || state.is(BlockTags.SAND) || state.is(BlockTags.IMPERMEABLE)
-                        || state.is(BlockTags.STONE_BRICKS) || state.is(BlockTags.STONE_PRESSURE_PLATES) || state.is(BlockTags.WALLS) || state.is(BlockTags.STONE_BRICKS)
-                        || state.is(Blocks.DIRT)
-                        || state.is(Blocks.GRASS_BLOCK)
+                        || state.is(BlockTags.STONE_BRICKS) || state.is(BlockTags.STONE_PRESSURE_PLATES) || state.is(BlockTags.WALLS) || state.is(BlockTags.STONE_BRICKS) || state.is(BlockTags.DIRT)
+
                         || state.is(Blocks.GLASS_PANE)
                         || state.is(Blocks.WHITE_STAINED_GLASS_PANE)
                         || state.is(Blocks.ORANGE_STAINED_GLASS_PANE)
