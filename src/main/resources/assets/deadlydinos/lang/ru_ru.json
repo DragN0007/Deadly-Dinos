@@ -1,6 +1,9 @@
 {
   "Russian translation by Moog": "Thank You!",
   
+ {
+  "Russian translation by Moog": "Thank You!",
+  
   "itemGroup.blockmodtab": "Древние блоки",
   "itemGroup.foodmodtab": "Древняя еда",
   "itemGroup.dinomodtab": "Древние сущности",
@@ -112,19 +115,19 @@
   "item.deadlydinos.cracker": "Крекер",
   "item.deadlydinos.cannedveggies": "Консервированные овощи",
   "item.deadlydinos.cannedmeat": "Консервированное мясо",
-  "item.deadlydinos.cannedstew": "Консервированный рагу",
+  "item.deadlydinos.cannedstew": "Консервированное рагу",
   "item.deadlydinos.dinosandwich": "Бутерброд с мясом динозавра",
   "item.deadlydinos.mre": "Военная консервация",
   "item.deadlydinos.soda": "Газировка",
   "item.deadlydinos.alcohol": "Алкоголь",
-  "item.deadlydinos.tiger_nuts": "Фрукты тигровых орехов",
+  "item.deadlydinos.tiger_nuts": "Тигровые орехи",
   "item.deadlydinos.yew_plum": "Бузина",
   "item.deadlydinos.pbj": "Сэндвич с арахисовым маслом и вареньем",
   "item.deadlydinos.tiger_nut_butter": "Масло из тигровых орехов",
   "item.deadlydinos.yew_plum_jam": "Варенье из бузины",
   "item.deadlydinos.glazed_ribs": "Рёбра динозавра в глазури из бузины",
-  "item.deadlydinos.rawescargot": "Сырая гигантская улитка-ракушка",
-  "item.deadlydinos.cookedescargot": "Приготовленная гигантская улитка-ракушка",
+  "item.deadlydinos.rawescargot": "Сырая гигантская улитка",
+  "item.deadlydinos.cookedescargot": "Приготовленная гигантская улитка",
   "item.deadlydinos.dino_nugget_1": "Кусочек динозаврика стегозавра",
   "item.deadlydinos.dino_nugget_2": "Кусочек динозаврика завропосейдона",
   "item.deadlydinos.dino_nugget_3": "Кусочек динозаврика тираннозавра",
