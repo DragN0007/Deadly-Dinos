@@ -3097,6 +3097,11 @@
 					"rotation": {
 						"vector": [45, 0, 0]
 					}
+				},
+				"Body": {
+					"position": {
+						"vector": [0, 1, 0]
+					}
 				}
 			}
 		}

@@ -2587,6 +2587,147 @@
 					}
 				}
 			}
+		},
+		"sit": {
+			"loop": true,
+			"animation_length": 1.25,
+			"bones": {
+				"1": {
+					"rotation": {
+						"vector": [-12.5, 0, 0]
+					}
+				},
+				"5": {
+					"rotation": {
+						"vector": [2.5, 0, 0]
+					}
+				},
+				"7": {
+					"rotation": {
+						"vector": [2.5, 0, 0]
+					},
+					"position": {
+						"vector": [0, 0.1, 0]
+					}
+				},
+				"UpperBody": {
+					"rotation": {
+						"0.0": {
+							"vector": [-10, 0, 0]
+						},
+						"1.25": {
+							"vector": [-10, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, -4, 0]
+						},
+						"0.625": {
+							"vector": [0, -3.9, 0]
+						},
+						"1.25": {
+							"vector": [0, -4, 0]
+						}
+					}
+				},
+				"WristL": {
+					"rotation": {
+						"vector": [22.5, 0, 0]
+					}
+				},
+				"WristR": {
+					"rotation": {
+						"vector": [17.5, 0, 0]
+					}
+				},
+				"FeathersR": {
+					"rotation": {
+						"vector": [12.5, 0, 0]
+					}
+				},
+				"FeathersL": {
+					"rotation": {
+						"vector": [12.49067, 0.43399, -2.46207]
+					},
+					"position": {
+						"vector": [0, 0.3, 0]
+					}
+				},
+				"Head": {
+					"rotation": {
+						"0.0": {
+							"vector": [15, 0, 0]
+						},
+						"0.625": {
+							"vector": [20, 0, 0]
+						},
+						"1.25": {
+							"vector": [15, 0, 0]
+						}
+					}
+				},
+				"Legs": {
+					"position": {
+						"vector": [0, -4, 0]
+					}
+				},
+				"ThighL": {
+					"rotation": {
+						"vector": [0, -15, 0]
+					}
+				},
+				"Leg1L": {
+					"rotation": {
+						"vector": [67.5, 0, 0]
+					}
+				},
+				"Leg2L": {
+					"rotation": {
+						"vector": [-127.5, 0, 0]
+					}
+				},
+				"AnkleL": {
+					"rotation": {
+						"vector": [15, 0, 0]
+					}
+				},
+				"FootL": {
+					"rotation": {
+						"vector": [45, 0, 0]
+					}
+				},
+				"ThighR": {
+					"rotation": {
+						"vector": [0, 15, 0]
+					}
+				},
+				"Leg1R": {
+					"rotation": {
+						"vector": [67.5, 0, 0]
+					}
+				},
+				"Leg2R": {
+					"rotation": {
+						"vector": [-127.5, 0, 0]
+					}
+				},
+				"AnkleR": {
+					"rotation": {
+						"vector": [15, 0, 0]
+					}
+				},
+				"Body": {
+					"position": {
+						"vector": [0, -3.4, 0]
+					}
+				},
+				"FootR": {
+					"rotation": {
+						"vector": [45, 0, 0]
+					}
+				}
+			}
 		}
 	},
 	"geckolib_format_version": 2

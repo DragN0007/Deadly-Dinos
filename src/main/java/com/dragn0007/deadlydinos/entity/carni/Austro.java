@@ -175,7 +175,7 @@ public class Austro extends Animal implements IAnimatable {
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(0, new OpenDoorGoal(this, true));
         this.goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 25, true, true, LivingEntity::attackable));
-        this.goalSelector.addGoal(3, new DinoVeryWeakMeleeGoal(this, 2.5, true));
+        this.goalSelector.addGoal(0, new DinoVeryWeakMeleeGoal(this, 2.5, true));
         this.goalSelector.addGoal(4, new FloatGoal(this));
         this.goalSelector.addGoal(4, new LeapAtTargetGoal(this, 0.4F));
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1));

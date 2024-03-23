@@ -91,14 +91,14 @@ public class Mahakala extends ShoulderRidingEntity implements IAnimatable {
         super.registerGoals();
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(1, new FloatGoal(this));
-        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.9, true));
+        this.goalSelector.addGoal(0, new MeleeAttackGoal(this, 1.9, true));
         this.goalSelector.addGoal(0, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(1, new FollowOwnerGoal(this, 1.0D, 5.0F, 1.0F, true));
         this.goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1));
         this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
         this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.7f));
-        this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
-        this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
+        this.targetSelector.addGoal(0, new OwnerHurtByTargetGoal(this));
+        this.targetSelector.addGoal(0, new OwnerHurtTargetGoal(this));
 
         this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
@@ -335,16 +335,22 @@ public class Mahakala extends ShoulderRidingEntity implements IAnimatable {
 
 
     //Animation
-    private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event) {
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
 
         if (event.isMoving()) {
             if (isAggressive() || isSprinting()) {
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("sprint", ILoopType.EDefaultLoopTypes.LOOP));
-
-            } else
+            } else {
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", ILoopType.EDefaultLoopTypes.LOOP));
-        } else
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", ILoopType.EDefaultLoopTypes.LOOP));
+            }
+
+        } else {
+            if (isInSittingPose()) {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("sit", ILoopType.EDefaultLoopTypes.LOOP));
+            } else {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", ILoopType.EDefaultLoopTypes.LOOP));
+            }
+        }
 
         return PlayState.CONTINUE;
     }
