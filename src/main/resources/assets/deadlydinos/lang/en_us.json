@@ -6,7 +6,7 @@
 
   "item.deadlydinos.acro_spawn_egg": "Acrocanthrosaurus Spawn Egg",
   "item.deadlydinos.alberto_spawn_egg": "Albertosaurus Spawn Egg",
-  "item.deadlydinos.andal_spawn_egg": "Andalgornis Spawn Egg",
+  "item.deadlydinos.andal_spawn_egg": "Andalgalornis Spawn Egg",
   "item.deadlydinos.archae_spawn_egg": "Archaeopteryx Spawn Egg",
   "item.deadlydinos.austro_spawn_egg": "Austroraptor Spawn Egg",
   "item.deadlydinos.carno_spawn_egg": "Carnotaurus Spawn Egg",
@@ -38,7 +38,7 @@
 
   "entity.deadlydinos.acro_entity": "Acrocanthosaurus",
   "entity.deadlydinos.alberto_entity": "Albertosaurus",
-  "entity.deadlydinos.andal_entity": "Andalgornis",
+  "entity.deadlydinos.andal_entity": "Andalgalornis",
   "entity.deadlydinos.archae_entity": "Archaeopteryx",
   "entity.deadlydinos.austro_entity": "Austroraptor",
   "entity.deadlydinos.carno_entity": "Carnotaurus",
