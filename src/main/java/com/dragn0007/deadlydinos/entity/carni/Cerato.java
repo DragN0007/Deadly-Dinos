@@ -65,8 +65,10 @@ public class Cerato extends Animal implements IAnimatable {
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.5)
                 ;
     }
-    
 
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.RAVAGER_ROAR;
+    }
     @Nullable
     protected SoundEvent getHurtSound(DamageSource p_184601_1_) {
         return SoundEvents.POLAR_BEAR_WARNING;
