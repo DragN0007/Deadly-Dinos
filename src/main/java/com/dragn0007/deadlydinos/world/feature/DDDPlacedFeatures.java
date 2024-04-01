@@ -15,17 +15,17 @@ public class DDDPlacedFeatures {
     public static final Holder<PlacedFeature> CONIFER_PLACED =
             PlacementUtils.register("conifer_placed",
                     DDDConfigFeatures.CONIFER_SPAWN,
-                    treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
+                    treePlacement(PlacementUtils.countExtra(1, 0.01F, 1)));
 
     public static final Holder<PlacedFeature> YEW_PLACED =
             PlacementUtils.register("yew_placed",
                     DDDConfigFeatures.YEW_SPAWN,
-                    treePlacement(PlacementUtils.countExtra(2, 0.5F, 2)));
+                    treePlacement(PlacementUtils.countExtra(2, 0.1F, 2)));
 
     public static final Holder<PlacedFeature> SEQUOIA_PLACED =
             PlacementUtils.register("sequoia_placed",
                     DDDConfigFeatures.SEQUOIA_SPAWN,
-                    treePlacement(PlacementUtils.countExtra(0, 0.1F, 1)));
+                    treePlacement(PlacementUtils.countExtra(0, 0.01F, 1)));
 
 
 
