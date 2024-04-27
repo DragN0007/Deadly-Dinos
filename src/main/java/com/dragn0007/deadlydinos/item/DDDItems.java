@@ -60,6 +60,8 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.TARBO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> ANDAL_SPAWN_EGG = ITEMS.register("andal_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.ANDAL_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> CARCHAR_SPAWN_EGG = ITEMS.register("carchar_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.CARCHAR_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
     //HERBIVORE SPAWN EGGS
@@ -428,6 +430,13 @@ public class DDDItems {
                     new MobEffectInstance(MobEffects.JUMP, 2880, 2, true, false)
 
             ));
+
+    public static final RegistryObject<TrophyItem> CARCHARTROPHY = ITEMS.register("carchartrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2880, 5,true, false),
+                    new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2880, 2, true, false)
+            ));
+
     public static final RegistryObject<TrophyItem> CARNOTROPHY = ITEMS.register("carnotrophy",
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2880, 5,true, false),

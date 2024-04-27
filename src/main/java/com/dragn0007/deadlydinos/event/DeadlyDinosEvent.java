@@ -41,7 +41,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         event.put(EntityTypes.TROODON_ENTITY.get(), Troodon.createAttributes().build());
         event.put(EntityTypes.ARCHAE_ENTITY.get(), Archae.createAttributes().build());
         event.put(EntityTypes.TARBO_ENTITY.get(), Tarbo.createAttributes().build());
-        event.put(EntityTypes.ANDAL_ENTITY.get(), Tarbo.createAttributes().build());
+        event.put(EntityTypes.ANDAL_ENTITY.get(), Andal.createAttributes().build());
+        event.put(EntityTypes.CARCHAR_ENTITY.get(), Carchar.createAttributes().build());
 
         event.put(EntityTypes.CROPSNAIL_ENTITY.get(), CropSnail.createAttributes().build());
         event.put(EntityTypes.AMARGA_ENTITY.get(), Amarga.createAttributes().build());
@@ -144,7 +145,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         SpawnPlacements.register
                 (EntityTypes.SPINO_ENTITY.get(),
                         SpawnPlacements.Type.ON_GROUND,
-                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Acro::checkAnimalSpawnRules);
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Spino::checkAnimalSpawnRules);
+
+        SpawnPlacements.register
+                (EntityTypes.CARCHAR_ENTITY.get(),
+                        SpawnPlacements.Type.ON_GROUND,
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Carchar::checkAnimalSpawnRules);
 
 
 
@@ -226,6 +232,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         EntityRenderers.register(EntityTypes.ARCHAE_ENTITY.get(), ArchaeRender::new);
         EntityRenderers.register(EntityTypes.TARBO_ENTITY.get(), TarboRender::new);
         EntityRenderers.register(EntityTypes.ANDAL_ENTITY.get(), AndalRender::new);
+        EntityRenderers.register(EntityTypes.CARCHAR_ENTITY.get(), CarcharRender::new);
 
         EntityRenderers.register(EntityTypes.CROPSNAIL_ENTITY.get(), CropSnailRender::new);
         EntityRenderers.register(EntityTypes.AMARGA_ENTITY.get(), AmargaRender::new);

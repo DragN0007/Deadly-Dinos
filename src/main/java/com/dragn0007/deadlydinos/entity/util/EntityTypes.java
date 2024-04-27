@@ -41,7 +41,7 @@ public class EntityTypes {
     public static final RegistryObject<EntityType<Cerato>> CERATO_ENTITY = ENTITY_TYPES.register("cerato_entity",
             () -> EntityType.Builder.of(Cerato::new,
                             MobCategory.CREATURE)
-                    .sized(2f,3f)
+                    .sized(2f,2.8f)
                     .build(new ResourceLocation(MODID,"cerato").toString()));
 
     public static final RegistryObject<EntityType<Giga>> GIGA_ENTITY = ENTITY_TYPES.register("giga_entity",
@@ -120,6 +120,12 @@ public class EntityTypes {
                             MobCategory.CREATURE)
                     .sized(1.5f,1f)
                     .build(new ResourceLocation(MODID,"andal").toString()));
+
+    public static final RegistryObject<EntityType<Carchar>> CARCHAR_ENTITY = ENTITY_TYPES.register("carchar_entity",
+            () -> EntityType.Builder.of(Carchar::new,
+                            MobCategory.CREATURE)
+                    .sized(2.5f,5f)
+                    .build(new ResourceLocation(MODID,"carchar").toString()));
 
 
 

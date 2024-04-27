@@ -35,6 +35,7 @@ public class ForgeEvent {
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.THERI_ENTITY.get(), DeadlyDinosCommonConfig.THERI_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.GALLI_ENTITY.get(), DeadlyDinosCommonConfig.GALLI_WEIGHT.get(), 1, 4));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.AVA_ENTITY.get(), DeadlyDinosCommonConfig.AVA_WEIGHT.get(), 1, 3));
+                event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.CARCHAR_ENTITY.get(), DeadlyDinosCommonConfig.CARCHAR_WEIGHT.get(), 1, 1));
                 break;
 
             case PLAINS:
@@ -106,6 +107,7 @@ public class ForgeEvent {
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.AMARGA_ENTITY.get(), DeadlyDinosCommonConfig.AMARGA_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.GALLI_ENTITY.get(), DeadlyDinosCommonConfig.GALLI_WEIGHT.get(), 1, 4));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.SAURO_ENTITY.get(), DeadlyDinosCommonConfig.SAURO_WEIGHT.get(), 1, 1));
+                event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.CARCHAR_ENTITY.get(), DeadlyDinosCommonConfig.CARCHAR_WEIGHT.get(), 1, 1));
                 break;
 
             case BEACH:
@@ -157,6 +159,7 @@ public class ForgeEvent {
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.CARFLIPPED_ENTITY.get(), 2, 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.CARSIDE_ENTITY.get(), 2, 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.GALLI_ENTITY.get(), DeadlyDinosCommonConfig.GALLI_WEIGHT.get(), 1, 4));
+                event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.CARCHAR_ENTITY.get(), DeadlyDinosCommonConfig.CARCHAR_WEIGHT.get(), 1, 1));
                 break;
 
             case SAVANNA:
