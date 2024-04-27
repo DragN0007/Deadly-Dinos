@@ -13,6 +13,16 @@
           "type": "minecraft:item",
           "name": "deadlydinos:para_plushy_2",
           "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "deadlydinos:acro_plushy_1",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "deadlydinos:acro_plushy_2",
+          "weight": 1
         }
       ]
     }

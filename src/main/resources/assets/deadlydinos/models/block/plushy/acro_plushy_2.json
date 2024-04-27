@@ -1,0 +1,6 @@
+{
+	"parent": "deadlydinos:block/parent/acro_plushy",
+	"textures": {
+		"plushy": "deadlydinos:block/acro_plushy_2"
+	}
+}

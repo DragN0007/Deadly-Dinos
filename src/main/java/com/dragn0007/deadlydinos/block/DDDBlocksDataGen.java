@@ -1,7 +1,7 @@
 package com.dragn0007.deadlydinos.block;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
-import com.dragn0007.deadlydinos.block.plushy.ParaPlushy;
+import com.dragn0007.deadlydinos.block.plushy.Plushy;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.item.util.DDDItemGroup;
 import net.minecraft.world.item.BlockItem;
@@ -20,9 +20,14 @@ public class DDDBlocksDataGen {
 
 
     public static final RegistryObject<Block> PARA_PLUSHY_1 = registerBlock("para_plushy_1",
-            () -> new ParaPlushy());
+            () -> new Plushy());
     public static final RegistryObject<Block> PARA_PLUSHY_2 = registerBlock("para_plushy_2",
-            () -> new ParaPlushy());
+            () -> new Plushy());
+
+    public static final RegistryObject<Block> ACRO_PLUSHY_1 = registerBlock("acro_plushy_1",
+            () -> new Plushy());
+    public static final RegistryObject<Block> ACRO_PLUSHY_2 = registerBlock("acro_plushy_2",
+            () -> new Plushy());
 
 
 
