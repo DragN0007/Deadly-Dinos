@@ -22,12 +22,19 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
+import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Turtle;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.AmphibiousNodeEvaluator;
+import net.minecraft.world.level.pathfinder.PathFinder;
+import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -67,17 +74,37 @@ public class Spino extends Animal implements IAnimatable {
     public boolean canBreatheUnderwater() {
         return true;
     }
+    protected boolean canRandomSwim() {
+        return true;
+    }
+    static class SpinoSwimGoal extends RandomSwimmingGoal {
+        private final Spino spino;
+        public SpinoSwimGoal(Spino p_27505_) {
+            super(p_27505_, 1.0D, 40);
+            this.spino = p_27505_;
+        }
+        public boolean canUse() {
+            return this.spino.canRandomSwim() && super.canUse();
+        }
+    }
+
+    @Override
+    public float getStepHeight() {
+        return 1f;
+    }
 
     protected void registerGoals() {
         super.registerGoals();
+        this.goalSelector.addGoal(0, new BreathAirGoal(this));
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, Player.class, 15, true, true, LivingEntity::attackable));
         this.goalSelector.addGoal(1, new TryFindWaterGoal(this));
         this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 1.0D, 10));
-        this.goalSelector.addGoal(2, new FloatGoal(this));
         this.goalSelector.addGoal(4, new FollowBoatGoal(this));
-        this.goalSelector.addGoal(0, new DinoMeleeGoal(this, 1.2, true));
+        this.goalSelector.addGoal(0, new DinoMeleeGoal(this, 1, true));
         this.goalSelector.addGoal(6, new RandomStrollGoal(this, 1));
+        this.goalSelector.addGoal(4, new SpinoSwimGoal(this));
+        this.goalSelector.addGoal(3, new SpinoStrollOnLandGoal(this, 1.0D, 100));
         this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
@@ -92,6 +119,8 @@ public class Spino extends Animal implements IAnimatable {
                 if (livingEntity instanceof CarFlipped)
                     return false;
                 if (livingEntity instanceof ArmorStand)
+                    return false;
+                if (livingEntity instanceof AbstractFish)
                     return false;
                 return true;
             }
@@ -112,37 +141,46 @@ public class Spino extends Animal implements IAnimatable {
         this.playSound(SoundEvents.POLAR_BEAR_STEP, 0.15F, 0.5F);
     }
 
-    private <E extends IAnimatable>PlayState swimPredicate(AnimationEvent<E> event) {
-        if (this.isInWater() && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
-            event.getController().markNeedsReload();
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("spinoswim", ILoopType.EDefaultLoopTypes.LOOP));
-//            this.isInWater() = false;
+
+    //Animation
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        if (isInWater()) {
+            if (!event.isMoving()) {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("swimidle", ILoopType.EDefaultLoopTypes.LOOP));
+                return PlayState.CONTINUE;
+            } else {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("swim", ILoopType.EDefaultLoopTypes.LOOP));
+                return PlayState.CONTINUE;
+            }
+        }
+
+        if (event.isMoving()) {
+            if (isAggressive()) {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("run", ILoopType.EDefaultLoopTypes.LOOP));
+            } else {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", ILoopType.EDefaultLoopTypes.LOOP));
+            }
+        } else {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", ILoopType.EDefaultLoopTypes.LOOP));
         }
 
         return PlayState.CONTINUE;
     }
 
-    private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event) {
-
-        if (event.isMoving()) {
-            if (isAggressive()) {
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("spinowalk", ILoopType.EDefaultLoopTypes.LOOP));
-
-            } else
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("spinowalk", ILoopType.EDefaultLoopTypes.LOOP));
-
-        } else
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("spinoidle", ILoopType.EDefaultLoopTypes.LOOP));
+    private PlayState attackPredicate(AnimationEvent event) {
+        if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
+            event.getController().markNeedsReload();
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("attack", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
+            this.swinging = false;
+        }
 
         return PlayState.CONTINUE;
     }
 
-
-
     @Override
-    public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController(this, "swimController", 3, this::swimPredicate));
-        data.addAnimationController(new AnimationController(this,"controller",5,this::predicate));
+    public void registerControllers (AnimationData data){
+        data.addAnimationController(new AnimationController(this, "controller", 3, this::predicate));
+        data.addAnimationController(new AnimationController(this, "attackController", 1, this::attackPredicate));
     }
 
 
@@ -152,7 +190,75 @@ public class Spino extends Animal implements IAnimatable {
         return factory;
     }
 
+    static class SpinoStrollOnLandGoal extends RandomStrollGoal {
+        private final Spino spino;
 
+        SpinoStrollOnLandGoal(Spino p_30303_, double p_30304_, int p_30305_) {
+            super(p_30303_, p_30304_, p_30305_);
+            this.spino = p_30303_;
+        }
+
+        public boolean canUse() {
+            return !this.mob.isInWater() && super.canUse();
+        }
+    }
+
+    static class SpinoPathNav extends WaterBoundPathNavigation {
+        SpinoPathNav(Spino p_30294_, Level p_30295_) {
+            super(p_30294_, p_30295_);
+        }
+
+        protected boolean canUpdatePath() {
+            return true;
+        }
+
+        protected PathFinder createPathFinder(int p_30298_) {
+            this.nodeEvaluator = new AmphibiousNodeEvaluator(true);
+            return new PathFinder(this.nodeEvaluator, p_30298_);
+        }
+
+        public boolean isStableDestination(BlockPos p_30300_) {
+            if (this.mob instanceof Spino) {
+                Spino spino = (Spino)this.mob;
+            }
+
+            return !this.level.getBlockState(p_30300_.below()).isAir();
+        }
+    }
+
+    public void travel(Vec3 p27490) {
+        if (this.isEffectiveAi() && this.isInWater()) {
+            this.moveRelative(0.7F, p27490);
+            this.move(MoverType.SELF, this.getDeltaMovement());
+            this.setDeltaMovement(this.getDeltaMovement().scale(0D));
+            if (this.getTarget() == null) {
+                this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.005D, 0.0D));
+            } else {
+                if (this.getTarget().isAlive() && this.canAttack(this.getTarget())) {
+                    Vec3 targetPos = new Vec3(this.getTarget().getX(), this.getTarget().getY(), this.getTarget().getZ());
+                    this.moveTowardsTarget(targetPos);
+                } else {
+                    this.setTarget(null);
+                }
+            }
+        } else {
+            super.travel(p27490);
+        }
+    }
+
+    private void moveTowardsTarget(Vec3 targetPos) {
+        double dx = targetPos.x - this.getX();
+        double dy = targetPos.y - this.getY();
+        double dz = targetPos.z - this.getZ();
+
+        double distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+        double speed = 0.1;
+        dx /= distance;
+        dy /= distance;
+        dz /= distance;
+
+        this.setDeltaMovement(dx * speed, dy * speed, dz * speed);
+    }
 
 
     //Generates variant textures
