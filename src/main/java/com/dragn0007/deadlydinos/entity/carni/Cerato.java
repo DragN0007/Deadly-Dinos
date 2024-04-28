@@ -27,6 +27,9 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.*;
 import net.minecraft.world.entity.animal.*;
+import net.minecraft.world.entity.animal.horse.Donkey;
+import net.minecraft.world.entity.animal.horse.Horse;
+import net.minecraft.world.entity.animal.horse.Mule;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.DismountHelper;
@@ -107,6 +110,15 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
                 || entitytype == EntityTypes.AVA_ENTITY.get()
                 || entitytype == EntityTypes.ANDAL_ENTITY.get()
                 || entitytype == EntityType.PLAYER
+                || entitytype == EntityType.CAT
+                || entitytype == EntityType.WOLF
+                || entitytype == EntityType.HORSE
+                || entitytype == EntityType.MULE
+                || entitytype == EntityType.DONKEY
+                || entitytype == EntityType.SHEEP
+                || entitytype == EntityType.COW
+                || entitytype == EntityType.CHICKEN
+                || entitytype == EntityType.PIG
                 ;
     };
 
@@ -146,6 +158,24 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
                 if (livingEntity instanceof Dolphin)
                     return false;
                 if (livingEntity instanceof Player) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Cat) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Wolf) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Horse) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Mule) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Donkey) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Sheep) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Cow) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Chicken) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Pig) //<- taken care of by the prey selector
                     return false;
                 return true;
             }
