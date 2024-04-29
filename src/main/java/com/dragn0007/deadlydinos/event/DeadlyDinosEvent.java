@@ -55,6 +55,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         event.put(EntityTypes.SAURO_ENTITY.get(), Sauro.createAttributes().build());
         event.put(EntityTypes.ANKY_ENTITY.get(), Anky.createAttributes().build());
         event.put(EntityTypes.AVA_ENTITY.get(), Ava.createAttributes().build());
+        event.put(EntityTypes.GRYPO_ENTITY.get(), Ava.createAttributes().build());
 
         event.put(EntityTypes.CAR_ENTITY.get(), Car.createAttributes().build());
         event.put(EntityTypes.CARSIDE_ENTITY.get(), CarSide.createAttributes().build());
@@ -207,7 +208,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         SpawnPlacements.register
                 (EntityTypes.DEINOCH_ENTITY.get(),
                         SpawnPlacements.Type.ON_GROUND,
-                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Acro::checkAnimalSpawnRules);
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Deinoch::checkAnimalSpawnRules);
+
+        SpawnPlacements.register
+                (EntityTypes.GRYPO_ENTITY.get(),
+                        SpawnPlacements.Type.ON_GROUND,
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Grypo::checkAnimalSpawnRules);
 
 
     }
@@ -245,6 +251,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         EntityRenderers.register(EntityTypes.SAURO_ENTITY.get(), SauroRender::new);
         EntityRenderers.register(EntityTypes.ANKY_ENTITY.get(), AnkyRender::new);
         EntityRenderers.register(EntityTypes.AVA_ENTITY.get(), AvaRender::new);
+        EntityRenderers.register(EntityTypes.GRYPO_ENTITY.get(), GrypoRender::new);
 
         EntityRenderers.register(EntityTypes.CAR_ENTITY.get(), CarRender::new);
         EntityRenderers.register(EntityTypes.CARSIDE_ENTITY.get(), CarSideRender::new);

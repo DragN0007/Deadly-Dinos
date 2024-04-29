@@ -188,6 +188,11 @@ public class EntityTypes {
                             MobCategory.CREATURE)
                     .sized(1.5f,1.5f)
                     .build(new ResourceLocation(MODID,"ava").toString()));
+    public static final RegistryObject<EntityType<Grypo>> GRYPO_ENTITY = ENTITY_TYPES.register("grypo_entity",
+            () -> EntityType.Builder.of(Grypo::new,
+                            MobCategory.CREATURE)
+                    .sized(2f,4.5f)
+                    .build(new ResourceLocation(MODID,"grypo").toString()));
 
 
 

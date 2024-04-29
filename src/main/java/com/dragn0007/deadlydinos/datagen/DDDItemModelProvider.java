@@ -18,6 +18,9 @@ public class DDDItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
 
+        simpleItem(DDDItems.GRYPOTROPHY.get());
+        simpleItem(DDDItems.GRYPO_SPAWN_EGG.get());
+
 //        simpleItem(DDDItems.ARCHAE_HARNESS.get());
         simpleItem(DDDItems.DINO_NUGGET_1.get());
         simpleItem(DDDItems.DINO_NUGGET_2.get());

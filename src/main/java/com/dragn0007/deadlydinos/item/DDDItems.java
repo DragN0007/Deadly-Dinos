@@ -87,6 +87,8 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.ANKY_ENTITY, 0xb08260, 0xe3955d, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> AVA_SPAWN_EGG = ITEMS.register("ava_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.AVA_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> GRYPO_SPAWN_EGG = ITEMS.register("grypo_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.GRYPO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
 
@@ -552,6 +554,11 @@ public class DDDItems {
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2880, 2,true, false),
                     new MobEffectInstance(MobEffects.DIG_SPEED, 2880, 3, true, false)
+            ));
+    public static final RegistryObject<TrophyItem> GRYPOTROPHY = ITEMS.register("grypotrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.SATURATION, 2880, 2,true, false),
+                    new MobEffectInstance(MobEffects.HEAL, 2880, 3, true, false)
             ));
 
 

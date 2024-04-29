@@ -92,7 +92,6 @@ public class ForgeEvent {
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.ANKY_ENTITY.get(), DeadlyDinosCommonConfig.ANKY_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.SAURO_ENTITY.get(), DeadlyDinosCommonConfig.SAURO_WEIGHT.get(), 1, 1));
 
-
             case EXTREME_HILLS:
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.AUSTRO_ENTITY.get(), DeadlyDinosCommonConfig.AUSTRO_WEIGHT.get(), 2, 4));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.TROODON_ENTITY.get(), DeadlyDinosCommonConfig.TROODON_WEIGHT.get(), 1, 1));
@@ -153,7 +152,6 @@ public class ForgeEvent {
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.TROODON_ENTITY.get(), DeadlyDinosCommonConfig.TROODON_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.COMPY_ENTITY.get(), DeadlyDinosCommonConfig.COMPY_WEIGHT.get(), 2, 6));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.CARNO_ENTITY.get(), DeadlyDinosCommonConfig.CARNO_WEIGHT.get(), 1, 1));
-                event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.MAJUNGA_ENTITY.get(), DeadlyDinosCommonConfig.MAJUNGA_WEIGHT.get(), 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.UTAH_ENTITY.get(), DeadlyDinosCommonConfig.UTAH_WEIGHT.get(), 2, 3));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.CAR_ENTITY.get(), 2, 1, 1));
                 event.getSpawns().getSpawner(MobCategory.CREATURE).add(new MobSpawnSettings.SpawnerData(EntityTypes.CARFLIPPED_ENTITY.get(), 2, 1, 1));

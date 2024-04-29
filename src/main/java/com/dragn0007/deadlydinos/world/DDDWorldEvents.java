@@ -3,6 +3,7 @@ package com.dragn0007.deadlydinos.world;
 import com.dragn0007.deadlydinos.DeadlyDinos;
 import com.dragn0007.deadlydinos.world.gen.DDDFlowerGeneration;
 import com.dragn0007.deadlydinos.world.gen.DDDTreeGeneration;
+import com.dragn0007.deadlydinos.world.gen.DinoSpawnGeneration;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -17,5 +18,7 @@ public class DDDWorldEvents {
 
     DDDFlowerGeneration.generateFlowers(event);
     DDDTreeGeneration.generateTrees(event);
+
+    DinoSpawnGeneration.onEntitySpawn(event);
     }
 }

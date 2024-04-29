@@ -35,6 +35,7 @@
   "item.deadlydinos.sauro_spawn_egg": "Sauroposeidon Spawn Egg",
   "item.deadlydinos.anky_spawn_egg": "Ankylosaurus Spawn Egg",
   "item.deadlydinos.ava_spawn_egg": "Avaceratops Spawn Egg",
+  "item.deadlydinos.grypo_spawn_egg": "Gryposaurus Spawn Egg",
   
 
   "entity.deadlydinos.acro_entity": "Acrocanthosaurus",
@@ -68,6 +69,7 @@
   "entity.deadlydinos.sauro_entity": "Sauroposeidon",
   "entity.deadlydinos.anky_entity": "Ankylosaurus",
   "entity.deadlydinos.ava_entity": "Avaceratops",
+  "entity.deadlydinos.grypo_entity": "Gryposaurus",
 
 
   "item.deadlydinos.archae_harness": "Archaeopteryx Pack Harness",
@@ -102,6 +104,7 @@
   "item.deadlydinos.shanttrophy": "Shant Spine Trophy",
   "item.deadlydinos.stegotrophy": "Stego Plate Trophy",
   "item.deadlydinos.theritrophy": "Theri Claw Trophy",
+  "item.deadlydinos.grypotrophy": "Grypo Crest Trophy",
 
   
   "item.deadlydinos.rawsmallmeat": "Raw Small Dino Meat",

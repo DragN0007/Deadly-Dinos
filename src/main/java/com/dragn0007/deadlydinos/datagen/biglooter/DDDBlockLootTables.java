@@ -10,6 +10,8 @@ public class DDDBlockLootTables extends BlockLoot {
     protected void addTables() {
         this.dropSelf(DDDBlocksDataGen.PARA_PLUSHY_1.get());
         this.dropSelf(DDDBlocksDataGen.PARA_PLUSHY_2.get());
+        this.dropSelf(DDDBlocksDataGen.ACRO_PLUSHY_1.get());
+        this.dropSelf(DDDBlocksDataGen.ACRO_PLUSHY_2.get());
     }
 
     @Override
