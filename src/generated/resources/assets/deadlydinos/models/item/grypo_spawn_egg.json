@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "deadlydinos:items/grypo_spawn_egg"
+  }
+}
