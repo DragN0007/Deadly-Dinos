@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -15,15 +16,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import java.util.List;
 
 
-public class DestroyWaterPlantsGoal extends Goal {
+public class TamableDestroyCropsGoal extends Goal {
 
-    //For Aquatic Herbivores.
+    //For Tamable Herbivores.
 
     private boolean checkState(BlockState state) {
-        return state.is(BlockTags.CROPS)
-                || state.is(Blocks.SEAGRASS)
-                || state.is(Blocks.TALL_SEAGRASS)
-                || state.is(Blocks.LILY_PAD)
+        return state.is(BlockTags.CROPS) || state.is(BlockTags.TALL_FLOWERS) || state.is(BlockTags.SAPLINGS)
                 || state.is(Blocks.MELON)
                 || state.is(Blocks.PUMPKIN)
                 || state.is(Blocks.HAY_BLOCK);
@@ -31,10 +29,12 @@ public class DestroyWaterPlantsGoal extends Goal {
 
     private final Animal entity;
     private BlockPos currentTarget;
+    private final TamableAnimal tamableEntity;
 
-    public DestroyWaterPlantsGoal(Animal entity) {
+    public TamableDestroyCropsGoal(Animal entity, TamableAnimal tamableEntity) {
         this.entity = entity;
         this.currentTarget = null;
+        this.tamableEntity = tamableEntity;
     }
 
 
@@ -80,6 +80,10 @@ public class DestroyWaterPlantsGoal extends Goal {
 
 
     public boolean canUse() {
+        if (tamableEntity.isTame()) {
+            return false;
+        }
+
         if (currentTarget != null && entity.level.getBlockState(currentTarget).getBlock() == Blocks.AIR) {
             currentTarget = null;
         }

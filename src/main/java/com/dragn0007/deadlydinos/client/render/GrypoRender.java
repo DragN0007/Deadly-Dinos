@@ -1,9 +1,7 @@
 package com.dragn0007.deadlydinos.client.render;
 
 import com.dragn0007.deadlydinos.client.model.GrypoModel;
-import com.dragn0007.deadlydinos.client.model.ParaModel;
 import com.dragn0007.deadlydinos.entity.herbi.Grypo;
-import com.dragn0007.deadlydinos.entity.herbi.Para;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -18,7 +16,6 @@ import software.bernie.geckolib3.core.processor.IBone;
 import software.bernie.geckolib3.geo.render.built.GeoBone;
 import software.bernie.geckolib3.geo.render.built.GeoModel;
 import software.bernie.geckolib3.renderers.geo.ExtendedGeoEntityRenderer;
-import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 public class GrypoRender extends ExtendedGeoEntityRenderer<Grypo> {
     public GrypoRender(EntityRendererProvider.Context renderManager) {
@@ -28,6 +25,12 @@ public class GrypoRender extends ExtendedGeoEntityRenderer<Grypo> {
 
     @Override
     public void render(GeoModel model, Grypo animatable, float partialTick, RenderType type, PoseStack poseStack, MultiBufferSource bufferSource, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+
+        if(animatable.isChested()) {
+            model.getBone("SaddleBags").ifPresent(b -> b.setHidden(false));
+        } else {
+            model.getBone("SaddleBags").ifPresent(b -> b.setHidden(true));
+        }
 
         if(animatable.isSaddled()) {
             model.getBone("Saddle").ifPresent(b -> b.setHidden(false));

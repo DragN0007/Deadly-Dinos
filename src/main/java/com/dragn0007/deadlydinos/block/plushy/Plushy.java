@@ -1,6 +1,5 @@
 package com.dragn0007.deadlydinos.block.plushy;
 
-import com.dragn0007.deadlydinos.block.rot.DecorRotator;
 import com.dragn0007.deadlydinos.block.rot.NoColDecorRotator;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.shapes.BooleanOp;

@@ -5,10 +5,13 @@ import com.dragn0007.deadlydinos.block.DDDBlocks;
 import com.dragn0007.deadlydinos.client.render.*;
 import com.dragn0007.deadlydinos.entity.carni.*;
 import com.dragn0007.deadlydinos.entity.herbi.*;
+import com.dragn0007.deadlydinos.entity.menu.GrypoScreen;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
+import com.dragn0007.deadlydinos.gui.DDDMenuTypes;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -270,6 +273,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         ItemBlockRenderTypes.setRenderLayer(DDDBlocks.CYPERUS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DDDBlocks.ZOSTER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DDDBlocks.CYCADS.get(), RenderType.cutout());
+
+        MenuScreens.register(DDDMenuTypes.GRYPO_MENU.get(), GrypoScreen::new);
     }
 }
 

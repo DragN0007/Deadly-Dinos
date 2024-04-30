@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -20,7 +21,7 @@ public class DestroyCropsGoal extends Goal {
     //For Herbivores.
 
     private boolean checkState(BlockState state) {
-        return state.is(BlockTags.CROPS) || state.is(Blocks.VINE) || state.is(BlockTags.TALL_FLOWERS) || state.is(BlockTags.SAPLINGS)
+        return state.is(BlockTags.CROPS) || state.is(BlockTags.TALL_FLOWERS) || state.is(BlockTags.SAPLINGS)
                 || state.is(Blocks.MELON)
                 || state.is(Blocks.PUMPKIN)
                 || state.is(Blocks.HAY_BLOCK);
@@ -77,6 +78,7 @@ public class DestroyCropsGoal extends Goal {
 
 
     public boolean canUse() {
+
         if (currentTarget != null && entity.level.getBlockState(currentTarget).getBlock() == Blocks.AIR) {
             currentTarget = null;
         }

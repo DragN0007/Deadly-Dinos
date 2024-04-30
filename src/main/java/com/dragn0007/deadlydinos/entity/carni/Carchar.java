@@ -1,9 +1,7 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
 import com.dragn0007.deadlydinos.client.model.CarcharModel;
-import com.dragn0007.deadlydinos.client.model.GigaModel;
 import com.dragn0007.deadlydinos.entity.ai.DinoExtremeMeleeGoal;
-import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;

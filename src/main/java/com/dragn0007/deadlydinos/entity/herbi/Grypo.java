@@ -1,12 +1,13 @@
 package com.dragn0007.deadlydinos.entity.herbi;
 
 import com.dragn0007.deadlydinos.client.model.GrypoModel;
-import com.dragn0007.deadlydinos.client.model.ParaModel;
 import com.dragn0007.deadlydinos.entity.Chestable;
 import com.dragn0007.deadlydinos.entity.ai.DestroyCropsGoal;
 import com.dragn0007.deadlydinos.entity.ai.DestroyWaterPlantsGoal;
 import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
+import com.dragn0007.deadlydinos.entity.ai.TamableDestroyCropsGoal;
 import com.dragn0007.deadlydinos.entity.carni.Cerato;
+import com.dragn0007.deadlydinos.entity.menu.GrypoMenu;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -17,6 +18,7 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -32,7 +34,6 @@ import net.minecraft.world.entity.ai.goal.SitWhenOrderedToGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.DismountHelper;
 import net.minecraft.world.item.ItemStack;
@@ -49,6 +50,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
+import net.minecraftforge.network.NetworkHooks;
 import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -89,6 +91,7 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
     public SimpleContainer inventory;
     private LazyOptional<?> itemHandler = null;
 
+
     protected SoundEvent getAmbientSound() {
         return SoundEvents.HORSE_BREATHE;
     }
@@ -107,7 +110,7 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
         super.registerGoals();
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1));
-        this.goalSelector.addGoal(2, new DestroyCropsGoal(this));
+        this.goalSelector.addGoal(2, new TamableDestroyCropsGoal(this, this));
         this.goalSelector.addGoal(0, new DinoMeleeGoal(this, 1.4, true));
         this.goalSelector.addGoal(4, new FloatGoal(this));
 
@@ -165,56 +168,75 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
     }
 
     public boolean hurt(DamageSource damageSource, float amount) {
-        if (damageSource.getEntity() instanceof Player player && player.isShiftKeyDown()) {
-            if (!this.level.isClientSide && this.isTame() && this.isSaddled()) {
-                ItemStack saddle = new ItemStack(Items.SADDLE);
-                player.addItem(saddle);
-                this.setSaddled(false);
-                return false;
+        if (damageSource.getEntity() instanceof Player player && player.isCrouching()) {
+            if (this.isOrderedToSit()) {
+                this.setOrderedToSit(false);
+            } else {
+                this.setOrderedToSit(true);
             }
+            return true;
         }
         return super.hurt(damageSource, amount);
     }
 
+    @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
-        if (this.isTame()) {
-            if (this.isFood(itemStack)) {
+
+        if(this.isTame()) {
+            if(this.isFood(itemStack)) {
                 if (this.getHealth() < this.getMaxHealth()) {
                     // heal
                     this.usePlayerItem(player, hand, itemStack);
                     this.heal(itemStack.getFoodProperties(this).getNutrition());
                     this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
                     return InteractionResult.sidedSuccess(this.level.isClientSide);
+                } else if (this.canFallInLove() && !this.level.isClientSide) {
+                    // set to baby maker mode
+                    this.usePlayerItem(player, hand, itemStack);
+                    this.setInLove(player);
+                    this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
+                    return InteractionResult.SUCCESS;
                 }
-            } else if (itemStack.is(Items.SADDLE) && this.isSaddleable()) {
+            } else if(itemStack.is(Items.SADDLE) && this.isSaddleable()) {
                 itemStack.interactLivingEntity(player, this, hand);
                 this.setSaddled(true);
                 this.updateInventory();
                 return InteractionResult.sidedSuccess(this.level.isClientSide);
-            } else if (player.isCrouching()) {
-                // sit if crouch clicking
-                if (this.isOrderedToSit()) {
-                    this.setOrderedToSit(false);
-                } else {
-                    this.setOrderedToSit(true);
-                }
-                return InteractionResult.SUCCESS;
-            } else if (itemStack.is(Items.SADDLE) && this.isSaddleable()) {
-                // saddle up
-                itemStack.interactLivingEntity(player, this, hand);
-                this.setSaddled(true);
+            } else if(itemStack.is(Items.CHEST) && this.isChestable()) {
+                // equip chest
+                this.setChested(true);
+                this.equipChest(SoundSource.NEUTRAL);
                 this.updateInventory();
                 return InteractionResult.sidedSuccess(this.level.isClientSide);
-            } else if (this.isSaddled() && !this.isOrderedToSit()) {
-                // hop on
-                this.doPlayerRide(player);
+
+            } else if(!this.level.isClientSide) {
+                if(player.isShiftKeyDown()) {
+                    // open chest inventory
+                    NetworkHooks.openGui((ServerPlayer) player, new SimpleMenuProvider((containerId, inventory, serverPlayer) -> {
+                        return new GrypoMenu(containerId, inventory, this.inventory, this);
+                    }, this.getDisplayName()), (data) -> {
+                        data.writeInt(this.getInventorySize());
+                        data.writeInt(this.getId());
+                    });
+                    return InteractionResult.SUCCESS;
+                } else if(this.isSaddled()) {
+                    // hop on
+                    this.doPlayerRide(player);
+                    return InteractionResult.SUCCESS;
+                }
+            }
+        } else if(this.isFood(itemStack) && !this.level.isClientSide) {
+            this.usePlayerItem(player, hand, itemStack);
+            if(this.isBaby()) {
+                // grow baby
+                this.ageUp(itemStack.getFoodProperties(this).getNutrition());
+                this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
                 return InteractionResult.SUCCESS;
             }
-        } else if (this.isFood(itemStack) && !this.level.isClientSide) {
-            this.usePlayerItem(player, hand, itemStack);
+
             // try to tame (33% chance to succeed)
-            if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
+            if(this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
                 this.tame(player);
                 return InteractionResult.SUCCESS;
             }
@@ -343,7 +365,7 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
 
 
     private int getInventorySize() {
-        return this.isChested() ? 15 : 1;
+        return this.isChested() ? 51 : 1;
     }
 
     private void updateInventory() {
