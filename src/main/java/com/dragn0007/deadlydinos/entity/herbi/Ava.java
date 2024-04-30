@@ -171,7 +171,7 @@ public class Ava extends TamableAnimal implements ContainerListener, Saddleable,
                 this.setSaddled(true);
                 this.updateInventory();
                 return InteractionResult.sidedSuccess(this.level.isClientSide);
-            } else if (this.isSaddled()) {
+            } else if (this.isSaddled() && !this.isOrderedToSit()) {
                 // hop on
                 this.doPlayerRide(player);
                 return InteractionResult.SUCCESS;

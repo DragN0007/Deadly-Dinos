@@ -5,6 +5,7 @@ import com.dragn0007.deadlydinos.block.DDDBlocks;
 import com.dragn0007.deadlydinos.client.render.*;
 import com.dragn0007.deadlydinos.entity.carni.*;
 import com.dragn0007.deadlydinos.entity.herbi.*;
+import com.dragn0007.deadlydinos.entity.menu.AmargaScreen;
 import com.dragn0007.deadlydinos.entity.menu.GrypoScreen;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
@@ -275,6 +276,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         ItemBlockRenderTypes.setRenderLayer(DDDBlocks.CYCADS.get(), RenderType.cutout());
 
         MenuScreens.register(DDDMenuTypes.GRYPO_MENU.get(), GrypoScreen::new);
+        MenuScreens.register(DDDMenuTypes.AMARGA_MENU.get(), AmargaScreen::new);
     }
 }
 

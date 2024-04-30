@@ -84,8 +84,8 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
 
     }
 
-    private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(Cerato.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> CHESTED = SynchedEntityData.defineId(Cerato.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(Grypo.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> CHESTED = SynchedEntityData.defineId(Grypo.class, EntityDataSerializers.BOOLEAN);
     private static final Ingredient FOOD_ITEMS = Ingredient.of(DDDTags.Items.VEGETABLES);
 
     public SimpleContainer inventory;
@@ -220,7 +220,7 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
                         data.writeInt(this.getId());
                     });
                     return InteractionResult.SUCCESS;
-                } else if(this.isSaddled()) {
+                } else if(this.isSaddled() && !this.isOrderedToSit()) {
                     // hop on
                     this.doPlayerRide(player);
                     return InteractionResult.SUCCESS;
@@ -432,7 +432,7 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
                 this.setRot(this.getYRot(), this.getXRot());
                 this.yBodyRot = this.getYRot();
                 this.yHeadRot = this.yBodyRot;
-                float f = livingentity.xxa * 0.7F; //Strafe moving speed
+                float f = livingentity.xxa * 0.4F; //Strafe moving speed
                 float f1 = livingentity.zza * 0.5F; //Foward moving speed
                 if (f1 <= 0.0F) {
                     f1 *= 0.25F;
