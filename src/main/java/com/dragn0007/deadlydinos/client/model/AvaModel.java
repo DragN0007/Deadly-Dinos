@@ -21,7 +21,7 @@ public class AvaModel extends AnimatedGeoModel<Ava> {
     }
 
     public static final ResourceLocation model = new ResourceLocation(DeadlyDinos.MODID, "geo/ava.geo.json");
-    public static final ResourceLocation babyModel = new ResourceLocation(DeadlyDinos.MODID, "geo/ava.geo.json");
+    public static final ResourceLocation babyModel = new ResourceLocation(DeadlyDinos.MODID, "geo/baby_ava.geo.json");
     public static final ResourceLocation animation = new ResourceLocation(DeadlyDinos.MODID, "animations/ava.animation.json");
 
 
