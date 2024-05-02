@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 import java.util.function.Predicate;
 
-public class Cerato extends TamableAnimal implements ContainerListener, Saddleable, IAnimatable, Chestable {
+public class Cerato extends TamableAnimal implements ContainerListener, Saddleable, IAnimatable {
 
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
@@ -251,7 +251,6 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
             } else if (itemStack.is(Items.SADDLE) && this.isSaddleable()) {
                 itemStack.interactLivingEntity(player, this, hand);
                 this.setSaddled(true);
-                this.updateInventory();
                 return InteractionResult.sidedSuccess(this.level.isClientSide);
             } else if (player.isCrouching()) {
                 // sit if crouch clicking
@@ -265,7 +264,6 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
                 // saddle up
                 itemStack.interactLivingEntity(player, this, hand);
                 this.setSaddled(true);
-                this.updateInventory();
                 return InteractionResult.sidedSuccess(this.level.isClientSide);
             } else if (this.isSaddled() && !this.isOrderedToSit()) {
                 // hop on
@@ -318,22 +316,6 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
             this.setSaddled(tag.getBoolean("Saddled"));
         }
 
-        if(tag.contains("Chested")) {
-            this.setChested(tag.getBoolean("Chested"));
-        }
-
-        this.updateInventory();
-        if(this.isChested()) {
-            ListTag listTag = tag.getList("Items", 10);
-
-            for(int i = 0; i < listTag.size(); i++) {
-                CompoundTag compoundTag = listTag.getCompound(i);
-                int j = compoundTag.getByte("Slot") & 255;
-                if(j < this.inventory.getContainerSize()) {
-                    this.inventory.setItem(j, ItemStack.of(compoundTag));
-                }
-            }
-        }
     }
 
     @Override
@@ -341,22 +323,6 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
         super.addAdditionalSaveData(tag);
         tag.putInt("Variant", getVariant());
         tag.putBoolean("Saddled", this.isSaddled());
-        tag.putBoolean("Chested", this.isChested());
-
-        if(this.isChested()) {
-            ListTag listTag = new ListTag();
-
-            for(int i = 0; i < this.inventory.getContainerSize(); i++) {
-                ItemStack itemStack = this.inventory.getItem(i);
-                if(!itemStack.isEmpty()) {
-                    CompoundTag compoundTag = new CompoundTag();
-                    compoundTag.putByte("Slot", (byte) i);
-                    itemStack.save(compoundTag);
-                    listTag.add(compoundTag);
-                }
-            }
-            tag.put("Items", listTag);
-        }
     }
 
     @Nullable
@@ -407,38 +373,10 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
         }
     }
 
-
-    private int getInventorySize() {
-        return this.isChested() ? 15 : 1;
-    }
-
-    private void updateInventory() {
-        SimpleContainer tempInventory = this.inventory;
-        this.inventory = new SimpleContainer(this.getInventorySize());
-
-        if(tempInventory != null) {
-            tempInventory.removeListener(this);
-            int maxSize = Math.min(tempInventory.getContainerSize(), this.inventory.getContainerSize());
-
-            for(int i = 0; i < maxSize; i++) {
-                ItemStack itemStack = tempInventory.getItem(i);
-                if(!itemStack.isEmpty()) {
-                    this.inventory.setItem(i, itemStack.copy());
-                }
-            }
-        }
-        this.inventory.addListener(this);
-        this.itemHandler = LazyOptional.of(() -> new InvWrapper(this.inventory));
-    }
-
     @Override
     protected void dropEquipment() {
         if(!this.level.isClientSide) {
             super.dropEquipment();
-            if(this.isChested()) {
-                this.spawnAtLocation(Items.CHEST);
-            }
-            Containers.dropContents(this.level, this, this.inventory);
         }
     }
 
@@ -516,7 +454,7 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
 
     @Override
     public void equipSaddle(@Nullable SoundSource soundSource) {
-        this.inventory.setItem(0, new ItemStack(Items.SADDLE));
+        this.setSaddled(true);
         if (soundSource != null) {
             this.level.playSound(null, this, SoundEvents.HORSE_SADDLE, soundSource, 0.5f, 1.0f);
         }
@@ -529,23 +467,6 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
 
     private void setSaddled(boolean saddled) {
         this.entityData.set(SADDLED, saddled);
-    }
-
-    @Override
-    public boolean isChestable() {
-        return this.isAlive() && !this.isBaby() && this.isTame();
-    }
-
-    @Override
-    public void equipChest(@Nullable SoundSource soundSource) {
-        if(soundSource != null) {
-            this.level.playSound(null, this, SoundEvents.MULE_CHEST, soundSource, 0.5f, 1f);
-        }
-    }
-
-    @Override
-    public boolean isChested() {
-        return this.entityData.get(CHESTED);
     }
 
     private void setChested(boolean chested) {

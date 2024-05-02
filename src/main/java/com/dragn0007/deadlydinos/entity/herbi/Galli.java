@@ -24,6 +24,7 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -38,7 +39,6 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 
-//Maybe if raptors couldn't climb walls, we could have nice things.
 
 public class Galli extends Animal implements IAnimatable {
 
@@ -84,25 +84,36 @@ public class Galli extends Animal implements IAnimatable {
 
 
 
-        private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event) {
+    //Animation
+    private <E extends IAnimatable>PlayState predicate(AnimationEvent<E> event) {
 
-            if (event.isMoving()) {
-                if (isAttackable()) {
-                    event.getController().setAnimation(new AnimationBuilder().addAnimation("gallisprint", ILoopType.EDefaultLoopTypes.LOOP));
-
-                } else
-                    event.getController().setAnimation(new AnimationBuilder().addAnimation("galliwalk", ILoopType.EDefaultLoopTypes.LOOP));
+        if (event.isMoving()) {
+            if (isAggressive() || isSprinting()) {
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("run", ILoopType.EDefaultLoopTypes.LOOP));
 
             } else
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("galliidle", ILoopType.EDefaultLoopTypes.LOOP));
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", ILoopType.EDefaultLoopTypes.LOOP));
+        } else
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", ILoopType.EDefaultLoopTypes.LOOP));
 
-            return PlayState.CONTINUE;
+        return PlayState.CONTINUE;
+    }
+
+    private PlayState attackPredicate(AnimationEvent event) {
+        if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
+            event.getController().markNeedsReload();
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("attack", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
+            this.swinging = false;
         }
 
-        @Override
-        public void registerControllers (AnimationData data){
-            data.addAnimationController(new AnimationController(this, "controller", 3, this::predicate));
-        }
+        return PlayState.CONTINUE;
+    }
+
+    @Override
+    public void registerControllers (AnimationData data){
+        data.addAnimationController(new AnimationController(this, "controller", 3, this::predicate));
+        data.addAnimationController(new AnimationController(this, "attackController", 1, this::attackPredicate));
+    }
 
 
 
