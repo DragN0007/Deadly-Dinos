@@ -72,6 +72,7 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
     public Grypo(EntityType<? extends Grypo> entityType, Level level) {
         super(entityType, level);
         this.noCulling = true;
+        this.updateInventory();
     }
 
     public static AttributeSupplier.Builder createAttributes() {

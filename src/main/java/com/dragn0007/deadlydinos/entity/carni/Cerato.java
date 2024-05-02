@@ -72,7 +72,6 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
     }
 
     private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(Cerato.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> CHESTED = SynchedEntityData.defineId(Cerato.class, EntityDataSerializers.BOOLEAN);
     private static final Ingredient FOOD_ITEMS = Ingredient.of(DDDTags.Items.MEATS);
 
     public SimpleContainer inventory;
@@ -346,7 +345,6 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
         super.defineSynchedData();
         this.entityData.define(VARIANT, 0);
         this.entityData.define(SADDLED, false);
-        this.entityData.define(CHESTED, false);
     }
 
 
@@ -467,10 +465,6 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
 
     private void setSaddled(boolean saddled) {
         this.entityData.set(SADDLED, saddled);
-    }
-
-    private void setChested(boolean chested) {
-        this.entityData.set(CHESTED, chested);
     }
 
     protected void doPlayerRide(Player p_30634_) {

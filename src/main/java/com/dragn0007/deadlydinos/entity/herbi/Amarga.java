@@ -70,6 +70,7 @@ public class Amarga extends TamableAnimal implements ContainerListener, Saddleab
     public Amarga(EntityType<? extends Amarga> entityType, Level level) {
         super(entityType, level);
         this.noCulling = true;
+        this.updateInventory();
     }
 
     public static AttributeSupplier.Builder createAttributes() {

@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 
-public class Ava extends TamableAnimal implements ContainerListener, Saddleable, IAnimatable, Chestable {
+public class Ava extends TamableAnimal implements ContainerListener, Saddleable, IAnimatable {
 
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
@@ -80,7 +80,6 @@ public class Ava extends TamableAnimal implements ContainerListener, Saddleable,
     }
 
     private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(Cerato.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> CHESTED = SynchedEntityData.defineId(Cerato.class, EntityDataSerializers.BOOLEAN);
     private static final Ingredient FOOD_ITEMS = Ingredient.of(DDDTags.Items.VEGETABLES);
 
     public SimpleContainer inventory;
@@ -145,17 +144,10 @@ public class Ava extends TamableAnimal implements ContainerListener, Saddleable,
                     this.heal(itemStack.getFoodProperties(this).getNutrition());
                     this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
                     return InteractionResult.sidedSuccess(this.level.isClientSide);
-                } else if (this.canFallInLove() && !this.level.isClientSide) {
-                    // set to baby maker mode
-                    this.usePlayerItem(player, hand, itemStack);
-                    this.setInLove(player);
-                    this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
-                    return InteractionResult.SUCCESS;
                 }
             } else if (itemStack.is(Items.SADDLE) && this.isSaddleable()) {
                 itemStack.interactLivingEntity(player, this, hand);
                 this.setSaddled(true);
-                this.updateInventory();
                 return InteractionResult.sidedSuccess(this.level.isClientSide);
             } else if (player.isCrouching()) {
                 // sit if crouch clicking
@@ -169,7 +161,6 @@ public class Ava extends TamableAnimal implements ContainerListener, Saddleable,
                 // saddle up
                 itemStack.interactLivingEntity(player, this, hand);
                 this.setSaddled(true);
-                this.updateInventory();
                 return InteractionResult.sidedSuccess(this.level.isClientSide);
             } else if (this.isSaddled() && !this.isOrderedToSit()) {
                 // hop on
@@ -178,13 +169,6 @@ public class Ava extends TamableAnimal implements ContainerListener, Saddleable,
             }
         } else if (this.isFood(itemStack) && !this.level.isClientSide) {
             this.usePlayerItem(player, hand, itemStack);
-            if (this.isBaby()) {
-                // grow baby
-                this.ageUp(itemStack.getFoodProperties(this).getNutrition());
-                this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
-                return InteractionResult.SUCCESS;
-            }
-
             // try to tame (33% chance to succeed)
             if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
                 this.tame(player);
@@ -258,55 +242,24 @@ public class Ava extends TamableAnimal implements ContainerListener, Saddleable,
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag compoundNBT) {
-        super.readAdditionalSaveData(compoundNBT);
-        if(compoundNBT.contains("Variant")) {
-            setVariant(compoundNBT.getInt("Variant"));
+    public void readAdditionalSaveData(CompoundTag tag) {
+        super.readAdditionalSaveData(tag);
 
-            if (compoundNBT.contains("Saddled")) {
-                this.setSaddled(compoundNBT.getBoolean("Saddled"));
-            }
-
-            if (compoundNBT.contains("Chested")) {
-                this.setChested(compoundNBT.getBoolean("Chested"));
-            }
-
-            this.updateInventory();
-            if (this.isChested()) {
-                ListTag listTag = compoundNBT.getList("Items", 10);
-
-                for (int i = 0; i < listTag.size(); i++) {
-                    CompoundTag compoundTag = listTag.getCompound(i);
-                    int j = compoundTag.getByte("Slot") & 255;
-                    if (j < this.inventory.getContainerSize()) {
-                        this.inventory.setItem(j, ItemStack.of(compoundTag));
-                    }
-                }
-            }
+        if(tag.contains("Variant")) {
+            setVariant(tag.getInt("Variant"));
         }
+
+        if(tag.contains("Saddled")) {
+            this.setSaddled(tag.getBoolean("Saddled"));
+        }
+
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag compoundNBT) {
-        super.addAdditionalSaveData(compoundNBT);
-        compoundNBT.putInt("Variant", getVariant());
-        compoundNBT.putBoolean("Saddled", this.isSaddled());
-        compoundNBT.putBoolean("Chested", this.isChested());
-
-        if(this.isChested()) {
-            ListTag listTag = new ListTag();
-
-            for(int i = 0; i < this.inventory.getContainerSize(); i++) {
-                ItemStack itemStack = this.inventory.getItem(i);
-                if(!itemStack.isEmpty()) {
-                    CompoundTag compoundTag = new CompoundTag();
-                    compoundTag.putByte("Slot", (byte) i);
-                    itemStack.save(compoundTag);
-                    listTag.add(compoundTag);
-                }
-            }
-            compoundNBT.put("Items", listTag);
-        }
+    public void addAdditionalSaveData(CompoundTag tag) {
+        super.addAdditionalSaveData(tag);
+        tag.putInt("Variant", getVariant());
+        tag.putBoolean("Saddled", this.isSaddled());
     }
 
 
@@ -343,7 +296,6 @@ public class Ava extends TamableAnimal implements ContainerListener, Saddleable,
         super.defineSynchedData();
         this.entityData.define(VARIANT, 0);
         this.entityData.define(SADDLED, false);
-        this.entityData.define(CHESTED, false);
     }
 
 
@@ -370,37 +322,10 @@ public class Ava extends TamableAnimal implements ContainerListener, Saddleable,
     }
 
 
-    private int getInventorySize() {
-        return this.isChested() ? 15 : 1;
-    }
-
-    private void updateInventory() {
-        SimpleContainer tempInventory = this.inventory;
-        this.inventory = new SimpleContainer(this.getInventorySize());
-
-        if(tempInventory != null) {
-            tempInventory.removeListener(this);
-            int maxSize = Math.min(tempInventory.getContainerSize(), this.inventory.getContainerSize());
-
-            for(int i = 0; i < maxSize; i++) {
-                ItemStack itemStack = tempInventory.getItem(i);
-                if(!itemStack.isEmpty()) {
-                    this.inventory.setItem(i, itemStack.copy());
-                }
-            }
-        }
-        this.inventory.addListener(this);
-        this.itemHandler = LazyOptional.of(() -> new InvWrapper(this.inventory));
-    }
-
     @Override
     protected void dropEquipment() {
         if(!this.level.isClientSide) {
             super.dropEquipment();
-            if(this.isChested()) {
-                this.spawnAtLocation(Items.CHEST);
-            }
-            Containers.dropContents(this.level, this, this.inventory);
         }
     }
 
@@ -478,7 +403,7 @@ public class Ava extends TamableAnimal implements ContainerListener, Saddleable,
 
     @Override
     public void equipSaddle(@Nullable SoundSource soundSource) {
-        this.inventory.setItem(0, new ItemStack(Items.SADDLE));
+        this.setSaddled(true);
         if (soundSource != null) {
             this.level.playSound(null, this, SoundEvents.HORSE_SADDLE, soundSource, 0.5f, 1.0f);
         }
@@ -491,27 +416,6 @@ public class Ava extends TamableAnimal implements ContainerListener, Saddleable,
 
     private void setSaddled(boolean saddled) {
         this.entityData.set(SADDLED, saddled);
-    }
-
-    @Override
-    public boolean isChestable() {
-        return this.isAlive() && !this.isBaby() && this.isTame();
-    }
-
-    @Override
-    public void equipChest(@Nullable SoundSource soundSource) {
-        if(soundSource != null) {
-            this.level.playSound(null, this, SoundEvents.MULE_CHEST, soundSource, 0.5f, 1f);
-        }
-    }
-
-    @Override
-    public boolean isChested() {
-        return this.entityData.get(CHESTED);
-    }
-
-    private void setChested(boolean chested) {
-        this.entityData.set(CHESTED, chested);
     }
 
     protected void doPlayerRide(Player p_30634_) {
