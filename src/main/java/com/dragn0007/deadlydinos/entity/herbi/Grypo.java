@@ -433,7 +433,7 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
                 this.setRot(this.getYRot(), this.getXRot());
                 this.yBodyRot = this.getYRot();
                 this.yHeadRot = this.yBodyRot;
-                float f = livingentity.xxa * 0.4F; //Strafe moving speed
+                float f = livingentity.xxa * 0.3F; //Strafe moving speed
                 float f1 = livingentity.zza * 0.5F; //Foward moving speed
                 if (f1 <= 0.0F) {
                     f1 *= 0.25F;

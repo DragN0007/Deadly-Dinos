@@ -344,7 +344,7 @@ public class Amarga extends TamableAnimal implements ContainerListener, Saddleab
         if (this.hasPassenger(entity)) {
 
             double offsetX = 0;
-            double offsetY = 3.6;
+            double offsetY = 3.4;
             double offsetZ = -0.5;
 
             double radYaw = Math.toRadians(this.getYRot());
@@ -430,7 +430,7 @@ public class Amarga extends TamableAnimal implements ContainerListener, Saddleab
                 this.setRot(this.getYRot(), this.getXRot());
                 this.yBodyRot = this.getYRot();
                 this.yHeadRot = this.yBodyRot;
-                float f = livingentity.xxa * 0.4F; //Strafe moving speed
+                float f = livingentity.xxa * 0.3F; //Strafe moving speed
                 float f1 = livingentity.zza * 0.5F; //Foward moving speed
                 if (f1 <= 0.0F) {
                     f1 *= 0.25F;
