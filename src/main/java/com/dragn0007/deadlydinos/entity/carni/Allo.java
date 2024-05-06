@@ -110,6 +110,8 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
                 || entitytype == EntityTypes.AVA_ENTITY.get()
                 || entitytype == EntityTypes.ANDAL_ENTITY.get()
                 || entitytype == EntityTypes.CERATO_ENTITY.get()
+                || entitytype == EntityTypes.GRYPO_ENTITY.get()
+                || entitytype == EntityTypes.AMARGA_ENTITY.get()
                 || entitytype == EntityType.PLAYER
                 || entitytype == EntityType.CAT
                 || entitytype == EntityType.WOLF
