@@ -62,6 +62,10 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.ANDAL_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> CARCHAR_SPAWN_EGG = ITEMS.register("carchar_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.CARCHAR_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> ALLO_SPAWN_EGG = ITEMS.register("allo_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.ALLO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> DILO_SPAWN_EGG = ITEMS.register("dilo_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.DILO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
     //HERBIVORE SPAWN EGGS
@@ -414,6 +418,11 @@ public class DDDItems {
                     new MobEffectInstance(MobEffects.ABSORPTION, 2880, 5, true, false)
 
             ));
+    public static final RegistryObject<TrophyItem> ALLOTROPHY = ITEMS.register("allotrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.REGENERATION, 2880, 2,true, false),
+                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2880, 3, true, false)
+            ));
     public static final RegistryObject<TrophyItem> ANDALTROPHY = ITEMS.register("andaltrophy",
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.DIG_SPEED, 2880, 1,true, false),
@@ -461,6 +470,11 @@ public class DDDItems {
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.DIG_SPEED, 2880, 5,true, false),
                     new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2880, 2, true, false)
+            ));
+    public static final RegistryObject<TrophyItem> DILOTROPHY = ITEMS.register("dilotrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.INVISIBILITY, 2880, 5,true, false),
+                    new MobEffectInstance(MobEffects.LUCK, 2880, 2, true, false)
             ));
     public static final RegistryObject<TrophyItem> GIGATROPHY = ITEMS.register("gigatrophy",
             () -> new TrophyItem(

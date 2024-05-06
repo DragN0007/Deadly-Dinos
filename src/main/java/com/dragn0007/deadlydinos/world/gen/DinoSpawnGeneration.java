@@ -30,6 +30,15 @@ public class DinoSpawnGeneration {
                 Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU
         );
 
+        addEntityToSpecificBiomes(event, EntityTypes.ALLO_ENTITY.get(),
+                DeadlyDinosCommonConfig.ALLO_WEIGHT.get(), 1, 1,
+                Biomes.JUNGLE, Biomes.SPARSE_JUNGLE,
+                Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU,
+                Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS,
+                Biomes.DESERT,
+                Biomes.BIRCH_FOREST, Biomes.DARK_FOREST
+        );
+
         addEntityToSpecificBiomes(event, EntityTypes.ANDAL_ENTITY.get(),
                 DeadlyDinosCommonConfig.ANDAL_WEIGHT.get(), 1, 3,
                 Biomes.BADLANDS, Biomes.WOODED_BADLANDS,
@@ -95,6 +104,13 @@ public class DinoSpawnGeneration {
                 Biomes.BEACH,
                 Biomes.FOREST, Biomes.FLOWER_FOREST, Biomes.BIRCH_FOREST,
                 Biomes.JUNGLE, Biomes.SPARSE_JUNGLE
+        );
+
+        addEntityToSpecificBiomes(event, EntityTypes.DILO_ENTITY.get(),
+                DeadlyDinosCommonConfig.DILO_WEIGHT.get(), 1, 1,
+                Biomes.JUNGLE, Biomes.SPARSE_JUNGLE,
+                Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU,
+                Biomes.FOREST, Biomes.FLOWER_FOREST, Biomes.BIRCH_FOREST, Biomes.DARK_FOREST
         );
 
         addEntityToSpecificBiomes(event, EntityTypes.GIGA_ENTITY.get(),

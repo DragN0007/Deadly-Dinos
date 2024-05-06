@@ -127,6 +127,18 @@ public class EntityTypes {
                     .sized(2.5f,5f)
                     .build(new ResourceLocation(MODID,"carchar").toString()));
 
+    public static final RegistryObject<EntityType<Allo>> ALLO_ENTITY = ENTITY_TYPES.register("allo_entity",
+            () -> EntityType.Builder.of(Allo::new,
+                            MobCategory.CREATURE)
+                    .sized(2f,3f)
+                    .build(new ResourceLocation(MODID,"allo").toString()));
+
+    public static final RegistryObject<EntityType<Dilo>> DILO_ENTITY = ENTITY_TYPES.register("dilo_entity",
+            () -> EntityType.Builder.of(Dilo::new,
+                            MobCategory.CREATURE)
+                    .sized(0.8f,1.8f)
+                    .build(new ResourceLocation(MODID,"dilo").toString()));
+
 
 
     //Herbivores

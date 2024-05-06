@@ -21,6 +21,12 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.GRYPOTROPHY.get());
         simpleItem(DDDItems.GRYPO_SPAWN_EGG.get());
 
+        simpleItem(DDDItems.ALLOTROPHY.get());
+        simpleItem(DDDItems.ALLO_SPAWN_EGG.get());
+
+        simpleItem(DDDItems.DILOTROPHY.get());
+        simpleItem(DDDItems.DILO_SPAWN_EGG.get());
+
 //        simpleItem(DDDItems.ARCHAE_HARNESS.get());
         simpleItem(DDDItems.DINO_NUGGET_1.get());
         simpleItem(DDDItems.DINO_NUGGET_2.get());

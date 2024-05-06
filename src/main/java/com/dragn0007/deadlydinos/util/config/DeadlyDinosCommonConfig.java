@@ -17,6 +17,7 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> SMALL_DINO_BREAK_DEPTH;
     public static final ForgeConfigSpec.ConfigValue<Integer> ACRO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ALBERTO_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> ALLO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ANDAL_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> AMARGA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ANKY_WEIGHT;
@@ -30,6 +31,7 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> CROPSNAIL_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> DEINOCH_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> DEINON_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> DILO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> GALLI_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> GIGA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> GRYPO_WEIGHT;
@@ -88,6 +90,9 @@ public class DeadlyDinosCommonConfig {
         ALBERTO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
                 .define("ALBERTO Spawn Weight", 3);
 
+        ALLO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
+                .define("ALLO Spawn Weight", 3);
+
         ANDAL_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 5.")
                 .define("ANDAL Spawn Weight", 5);
 
@@ -109,8 +114,8 @@ public class DeadlyDinosCommonConfig {
         CARCHAR_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
                 .define("CARCHAR Spawn Weight", 4);
 
-        CARNO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 7.")
-                .define("CARNO Spawn Weight", 7);
+        CARNO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 5.")
+                .define("CARNO Spawn Weight", 5);
 
         CERATO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 6.")
                 .define("CERATO Spawn Weight", 6);
@@ -127,6 +132,9 @@ public class DeadlyDinosCommonConfig {
         DEINON_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
                 .define("DEINON Spawn Weight", 3);
 
+        DILO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
+                .define("DILO Spawn Weight", 3);
+
         GALLI_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
                 .define("GALLI Spawn Weight", 2);
 
@@ -139,8 +147,8 @@ public class DeadlyDinosCommonConfig {
         MAHAKALA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 8.")
                 .define("MAHAKALA Spawn Weight", 8);
 
-        MAJUNGA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 7.")
-                .define("MAJUNGA Spawn Weight", 7);
+        MAJUNGA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 5.")
+                .define("MAJUNGA Spawn Weight", 5);
 
         PARA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
                 .define("PARA Spawn Weight", 3);
