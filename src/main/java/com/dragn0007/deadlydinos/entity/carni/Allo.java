@@ -131,6 +131,9 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
         this.goalSelector.addGoal(3, new DinoWeakMeleeGoal(this, 1.8, true));
         this.goalSelector.addGoal(4, new FloatGoal(this));
 
+        this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
+        this.goalSelector.addGoal(1, new BreedGoal(this, 1.0D));
+        this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25D));
         this.goalSelector.addGoal(0, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(2, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
         this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
@@ -282,14 +285,6 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
                 return InteractionResult.SUCCESS;
             }
         } else if (this.isFood(itemStack) && !this.level.isClientSide) {
-            this.usePlayerItem(player, hand, itemStack);
-            if (this.isBaby()) {
-                // grow baby
-                this.ageUp(itemStack.getFoodProperties(this).getNutrition());
-                this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
-                return InteractionResult.SUCCESS;
-            }
-
             // try to tame (33% chance to succeed)
             if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
                 this.tame(player);

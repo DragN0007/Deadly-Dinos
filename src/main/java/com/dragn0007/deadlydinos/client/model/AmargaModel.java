@@ -43,6 +43,8 @@ public class AmargaModel extends AnimatedGeoModel<Amarga> {
 
     @Override
     public ResourceLocation getAnimationFileLocation(Amarga animatable) {
+        if(animatable.isBaby())
+            return (new ResourceLocation(DeadlyDinos.MODID, "animations/baby_amarga.animation.json"));
         return animation;
     }
 }

@@ -42,6 +42,8 @@ public class AvaModel extends AnimatedGeoModel<Ava> {
 
     @Override
     public ResourceLocation getAnimationFileLocation(Ava animatable) {
+        if(animatable.isBaby())
+            return (new ResourceLocation(DeadlyDinos.MODID, "animations/baby_ava.animation.json"));
         return animation;
     }
 }

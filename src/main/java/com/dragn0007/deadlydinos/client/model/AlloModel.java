@@ -47,6 +47,8 @@ public class AlloModel extends AnimatedGeoModel<Allo> {
 
     @Override
     public ResourceLocation getAnimationFileLocation(Allo animatable) {
+        if(animatable.isBaby())
+            return (new ResourceLocation(DeadlyDinos.MODID, "animations/baby_allo.animation.json"));
         return animation;
     }
 }

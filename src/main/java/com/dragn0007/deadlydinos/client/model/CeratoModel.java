@@ -44,6 +44,8 @@ public class CeratoModel extends AnimatedGeoModel<Cerato> {
 
     @Override
     public ResourceLocation getAnimationFileLocation(Cerato animatable) {
+        if(animatable.isBaby())
+            return (new ResourceLocation(DeadlyDinos.MODID, "animations/baby_cerato.animation.json"));
         return animation;
     }
 }

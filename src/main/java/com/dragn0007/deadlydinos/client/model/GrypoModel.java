@@ -26,7 +26,7 @@ public class GrypoModel extends AnimatedGeoModel<Grypo> {
 
 
 
-    public static final ResourceLocation baby_model = new ResourceLocation(DeadlyDinos.MODID, "geo/grypo_allo.geo.json");
+    public static final ResourceLocation baby_model = new ResourceLocation(DeadlyDinos.MODID, "geo/baby_grypo.geo.json");
     @Override
     public ResourceLocation getModelLocation(Grypo object) {
         if(object.isBaby())
@@ -43,6 +43,8 @@ public class GrypoModel extends AnimatedGeoModel<Grypo> {
 
     @Override
     public ResourceLocation getAnimationFileLocation(Grypo animatable) {
+        if(animatable.isBaby())
+            return (new ResourceLocation(DeadlyDinos.MODID, "animations/baby_grypo.animation.json"));
         return animation;
     }
 }
