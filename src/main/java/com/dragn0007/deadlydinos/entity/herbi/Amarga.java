@@ -104,9 +104,9 @@ public class Amarga extends TamableAnimal implements ContainerListener, Saddleab
 
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
+        this.goalSelector.addGoal(1, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(2, new TamableDestroyCropsGoal(this, this));
-        this.goalSelector.addGoal(0, new DinoExtremeMeleeGoal(this, 1, true));
+        this.goalSelector.addGoal(1, new DinoExtremeMeleeGoal(this, 1, true));
         this.goalSelector.addGoal(4, new FloatGoal(this));
         this.goalSelector.addGoal(1, new WaterAvoidingRandomStrollGoal(this, 1));
 

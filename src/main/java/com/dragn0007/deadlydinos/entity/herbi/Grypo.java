@@ -105,10 +105,10 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
 
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
-        this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1));
+        this.goalSelector.addGoal(1, new HurtByTargetGoal(this));
+        this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
         this.goalSelector.addGoal(2, new TamableDestroyCropsGoal(this, this));
-        this.goalSelector.addGoal(0, new DinoMeleeGoal(this, 1.4, true));
+        this.goalSelector.addGoal(1, new DinoMeleeGoal(this, 1.4, true));
         this.goalSelector.addGoal(4, new FloatGoal(this));
 
         this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
@@ -117,7 +117,6 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
         this.goalSelector.addGoal(0, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(2, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
         this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
-        this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
     }
 
 
