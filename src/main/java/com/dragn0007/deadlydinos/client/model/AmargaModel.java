@@ -2,6 +2,7 @@ package com.dragn0007.deadlydinos.client.model;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
 import com.dragn0007.deadlydinos.entity.herbi.Amarga;
+import com.dragn0007.deadlydinos.entity.herbi.Grypo;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
@@ -25,13 +26,20 @@ public class AmargaModel extends AnimatedGeoModel<Amarga> {
 
 
 
+    public static final ResourceLocation baby_model = new ResourceLocation(DeadlyDinos.MODID, "geo/amarga_allo.geo.json");
     @Override
     public ResourceLocation getModelLocation(Amarga object) {
+        if(object.isBaby())
+            return baby_model;
         return model;
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Amarga object) {return object.getTextureLocation();}
+    public ResourceLocation getTextureLocation(Amarga object) {
+        if(object.isBaby())
+            return (new ResourceLocation(DeadlyDinos.MODID, "textures/entity/amargababy.png"));
+        return object.getTextureLocation();
+    }
 
     @Override
     public ResourceLocation getAnimationFileLocation(Amarga animatable) {

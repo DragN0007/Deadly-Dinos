@@ -1,7 +1,6 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
 import com.dragn0007.deadlydinos.client.model.AlloModel;
-import com.dragn0007.deadlydinos.client.model.CeratoModel;
 import com.dragn0007.deadlydinos.entity.Bannered;
 import com.dragn0007.deadlydinos.entity.ai.DinoWeakMeleeGoal;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
@@ -40,8 +39,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.block.BannerBlock;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
@@ -360,10 +357,22 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
         return super.finalizeSpawn(levelAccessor, difficultyInstance, mobSpawnType, spawnGroupData, compoundTag);
     }
 
-    @Nullable
+    public boolean canBeParent() {
+        return !this.isBaby() && this.getHealth() >= this.getMaxHealth() && this.isInLove();
+    }
+
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel p_241840_1_, AgeableMob p_241840_2_) {
-        return null;
+    public boolean canMate(Animal animal) {
+        if (animal == this || !(animal instanceof Allo)) {
+            return false;
+        } else {
+            return this.canBeParent() && ((Allo)animal).canBeParent();
+        }
+    }
+
+    @Override
+    public Allo getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
+        return EntityTypes.ALLO_ENTITY.get().create(level);
     }
 
 

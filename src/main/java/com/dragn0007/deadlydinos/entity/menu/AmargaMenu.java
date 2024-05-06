@@ -1,7 +1,6 @@
 package com.dragn0007.deadlydinos.entity.menu;
 
 import com.dragn0007.deadlydinos.entity.herbi.Amarga;
-import com.dragn0007.deadlydinos.entity.herbi.Amarga;
 import com.dragn0007.deadlydinos.gui.DDDMenuTypes;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;

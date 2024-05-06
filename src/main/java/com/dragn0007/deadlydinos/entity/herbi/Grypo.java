@@ -2,12 +2,10 @@ package com.dragn0007.deadlydinos.entity.herbi;
 
 import com.dragn0007.deadlydinos.client.model.GrypoModel;
 import com.dragn0007.deadlydinos.entity.Chestable;
-import com.dragn0007.deadlydinos.entity.ai.DestroyCropsGoal;
-import com.dragn0007.deadlydinos.entity.ai.DestroyWaterPlantsGoal;
 import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
 import com.dragn0007.deadlydinos.entity.ai.TamableDestroyCropsGoal;
-import com.dragn0007.deadlydinos.entity.carni.Cerato;
 import com.dragn0007.deadlydinos.entity.menu.GrypoMenu;
+import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -31,6 +29,7 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.DismountHelper;
 import net.minecraft.world.item.ItemStack;
@@ -325,10 +324,22 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
         return super.finalizeSpawn(levelAccessor, difficultyInstance, mobSpawnType, spawnGroupData, compoundTag);
     }
 
-    @Nullable
+    public boolean canBeParent() {
+        return !this.isBaby() && this.getHealth() >= this.getMaxHealth() && this.isInLove();
+    }
+
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel p_241840_1_, AgeableMob p_241840_2_) {
-        return null;
+    public boolean canMate(Animal animal) {
+        if (animal == this || !(animal instanceof Grypo)) {
+            return false;
+        } else {
+            return this.canBeParent() && ((Grypo)animal).canBeParent();
+        }
+    }
+
+    @Override
+    public Grypo getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
+        return EntityTypes.GRYPO_ENTITY.get().create(level);
     }
 
 

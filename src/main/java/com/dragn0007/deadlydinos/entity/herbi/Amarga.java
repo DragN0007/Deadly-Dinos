@@ -5,7 +5,7 @@ import com.dragn0007.deadlydinos.entity.Chestable;
 import com.dragn0007.deadlydinos.entity.ai.DinoExtremeMeleeGoal;
 import com.dragn0007.deadlydinos.entity.ai.TamableDestroyCropsGoal;
 import com.dragn0007.deadlydinos.entity.menu.AmargaMenu;
-import com.dragn0007.deadlydinos.entity.menu.GrypoMenu;
+import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -324,10 +324,22 @@ public class Amarga extends TamableAnimal implements ContainerListener, Saddleab
         return super.finalizeSpawn(levelAccessor, difficultyInstance, mobSpawnType, spawnGroupData, compoundTag);
     }
 
-    @Nullable
+    public boolean canBeParent() {
+        return !this.isBaby() && this.getHealth() >= this.getMaxHealth() && this.isInLove();
+    }
+
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel p_241840_1_, AgeableMob p_241840_2_) {
-        return null;
+    public boolean canMate(Animal animal) {
+        if (animal == this || !(animal instanceof Amarga)) {
+            return false;
+        } else {
+            return this.canBeParent() && ((Amarga)animal).canBeParent();
+        }
+    }
+
+    @Override
+    public Amarga getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
+        return EntityTypes.AMARGA_ENTITY.get().create(level);
     }
 
 
