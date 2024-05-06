@@ -144,6 +144,12 @@ public class Ava extends TamableAnimal implements ContainerListener, Saddleable,
                     this.heal(itemStack.getFoodProperties(this).getNutrition());
                     this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
                     return InteractionResult.sidedSuccess(this.level.isClientSide);
+                } else if (this.canFallInLove() && !this.level.isClientSide) {
+                    // set to baby maker mode
+                    this.usePlayerItem(player, hand, itemStack);
+                    this.setInLove(player);
+                    this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
+                    return InteractionResult.SUCCESS;
                 }
             } else if (itemStack.is(Items.SADDLE) && this.isSaddleable()) {
                 itemStack.interactLivingEntity(player, this, hand);
@@ -169,6 +175,13 @@ public class Ava extends TamableAnimal implements ContainerListener, Saddleable,
             }
         } else if (this.isFood(itemStack) && !this.level.isClientSide) {
             this.usePlayerItem(player, hand, itemStack);
+            if (this.isBaby()) {
+                // grow baby
+                this.ageUp(itemStack.getFoodProperties(this).getNutrition());
+                this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
+                return InteractionResult.SUCCESS;
+            }
+
             // try to tame (33% chance to succeed)
             if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
                 this.tame(player);
