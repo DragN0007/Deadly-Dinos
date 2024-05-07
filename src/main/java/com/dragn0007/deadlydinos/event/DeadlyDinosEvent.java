@@ -2,6 +2,7 @@ package com.dragn0007.deadlydinos.event;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
 import com.dragn0007.deadlydinos.block.DDDBlocks;
+import com.dragn0007.deadlydinos.block.DDDBlocksDataGen;
 import com.dragn0007.deadlydinos.client.render.*;
 import com.dragn0007.deadlydinos.entity.carni.*;
 import com.dragn0007.deadlydinos.entity.herbi.*;
@@ -288,6 +289,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         ItemBlockRenderTypes.setRenderLayer(DDDBlocks.CYPERUS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DDDBlocks.ZOSTER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(DDDBlocks.CYCADS.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(DDDBlocksDataGen.ASTEROXYLON.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(DDDBlocksDataGen.HORSETAIL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(DDDBlocks.CALAMITES.get(), RenderType.cutout());
 
         MenuScreens.register(DDDMenuTypes.GRYPO_MENU.get(), GrypoScreen::new);
         MenuScreens.register(DDDMenuTypes.AMARGA_MENU.get(), AmargaScreen::new);

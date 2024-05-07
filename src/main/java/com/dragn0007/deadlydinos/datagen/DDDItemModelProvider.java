@@ -1,6 +1,7 @@
 package com.dragn0007.deadlydinos.datagen;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
+import com.dragn0007.deadlydinos.block.DDDBlocksDataGen;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
@@ -39,6 +40,9 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.BONE_MARROW.get());
         simpleItem(DDDItems.CHICKEN_NOODLE_SOUP.get());
         simpleItem(DDDItems.DINO_ROAST.get());
+
+        simpleSpriteBlockItem(DDDBlocksDataGen.ASTEROXYLON.get());
+        simpleSpriteBlockItem(DDDBlocksDataGen.HORSETAIL.get());
 
         handheldItem(DDDItems.BOWIE_KNIFE.get());
         handheldItem(DDDItems.CROWBAR.get());

@@ -303,7 +303,9 @@
   "block.deadlydinos.zoster": "Zosterophyllum",
   "block.deadlydinos.cyperus": "Cyperus",
   "block.deadlydinos.cooksonia": "Cooksonia",
-
+  "block.deadlydinos.horsetail": "Horsetail",
+  "block.deadlydinos.asteroxylon": "Asteroxylon",
+  "block.deadlydinos.calamites": "Calamites",
   
   "entity.deadlydinos.car_entity": "Car",
   "entity.deadlydinos.carside_entity": "Car",

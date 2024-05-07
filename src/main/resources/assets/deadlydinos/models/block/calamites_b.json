@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "deadlydinos:block/calamites_b"
+  }
+}

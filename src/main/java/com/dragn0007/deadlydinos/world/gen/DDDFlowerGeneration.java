@@ -20,13 +20,6 @@ public class DDDFlowerGeneration {
         Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);
 
 
-
-        if (types.contains(BiomeDictionary.Type.LUSH)) {
-            List<Holder<PlacedFeature>> base =
-                    event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
-
-            base.add(DDDPlacedFeatures.COOKSONIA_PLACED);
-        }
         if (types.contains(BiomeDictionary.Type.HOT)) {
             List<Holder<PlacedFeature>> base =
                     event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
@@ -34,13 +27,6 @@ public class DDDFlowerGeneration {
             base.add(DDDPlacedFeatures.COOKSONIA_PLACED);
         }
 
-
-        if (types.contains(BiomeDictionary.Type.LUSH)) {
-            List<Holder<PlacedFeature>> base =
-                    event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
-
-            base.add(DDDPlacedFeatures.CYCADS_PLACED);
-        }
         if (types.contains(BiomeDictionary.Type.HOT)) {
             List<Holder<PlacedFeature>> base =
                     event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
@@ -48,13 +34,6 @@ public class DDDFlowerGeneration {
             base.add(DDDPlacedFeatures.CYCADS_PLACED);
         }
 
-
-        if (types.contains(BiomeDictionary.Type.LUSH)) {
-            List<Holder<PlacedFeature>> base =
-                    event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
-
-            base.add(DDDPlacedFeatures.ZOSTER_PLACED);
-        }
         if (types.contains(BiomeDictionary.Type.HOT)) {
             List<Holder<PlacedFeature>> base =
                     event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
@@ -62,13 +41,6 @@ public class DDDFlowerGeneration {
             base.add(DDDPlacedFeatures.ZOSTER_PLACED);
         }
 
-
-        if (types.contains(BiomeDictionary.Type.LUSH)) {
-            List<Holder<PlacedFeature>> base =
-                    event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
-
-            base.add(DDDPlacedFeatures.CYCAS_PLACED);
-        }
         if (types.contains(BiomeDictionary.Type.HOT)) {
             List<Holder<PlacedFeature>> base =
                     event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
@@ -76,19 +48,34 @@ public class DDDFlowerGeneration {
             base.add(DDDPlacedFeatures.CYCAS_PLACED);
         }
 
-
-        if (types.contains(BiomeDictionary.Type.LUSH)) {
-            List<Holder<PlacedFeature>> base =
-                    event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
-
-            base.add(DDDPlacedFeatures.CYPERUS_PLACED);
-        }
         if (types.contains(BiomeDictionary.Type.HOT)) {
             List<Holder<PlacedFeature>> base =
                     event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
 
             base.add(DDDPlacedFeatures.CYPERUS_PLACED);
         }
+
+        if (types.contains(BiomeDictionary.Type.HOT)) {
+            List<Holder<PlacedFeature>> base =
+                    event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
+
+            base.add(DDDPlacedFeatures.ASTEROXYLON_PLACED);
+        }
+
+        if (types.contains(BiomeDictionary.Type.HOT)) {
+            List<Holder<PlacedFeature>> base =
+                    event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
+
+            base.add(DDDPlacedFeatures.CALAMITES_PLACED);
+        }
+
+        if (types.contains(BiomeDictionary.Type.HOT)) {
+            List<Holder<PlacedFeature>> base =
+                    event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
+
+            base.add(DDDPlacedFeatures.HORSETAIL_PLACED);
+        }
+
 
 
 

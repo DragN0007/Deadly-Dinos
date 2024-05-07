@@ -55,6 +55,21 @@ public class DDDPlacedFeatures {
                     DDDConfigFeatures.ZOSTER,
                     RarityFilter.onAverageOnceEvery(16),
                     InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+    public static final Holder<PlacedFeature> CALAMITES_PLACED =
+            PlacementUtils.register("calamites_placed",
+                    DDDConfigFeatures.CALAMITES,
+                    RarityFilter.onAverageOnceEvery(16),
+                    InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+    public static final Holder<PlacedFeature> HORSETAIL_PLACED =
+            PlacementUtils.register("horsetail_placed",
+                    DDDConfigFeatures.HORSETAIL,
+                    RarityFilter.onAverageOnceEvery(16),
+                    InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+    public static final Holder<PlacedFeature> ASTEROXYLON_PLACED =
+            PlacementUtils.register("asteroxylon_placed",
+                    DDDConfigFeatures.ASTEROXYLON,
+                    RarityFilter.onAverageOnceEvery(16),
+                    InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
 
 }

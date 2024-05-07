@@ -1,6 +1,7 @@
 package com.dragn0007.deadlydinos.world.feature;
 
 import com.dragn0007.deadlydinos.block.DDDBlocks;
+import com.dragn0007.deadlydinos.block.DDDBlocksDataGen;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.features.FeatureUtils;
@@ -49,6 +50,18 @@ public class DDDConfigFeatures {
             FeatureUtils.register("cycads", Feature.FLOWER,
                     new RandomPatchConfiguration(15, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                             new SimpleBlockConfiguration(BlockStateProvider.simple(DDDBlocks.CYCADS.get())))));
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> CALAMITES =
+            FeatureUtils.register("calamites", Feature.FLOWER,
+                    new RandomPatchConfiguration(15, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(DDDBlocks.CALAMITES.get())))));
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> HORSETAIL =
+            FeatureUtils.register("horsetail", Feature.FLOWER,
+                    new RandomPatchConfiguration(15, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(DDDBlocksDataGen.HORSETAIL.get())))));
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> ASTEROXYLON =
+            FeatureUtils.register("asteroxylon", Feature.FLOWER,
+                    new RandomPatchConfiguration(15, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(DDDBlocksDataGen.ASTEROXYLON.get())))));
 
 
 

@@ -1,5 +1,6 @@
 5ce01db82d15357153c64a91e1ec9feff5cd7d7d assets/deadlydinos/models/item/allo_spawn_egg.json
 a4851088c1bf0d14e08ebb65e0d6a0607ff51959 assets/deadlydinos/models/item/allotrophy.json
+bdcabf8eb487007eb43509160709de9bba279d70 assets/deadlydinos/models/item/asteroxylon.json
 fd854c518da33641ed11583044b24a875f166e9e assets/deadlydinos/models/item/bone_marrow.json
 e479dace103bdb348a7f8c34f82adbcea3370a1d assets/deadlydinos/models/item/bowie_knife.json
 071008b0a97591091a2b2bc2af97c0bce8d6911c assets/deadlydinos/models/item/broth.json
@@ -16,6 +17,7 @@ b691861564eb4118e5cf31e631a9bbf7a5ed0f6b assets/deadlydinos/models/item/dough.js
 0fbf8f7104f50b45a4ad851bb2f548e41a6df94b assets/deadlydinos/models/item/grypo_spawn_egg.json
 b7a246eee3574452ee0e7a50ecbb9cd4863a8828 assets/deadlydinos/models/item/grypotrophy.json
 4502d5bc3b0247171a8edb85331cc61c8d831522 assets/deadlydinos/models/item/hearty_salad.json
+b0a33b6feb34ac6c246a7fc38d28dc3c9faece46 assets/deadlydinos/models/item/horsetail.json
 f6c2215b30867bddf406ae839c5651a9ab09bb06 assets/deadlydinos/models/item/smoothie.json
 dd34ed7da4e20775871f58d449a77d86e40dcdff data/deadlydinos/advancements/recipes/blockmodtab/dino_nuggets_box.json
 7906f3a995f55cbccf6e8be8e3fae810ad3902a1 data/deadlydinos/advancements/recipes/foodmodtab/bone_marrow.json
@@ -34,6 +36,8 @@ f5b6fd25361f796fba9f359d7e153c746e697a91 data/deadlydinos/advancements/recipes/f
 f725ecca0835fe13b1960ee273dbb5caeee9b6c6 data/deadlydinos/advancements/recipes/foodmodtab/soda.json
 ddb52b588811fa667e5c271d5f153e18ce366548 data/deadlydinos/loot_tables/blocks/acro_plushy_1.json
 4447aa31fc95bee84d06e69f373c8063fb1f6c19 data/deadlydinos/loot_tables/blocks/acro_plushy_2.json
+db6d9085e9f358ea44cb71acd0dbf3f162148c22 data/deadlydinos/loot_tables/blocks/asteroxylon.json
+5302599dfa472ddee598bc53dc5ddc6673bd9dde data/deadlydinos/loot_tables/blocks/horsetail.json
 1539ab1bfedf944bd34bd170d357cad533655733 data/deadlydinos/loot_tables/blocks/para_plushy_1.json
 e46ac1533043b2307368c21d4b32cdc719f23c29 data/deadlydinos/loot_tables/blocks/para_plushy_2.json
 f277c0e67f81feff78a50263a2dadf284d64ada0 data/deadlydinos/recipes/bone_marrow.json

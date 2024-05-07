@@ -140,7 +140,8 @@ public class DDDBlocks {
             () -> new FlowerBlock(MobEffects.ABSORPTION, 20, Block.Properties.of(Material.PLANT).sound(SoundType.GRASS).noCollission()));
     public static final RegistryObject<TallFlowerBlock> CYCADS = registerBlock("cycads",
             () -> new TallFlowerBlock(Block.Properties.of(Material.REPLACEABLE_PLANT).sound(SoundType.GRASS).noCollission()));
-
+    public static final RegistryObject<TallFlowerBlock> CALAMITES = registerBlock("calamites",
+            () -> new TallFlowerBlock(Block.Properties.of(Material.REPLACEABLE_PLANT).sound(SoundType.GRASS).noCollission()));
 
 
 

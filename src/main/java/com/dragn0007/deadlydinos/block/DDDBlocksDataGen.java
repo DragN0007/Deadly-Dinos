@@ -4,9 +4,14 @@ import com.dragn0007.deadlydinos.DeadlyDinos;
 import com.dragn0007.deadlydinos.block.plushy.Plushy;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.item.util.DDDItemGroup;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.TallFlowerBlock;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -29,6 +34,13 @@ public class DDDBlocksDataGen {
     public static final RegistryObject<Block> ACRO_PLUSHY_2 = registerBlock("acro_plushy_2",
             () -> new Plushy());
 
+
+
+
+    public static final RegistryObject<FlowerBlock> ASTEROXYLON = registerBlock("asteroxylon",
+            () -> new FlowerBlock(MobEffects.ABSORPTION, 20, Block.Properties.of(Material.PLANT).sound(SoundType.GRASS).noCollission()));
+    public static final RegistryObject<FlowerBlock> HORSETAIL = registerBlock("horsetail",
+            () -> new FlowerBlock(MobEffects.ABSORPTION, 20, Block.Properties.of(Material.PLANT).sound(SoundType.GRASS).noCollission()));
 
 
 
