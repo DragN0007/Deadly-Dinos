@@ -220,7 +220,7 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
                         data.writeInt(this.getId());
                     });
                     return InteractionResult.SUCCESS;
-                } else if(this.isSaddled()) {
+                } else if(this.isSaddled() && !this.isOrderedToSit()) {
                     // hop on
                     this.doPlayerRide(player);
                     return InteractionResult.SUCCESS;
