@@ -173,7 +173,7 @@ public class Amarga extends TamableAnimal implements ContainerListener, Saddleab
             } else {
                 this.setOrderedToSit(true);
             }
-            return true;
+            return false;
         }
         return super.hurt(damageSource, amount);
     }

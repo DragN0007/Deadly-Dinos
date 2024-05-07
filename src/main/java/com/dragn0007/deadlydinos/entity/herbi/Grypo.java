@@ -117,6 +117,7 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
         this.goalSelector.addGoal(0, new SitWhenOrderedToGoal(this));
         this.goalSelector.addGoal(2, new FollowOwnerGoal(this, 1.0D, 10.0F, 2.0F, false));
         this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
+        this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
     }
 
 
@@ -173,7 +174,7 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
             } else {
                 this.setOrderedToSit(true);
             }
-            return true;
+            return false;
         }
         return super.hurt(damageSource, amount);
     }

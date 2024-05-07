@@ -26,7 +26,7 @@ public class AmargaModel extends AnimatedGeoModel<Amarga> {
 
 
 
-    public static final ResourceLocation baby_model = new ResourceLocation(DeadlyDinos.MODID, "geo/amarga_allo.geo.json");
+    public static final ResourceLocation baby_model = new ResourceLocation(DeadlyDinos.MODID, "geo/baby_amarga.geo.json");
     @Override
     public ResourceLocation getModelLocation(Amarga object) {
         if(object.isBaby())
