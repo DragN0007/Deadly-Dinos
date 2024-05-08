@@ -38,6 +38,7 @@
   "item.deadlydinos.anky_spawn_egg": "Ankylosaurus Spawn Egg",
   "item.deadlydinos.ava_spawn_egg": "Avaceratops Spawn Egg",
   "item.deadlydinos.grypo_spawn_egg": "Gryposaurus Spawn Egg",
+  "item.deadlydinos.ampelo_spawn_egg": "Ampelosaurus Spawn Egg",
   
 
   "entity.deadlydinos.acro_entity": "Acrocanthosaurus",
@@ -74,6 +75,7 @@
   "entity.deadlydinos.anky_entity": "Ankylosaurus",
   "entity.deadlydinos.ava_entity": "Avaceratops",
   "entity.deadlydinos.grypo_entity": "Gryposaurus",
+  "entity.deadlydinos.ampelo_entity": "Ampelosaurus",
 
 
   "item.deadlydinos.archae_harness": "Archaeopteryx Pack Harness",
@@ -81,7 +83,7 @@
   
   "item.deadlydinos.acrotrophy": "Acro Tooth Trophy",
   "item.deadlydinos.albertotrophy": "Alberto Tooth Trophy",
-  "item.deadlydinos.albertotrophy": "Allo Crest Trophy",
+  "item.deadlydinos.allotrophy": "Allo Crest Trophy",
   "item.deadlydinos.andaltrophy": "Andal Claw Trophy",
   "item.deadlydinos.archaetrophy": "Archae Feather Trophy",
   "item.deadlydinos.austrotrophy": "Austro Claw Trophy",
@@ -111,6 +113,7 @@
   "item.deadlydinos.stegotrophy": "Stego Plate Trophy",
   "item.deadlydinos.theritrophy": "Theri Claw Trophy",
   "item.deadlydinos.grypotrophy": "Grypo Crest Trophy",
+  "item.deadlydinos.ampelotrophy": "Ampelo Spike Trophy",
 
   
   "item.deadlydinos.rawsmallmeat": "Raw Small Dino Meat",

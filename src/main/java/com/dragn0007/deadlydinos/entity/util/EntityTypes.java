@@ -159,12 +159,12 @@ public class EntityTypes {
             () -> EntityType.Builder.of(Para::new,
                             MobCategory.CREATURE)
                     .sized(2f,4.5f)
-                    .build(new ResourceLocation(MODID,"amarga").toString()));
+                    .build(new ResourceLocation(MODID,"para").toString()));
     public static final RegistryObject<EntityType<Theri>> THERI_ENTITY = ENTITY_TYPES.register("theri_entity",
             () -> EntityType.Builder.of(Theri::new,
                             MobCategory.CREATURE)
                     .sized(2f,5f)
-                    .build(new ResourceLocation(MODID,"amarga").toString()));
+                    .build(new ResourceLocation(MODID,"theri").toString()));
     public static final RegistryObject<EntityType<Deinoch>> DEINOCH_ENTITY = ENTITY_TYPES.register("deinoch_entity",
             () -> EntityType.Builder.of(Deinoch::new,
                             MobCategory.CREATURE)
@@ -205,6 +205,11 @@ public class EntityTypes {
                             MobCategory.CREATURE)
                     .sized(2f,4.5f)
                     .build(new ResourceLocation(MODID,"grypo").toString()));
+    public static final RegistryObject<EntityType<Ampelo>> AMPELO_ENTITY = ENTITY_TYPES.register("ampelo_entity",
+            () -> EntityType.Builder.of(Ampelo::new,
+                            MobCategory.CREATURE)
+                    .sized(2f,4.5f)
+                    .build(new ResourceLocation(MODID,"ampelo").toString()));
 
 
 

@@ -189,6 +189,13 @@ public class DinoSpawnGeneration {
                 Biomes.JUNGLE, Biomes.SPARSE_JUNGLE
         );
 
+        addEntityToSpecificBiomes(event, EntityTypes.AMPELO_ENTITY.get(),
+                DeadlyDinosCommonConfig.AMPELO_WEIGHT.get(), 1, 1,
+                Biomes.FOREST, Biomes.FLOWER_FOREST, Biomes.BIRCH_FOREST,
+                Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU,
+                Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS
+        );
+
         addEntityToSpecificBiomes(event, EntityTypes.ANKY_ENTITY.get(),
                 DeadlyDinosCommonConfig.ANKY_WEIGHT.get(), 1, 1,
                 Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS,

@@ -20,6 +20,7 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> ALLO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ANDAL_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> AMARGA_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> AMPELO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ANKY_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ARCHAE_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> AUSTRO_WEIGHT;
@@ -98,6 +99,9 @@ public class DeadlyDinosCommonConfig {
 
         AMARGA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
                 .define("AMARGA Spawn Weight", 2);
+
+        AMPELO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
+                .define("AMPELO Spawn Weight", 2);
 
         ANKY_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
                 .define("ANKY Spawn Weight", 2);
