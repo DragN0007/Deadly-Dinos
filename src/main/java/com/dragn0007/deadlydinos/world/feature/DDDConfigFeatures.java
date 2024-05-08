@@ -95,7 +95,7 @@ public class DDDConfigFeatures {
     public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> YEW_SPAWN =
             FeatureUtils.register("yew_spawn", Feature.RANDOM_SELECTOR,
                     new RandomFeatureConfiguration(List.of(
-                            new WeightedPlacedFeature(YEW_CHECKED, 0.3F)), YEW_CHECKED));
+                            new WeightedPlacedFeature(YEW_CHECKED, 0.33333334F)), YEW_CHECKED));
 
 
     //SEQUOIA
