@@ -100,8 +100,8 @@ public class DeadlyDinosCommonConfig {
         AMARGA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
                 .define("AMARGA Spawn Weight", 2);
 
-        AMPELO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
-                .define("AMPELO Spawn Weight", 2);
+        AMPELO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
+                .define("AMPELO Spawn Weight", 1);
 
         ANKY_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
                 .define("ANKY Spawn Weight", 2);
