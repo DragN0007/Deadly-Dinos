@@ -10,7 +10,8 @@ public class SauroModel extends AnimatedGeoModel<Sauro> {
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/sauromale.png")),
         FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/saurofemale.png")),
-        SPECIAL(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/saurospecial.png"));
+        SPECIAL(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/saurospecial.png")),
+        DARK(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/saurodark.png"));
 
         public final ResourceLocation resourceLocation;
 

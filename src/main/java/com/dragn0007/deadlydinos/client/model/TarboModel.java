@@ -9,7 +9,8 @@ public class TarboModel extends AnimatedGeoModel<Tarbo> {
 
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/tarbomale.png")),
-        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/tarbofemale.png"));
+        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/tarbofemale.png")),
+        NIGHT(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/tarbonight.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

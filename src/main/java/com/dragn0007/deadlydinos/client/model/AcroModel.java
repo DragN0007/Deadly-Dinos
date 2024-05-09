@@ -9,7 +9,8 @@ public class AcroModel extends AnimatedGeoModel<Acro> {
     
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/acromale.png")),
-        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/acrofemale.png"));
+        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/acrofemale.png")),
+        ALBINO(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/acroalbino.png"));
         
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

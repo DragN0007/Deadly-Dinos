@@ -9,7 +9,8 @@ public class AustroModel extends AnimatedGeoModel<Austro> {
 
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/austromale.png")),
-        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/austrofemale.png"));
+        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/austrofemale.png")),
+        SKY(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/austrosky.png"));
 
         public final ResourceLocation resourceLocation;
 

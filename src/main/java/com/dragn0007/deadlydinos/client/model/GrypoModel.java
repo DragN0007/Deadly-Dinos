@@ -10,7 +10,8 @@ public class GrypoModel extends AnimatedGeoModel<Grypo> {
 
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/grypomale.png")),
-        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/grypofemale.png"));
+        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/grypofemale.png")),
+        PEARL(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/grypopearl.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

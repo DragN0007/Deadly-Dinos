@@ -11,7 +11,8 @@ public class CeratoModel extends AnimatedGeoModel<Cerato> {
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/ceratomale.png")),
         FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/ceratofemale.png")),
-        SPECIAL(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/ceratospecial.png"));
+        SPECIAL(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/ceratospecial.png")),
+        MAHOGANY(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/ceratomahogany.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

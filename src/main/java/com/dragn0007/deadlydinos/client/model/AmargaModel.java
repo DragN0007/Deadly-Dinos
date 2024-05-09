@@ -10,7 +10,8 @@ public class AmargaModel extends AnimatedGeoModel<Amarga> {
 
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/amargamale.png")),
-        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/amargafemale.png"));
+        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/amargafemale.png")),
+        CITRINE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/amargacitrine.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

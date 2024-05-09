@@ -9,7 +9,8 @@ public class UtahModel extends AnimatedGeoModel<Utah> {
 
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/utahmale.png")),
-        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/utahfemale.png"));
+        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/utahfemale.png")),
+        CHARCOAL(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/utahcharcoal.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

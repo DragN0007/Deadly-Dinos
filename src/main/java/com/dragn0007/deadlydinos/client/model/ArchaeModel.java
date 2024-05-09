@@ -10,7 +10,8 @@ public class ArchaeModel extends AnimatedGeoModel<Archae> {
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/archaemale.png")),
         FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/archaefemale.png")),
-        SPECIAL (new ResourceLocation(DeadlyDinos.MODID, "textures/entity/archaespecial.png"));
+        SPECIAL (new ResourceLocation(DeadlyDinos.MODID, "textures/entity/archaespecial.png")),
+        BLOOD (new ResourceLocation(DeadlyDinos.MODID, "textures/entity/archaeblood.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

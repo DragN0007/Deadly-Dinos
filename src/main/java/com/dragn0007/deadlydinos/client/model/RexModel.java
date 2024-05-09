@@ -9,7 +9,8 @@ public class RexModel extends AnimatedGeoModel<Rex> {
 
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/rexmale.png")),
-        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/rexfemale.png"));
+        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/rexfemale.png")),
+        CORAL(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/rexcoral.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {
