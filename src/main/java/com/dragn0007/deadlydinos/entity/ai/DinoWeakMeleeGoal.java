@@ -58,9 +58,9 @@ public class DinoWeakMeleeGoal extends MeleeAttackGoal {
         BlockPos base = entity.blockPosition().relative(direction, 1);
 
         // Define the size of the cube to break blocks within
-        int width = DeadlyDinosCommonConfig.SMALL_DINO_BREAK_WIDTH.get();
-        int height = DeadlyDinosCommonConfig.SMALL_DINO_BREAK_HEIGHT.get();
-        int depth = DeadlyDinosCommonConfig.SMALL_DINO_BREAK_DEPTH.get();
+        int width = DeadlyDinosCommonConfig.SMALL_DINO_BREAK_RADIUS.get();
+        int height = DeadlyDinosCommonConfig.SMALL_DINO_BREAK_RADIUS.get();
+        int depth = DeadlyDinosCommonConfig.SMALL_DINO_BREAK_RADIUS.get();
 
         // Define the maximum reach distance
         int maxReachDistance = 3;

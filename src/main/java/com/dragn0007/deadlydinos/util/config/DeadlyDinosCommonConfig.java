@@ -8,13 +8,9 @@ public class DeadlyDinosCommonConfig {
 
     public static final ForgeConfigSpec.ConfigValue<Integer> TROPHYITEM_DURABILITY;
     public static final ForgeConfigSpec.ConfigValue<Integer> SPAWNCONFIGHELPER;
-    public static final ForgeConfigSpec.ConfigValue<Integer> GRIEFCONFIGHELPER;
-    public static final ForgeConfigSpec.ConfigValue<Integer> BIG_DINO_BREAK_WIDTH;
-    public static final ForgeConfigSpec.ConfigValue<Integer> BIG_DINO_BREAK_HEIGHT;
-    public static final ForgeConfigSpec.ConfigValue<Integer> BIG_DINO_BREAK_DEPTH;
-    public static final ForgeConfigSpec.ConfigValue<Integer> SMALL_DINO_BREAK_WIDTH;
-    public static final ForgeConfigSpec.ConfigValue<Integer> SMALL_DINO_BREAK_HEIGHT;
-    public static final ForgeConfigSpec.ConfigValue<Integer> SMALL_DINO_BREAK_DEPTH;
+//    public static final ForgeConfigSpec.ConfigValue<Boolean> DINO_GRIEFING_ENABLED;
+    public static final ForgeConfigSpec.ConfigValue<Integer> BIG_DINO_BREAK_RADIUS;
+    public static final ForgeConfigSpec.ConfigValue<Integer> SMALL_DINO_BREAK_RADIUS;
     public static final ForgeConfigSpec.ConfigValue<Integer> ACRO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ALBERTO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ALLO_WEIGHT;
@@ -59,26 +55,16 @@ public class DeadlyDinosCommonConfig {
         TROPHYITEM_DURABILITY = BUILDER.comment("Amount of uses of Dino Trophies. Set to 0 for inifinite durability. Default is 10.")
                 .define("How much durabiltiy should Dino Trophies have?", 10);
 
-        BUILDER.comment("<<GRIEF CONFIG HELPER>> Dino block-destroy configs have 3 integers: Width, Height, and Depth. You can play with these numbers to get the perfect block-break range for you. Set all to 0 to stop dinos from breaking blocks entirely.");
-
-        GRIEFCONFIGHELPER = BUILDER.comment("Dino block-destroy configs have 3 integers: Width, Height, and Depth. You can play with these numbers to get the perfect block-break range for you. Set all to 0 to stop dinos from breaking blocks entirely.")
-                .define("<<GRIEF CONFIG HELPER>> - Look here ^ for help!", 6666);
+//        DINO_GRIEFING_ENABLED = BUILDER.comment("Should Dinos be able to break blocks? True or False. Default: True")
+//                .define("Dino Grief", true);
 
         //Large Dinos - How many blocks should they break?
-        BIG_DINO_BREAK_WIDTH = BUILDER.comment("What should the width be that Large Deadly Dinos can destroy when attacking? 5 Blocks is Default.")
-                .define("Large Dino destroy width", 5);
-        BIG_DINO_BREAK_HEIGHT = BUILDER.comment("What should the height be that Large Deadly Dinos can destroy when attacking? 5 Blocks is Default.")
-                .define("Large Dino destroy height", 5);
-        BIG_DINO_BREAK_DEPTH = BUILDER.comment("What should the depth be that Large Deadly Dinos can destroy when attacking? 5 Blocks is Default.")
-                .define("Large Dino destroy depth", 5);
+        BIG_DINO_BREAK_RADIUS = BUILDER.comment("What should the radius be that Large Deadly Dinos can destroy when attacking? 5 Blocks is Default.")
+                .define("Large Dino destroy radius", 5);
 
         //Small Dinos - How many blocks should they break?
-        SMALL_DINO_BREAK_WIDTH = BUILDER.comment("What should the width be that Small Deadly Dinos can destroy when attacking? 3 Blocks is Default.")
-                .define("Small Dino destroy width", 3);
-        SMALL_DINO_BREAK_HEIGHT = BUILDER.comment("What should the height be that Small Deadly Dinos can destroy when attacking? 3 Blocks is Default.")
-                .define("Small Dino destroy height", 3);
-        SMALL_DINO_BREAK_DEPTH = BUILDER.comment("What should the depth be that Small Deadly Dinos can destroy when attacking? 3 Blocks is Default.")
-                .define("Small Dino destroy depth", 3);
+        SMALL_DINO_BREAK_RADIUS = BUILDER.comment("What should the radius be that Small Deadly Dinos can destroy when attacking? 3 Blocks is Default.")
+                .define("Small Dino destroy radius", 3);
 
 
         SPAWNCONFIGHELPER = BUILDER.comment("Dino spawn configs have 1 integer: Weight. You can play with this number to get the perfect spawn rate for you. Set it to 0 to stop a certain dino from spawning entirely.")
