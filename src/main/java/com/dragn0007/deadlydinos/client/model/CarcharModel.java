@@ -9,7 +9,8 @@ public class CarcharModel extends AnimatedGeoModel<Carchar> {
 
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/carcharmale.png")),
-        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/carcharfemale.png"));
+        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/carcharfemale.png")),
+        STONE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/carcharstone.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

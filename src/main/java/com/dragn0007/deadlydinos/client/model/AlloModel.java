@@ -12,7 +12,8 @@ public class AlloModel extends AnimatedGeoModel<Allo> {
 
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/allomale.png")),
-        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/allofemale.png"));
+        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/allofemale.png")),
+        CITRINE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/allocitrine.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

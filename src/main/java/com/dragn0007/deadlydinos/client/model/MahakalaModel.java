@@ -10,7 +10,8 @@ public class MahakalaModel extends AnimatedGeoModel<Mahakala> {
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/mahakalamale.png")),
         FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/mahakalafemale.png")),
-        SPECIAL(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/mahakalaspecial.png"));
+        SPECIAL(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/mahakalaspecial.png")),
+        BEIGE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/mahakalabeige.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

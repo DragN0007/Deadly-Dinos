@@ -9,7 +9,8 @@ public class StegoModel extends AnimatedGeoModel<Stego> {
     
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/stegomale.png")),
-        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/stegofemale.png"));
+        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/stegofemale.png")),
+        CYAN(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/stegocyan.png"));
         
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

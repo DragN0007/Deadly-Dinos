@@ -10,7 +10,8 @@ public class DiloModel extends AnimatedGeoModel<Dilo> {
 
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/dilomale.png")),
-        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/dilofemale.png"));
+        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/dilofemale.png")),
+        CHOCOLATE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/dilochocolate.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

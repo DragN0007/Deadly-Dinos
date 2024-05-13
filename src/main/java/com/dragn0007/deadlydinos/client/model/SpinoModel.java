@@ -9,7 +9,8 @@ public class SpinoModel extends AnimatedGeoModel<Spino> {
 
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/spinomale.png")),
-        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/spinofemale.png"));
+        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/spinofemale.png")),
+        GREY(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/spinogrey.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

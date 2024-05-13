@@ -9,7 +9,8 @@ public class CompyModel extends AnimatedGeoModel<Compy> {
 
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/compymale.png")),
-        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/compyfemale.png"));
+        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/compyfemale.png")),
+        SWAMP(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/compyswamp.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

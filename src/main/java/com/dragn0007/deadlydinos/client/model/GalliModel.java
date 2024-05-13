@@ -9,7 +9,8 @@ public class GalliModel extends AnimatedGeoModel<Galli> {
     
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/gallimale.png")),
-        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/gallifemale.png"));
+        FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/gallifemale.png")),
+        SUNNY(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/gallisunny.png"));
         
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {
