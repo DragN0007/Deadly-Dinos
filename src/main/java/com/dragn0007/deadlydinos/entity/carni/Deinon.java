@@ -73,6 +73,10 @@ public class Deinon extends Animal implements IAnimatable {
 
     }
 
+    @Override
+    public float getStepHeight() {
+        return 2f;
+    }
 
     private static final Predicate<Mob> NOT_MAHAKALA_PREDICATE = new Predicate<Mob>() {
         public boolean test(@Nullable Mob p_test_1_) {

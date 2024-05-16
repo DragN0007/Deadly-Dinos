@@ -73,6 +73,10 @@ public class Austro extends Animal implements IAnimatable {
         
     }
 
+    @Override
+    public float getStepHeight() {
+        return 2f;
+    }
 
     //Sound
     private static final Predicate<Mob> NOT_MAHAKALA_PREDICATE = new Predicate<Mob>() {
