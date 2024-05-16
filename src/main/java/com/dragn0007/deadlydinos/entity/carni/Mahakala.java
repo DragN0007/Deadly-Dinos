@@ -87,6 +87,11 @@ public class Mahakala extends ShoulderRidingEntity implements IAnimatable {
                 ;
     }
 
+    @Override
+    public float getStepHeight() {
+        return 1.6f;
+    }
+
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));

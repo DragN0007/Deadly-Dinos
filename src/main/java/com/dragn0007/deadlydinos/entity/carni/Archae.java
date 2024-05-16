@@ -108,7 +108,10 @@ public class Archae extends TamableAnimal implements IAnimatable {
                         || entitytype == EntityType.PIG
                 ;
     };
-
+    @Override
+    public float getStepHeight() {
+        return 1.6f;
+    }
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));

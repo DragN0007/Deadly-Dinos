@@ -72,6 +72,11 @@ public class Troodon extends Animal implements IAnimatable {
                 ;
     }
 
+    @Override
+    public float getStepHeight() {
+        return 1.6f;
+    }
+
 
     //Sound
     private static final Predicate<Mob> NOT_MAHAKALA_PREDICATE = new Predicate<Mob>() {
