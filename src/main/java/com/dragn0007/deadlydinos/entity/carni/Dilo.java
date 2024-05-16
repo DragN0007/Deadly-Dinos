@@ -85,6 +85,7 @@ public class Dilo extends Animal implements IAnimatable {
                 if (i > 0) {
                     ((LivingEntity)p_32257_).addEffect(new MobEffectInstance(MobEffects.WITHER, i * 50, 0), this);
                     ((LivingEntity)p_32257_).addEffect(new MobEffectInstance(MobEffects.CONFUSION, i * 30, 0), this);
+                    ((LivingEntity)p_32257_).addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, i * 60, 0), this);
                 }
             }
 
