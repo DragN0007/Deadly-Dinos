@@ -81,7 +81,10 @@ public class Carchar extends Animal implements IAnimatable {
     protected void playStepSound(BlockPos p_180429_1_, BlockState p_180429_2_) {
         this.playSound(SoundEvents.POLAR_BEAR_STEP, 0.15F, 0.5F);
     }
-
+    @Override
+    public float getStepHeight() {
+        return 1f;
+    }
 
     protected void registerGoals() {
         super.registerGoals();

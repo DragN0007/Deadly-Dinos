@@ -45,7 +45,10 @@ public class CropSnail extends Animal implements IAnimatable {
                 ;
     }
 
-
+    @Override
+    public float getStepHeight() {
+        return 1f;
+    }
 
     protected void registerGoals() {
         super.registerGoals();

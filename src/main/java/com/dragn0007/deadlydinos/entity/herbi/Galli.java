@@ -58,7 +58,10 @@ public class Galli extends Animal implements IAnimatable {
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.2)
                 ;
     }
-
+    @Override
+    public float getStepHeight() {
+        return 1f;
+    }
     protected SoundEvent getAmbientSound() {
         return SoundEvents.CHICKEN_AMBIENT;
     }

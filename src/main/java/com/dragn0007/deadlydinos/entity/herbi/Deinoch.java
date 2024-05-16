@@ -63,7 +63,10 @@ public class Deinoch extends Animal implements IAnimatable {
                 ;
     }
 
-
+    @Override
+    public float getStepHeight() {
+        return 1f;
+    }
     protected SoundEvent getAmbientSound() {
         return SoundEvents.HORSE_BREATHE;
     }

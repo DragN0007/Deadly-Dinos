@@ -68,6 +68,11 @@ public class Giga extends Animal implements IAnimatable {
 
     }
 
+    @Override
+    public float getStepHeight() {
+        return 1f;
+    }
+
     protected SoundEvent getAmbientSound() {
         return SoundEvents.RAVAGER_ROAR;
     }

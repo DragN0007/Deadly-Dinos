@@ -68,7 +68,10 @@ public class Dilo extends Animal implements IAnimatable {
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.4)
                 ;
     }
-
+    @Override
+    public float getStepHeight() {
+        return 1f;
+    }
     public boolean doHurtTarget(Entity p_32257_) {
         if (super.doHurtTarget(p_32257_)) {
             if (p_32257_ instanceof LivingEntity) {

@@ -67,6 +67,11 @@ public class Majunga extends Animal implements IAnimatable {
                 ;
     }
 
+    @Override
+    public float getStepHeight() {
+        return 1f;
+    }
+
     protected SoundEvent getAmbientSound() {
         return SoundEvents.PANDA_AGGRESSIVE_AMBIENT;
     }

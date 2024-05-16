@@ -104,7 +104,10 @@ public class Andal extends TamableAnimal implements IAnimatable {
                 ;
 
     }
-
+    @Override
+    public float getStepHeight() {
+        return 1f;
+    }
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));

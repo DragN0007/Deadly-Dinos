@@ -81,7 +81,10 @@ public class Carno extends Animal implements IAnimatable {
         this.playSound(SoundEvents.POLAR_BEAR_STEP, 0.15F, 1.0F);
     }
 
-
+    @Override
+    public float getStepHeight() {
+        return 1f;
+    }
 
     protected void registerGoals() {
         super.registerGoals();
