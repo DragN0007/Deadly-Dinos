@@ -3,6 +3,10 @@ package com.dragn0007.deadlydinos.entity.carni;
 import com.dragn0007.deadlydinos.client.model.AlloModel;
 import com.dragn0007.deadlydinos.entity.Bannered;
 import com.dragn0007.deadlydinos.entity.ai.DinoWeakMeleeGoal;
+import com.dragn0007.deadlydinos.entity.herbi.Amarga;
+import com.dragn0007.deadlydinos.entity.herbi.Ampelo;
+import com.dragn0007.deadlydinos.entity.herbi.Ava;
+import com.dragn0007.deadlydinos.entity.herbi.Grypo;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
@@ -107,21 +111,23 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
         EntityType<?> entitytype = p_30437_.getType();
         return
                 entitytype == EntityTypes.ARCHAE_ENTITY.get()
-                || entitytype == EntityTypes.AVA_ENTITY.get()
-                || entitytype == EntityTypes.ANDAL_ENTITY.get()
-                || entitytype == EntityTypes.CERATO_ENTITY.get()
-                || entitytype == EntityTypes.GRYPO_ENTITY.get()
-                || entitytype == EntityTypes.AMARGA_ENTITY.get()
-                || entitytype == EntityType.PLAYER
-                || entitytype == EntityType.CAT
-                || entitytype == EntityType.WOLF
-                || entitytype == EntityType.HORSE
-                || entitytype == EntityType.MULE
-                || entitytype == EntityType.DONKEY
-                || entitytype == EntityType.SHEEP
-                || entitytype == EntityType.COW
-                || entitytype == EntityType.CHICKEN
-                || entitytype == EntityType.PIG
+                        || entitytype == EntityTypes.AVA_ENTITY.get()
+                        || entitytype == EntityTypes.ALLO_ENTITY.get()
+                        || entitytype == EntityTypes.CERATO_ENTITY.get()
+                        || entitytype == EntityTypes.ANDAL_ENTITY.get()
+                        || entitytype == EntityTypes.GRYPO_ENTITY.get()
+                        || entitytype == EntityTypes.AMARGA_ENTITY.get()
+                        || entitytype == EntityTypes.AMPELO_ENTITY.get()
+                        || entitytype == EntityType.PLAYER
+                        || entitytype == EntityType.CAT
+                        || entitytype == EntityType.WOLF
+                        || entitytype == EntityType.HORSE
+                        || entitytype == EntityType.MULE
+                        || entitytype == EntityType.DONKEY
+                        || entitytype == EntityType.SHEEP
+                        || entitytype == EntityType.COW
+                        || entitytype == EntityType.CHICKEN
+                        || entitytype == EntityType.PIG
                 ;
     };
 
@@ -164,6 +170,20 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
                 if (livingEntity instanceof Dolphin)
                     return false;
                 if (livingEntity instanceof Player) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Ava) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Cerato) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Andal) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Grypo) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Amarga) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Ampelo) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Archae) //<- taken care of by the prey selector
                     return false;
                 if (livingEntity instanceof Cat) //<- taken care of by the prey selector
                     return false;
