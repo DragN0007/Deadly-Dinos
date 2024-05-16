@@ -2,9 +2,11 @@ package com.dragn0007.deadlydinos.util;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 public class DDDTags {
 
@@ -31,5 +33,19 @@ public class DDDTags {
             return ItemTags.create(new ResourceLocation("forge", name));
         }
     }
+
+
+        public static class Blocks {
+            public static final TagKey<Block> DESERT_DINO_SPAWNABLE_ON = tag("desert_dino_spawnable_on");
+
+
+            private static TagKey<Block> tag (String name) {
+                return BlockTags.create(new ResourceLocation(DeadlyDinos.MODID, name));
+            }
+            private static TagKey<Block> forgeTag (String name) {
+                return BlockTags.create(new ResourceLocation("forge", name));
+        }
+    }
+
 
 }

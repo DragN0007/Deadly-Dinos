@@ -83,12 +83,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         SpawnPlacements.register
                 (EntityTypes.UTAH_ENTITY.get(),
                         SpawnPlacements.Type.ON_GROUND,
-                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Utah::checkAnimalSpawnRules);
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Utah::checkDesertDinoSpawnRules);
 
         SpawnPlacements.register
                 (EntityTypes.CERATO_ENTITY.get(),
                         SpawnPlacements.Type.ON_GROUND,
-                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Cerato::checkAnimalSpawnRules);
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Cerato::checkDesertDinoSpawnRules);
 
         SpawnPlacements.register
                 (EntityTypes.GIGA_ENTITY.get(),
@@ -103,7 +103,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         SpawnPlacements.register
                 (EntityTypes.CARNO_ENTITY.get(),
                         SpawnPlacements.Type.ON_GROUND,
-                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Carno::checkAnimalSpawnRules);
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Carno::checkDesertDinoSpawnRules);
 
         SpawnPlacements.register
                 (EntityTypes.COMPY_ENTITY.get(),
@@ -128,12 +128,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         SpawnPlacements.register
                 (EntityTypes.ALBERTO_ENTITY.get(),
                         SpawnPlacements.Type.ON_GROUND,
-                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Alberto::checkAnimalSpawnRules);
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Alberto::checkDesertDinoSpawnRules);
 
         SpawnPlacements.register
                 (EntityTypes.MAJUNGA_ENTITY.get(),
                         SpawnPlacements.Type.ON_GROUND,
-                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Majunga::checkAnimalSpawnRules);
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Majunga::checkDesertDinoSpawnRules);
 
         SpawnPlacements.register
                 (EntityTypes.TROODON_ENTITY.get(),
@@ -153,7 +153,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         SpawnPlacements.register
                 (EntityTypes.ANDAL_ENTITY.get(),
                         SpawnPlacements.Type.ON_GROUND,
-                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Andal::checkAnimalSpawnRules);
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Andal::checkDesertDinoSpawnRules);
 
         SpawnPlacements.register
                 (EntityTypes.SPINO_ENTITY.get(),
@@ -163,12 +163,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         SpawnPlacements.register
                 (EntityTypes.CARCHAR_ENTITY.get(),
                         SpawnPlacements.Type.ON_GROUND,
-                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Carchar::checkAnimalSpawnRules);
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Carchar::checkDesertDinoSpawnRules);
 
         SpawnPlacements.register
                 (EntityTypes.ALLO_ENTITY.get(),
                         SpawnPlacements.Type.ON_GROUND,
-                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Allo::checkAnimalSpawnRules);
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Allo::checkDesertDinoSpawnRules);
 
         SpawnPlacements.register
                 (EntityTypes.DILO_ENTITY.get(),
