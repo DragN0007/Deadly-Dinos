@@ -19,6 +19,7 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> AMPELO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ANKY_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ARCHAE_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> AUSTRALO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> AUSTRO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> AVA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> CARCHAR_WEIGHT;
@@ -26,6 +27,7 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> CERATO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> COMPY_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> CROPSNAIL_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> CRYO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> DEINOCH_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> DEINON_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> DILO_WEIGHT;
@@ -34,6 +36,7 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> GRYPO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> MAHAKALA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> MAJUNGA_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> PACHYR_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> PARA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> REX_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> SAURO_WEIGHT;
@@ -44,6 +47,7 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> THERI_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> TROODON_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> UTAH_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> YUTY_WEIGHT;
 
 
 
@@ -95,6 +99,9 @@ public class DeadlyDinosCommonConfig {
         ARCHAE_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
                 .define("ARCHAE Spawn Weight", 4);
 
+        AUSTRALO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 5.")
+                .define("AUSTRALO Spawn Weight", 5);
+
         AUSTRO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
                 .define("AUSTRO Spawn Weight", 3);
 
@@ -115,6 +122,9 @@ public class DeadlyDinosCommonConfig {
 
         CROPSNAIL_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 6.")
                 .define("CROPSNAIL Spawn Weight", 6);
+
+        CRYO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
+                .define("CRYO Spawn Weight", 4);
 
         DEINOCH_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
                 .define("DEINOCH Spawn Weight", 2);
@@ -139,6 +149,9 @@ public class DeadlyDinosCommonConfig {
 
         MAJUNGA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 5.")
                 .define("MAJUNGA Spawn Weight", 5);
+
+        PACHYR_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
+                .define("PACHYR Spawn Weight", 4);
 
         PARA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
                 .define("PARA Spawn Weight", 3);
@@ -169,6 +182,9 @@ public class DeadlyDinosCommonConfig {
 
         UTAH_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 5.")
                 .define("UTAH Spawn Weight", 5);
+
+        YUTY_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
+                .define("YUTY Spawn Weight", 2);
 
 
 

@@ -27,6 +27,14 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.DILO_SPAWN_EGG.get());
         simpleItem(DDDItems.AMPELOTROPHY.get());
         simpleItem(DDDItems.AMPELO_SPAWN_EGG.get());
+        simpleItem(DDDItems.YUTYTROPHY.get());
+        simpleItem(DDDItems.YUTY_SPAWN_EGG.get());
+        simpleItem(DDDItems.CRYOTROPHY.get());
+        simpleItem(DDDItems.CRYO_SPAWN_EGG.get());
+        simpleItem(DDDItems.PACHYRTROPHY.get());
+        simpleItem(DDDItems.PACHYR_SPAWN_EGG.get());
+        simpleItem(DDDItems.AUSTRALOTROPHY.get());
+        simpleItem(DDDItems.AUSTRALO_SPAWN_EGG.get());
 
 //        simpleItem(DDDItems.ARCHAE_HARNESS.get());
         simpleItem(DDDItems.DINO_NUGGET_1.get());

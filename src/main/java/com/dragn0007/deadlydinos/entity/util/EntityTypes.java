@@ -139,6 +139,26 @@ public class EntityTypes {
                     .sized(0.8f,1.8f)
                     .build(new ResourceLocation(MODID,"dilo").toString()));
 
+    public static final RegistryObject<EntityType<Yuty>> YUTY_ENTITY = ENTITY_TYPES.register("yuty_entity",
+            () -> EntityType.Builder.of(Yuty::new,
+                            MobCategory.CREATURE)
+                    .sized(2f,3f)
+                    .build(new ResourceLocation(MODID,"yuty").toString()));
+
+    public static final RegistryObject<EntityType<Cryo>> CRYO_ENTITY = ENTITY_TYPES.register("cryo_entity",
+            () -> EntityType.Builder.of(Cryo::new,
+                            MobCategory.CREATURE)
+                    .sized(2f,2f)
+                    .build(new ResourceLocation(MODID,"cryo").toString()));
+
+    public static final RegistryObject<EntityType<Australo>> AUSTRALO_ENTITY = ENTITY_TYPES.register("australo_entity",
+            () -> EntityType.Builder.of(Australo::new,
+                            MobCategory.CREATURE)
+                    .sized(0.8f,1.8f)
+                    .build(new ResourceLocation(MODID,"australo").toString()));
+
+
+
 
 
     //Herbivores
@@ -195,21 +215,30 @@ public class EntityTypes {
                             MobCategory.CREATURE)
                     .sized(2f,2.5f)
                     .build(new ResourceLocation(MODID,"anky").toString()));
+
     public static final RegistryObject<EntityType<Ava>> AVA_ENTITY = ENTITY_TYPES.register("ava_entity",
             () -> EntityType.Builder.of(Ava::new,
                             MobCategory.CREATURE)
                     .sized(1.5f,1.5f)
                     .build(new ResourceLocation(MODID,"ava").toString()));
+
     public static final RegistryObject<EntityType<Grypo>> GRYPO_ENTITY = ENTITY_TYPES.register("grypo_entity",
             () -> EntityType.Builder.of(Grypo::new,
                             MobCategory.CREATURE)
                     .sized(2f,4.5f)
                     .build(new ResourceLocation(MODID,"grypo").toString()));
+
     public static final RegistryObject<EntityType<Ampelo>> AMPELO_ENTITY = ENTITY_TYPES.register("ampelo_entity",
             () -> EntityType.Builder.of(Ampelo::new,
                             MobCategory.CREATURE)
                     .sized(2f,4.5f)
                     .build(new ResourceLocation(MODID,"ampelo").toString()));
+
+    public static final RegistryObject<EntityType<Pachyr>> PACHYR_ENTITY = ENTITY_TYPES.register("pachyr_entity",
+            () -> EntityType.Builder.of(Pachyr::new,
+                            MobCategory.CREATURE)
+                    .sized(2f,2.5f)
+                    .build(new ResourceLocation(MODID,"pachyr").toString()));
 
 
 

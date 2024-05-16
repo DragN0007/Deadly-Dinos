@@ -96,6 +96,7 @@ public class Archae extends TamableAnimal implements IAnimatable {
                         || entitytype == EntityTypes.GRYPO_ENTITY.get()
                         || entitytype == EntityTypes.AMARGA_ENTITY.get()
                         || entitytype == EntityTypes.AMPELO_ENTITY.get()
+                        || entitytype == EntityTypes.YUTY_ENTITY.get()
                         || entitytype == EntityType.PLAYER
                         || entitytype == EntityType.CAT
                         || entitytype == EntityType.WOLF
@@ -169,6 +170,8 @@ public class Archae extends TamableAnimal implements IAnimatable {
                 if (livingEntity instanceof CarFlipped)
                     return false;
                 if (livingEntity instanceof Creeper)
+                    return false;
+                if (livingEntity instanceof Yuty) //<- taken care of by the prey selector
                     return false;
                 if (livingEntity instanceof Player) //<- taken care of by the prey selector
                     return false;

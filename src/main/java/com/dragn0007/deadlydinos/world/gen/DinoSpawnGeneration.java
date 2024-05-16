@@ -53,6 +53,12 @@ public class DinoSpawnGeneration {
                 Biomes.JUNGLE, Biomes.SPARSE_JUNGLE
         );
 
+        addEntityToSpecificBiomes(event, EntityTypes.AUSTRALO_ENTITY.get(),
+                DeadlyDinosCommonConfig.AUSTRALO_WEIGHT.get(), 2, 3,
+                Biomes.SNOWY_PLAINS, Biomes.SNOWY_SLOPES, Biomes.SNOWY_BEACH,
+                Biomes.TAIGA, Biomes.SNOWY_TAIGA,  Biomes.OLD_GROWTH_SPRUCE_TAIGA
+        );
+
         addEntityToSpecificBiomes(event, EntityTypes.AUSTRO_ENTITY.get(),
                 DeadlyDinosCommonConfig.AUSTRO_WEIGHT.get(), 2, 4,
                 Biomes.TAIGA, Biomes.SNOWY_TAIGA,  Biomes.OLD_GROWTH_SPRUCE_TAIGA,
@@ -96,6 +102,12 @@ public class DinoSpawnGeneration {
                 Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU,
                 Biomes.JUNGLE, Biomes.SPARSE_JUNGLE
                 );
+
+        addEntityToSpecificBiomes(event, EntityTypes.CRYO_ENTITY.get(),
+                DeadlyDinosCommonConfig.CRYO_WEIGHT.get(), 1, 2,
+                Biomes.SNOWY_PLAINS, Biomes.SNOWY_SLOPES, Biomes.SNOWY_BEACH,
+                Biomes.TAIGA, Biomes.SNOWY_TAIGA,  Biomes.OLD_GROWTH_SPRUCE_TAIGA
+        );
 
         addEntityToSpecificBiomes(event, EntityTypes.DEINON_ENTITY.get(),
                 DeadlyDinosCommonConfig.DEINON_WEIGHT.get(), 2, 3,
@@ -178,6 +190,12 @@ public class DinoSpawnGeneration {
                 Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU
         );
 
+        addEntityToSpecificBiomes(event, EntityTypes.YUTY_ENTITY.get(),
+                DeadlyDinosCommonConfig.YUTY_WEIGHT.get(), 1, 2,
+                Biomes.SNOWY_PLAINS, Biomes.SNOWY_SLOPES, Biomes.SNOWY_BEACH,
+                Biomes.TAIGA, Biomes.SNOWY_TAIGA,  Biomes.OLD_GROWTH_SPRUCE_TAIGA
+        );
+
 
 
         addEntityToSpecificBiomes(event, EntityTypes.AMARGA_ENTITY.get(),
@@ -243,6 +261,13 @@ public class DinoSpawnGeneration {
                 Biomes.TAIGA, Biomes.SNOWY_TAIGA,  Biomes.OLD_GROWTH_SPRUCE_TAIGA,
                 Biomes.SWAMP,
                 Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES
+        );
+
+        addEntityToSpecificBiomes(event, EntityTypes.PACHYR_ENTITY.get(),
+                DeadlyDinosCommonConfig.PACHYR_WEIGHT.get(), 1, 3,
+                Biomes.SNOWY_PLAINS, Biomes.SNOWY_SLOPES, Biomes.SNOWY_BEACH,
+                Biomes.TAIGA, Biomes.SNOWY_TAIGA,  Biomes.OLD_GROWTH_SPRUCE_TAIGA,
+                Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS
         );
 
         addEntityToSpecificBiomes(event, EntityTypes.PARA_ENTITY.get(),
