@@ -41,12 +41,6 @@ public class AlloRender extends ExtendedGeoEntityRenderer<Allo> {
             model.getBone("Saddle3").ifPresent(b -> b.setHidden(true));
         }
 
-        if(animatable.isBannered()) {
-            model.getBone("Banner").ifPresent(b -> b.setHidden(false));
-        } else {
-            model.getBone("Banner").ifPresent(b -> b.setHidden(true));
-        }
-
         super.render(model, animatable, partialTick, type, poseStack, bufferSource, buffer, packedLight, packedOverlay, red, green, blue, alpha);
     }
 
@@ -58,9 +52,6 @@ public class AlloRender extends ExtendedGeoEntityRenderer<Allo> {
     @Nullable
     @Override
     protected ResourceLocation getTextureForBone(String boneName, Allo animatable) {
-        if(boneName.equals("Banner")) {
-            return AlloModel.white_banner;
-        }
         return null;
     }
 

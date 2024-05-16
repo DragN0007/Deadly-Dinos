@@ -1,7 +1,7 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
 import com.dragn0007.deadlydinos.client.model.AlloModel;
-import com.dragn0007.deadlydinos.entity.Bannered;
+import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
 import com.dragn0007.deadlydinos.entity.ai.DinoWeakMeleeGoal;
 import com.dragn0007.deadlydinos.entity.herbi.Amarga;
 import com.dragn0007.deadlydinos.entity.herbi.Ampelo;
@@ -66,7 +66,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 import java.util.function.Predicate;
 
-public class Allo extends TamableAnimal implements ContainerListener, Saddleable, IAnimatable, Bannered {
+public class Allo extends TamableAnimal implements ContainerListener, Saddleable, IAnimatable {
 
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
@@ -76,7 +76,6 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
     }
 
     private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(Allo.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> BANNERED = SynchedEntityData.defineId(Allo.class, EntityDataSerializers.BOOLEAN);
     private static final Ingredient FOOD_ITEMS = Ingredient.of(DDDTags.Items.MEATS);
 
     public SimpleContainer inventory;
@@ -118,6 +117,7 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
                         || entitytype == EntityTypes.GRYPO_ENTITY.get()
                         || entitytype == EntityTypes.AMARGA_ENTITY.get()
                         || entitytype == EntityTypes.AMPELO_ENTITY.get()
+                        || entitytype == EntityTypes.YUTY_ENTITY.get()
                         || entitytype == EntityType.PLAYER
                         || entitytype == EntityType.CAT
                         || entitytype == EntityType.WOLF
@@ -136,7 +136,7 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
         this.goalSelector.addGoal(1, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, 40, true, true, LivingEntity::attackable));
         this.goalSelector.addGoal(2, new BreakDoorGoal(this, (x) -> x == Difficulty.EASY || x == Difficulty.NORMAL || x == Difficulty.HARD));
-        this.goalSelector.addGoal(3, new DinoWeakMeleeGoal(this, 1.8, true));
+        this.goalSelector.addGoal(3, new DinoMeleeGoal(this, 1.8, true));
         this.goalSelector.addGoal(4, new FloatGoal(this));
 
         this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
@@ -172,6 +172,8 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
                 if (livingEntity instanceof Player) //<- taken care of by the prey selector
                     return false;
                 if (livingEntity instanceof Ava) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Yuty) //<- taken care of by the prey selector
                     return false;
                 if (livingEntity instanceof Cerato) //<- taken care of by the prey selector
                     return false;
@@ -257,9 +259,7 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
             if (!this.level.isClientSide && this.isTame() && this.isSaddled()) {
                 ItemStack saddle = new ItemStack(Items.SADDLE);
                 player.addItem(saddle);
-                player.addItem(getEquippedBanner());
                 this.setSaddled(false);
-                this.setBannered(false);
 
                 return false;
             }
@@ -288,11 +288,6 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
                 itemStack.interactLivingEntity(player, this, hand);
                 this.setSaddled(true);
                 return InteractionResult.sidedSuccess(this.level.isClientSide);
-            } else if (itemStack.getItem() instanceof BannerItem && this.isSaddled()) {
-                // equip banner if saddled
-                player.setItemInHand(hand, ItemStack.EMPTY);
-                this.setBannered(true);
-                return InteractionResult.SUCCESS;
             } else if (player.isCrouching()) {
                 // sit if crouch clicking
                 if (this.isOrderedToSit()) {
@@ -351,10 +346,6 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
             this.setSaddled(tag.getBoolean("Saddled"));
         }
 
-        if(tag.contains("Bannered")) {
-            this.setSaddled(tag.getBoolean("Bannered"));
-        }
-
     }
 
     @Override
@@ -362,7 +353,6 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
         super.addAdditionalSaveData(tag);
         tag.putInt("Variant", getVariant());
         tag.putBoolean("Saddled", this.isSaddled());
-        tag.putBoolean("Bannered", this.isBannered());
     }
 
     @Nullable
@@ -398,7 +388,6 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
         super.defineSynchedData();
         this.entityData.define(VARIANT, 0);
         this.entityData.define(SADDLED, false);
-        this.entityData.define(BANNERED, false);
     }
 
 
@@ -600,27 +589,6 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
         if(this.tickCount > 20 && !flag && this.isSaddleable()) {
             this.playSound(SoundEvents.HORSE_SADDLE, 0.5f, 1f);
         }
-    }
-
-    @Override
-    public boolean isBannerable() {
-        return this.isAlive() && !this.isBaby() && this.isTame() && this.isSaddled();
-    }
-    @Override
-    public void equipBanner(@org.jetbrains.annotations.Nullable SoundSource soundSource) {
-        this.setBannered(true);
-        if (soundSource != null) {
-            this.level.playSound(null, this, SoundEvents.WOOL_BREAK, soundSource, 0.5f, 1.0f);
-        }
-    }
-    @Override
-    public boolean isBannered() {
-        return this.entityData.get(BANNERED);
-    }
-    private void setBannered(boolean bannered) {
-        this.entityData.set(BANNERED, bannered);
-    }
-    public void getBannerColor(BannerItem bannerItem, DyeColor dyeColor) {
     }
 
 }
