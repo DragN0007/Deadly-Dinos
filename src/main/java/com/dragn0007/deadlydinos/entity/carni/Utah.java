@@ -83,6 +83,10 @@ public class Utah extends Animal implements IAnimatable {
                 ;
     }
 
+    @Override
+    public float getStepHeight() {
+        return 3f;
+    }
 
     protected void registerGoals() {
         super.registerGoals();
