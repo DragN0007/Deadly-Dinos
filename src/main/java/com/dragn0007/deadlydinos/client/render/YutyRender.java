@@ -24,19 +24,6 @@ public class YutyRender extends ExtendedGeoEntityRenderer<Yuty> {
     }
 
     @Override
-    public RenderType getRenderType(Yuty animatable, float partialTicks, PoseStack stack,
-                                    MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
-                                    ResourceLocation textureLocation) {
-        if(animatable.isBaby()) {
-            stack.scale(0.4F, 0.4F, 0.4F);
-        } else {
-            stack.scale(1F, 1F, 1F);
-        }
-
-        return super.getRenderType(animatable, partialTicks, stack, renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
-    }
-
-    @Override
     public void render(GeoModel model, Yuty animatable, float partialTick, RenderType type, PoseStack poseStack, MultiBufferSource bufferSource, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
 
         if(animatable.isSaddled()) {
@@ -45,6 +32,12 @@ public class YutyRender extends ExtendedGeoEntityRenderer<Yuty> {
         } else {
             model.getBone("Saddle").ifPresent(b -> b.setHidden(true));
             model.getBone("Saddle3").ifPresent(b -> b.setHidden(true));
+        }
+
+        if(animatable.isBaby()) {
+            poseStack.scale(0.5F, 0.5F, 0.5F);
+        } else {
+            poseStack.scale(1F, 1F, 1F);
         }
 
         super.render(model, animatable, partialTick, type, poseStack, bufferSource, buffer, packedLight, packedOverlay, red, green, blue, alpha);
