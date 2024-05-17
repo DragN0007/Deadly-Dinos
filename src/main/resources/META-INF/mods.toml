@@ -4,7 +4,7 @@ license="All Rights Reserved, DragN0007"
 issueTrackerURL="https://discord.gg/jubppqCzXj"
 [[mods]]
 modId="deadlydinos"
-version="${1.18.2-1.8}"
+version="${1.18.2-1.9}"
 displayName="DragN's Deadly Dinos"
 logoFile="ddd.png"
 credits="EvangeliX, code helper. Dominic, bone item artist. Emi, bug tester. Neko, criticism. I owe you guys the world." #optional
