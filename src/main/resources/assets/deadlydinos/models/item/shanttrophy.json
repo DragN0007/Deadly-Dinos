@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "deadlydinos:items/shanttrophy"
+    "layer0": "deadlydinos:item/shanttrophy"
   }
 }

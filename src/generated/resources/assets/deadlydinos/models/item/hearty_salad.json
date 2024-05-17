@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "deadlydinos:items/hearty_salad"
+    "layer0": "deadlydinos:item/hearty_salad"
   }
 }

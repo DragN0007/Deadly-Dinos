@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "deadlydinos:items/tarbo_spawn_egg"
+    "layer0": "deadlydinos:item/tarbo_spawn_egg"
   }
 }

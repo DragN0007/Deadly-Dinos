@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "deadlydinos:items/galli_spawn_egg"
+    "layer0": "deadlydinos:item/galli_spawn_egg"
   }
 }

@@ -2,7 +2,6 @@ package com.dragn0007.deadlydinos.client.render;
 
 import com.dragn0007.deadlydinos.client.model.YutyModel;
 import com.dragn0007.deadlydinos.entity.carni.Yuty;
-import com.dragn0007.deadlydinos.entity.carni.Yuty;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;

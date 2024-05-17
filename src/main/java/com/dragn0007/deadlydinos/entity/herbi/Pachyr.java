@@ -1,9 +1,7 @@
 package com.dragn0007.deadlydinos.entity.herbi;
 
 import com.dragn0007.deadlydinos.client.model.PachyrModel;
-import com.dragn0007.deadlydinos.client.model.ParaModel;
 import com.dragn0007.deadlydinos.entity.ai.DestroyCropsGoal;
-import com.dragn0007.deadlydinos.entity.ai.DestroyWaterPlantsGoal;
 import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

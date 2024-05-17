@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "deadlydinos:items/amarga_spawn_egg"
+    "layer0": "deadlydinos:item/amarga_spawn_egg"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "deadlydinos:items/glazed_ribs"
+    "layer0": "deadlydinos:item/glazed_ribs"
   }
 }

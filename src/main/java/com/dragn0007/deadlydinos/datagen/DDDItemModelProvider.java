@@ -65,12 +65,12 @@ public class DDDItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder simpleItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(DeadlyDinos.MODID,"items/" + item.getRegistryName().getPath()));
+                new ResourceLocation(DeadlyDinos.MODID,"item/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder handheldItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/handheld")).texture("layer0",
-                new ResourceLocation(DeadlyDinos.MODID,"items/" + item.getRegistryName().getPath()));
+                new ResourceLocation(DeadlyDinos.MODID,"item/" + item.getRegistryName().getPath()));
     }
 }

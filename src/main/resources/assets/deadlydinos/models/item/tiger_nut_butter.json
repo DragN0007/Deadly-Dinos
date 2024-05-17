@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "deadlydinos:items/tiger_nut_butter"
+    "layer0": "deadlydinos:item/tiger_nut_butter"
   }
 }

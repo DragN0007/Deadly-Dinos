@@ -4,7 +4,7 @@ import com.dragn0007.deadlydinos.client.model.AmargaModel;
 import com.dragn0007.deadlydinos.entity.Chestable;
 import com.dragn0007.deadlydinos.entity.ai.DinoExtremeMeleeGoal;
 import com.dragn0007.deadlydinos.entity.ai.TamableDestroyCropsGoal;
-import com.dragn0007.deadlydinos.entity.menu.AmargaMenu;
+import com.dragn0007.deadlydinos.client.menu.AmargaMenu;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import net.minecraft.core.BlockPos;

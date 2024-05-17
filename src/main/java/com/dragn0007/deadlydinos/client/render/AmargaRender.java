@@ -2,7 +2,6 @@ package com.dragn0007.deadlydinos.client.render;
 
 import com.dragn0007.deadlydinos.client.model.AmargaModel;
 import com.dragn0007.deadlydinos.entity.herbi.Amarga;
-import com.dragn0007.deadlydinos.entity.herbi.Grypo;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -17,7 +16,6 @@ import software.bernie.geckolib3.core.processor.IBone;
 import software.bernie.geckolib3.geo.render.built.GeoBone;
 import software.bernie.geckolib3.geo.render.built.GeoModel;
 import software.bernie.geckolib3.renderers.geo.ExtendedGeoEntityRenderer;
-import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 public class AmargaRender extends ExtendedGeoEntityRenderer<Amarga> {
     public AmargaRender(EntityRendererProvider.Context renderManager) {

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "deadlydinos:items/yuty_spawn_egg"
+    "layer0": "deadlydinos:item/yuty_spawn_egg"
   }
 }

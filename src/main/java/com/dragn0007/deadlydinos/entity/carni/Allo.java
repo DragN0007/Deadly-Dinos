@@ -2,7 +2,6 @@ package com.dragn0007.deadlydinos.entity.carni;
 
 import com.dragn0007.deadlydinos.client.model.AlloModel;
 import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
-import com.dragn0007.deadlydinos.entity.ai.DinoWeakMeleeGoal;
 import com.dragn0007.deadlydinos.entity.herbi.Amarga;
 import com.dragn0007.deadlydinos.entity.herbi.Ampelo;
 import com.dragn0007.deadlydinos.entity.herbi.Ava;
@@ -38,7 +37,6 @@ import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.DismountHelper;
 import net.minecraft.world.item.BannerItem;
-import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "deadlydinos:items/australo_spawn_egg"
+    "layer0": "deadlydinos:item/australo_spawn_egg"
   }
 }

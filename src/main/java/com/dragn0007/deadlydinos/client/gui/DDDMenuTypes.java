@@ -1,8 +1,8 @@
-package com.dragn0007.deadlydinos.gui;
+package com.dragn0007.deadlydinos.client.gui;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
-import com.dragn0007.deadlydinos.entity.menu.AmargaMenu;
-import com.dragn0007.deadlydinos.entity.menu.GrypoMenu;
+import com.dragn0007.deadlydinos.client.menu.AmargaMenu;
+import com.dragn0007.deadlydinos.client.menu.GrypoMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

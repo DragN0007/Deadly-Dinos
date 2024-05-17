@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "deadlydinos:items/mre"
+    "layer0": "deadlydinos:item/mre"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "deadlydinos:items/archae_spawn_egg"
+    "layer0": "deadlydinos:item/archae_spawn_egg"
   }
 }

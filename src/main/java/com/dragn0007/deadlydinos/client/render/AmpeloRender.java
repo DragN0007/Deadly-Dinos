@@ -2,7 +2,6 @@ package com.dragn0007.deadlydinos.client.render;
 
 import com.dragn0007.deadlydinos.client.model.AmpeloModel;
 import com.dragn0007.deadlydinos.entity.herbi.Ampelo;
-import com.dragn0007.deadlydinos.entity.herbi.Ampelo;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;

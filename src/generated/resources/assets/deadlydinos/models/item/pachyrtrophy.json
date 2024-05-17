@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "deadlydinos:items/pachyrtrophy"
+    "layer0": "deadlydinos:item/pachyrtrophy"
   }
 }

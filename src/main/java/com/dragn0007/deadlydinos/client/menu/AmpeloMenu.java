@@ -1,7 +1,7 @@
-package com.dragn0007.deadlydinos.entity.menu;
+package com.dragn0007.deadlydinos.client.menu;
 
-import com.dragn0007.deadlydinos.entity.herbi.Grypo;
-import com.dragn0007.deadlydinos.gui.DDDMenuTypes;
+import com.dragn0007.deadlydinos.entity.herbi.Ampelo;
+import com.dragn0007.deadlydinos.client.gui.DDDMenuTypes;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -12,39 +12,39 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.network.IContainerFactory;
 
-public class GrypoMenu extends AbstractContainerMenu {
+public class AmpeloMenu extends AbstractContainerMenu {
 
     public Container container;
-    public Grypo grypo;
+    public Ampelo ampelo;
 
-    public GrypoMenu(int containerId, Inventory inventory, Container container, Grypo grypo) {
-        super(DDDMenuTypes.GRYPO_MENU.get(), containerId);
+    public AmpeloMenu(int containerId, Inventory inventory, Container container, Ampelo ampelo) {
+        super(DDDMenuTypes.AMARGA_MENU.get(), containerId);
         this.container = container;
-        this.grypo = grypo;
+        this.ampelo = ampelo;
 
-        int grypoSlots = 0;
-        this.addSlot(new Slot(this.container, grypoSlots++, 15, 26) {
+        int ampeloSlots = 0;
+        this.addSlot(new Slot(this.container, ampeloSlots++, 15, 26) {
             @Override
             public boolean mayPlace(ItemStack itemStack) {
-                return itemStack.is(Items.SADDLE) && !this.hasItem() && grypo.isSaddleable();
+                return itemStack.is(Items.SADDLE) && !this.hasItem() && ampelo.isSaddleable();
             }
 
             @Override
             public boolean isActive() {
-                return grypo.isSaddleable();
+                return ampelo.isSaddleable();
             }
         });
 
-        if(this.grypo.isChested()) {
+        if(this.ampelo.isChested()) {
             for(int y = 0; y < 2; y++) {
                 for(int x = 0; x < 7; x++) {
-                    this.addSlot(new Slot(this.container, grypoSlots++, 44 + x * 18, 18 + y * 18));
+                    this.addSlot(new Slot(this.container, ampeloSlots++, 44 + x * 18, 18 + y * 18));
                 }
             }
 
             for(int y = 0; y < 4; y++) {
                 for(int x = 0; x < 9; x++) {
-                    this.addSlot(new Slot(this.container, grypoSlots++, 8 + x * 18, 54 + y * 18));
+                    this.addSlot(new Slot(this.container, ampeloSlots++, 8 + x * 18, 54 + y * 18));
                 }
             }
         }
@@ -63,7 +63,7 @@ public class GrypoMenu extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(Player player) {
-        return this.grypo.isAlive() && this.grypo.distanceTo(player) <= 8f;
+        return this.ampelo.isAlive() && this.ampelo.distanceTo(player) <= 8f;
     }
 
     @Override
@@ -91,11 +91,11 @@ public class GrypoMenu extends AbstractContainerMenu {
         return itemStack;
     }
 
-    public static IContainerFactory<GrypoMenu> create() {
+    public static IContainerFactory<AmpeloMenu> create() {
         return (windowId, inv, data) -> {
             int containerSize = data.readInt();
-            Grypo grypo1 = (Grypo) inv.player.level.getEntity(data.readInt());
-            return new GrypoMenu(windowId, inv, new SimpleContainer(containerSize), grypo1);
+            Ampelo ampelo1 = (Ampelo) inv.player.level.getEntity(data.readInt());
+            return new AmpeloMenu(windowId, inv, new SimpleContainer(containerSize), ampelo1);
         };
     }
 }

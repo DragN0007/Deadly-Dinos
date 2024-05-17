@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "deadlydinos:items/smallherbitooth"
+    "layer0": "deadlydinos:item/smallherbitooth"
   }
 }

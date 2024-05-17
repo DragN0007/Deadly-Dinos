@@ -2,9 +2,8 @@ package com.dragn0007.deadlydinos;
 
 import com.dragn0007.deadlydinos.block.DDDBlocks;
 import com.dragn0007.deadlydinos.block.DDDBlocksDataGen;
-import com.dragn0007.deadlydinos.entity.sounds.DinoSounds;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
-import com.dragn0007.deadlydinos.gui.DDDMenuTypes;
+import com.dragn0007.deadlydinos.client.gui.DDDMenuTypes;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.util.config.DeadlyDinosCommonConfig;
 import com.mojang.logging.LogUtils;
@@ -50,7 +49,6 @@ public class DeadlyDinos
         DDDBlocks.register(eventBus);
         DDDBlocksDataGen.register(eventBus);
         EntityTypes.ENTITY_TYPES.register(eventBus);
-        DinoSounds.register(eventBus);
         DDDMenuTypes.register(eventBus);
 
         GeckoLib.initialize();

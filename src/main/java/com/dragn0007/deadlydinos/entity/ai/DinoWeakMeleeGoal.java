@@ -77,7 +77,7 @@ public class DinoWeakMeleeGoal extends MeleeAttackGoal {
                     BlockState state = entity.level.getBlockState(pos);
                     Block block = state.getBlock();
                     if (checkState(state)) {
-                        // Break the block and drop any items
+                        // Break the block and drop any item
                         entity.level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
                         List<ItemStack> drops = Block.getDrops(state, (ServerLevel) entity.level, pos, null, entity, ItemStack.EMPTY);
                         for (ItemStack drop : drops) {
@@ -87,7 +87,7 @@ public class DinoWeakMeleeGoal extends MeleeAttackGoal {
                         // Check if the block is within the maximum reach distance
                         if (center.distManhattan(pos) <= maxReachDistance) {
                             if (checkState(state)) {
-                                // Break the block and drop any items
+                                // Break the block and drop any item
                                 entity.level.destroyBlock(pos, true, entity);
 
                                 entity.level.setBlock(pos, Blocks.AIR.defaultBlockState(), 10);

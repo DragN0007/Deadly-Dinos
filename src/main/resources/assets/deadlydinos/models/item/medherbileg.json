@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "deadlydinos:items/medherbileg"
+    "layer0": "deadlydinos:item/medherbileg"
   }
 }
