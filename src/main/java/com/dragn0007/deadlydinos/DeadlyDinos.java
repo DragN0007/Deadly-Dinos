@@ -68,10 +68,6 @@ public class DeadlyDinos
     private void processIMC(final InterModProcessEvent event)
     {
     }
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event)
-    {
-    }
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents
     {

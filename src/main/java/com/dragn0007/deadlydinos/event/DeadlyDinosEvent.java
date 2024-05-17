@@ -311,6 +311,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         EntityRenderers.register(EntityTypes.CARSIDE_ENTITY.get(), CarSideRender::new);
         EntityRenderers.register(EntityTypes.CARFLIPPED_ENTITY.get(), CarFlippedRender::new);
 
+
         ItemBlockRenderTypes.setRenderLayer(DDDBlocks.RGLASS.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(DDDBlocks.CONIFERLEAVES.get(), RenderType.cutout());

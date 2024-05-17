@@ -4,130 +4,160 @@
   "itemGroup.dinomodtab": "Deadly Dinos Entities",
   "itemGroup.dddmodtab": "Deadly Dinos Items",
 
+
   "item.deadlydinos.acro_spawn_egg": "Acrocanthosaurus Spawn Egg",
-  "item.deadlydinos.alberto_spawn_egg": "Albertosaurus Spawn Egg",
-  "item.deadlydinos.allo_spawn_egg": "Allosaurus Spawn Egg",
-  "item.deadlydinos.andal_spawn_egg": "Andalgalornis Spawn Egg",
-  "item.deadlydinos.archae_spawn_egg": "Archaeopteryx Spawn Egg",
-  "item.deadlydinos.australo_spawn_egg": "Australovenator Spawn Egg",
-  "item.deadlydinos.austro_spawn_egg": "Austroraptor Spawn Egg",
-  "item.deadlydinos.carchar_spawn_egg": "Carcharodontosaurus Spawn Egg",
-  "item.deadlydinos.carno_spawn_egg": "Carnotaurus Spawn Egg",
-  "item.deadlydinos.cerato_spawn_egg": "Ceratosaurus Spawn Egg",
-  "item.deadlydinos.compy_spawn_egg": "Compsognathus Spawn Egg",
-  "item.deadlydinos.cryo_spawn_egg": "Cryolophosaurus Spawn Egg",
-  "item.deadlydinos.deinon_spawn_egg": "Deinonychus Spawn Egg",
-  "item.deadlydinos.dilo_spawn_egg": "Dilophosaurus Spawn Egg",
-  "item.deadlydinos.giga_spawn_egg": "Giganotosaurus Spawn Egg",
-  "item.deadlydinos.mahakala_spawn_egg": "Mahakala Spawn Egg",
-  "item.deadlydinos.majunga_spawn_egg": "Majungasaurus Spawn Egg",
-  "item.deadlydinos.spino_spawn_egg": "Spinosaurus Spawn Egg",
-  "item.deadlydinos.tarbo_spawn_egg": "Tarbosaurus Spawn Egg",
-  "item.deadlydinos.troodon_spawn_egg": "Troodon Spawn Egg",
-  "item.deadlydinos.rex_spawn_egg": "Tyrannosaurus Spawn Egg",
-  "item.deadlydinos.utah_spawn_egg": "Utahraptor Spawn Egg",
-  "item.deadlydinos.yuty_spawn_egg": "Yutyrannus Spawn Egg",
-
-  
-  "item.deadlydinos.amarga_spawn_egg": "Amargasaurus Spawn Egg",
-  "item.deadlydinos.cropsnail_spawn_egg": "Giant Crop Snail Spawn Egg",
-  "item.deadlydinos.pachyr_spawn_egg": "Pachyrhinosaurus Spawn Egg",
-  "item.deadlydinos.para_spawn_egg": "Parasaurolophus Spawn Egg",
-  "item.deadlydinos.theri_spawn_egg": "Therizinosaurus Spawn Egg",
-  "item.deadlydinos.deinoch_spawn_egg": "Deinocherius Spawn Egg",
-  "item.deadlydinos.stego_spawn_egg": "Stegosaurus Spawn Egg",
-  "item.deadlydinos.shant_spawn_egg": "Shantungosaurus Spawn Egg",
-  "item.deadlydinos.galli_spawn_egg": "Gallimimus Spawn Egg",
-  "item.deadlydinos.sauro_spawn_egg": "Sauroposeidon Spawn Egg",
-  "item.deadlydinos.anky_spawn_egg": "Ankylosaurus Spawn Egg",
-  "item.deadlydinos.ava_spawn_egg": "Avaceratops Spawn Egg",
-  "item.deadlydinos.grypo_spawn_egg": "Gryposaurus Spawn Egg",
-  "item.deadlydinos.ampelo_spawn_egg": "Ampelosaurus Spawn Egg",
-  
-
   "entity.deadlydinos.acro_entity": "Acrocanthosaurus",
+  "item.deadlydinos.acrotrophy": "Acro Tooth Trophy",
+
   "entity.deadlydinos.alberto_entity": "Albertosaurus",
+  "item.deadlydinos.alberto_spawn_egg": "Albertosaurus Spawn Egg",
+  "item.deadlydinos.albertotrophy": "Alberto Tooth Trophy",
+
   "entity.deadlydinos.allo_entity": "Allosaurus",
+  "item.deadlydinos.allo_spawn_egg": "Allosaurus Spawn Egg",
+  "item.deadlydinos.allotrophy": "Allo Crest Trophy",
+
   "entity.deadlydinos.andal_entity": "Andalgalornis",
+  "item.deadlydinos.andal_spawn_egg": "Andalgalornis Spawn Egg",
+  "item.deadlydinos.andaltrophy": "Andal Claw Trophy",
+
   "entity.deadlydinos.archae_entity": "Archaeopteryx",
+  "item.deadlydinos.archae_spawn_egg": "Archaeopteryx Spawn Egg",
+  "item.deadlydinos.archaetrophy": "Archae Feather Trophy",
+
   "entity.deadlydinos.australo_entity": "Australovenator",
+  "item.deadlydinos.australo_spawn_egg": "Australovenator Spawn Egg",
+  "item.deadlydinos.australotrophy": "Australo Claw Trophy",
+
   "entity.deadlydinos.austro_entity": "Austroraptor",
+  "item.deadlydinos.austro_spawn_egg": "Austroraptor Spawn Egg",
+  "item.deadlydinos.austrotrophy": "Austro Claw Trophy",
+
   "entity.deadlydinos.carchar_entity": "Carcharodontosaurus",
+  "item.deadlydinos.carchar_spawn_egg": "Carcharodontosaurus Spawn Egg",
+  "item.deadlydinos.carchartrophy": "Carchar Tooth Trophy",
+
   "entity.deadlydinos.carno_entity": "Carnotaurus",
+  "item.deadlydinos.carno_spawn_egg": "Carnotaurus Spawn Egg",
+  "item.deadlydinos.carnotrophy": "Carno Horn Trophy",
+
   "entity.deadlydinos.cerato_entity": "Ceratosaurus",
+  "item.deadlydinos.cerato_spawn_egg": "Ceratosaurus Spawn Egg",
+  "item.deadlydinos.ceratotrophy": "Cerato Crest Trophy",
+
   "entity.deadlydinos.cryo_entity": "Cryolophosaurus",
+  "item.deadlydinos.cryo_spawn_egg": "Cryolophosaurus Spawn Egg",
+  "item.deadlydinos.cryotrophy": "Cryo Tooth Trophy",
+
   "entity.deadlydinos.compy_entity": "Compsognathus",
+  "item.deadlydinos.compy_spawn_egg": "Compsognathus Spawn Egg",
+  "item.deadlydinos.compytrophy": "Compy Claw Trophy",
+
   "entity.deadlydinos.deinon_entity": "Deinonychus",
+  "item.deadlydinos.deinon_spawn_egg": "Deinonychus Spawn Egg",
+  "item.deadlydinos.deinontrophy": "Deinon Claw Trophy",
+
   "entity.deadlydinos.dilo_entity": "Dilophosaurus",
+  "item.deadlydinos.dilo_spawn_egg": "Dilophosaurus Spawn Egg",
+  "item.deadlydinos.dilotrophy": "Dilo Tooth Trophy",
+
   "entity.deadlydinos.giga_entity": "Giganotosaurus",
+  "item.deadlydinos.giga_spawn_egg": "Giganotosaurus Spawn Egg",
+  "item.deadlydinos.gigatrophy": "Giga Tooth Trophy",
+
   "entity.deadlydinos.mahakala_entity": "Mahakala",
+  "item.deadlydinos.mahakala_spawn_egg": "Mahakala Spawn Egg",
+  "item.deadlydinos.mahakalatrophy": "Mahakala Feather Trophy",
+
   "entity.deadlydinos.majunga_entity": "Majungasaurus",
+  "item.deadlydinos.majunga_spawn_egg": "Majungasaurus Spawn Egg",
+  "item.deadlydinos.majungatrophy": "Majunga Tooth Trophy",
+
   "entity.deadlydinos.spino_entity": "Spinosaurus",
+  "item.deadlydinos.spino_spawn_egg": "Spinosaurus Spawn Egg",
+  "item.deadlydinos.spinotrophy": "Spino Sail Trophy",
+
   "entity.deadlydinos.tarbo_entity": "Tarbosaurus",
+  "item.deadlydinos.tarbo_spawn_egg": "Tarbosaurus Spawn Egg",
+  "item.deadlydinos.tarbotrophy": "Tarbo Tooth Trophy",
+
   "entity.deadlydinos.troodon_entity": "Troodon",
+  "item.deadlydinos.troodon_spawn_egg": "Troodon Spawn Egg",
+  "item.deadlydinos.troodontrophy": "Troodon Claw Trophy",
+
   "entity.deadlydinos.rex_entity": "Tyrannosaurus",
+  "item.deadlydinos.rex_spawn_egg": "Tyrannosaurus Spawn Egg",
+  "item.deadlydinos.rextrophy": "Rex Tooth Trophy",
+
   "entity.deadlydinos.utah_entity": "Utahraptor",
+  "item.deadlydinos.utah_spawn_egg": "Utahraptor Spawn Egg",
+  "item.deadlydinos.utahtrophy": "Utah Claw Trophy",
+
   "entity.deadlydinos.yuty_entity": "Yutyrannus",
-  
+  "item.deadlydinos.yuty_spawn_egg": "Yutyrannus Spawn Egg",
+  "item.deadlydinos.yutytrophy": "Yuty Tooth Trophy",
 
   "entity.deadlydinos.amarga_entity": "Amargasaurus",
+  "item.deadlydinos.amarga_spawn_egg": "Amargasaurus Spawn Egg",
+  "item.deadlydinos.amargatrophy": "Amarga Spine Trophy",
+
   "entity.deadlydinos.cropsnail_entity": "Giant Crop Snail",
+  "item.deadlydinos.cropsnail_spawn_egg": "Giant Crop Snail Spawn Egg",
+
   "entity.deadlydinos.pachyr": "Pachyrhinosaurus",
+  "item.deadlydinos.pachyr_spawn_egg": "Pachyrhinosaurus Spawn Egg",
+  "item.deadlydinos.pachyrtrophy": "Pachyrhino Horn Trophy",
+
   "entity.deadlydinos.para_entity": "Parasaurolophus",
+  "item.deadlydinos.para_spawn_egg": "Parasaurolophus Spawn Egg",
+  "item.deadlydinos.paratrophy": "Para Crest Trophy",
+
   "entity.deadlydinos.theri_entity": "Therizinosaurus",
+  "item.deadlydinos.theri_spawn_egg": "Therizinosaurus Spawn Egg",
+  "item.deadlydinos.theritrophy": "Theri Claw Trophy",
+
   "entity.deadlydinos.deinoch_entity": "Deinocherius",
+  "item.deadlydinos.deinoch_spawn_egg": "Deinocherius Spawn Egg",
+  "item.deadlydinos.deinochtrophy": "Deinoch Claw Trophy",
+
   "entity.deadlydinos.stego_entity": "Stegosaurus",
+  "item.deadlydinos.stego_spawn_egg": "Stegosaurus Spawn Egg",
+  "item.deadlydinos.stegotrophy": "Stego Plate Trophy",
+
   "entity.deadlydinos.shant_entity": "Shantungosaurus",
+  "item.deadlydinos.shant_spawn_egg": "Shantungosaurus Spawn Egg",
+  "item.deadlydinos.shanttrophy": "Shant Spine Trophy",
+
   "entity.deadlydinos.galli_entity": "Gallimimus",
+  "item.deadlydinos.galli_spawn_egg": "Gallimimus Spawn Egg",
+  "item.deadlydinos.gallitrophy": "Galli Feather Trophy",
+
   "entity.deadlydinos.sauro_entity": "Sauroposeidon",
+  "item.deadlydinos.sauro_spawn_egg": "Sauroposeidon Spawn Egg",
+  "item.deadlydinos.saurotrophy": "Sauro Claw Trophy",
+
   "entity.deadlydinos.anky_entity": "Ankylosaurus",
+  "item.deadlydinos.anky_spawn_egg": "Ankylosaurus Spawn Egg",
+  "item.deadlydinos.ankytrophy": "Anky Armor Trophy",
+
   "entity.deadlydinos.ava_entity": "Avaceratops",
+  "item.deadlydinos.ava_spawn_egg": "Avaceratops Spawn Egg",
+  "item.deadlydinos.avatrophy": "Ava Horn Trophy",
+
   "entity.deadlydinos.grypo_entity": "Gryposaurus",
+  "item.deadlydinos.grypo_spawn_egg": "Gryposaurus Spawn Egg",
+  "item.deadlydinos.grypotrophy": "Grypo Crest Trophy",
+
   "entity.deadlydinos.ampelo_entity": "Ampelosaurus",
+  "item.deadlydinos.ampelo_spawn_egg": "Ampelosaurus Spawn Egg",
+  "item.deadlydinos.ampelotrophy": "Ampelo Spike Trophy",
+
 
 
   "item.deadlydinos.archae_harness": "Archaeopteryx Pack Harness",
 
-  
-  "item.deadlydinos.acrotrophy": "Acro Tooth Trophy",
-  "item.deadlydinos.albertotrophy": "Alberto Tooth Trophy",
-  "item.deadlydinos.allotrophy": "Allo Crest Trophy",
-  "item.deadlydinos.andaltrophy": "Andal Claw Trophy",
-  "item.deadlydinos.archaetrophy": "Archae Feather Trophy",
-  "item.deadlydinos.australotrophy": "Australo Claw Trophy",
-  "item.deadlydinos.austrotrophy": "Austro Claw Trophy",
-  "item.deadlydinos.carchartrophy": "Carchar Tooth Trophy",
-  "item.deadlydinos.carnotrophy": "Carno Horn Trophy",
-  "item.deadlydinos.ceratotrophy": "Cerato Crest Trophy",
-  "item.deadlydinos.cryotrophy": "Cryo Tooth Trophy",
-  "item.deadlydinos.compytrophy": "Compy Claw Trophy",
-  "item.deadlydinos.deinontrophy": "Deinon Claw Trophy",
-  "item.deadlydinos.dilotrophy": "Dilo Tooth Trophy",
-  "item.deadlydinos.gigatrophy": "Giga Tooth Trophy",
-  "item.deadlydinos.mahakalatrophy": "Mahakala Feather Trophy",
-  "item.deadlydinos.majungatrophy": "Majunga Tooth Trophy",
-  "item.deadlydinos.rextrophy": "Rex Tooth Trophy",
-  "item.deadlydinos.spinotrophy": "Spino Sail Trophy",
-  "item.deadlydinos.tarbotrophy": "Tarbo Tooth Trophy",
-  "item.deadlydinos.troodontrophy": "Troodon Claw Trophy",
-  "item.deadlydinos.utahtrophy": "Utah Claw Trophy",
-  "item.deadlydinos.yutytrophy": "Yuty Tooth Trophy",
 
-  "item.deadlydinos.amargatrophy": "Amarga Spine Trophy",
-  "item.deadlydinos.ankytrophy": "Anky Armor Trophy",
-  "item.deadlydinos.avatrophy": "Ava Horn Trophy",
-  "item.deadlydinos.deinochtrophy": "Deinoch Claw Trophy",
-  "item.deadlydinos.gallitrophy": "Galli Feather Trophy",
-  "item.deadlydinos.paratrophy": "Para Crest Trophy",
-  "item.deadlydinos.saurotrophy": "Sauro Claw Trophy",
-  "item.deadlydinos.shanttrophy": "Shant Spine Trophy",
-  "item.deadlydinos.stegotrophy": "Stego Plate Trophy",
-  "item.deadlydinos.theritrophy": "Theri Claw Trophy",
-  "item.deadlydinos.grypotrophy": "Grypo Crest Trophy",
-  "item.deadlydinos.ampelotrophy": "Ampelo Spike Trophy",
-  "item.deadlydinos.pachyrtrophy": "Pachyrhino Horn Trophy",
 
-  
   "item.deadlydinos.rawsmallmeat": "Raw Small Dino Meat",
   "item.deadlydinos.cookedsmallmeat": "Cooked Small Dino Meat",
   "item.deadlydinos.rawmediummeat": "Raw Medium Dino Meat",
