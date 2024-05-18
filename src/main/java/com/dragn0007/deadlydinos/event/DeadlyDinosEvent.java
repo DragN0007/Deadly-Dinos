@@ -3,6 +3,7 @@ package com.dragn0007.deadlydinos.event;
 import com.dragn0007.deadlydinos.DeadlyDinos;
 import com.dragn0007.deadlydinos.block.DDDBlocks;
 import com.dragn0007.deadlydinos.block.DDDBlocksDataGen;
+import com.dragn0007.deadlydinos.client.menu.ParaScreen;
 import com.dragn0007.deadlydinos.client.render.*;
 import com.dragn0007.deadlydinos.entity.carni.*;
 import com.dragn0007.deadlydinos.entity.herbi.*;
@@ -331,6 +332,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
         MenuScreens.register(DDDMenuTypes.GRYPO_MENU.get(), GrypoScreen::new);
         MenuScreens.register(DDDMenuTypes.AMARGA_MENU.get(), AmargaScreen::new);
+        MenuScreens.register(DDDMenuTypes.PARA_MENU.get(), ParaScreen::new);
     }
 }
 
