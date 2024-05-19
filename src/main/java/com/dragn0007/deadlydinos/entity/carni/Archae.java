@@ -88,8 +88,7 @@ public class Archae extends TamableAnimal implements IAnimatable {
     public static final Predicate<LivingEntity> PREY_SELECTOR = (p_30437_) -> {
         EntityType<?> entitytype = p_30437_.getType();
         return
-                entitytype == EntityTypes.ARCHAE_ENTITY.get()
-                        || entitytype == EntityTypes.AVA_ENTITY.get()
+                entitytype == EntityTypes.AVA_ENTITY.get()
                         || entitytype == EntityTypes.ALLO_ENTITY.get()
                         || entitytype == EntityTypes.CERATO_ENTITY.get()
                         || entitytype == EntityTypes.ANDAL_ENTITY.get()
