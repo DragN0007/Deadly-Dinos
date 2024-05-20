@@ -1,10 +1,10 @@
 package com.dragn0007.deadlydinos.entity.herbi;
 
+import com.dragn0007.deadlydinos.client.menu.GrypoMenu;
 import com.dragn0007.deadlydinos.client.model.GrypoModel;
 import com.dragn0007.deadlydinos.entity.Chestable;
 import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
 import com.dragn0007.deadlydinos.entity.ai.TamableDestroyCropsGoal;
-import com.dragn0007.deadlydinos.client.menu.GrypoMenu;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import net.minecraft.core.BlockPos;

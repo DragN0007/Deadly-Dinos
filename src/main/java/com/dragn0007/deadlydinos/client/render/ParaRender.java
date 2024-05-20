@@ -1,7 +1,6 @@
 package com.dragn0007.deadlydinos.client.render;
 
 import com.dragn0007.deadlydinos.client.model.ParaModel;
-import com.dragn0007.deadlydinos.entity.carni.Yuty;
 import com.dragn0007.deadlydinos.entity.herbi.Para;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -17,7 +16,6 @@ import software.bernie.geckolib3.core.processor.IBone;
 import software.bernie.geckolib3.geo.render.built.GeoBone;
 import software.bernie.geckolib3.geo.render.built.GeoModel;
 import software.bernie.geckolib3.renderers.geo.ExtendedGeoEntityRenderer;
-import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 public class ParaRender extends ExtendedGeoEntityRenderer<Para> {
     public ParaRender(EntityRendererProvider.Context renderManager) {

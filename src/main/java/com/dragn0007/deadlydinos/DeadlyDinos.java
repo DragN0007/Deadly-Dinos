@@ -2,15 +2,14 @@ package com.dragn0007.deadlydinos;
 
 import com.dragn0007.deadlydinos.block.DDDBlocks;
 import com.dragn0007.deadlydinos.block.DDDBlocksDataGen;
-import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.client.gui.DDDMenuTypes;
+import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.util.config.DeadlyDinosCommonConfig;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;

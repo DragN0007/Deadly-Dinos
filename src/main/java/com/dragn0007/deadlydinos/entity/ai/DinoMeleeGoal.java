@@ -13,7 +13,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import org.checkerframework.checker.i18nformatter.qual.I18nChecksFormat;
 
 import java.util.List;
 
@@ -48,9 +47,9 @@ public class DinoMeleeGoal extends MeleeAttackGoal {
                 ;
     }
 
+
     public DinoMeleeGoal(Animal entity, double speedModifier, boolean followingTargetEvenIfNotSeen) {
         super(entity, speedModifier, followingTargetEvenIfNotSeen);
-
     }
 
     @Override

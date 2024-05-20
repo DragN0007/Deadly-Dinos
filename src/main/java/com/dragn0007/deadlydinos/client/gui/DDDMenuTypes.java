@@ -4,7 +4,6 @@ import com.dragn0007.deadlydinos.DeadlyDinos;
 import com.dragn0007.deadlydinos.client.menu.AmargaMenu;
 import com.dragn0007.deadlydinos.client.menu.GrypoMenu;
 import com.dragn0007.deadlydinos.client.menu.ParaMenu;
-import com.dragn0007.deadlydinos.entity.herbi.Para;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;

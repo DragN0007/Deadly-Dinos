@@ -1,7 +1,7 @@
 package com.dragn0007.deadlydinos.client.menu;
 
-import com.dragn0007.deadlydinos.entity.herbi.Ampelo;
 import com.dragn0007.deadlydinos.client.gui.DDDMenuTypes;
+import com.dragn0007.deadlydinos.entity.herbi.Ampelo;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;

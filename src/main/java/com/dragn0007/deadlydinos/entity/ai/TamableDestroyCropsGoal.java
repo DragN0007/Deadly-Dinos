@@ -47,13 +47,13 @@ public class TamableDestroyCropsGoal extends Goal {
         }
 
         double distanceSq = entity.distanceToSqr(currentTarget.getX(), currentTarget.getY(), currentTarget.getZ());
-        if (distanceSq > 32) { // Blocks away from target
+        if (distanceSq > 32) {
             entity.getNavigation().moveTo(currentTarget.getX(), currentTarget.getY(), currentTarget.getZ(), 1.0);
         } else {
             BlockState state = entity.level.getBlockState(currentTarget);
             if (checkState(state)) {
                 List<ItemStack> drops = Block.getDrops(state, (ServerLevel) entity.level, currentTarget, null, entity, ItemStack.EMPTY);
-                if (entity.getRandom().nextFloat() < 0.1) { // check if random number is less than 0.2
+                if (entity.getRandom().nextFloat() < 0.1) {
                     for (ItemStack drop : drops) {
                         entity.level.addFreshEntity(new ItemEntity(entity.level, currentTarget.getX() + 0.5, currentTarget.getY() + 0.5, currentTarget.getZ() + 0.5, drop));
                     }
@@ -117,7 +117,6 @@ public class TamableDestroyCropsGoal extends Goal {
 
             boolean success = findNewTarget(x, y, z);
             if (success) {
-                // Do something with currentTarget
                 break;
             }
         }

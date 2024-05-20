@@ -1,5 +1,6 @@
 package com.dragn0007.deadlydinos.entity.ai;
 
+
 import com.dragn0007.deadlydinos.util.config.DeadlyDinosCommonConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -48,10 +49,11 @@ public class DinoExtremeMeleeGoal extends MeleeAttackGoal {
     }
 
 
+    private final Animal entity;
     public DinoExtremeMeleeGoal(Animal entity, double speedModifier, boolean followingTargetEvenIfNotSeen) {
         super(entity, speedModifier, followingTargetEvenIfNotSeen);
+        this.entity = entity;
     }
-
 
     @Override
     protected void checkAndPerformAttack(LivingEntity entity, double distance) {
@@ -59,18 +61,14 @@ public class DinoExtremeMeleeGoal extends MeleeAttackGoal {
         Direction direction = entity.getDirection();
         BlockPos base = entity.blockPosition().relative(direction, 1);
 
-        // Define the size of the cube to break blocks within
         int width = DeadlyDinosCommonConfig.BIG_DINO_BREAK_RADIUS.get();
         int height = DeadlyDinosCommonConfig.BIG_DINO_BREAK_RADIUS.get();
         int depth = DeadlyDinosCommonConfig.BIG_DINO_BREAK_RADIUS.get();
 
-        // Define the maximum reach distance
         int maxReachDistance = 8;
 
-        // Calculate the center of the cube, aka the dino's hitbox
         BlockPos center = new BlockPos(base.getX() + (width / 2), base.getY() + (height / 2), base.getZ() + (depth / 2));
 
-        // Loop through each block in the cube and break it if it's breakable
         int numBlocksBroken = 0;
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
@@ -79,23 +77,20 @@ public class DinoExtremeMeleeGoal extends MeleeAttackGoal {
                     BlockState state = entity.level.getBlockState(pos);
                     Block block = state.getBlock();
                     if ((checkState(state))) {
-                        // Break the block and drop any item
                         entity.level.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
                         List<ItemStack> drops = Block.getDrops(state, (ServerLevel) entity.level, pos, null, entity, ItemStack.EMPTY);
                         for (ItemStack drop : drops) {
                             entity.level.addFreshEntity(new ItemEntity(entity.level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, drop));
                         }
 
-                        // Check if the block is within the maximum reach distance
                         if (center.distManhattan(pos) <= maxReachDistance) {
                             if (checkState(state)) {
-                                // Break the block and drop any item
+
                                 entity.level.destroyBlock(pos, true, entity);
 
                                 entity.level.setBlock(pos, Blocks.AIR.defaultBlockState(), 10);
                                 numBlocksBroken++;
-                                // If the dino has broken enough blocks, stop breaking them
-                                if (numBlocksBroken >= 25) { // 5x5x5 cube has 125 blocks, so we need to break 25 to get a large enough hole
+                                if (numBlocksBroken >= 25) {
                                     break;
                                 }
                             }

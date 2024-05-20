@@ -82,7 +82,7 @@ public class DestroyPersonalPropertyGoal extends Goal {
         }
 
         double distanceSq = entity.distanceToSqr(currentTarget.getX(), currentTarget.getY(), currentTarget.getZ());
-        if (distanceSq > 8) { // Blocks away from target
+        if (distanceSq > 8) {
             entity.getNavigation().moveTo(currentTarget.getX(), currentTarget.getY(), currentTarget.getZ(), 1.0);
         } else {
             BlockState state = entity.level.getBlockState(currentTarget);
@@ -148,7 +148,6 @@ public class DestroyPersonalPropertyGoal extends Goal {
 
             boolean success = findNewTarget(x, y, z);
             if (success) {
-                // Do something with currentTarget
                 break;
             }
         }
