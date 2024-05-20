@@ -18,7 +18,6 @@ public class DDDWorldEvents {
 
     DDDFlowerGeneration.generateFlowers(event);
     DDDTreeGeneration.generateTrees(event);
-
     DinoSpawnGeneration.onEntitySpawn(event);
     }
 }
