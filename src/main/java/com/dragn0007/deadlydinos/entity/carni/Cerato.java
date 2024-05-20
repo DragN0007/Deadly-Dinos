@@ -127,6 +127,7 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
                         || entitytype == EntityTypes.AMARGA_ENTITY.get()
                         || entitytype == EntityTypes.AMPELO_ENTITY.get()
                         || entitytype == EntityTypes.YUTY_ENTITY.get()
+                        || entitytype == EntityTypes.PARA_ENTITY.get()
                         || entitytype == EntityType.PLAYER
                         || entitytype == EntityType.CAT
                         || entitytype == EntityType.WOLF

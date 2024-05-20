@@ -96,6 +96,7 @@ public class Archae extends TamableAnimal implements IAnimatable {
                         || entitytype == EntityTypes.AMARGA_ENTITY.get()
                         || entitytype == EntityTypes.AMPELO_ENTITY.get()
                         || entitytype == EntityTypes.YUTY_ENTITY.get()
+                        || entitytype == EntityTypes.PARA_ENTITY.get()
                         || entitytype == EntityType.PLAYER
                         || entitytype == EntityType.CAT
                         || entitytype == EntityType.WOLF

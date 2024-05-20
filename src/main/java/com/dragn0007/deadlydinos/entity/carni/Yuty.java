@@ -114,6 +114,7 @@ public class Yuty extends TamableAnimal implements ContainerListener, Saddleable
                         || entitytype == EntityTypes.GRYPO_ENTITY.get()
                         || entitytype == EntityTypes.AMARGA_ENTITY.get()
                         || entitytype == EntityTypes.AMPELO_ENTITY.get()
+                        || entitytype == EntityTypes.PARA_ENTITY.get()
                         || entitytype == EntityType.PLAYER
                         || entitytype == EntityType.CAT
                         || entitytype == EntityType.WOLF

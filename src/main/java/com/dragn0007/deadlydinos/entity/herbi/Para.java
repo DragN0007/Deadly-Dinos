@@ -6,6 +6,8 @@ import com.dragn0007.deadlydinos.client.model.ParaModel;
 import com.dragn0007.deadlydinos.entity.Chestable;
 import com.dragn0007.deadlydinos.entity.ai.DestroyWaterPlantsGoal;
 import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
+import com.dragn0007.deadlydinos.entity.ai.TamableDestroyCropsGoal;
+import com.dragn0007.deadlydinos.entity.ai.TamableDestroyWaterPlantsGoal;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import net.minecraft.core.BlockPos;
@@ -108,7 +110,7 @@ public class Para extends TamableAnimal implements ContainerListener, Saddleable
         super.registerGoals();
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1));
-        this.goalSelector.addGoal(2, new DestroyWaterPlantsGoal(this));
+        this.goalSelector.addGoal(2, new TamableDestroyWaterPlantsGoal(this, this));
         this.goalSelector.addGoal(0, new DinoMeleeGoal(this, 1.6, true));
         this.goalSelector.addGoal(4, new FloatGoal(this));
 
