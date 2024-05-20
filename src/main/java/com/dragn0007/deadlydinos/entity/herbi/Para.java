@@ -1,6 +1,6 @@
 package com.dragn0007.deadlydinos.entity.herbi;
 
-import com.dragn0007.deadlydinos.client.menu.AmargaMenu;
+
 import com.dragn0007.deadlydinos.client.menu.ParaMenu;
 import com.dragn0007.deadlydinos.client.model.ParaModel;
 import com.dragn0007.deadlydinos.entity.Chestable;
@@ -82,8 +82,8 @@ public class Para extends TamableAnimal implements ContainerListener, Saddleable
 
     }
 
-    private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(Amarga.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> CHESTED = SynchedEntityData.defineId(Amarga.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(Para.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> CHESTED = SynchedEntityData.defineId(Para.class, EntityDataSerializers.BOOLEAN);
     private static final Ingredient FOOD_ITEMS = Ingredient.of(DDDTags.Items.VEGETABLES);
 
     public SimpleContainer inventory;
@@ -109,7 +109,7 @@ public class Para extends TamableAnimal implements ContainerListener, Saddleable
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1));
         this.goalSelector.addGoal(2, new DestroyWaterPlantsGoal(this));
-        this.goalSelector.addGoal(0, new DinoMeleeGoal(this, 1, true));
+        this.goalSelector.addGoal(0, new DinoMeleeGoal(this, 1.6, true));
         this.goalSelector.addGoal(4, new FloatGoal(this));
 
         this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
@@ -327,16 +327,16 @@ public class Para extends TamableAnimal implements ContainerListener, Saddleable
 
     @Override
     public boolean canMate(Animal animal) {
-        if (animal == this || !(animal instanceof Amarga)) {
+        if (animal == this || !(animal instanceof Para)) {
             return false;
         } else {
-            return this.canBeParent() && ((Amarga)animal).canBeParent();
+            return this.canBeParent() && ((Para)animal).canBeParent();
         }
     }
 
     @Override
-    public Amarga getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
-        return EntityTypes.AMARGA_ENTITY.get().create(level);
+    public Para getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
+        return EntityTypes.PARA_ENTITY.get().create(level);
     }
 
 
