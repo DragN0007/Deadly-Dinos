@@ -313,10 +313,6 @@ public class DinoSpawnGeneration {
 
     }
 
-
-
-
-
     private static void addEntityToAllBiomesExceptThese(BiomeLoadingEvent event, EntityType<?> type,
                                                         int weight, int minCount, int maxCount, ResourceKey<Biome>... biomes) {
         boolean isBiomeSelected = Arrays.stream(biomes).map(ResourceKey::location)
