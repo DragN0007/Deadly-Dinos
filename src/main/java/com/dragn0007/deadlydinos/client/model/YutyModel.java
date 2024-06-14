@@ -10,7 +10,8 @@ public class YutyModel extends AnimatedGeoModel<Yuty> {
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/yutymale.png")),
         FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/yutyfemale.png")),
-        ICY(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/yutyicy.png"));
+        ICY(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/yutyicy.png")),
+        CHOCOLATE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/yutychocolate.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

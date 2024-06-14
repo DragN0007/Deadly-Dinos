@@ -10,7 +10,8 @@ public class CryoModel extends AnimatedGeoModel<Cryo> {
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/cryomale.png")),
         FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/cryofemale.png")),
-        ICY(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/cryoicy.png"));
+        ICY(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/cryoicy.png")),
+        LIME(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/cryolime.png"));
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {
