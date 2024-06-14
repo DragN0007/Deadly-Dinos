@@ -16,6 +16,7 @@ import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.controller.AnimationController;
@@ -35,6 +36,12 @@ public class CropSnail extends Animal implements IAnimatable {
     public CropSnail(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
         this.noCulling = true;
+    }
+
+    @Override
+    public Vec3 getLeashOffset() {
+        return new Vec3(0D, (double)this.getEyeHeight() * 0.2F, (double)(this.getBbWidth() * 0.6F));
+        //                      ^ Side offset                             ^ Height offset                  ^ Length offset
     }
 
     public static AttributeSupplier.Builder createAttributes() {

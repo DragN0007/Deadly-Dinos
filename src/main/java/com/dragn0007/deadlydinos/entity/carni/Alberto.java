@@ -39,6 +39,7 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -70,6 +71,12 @@ public class Alberto extends Animal implements IAnimatable {
         } else {
             return isBrightEnoughToSpawn(p_29551_, p_29553_) && p_29551_.getBlockState(p_29553_.below()).is(DDDTags.Blocks.DESERT_DINO_SPAWNABLE_ON);
         }
+    }
+
+    @Override
+    public Vec3 getLeashOffset() {
+        return new Vec3(0D, (double)this.getEyeHeight() * 1F, (double)(this.getBbWidth() * 1F));
+        //                      ^ Side offset                             ^ Height offset                  ^ Length offset
     }
 
     public static AttributeSupplier.Builder createAttributes() {

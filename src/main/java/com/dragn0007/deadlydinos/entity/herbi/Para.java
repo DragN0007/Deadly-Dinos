@@ -72,6 +72,12 @@ public class Para extends TamableAnimal implements ContainerListener, Saddleable
         this.updateInventory();
     }
 
+    @Override
+    public Vec3 getLeashOffset() {
+        return new Vec3(0D, (double)this.getEyeHeight() * 0.6F, (double)(this.getBbWidth() * 1.3F));
+        //                      ^ Side offset                             ^ Height offset                  ^ Length offset
+    }
+
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 120)

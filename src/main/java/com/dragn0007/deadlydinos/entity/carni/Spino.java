@@ -57,6 +57,12 @@ public class Spino extends Animal implements IAnimatable {
         this.noCulling = true;
     }
 
+    @Override
+    public Vec3 getLeashOffset() {
+        return new Vec3(0D, (double)this.getEyeHeight() * 0.6F, (double)(this.getBbWidth() * 1.5F));
+        //                      ^ Side offset                             ^ Height offset                  ^ Length offset
+    }
+
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 100)

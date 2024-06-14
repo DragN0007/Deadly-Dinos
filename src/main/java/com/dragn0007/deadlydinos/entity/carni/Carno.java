@@ -38,6 +38,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -60,6 +61,12 @@ public class Carno extends Animal implements IAnimatable {
     public Carno(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
         this.noCulling = true;
+    }
+
+    @Override
+    public Vec3 getLeashOffset() {
+        return new Vec3(0D, (double)this.getEyeHeight() * 0.8F, (double)(this.getBbWidth() * 1F));
+        //                      ^ Side offset                             ^ Height offset                  ^ Length offset
     }
 
     public static AttributeSupplier.Builder createAttributes() {

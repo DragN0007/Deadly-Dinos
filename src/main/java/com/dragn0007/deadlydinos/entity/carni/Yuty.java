@@ -78,6 +78,11 @@ public class Yuty extends TamableAnimal implements ContainerListener, Saddleable
     public SimpleContainer inventory;
     private LazyOptional<?> itemHandler = null;
 
+    @Override
+    public Vec3 getLeashOffset() {
+        return new Vec3(0D, (double)this.getEyeHeight() * 0.8F, (double)(this.getBbWidth() * 1.4F));
+        //                      ^ Side offset                             ^ Height offset                  ^ Length offset
+    }
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()

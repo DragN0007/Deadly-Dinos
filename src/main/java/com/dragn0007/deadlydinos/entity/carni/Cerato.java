@@ -82,6 +82,11 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
     public SimpleContainer inventory;
     private LazyOptional<?> itemHandler = null;
 
+    @Override
+    public Vec3 getLeashOffset() {
+        return new Vec3(0D, (double)this.getEyeHeight() * 0.8F, (double)(this.getBbWidth() * 1F));
+        //                      ^ Side offset                             ^ Height offset                  ^ Length offset
+    }
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()

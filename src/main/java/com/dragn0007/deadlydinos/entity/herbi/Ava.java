@@ -62,6 +62,12 @@ public class Ava extends TamableAnimal implements ContainerListener, Saddleable,
         this.noCulling = true;
     }
 
+    @Override
+    public Vec3 getLeashOffset() {
+        return new Vec3(0D, (double)this.getEyeHeight() * 0.5F, (double)(this.getBbWidth() * 0.7F));
+        //                      ^ Side offset                             ^ Height offset                  ^ Length offset
+    }
+
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 20)
