@@ -53,6 +53,13 @@ public class DinoSpawnGeneration {
                 Biomes.JUNGLE, Biomes.SPARSE_JUNGLE
         );
 
+        addEntityToSpecificBiomes(event, EntityTypes.ATROCI_ENTITY.get(),
+                DeadlyDinosCommonConfig.ATROCI_WEIGHT.get(), 1, 2,
+                Biomes.TAIGA, Biomes.SNOWY_TAIGA,  Biomes.OLD_GROWTH_SPRUCE_TAIGA,
+                Biomes.FOREST, Biomes.FLOWER_FOREST, Biomes.BIRCH_FOREST, Biomes.DARK_FOREST,
+                Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS
+        );
+
         addEntityToSpecificBiomes(event, EntityTypes.AUSTRALO_ENTITY.get(),
                 DeadlyDinosCommonConfig.AUSTRALO_WEIGHT.get(), 2, 3,
                 Biomes.SNOWY_PLAINS, Biomes.SNOWY_SLOPES, Biomes.SNOWY_BEACH,
@@ -261,6 +268,13 @@ public class DinoSpawnGeneration {
                 Biomes.TAIGA, Biomes.SNOWY_TAIGA,  Biomes.OLD_GROWTH_SPRUCE_TAIGA,
                 Biomes.SWAMP,
                 Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES
+        );
+
+        addEntityToSpecificBiomes(event, EntityTypes.EDMONTO_ENTITY.get(),
+                DeadlyDinosCommonConfig.EDMONTO_WEIGHT.get(), 1, 3,
+                Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS,
+                Biomes.SWAMP,
+                Biomes.BEACH
         );
 
         addEntityToSpecificBiomes(event, EntityTypes.PACHYR_ENTITY.get(),

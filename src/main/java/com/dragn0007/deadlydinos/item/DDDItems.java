@@ -72,6 +72,8 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.CRYO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> AUSTRALO_SPAWN_EGG = ITEMS.register("australo_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.AUSTRALO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> ATROCI_SPAWN_EGG = ITEMS.register("atroci_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.ATROCI_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
     //HERBIVORE SPAWN EGGS
@@ -103,6 +105,8 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.AMPELO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> PACHYR_SPAWN_EGG = ITEMS.register("pachyr_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.PACHYR_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> EDMONTO_SPAWN_EGG = ITEMS.register("edmonto_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.EDMONTO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
 
@@ -445,6 +449,12 @@ public class DDDItems {
                     new MobEffectInstance(MobEffects.JUMP, 2880, 2, true, false)
 
             ));
+    public static final RegistryObject<TrophyItem> ATROCITROPHY = ITEMS.register("atrocitrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2880, 5,true, false),
+                    new MobEffectInstance(MobEffects.JUMP, 2880, 2, true, false)
+
+            ));
     public static final RegistryObject<TrophyItem> AUSTRALOTROPHY = ITEMS.register("australotrophy",
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2880, 5,true, false),
@@ -565,6 +575,11 @@ public class DDDItems {
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2880, 2,true, false),
                     new MobEffectInstance(MobEffects.WATER_BREATHING, 2880, 3, true, false)
+            ));
+    public static final RegistryObject<TrophyItem> EDMONTOTROPHY = ITEMS.register("edmontotrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.WATER_BREATHING, 2880, 2,true, false),
+                    new MobEffectInstance(MobEffects.REGENERATION, 2880, 3, true, false)
             ));
     public static final RegistryObject<TrophyItem> GALLITROPHY = ITEMS.register("gallitrophy",
             () -> new TrophyItem(

@@ -19,6 +19,7 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> AMPELO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ANKY_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ARCHAE_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> ATROCI_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> AUSTRALO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> AUSTRO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> AVA_WEIGHT;
@@ -31,6 +32,7 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> DEINOCH_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> DEINON_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> DILO_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> EDMONTO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> GALLI_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> GIGA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> GRYPO_WEIGHT;
@@ -99,6 +101,9 @@ public class DeadlyDinosCommonConfig {
         ARCHAE_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
                 .define("ARCHAE Spawn Weight", 4);
 
+        ATROCI_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
+                .define("ATROCI Spawn Weight", 3);
+
         AUSTRALO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 5.")
                 .define("AUSTRALO Spawn Weight", 5);
 
@@ -134,6 +139,9 @@ public class DeadlyDinosCommonConfig {
 
         DILO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
                 .define("DILO Spawn Weight", 3);
+
+        EDMONTO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
+                .define("EDMONTO Spawn Weight", 2);
 
         GALLI_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
                 .define("GALLI Spawn Weight", 2);

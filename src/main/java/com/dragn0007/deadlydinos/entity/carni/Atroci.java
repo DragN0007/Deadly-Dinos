@@ -1,6 +1,7 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
 import com.dragn0007.deadlydinos.client.model.ArchaeModel;
+import com.dragn0007.deadlydinos.client.model.AtrociModel;
 import com.dragn0007.deadlydinos.entity.herbi.*;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
@@ -63,11 +64,11 @@ import java.util.Set;
 import java.util.function.Predicate;
 
 
-public class Archae extends TamableAnimal implements IAnimatable {
+public class Atroci extends TamableAnimal implements IAnimatable {
 
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
-    public Archae(EntityType<? extends TamableAnimal> entityType, Level level) {
+    public Atroci(EntityType<? extends TamableAnimal> entityType, Level level) {
         super(entityType, level);
         this.noCulling = true;
     }
@@ -80,10 +81,10 @@ public class Archae extends TamableAnimal implements IAnimatable {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 10)
-                .add(Attributes.ATTACK_DAMAGE, 3)
-                .add(Attributes.MOVEMENT_SPEED, 0.18)
-                .add(Attributes.JUMP_STRENGTH, 1)
+                .add(Attributes.MAX_HEALTH, 12)
+                .add(Attributes.ATTACK_DAMAGE, 4)
+                .add(Attributes.MOVEMENT_SPEED, 0.20)
+                .add(Attributes.JUMP_STRENGTH, 2)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.1)
                 ;
 
@@ -101,7 +102,6 @@ public class Archae extends TamableAnimal implements IAnimatable {
                         || entitytype == EntityTypes.AMPELO_ENTITY.get()
                         || entitytype == EntityTypes.YUTY_ENTITY.get()
                         || entitytype == EntityTypes.PARA_ENTITY.get()
-                        || entitytype == EntityTypes.ATROCI_ENTITY.get()
                         || entitytype == EntityType.PLAYER
                         || entitytype == EntityType.CAT
                         || entitytype == EntityType.WOLF
@@ -116,7 +116,7 @@ public class Archae extends TamableAnimal implements IAnimatable {
     };
     @Override
     public float getStepHeight() {
-        return 1.6f;
+        return 3f;
     }
     protected void registerGoals() {
         super.registerGoals();
@@ -148,11 +148,9 @@ public class Archae extends TamableAnimal implements IAnimatable {
         this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
-                if (livingEntity instanceof Archae)
+                if (livingEntity instanceof Atroci)
                     return false;
                 if (livingEntity instanceof Acro)
-                    return false;
-                if (livingEntity instanceof Ava)
                     return false;
                 if (livingEntity instanceof Alberto)
                     return false;
@@ -161,8 +159,6 @@ public class Archae extends TamableAnimal implements IAnimatable {
                 if (livingEntity instanceof Rex)
                     return false;
                 if (livingEntity instanceof Spino)
-                    return false;
-                if (livingEntity instanceof Player)
                     return false;
                 if (livingEntity instanceof Horse)
                     return false;
@@ -192,7 +188,7 @@ public class Archae extends TamableAnimal implements IAnimatable {
                     return false;
                 if (livingEntity instanceof Ampelo) //<- taken care of by the prey selector
                     return false;
-                if (livingEntity instanceof Archae) //<- taken care of by the prey selector
+                if (livingEntity instanceof Atroci) //<- taken care of by the prey selector
                     return false;
                 if (livingEntity instanceof Cat) //<- taken care of by the prey selector
                     return false;
@@ -211,6 +207,8 @@ public class Archae extends TamableAnimal implements IAnimatable {
                 if (livingEntity instanceof Chicken) //<- taken care of by the prey selector
                     return false;
                 if (livingEntity instanceof Pig) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Archae) //<- Raptor Class
                     return false;
                 if (livingEntity instanceof Para)
                     return false;
@@ -428,11 +426,11 @@ public class Archae extends TamableAnimal implements IAnimatable {
     //Generates variant textures
 
     public ResourceLocation getTextureLocation() {
-        return ArchaeModel.Variant.variantFromOrdinal(getVariant()).resourceLocation;
+        return AtrociModel.Variant.variantFromOrdinal(getVariant()).resourceLocation;
     }
 
 
-    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Archae.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Atroci.class, EntityDataSerializers.INT);
 
     public int getVariant(){
         return this.entityData.get(VARIANT);
@@ -461,7 +459,7 @@ public class Archae extends TamableAnimal implements IAnimatable {
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor levelAccessor, DifficultyInstance difficultyInstance, MobSpawnType mobSpawnType, @Nullable SpawnGroupData spawnGroupData, @Nullable CompoundTag compoundTag) {
 
-        setVariant(new Random().nextInt(ArchaeModel.Variant.values().length));
+        setVariant(new Random().nextInt(AtrociModel.Variant.values().length));
 
         return super.finalizeSpawn(levelAccessor, difficultyInstance, mobSpawnType, spawnGroupData, compoundTag);
     }
@@ -472,16 +470,16 @@ public class Archae extends TamableAnimal implements IAnimatable {
 
     @Override
     public boolean canMate(Animal animal) {
-        if (animal == this || !(animal instanceof Archae)) {
+        if (animal == this || !(animal instanceof Atroci)) {
             return false;
         } else {
-            return this.canBeParent() && ((Archae)animal).canBeParent();
+            return this.canBeParent() && ((Atroci)animal).canBeParent();
         }
     }
 
     @Override
-    public Archae getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
-        return EntityTypes.ARCHAE_ENTITY.get().create(level);
+    public Atroci getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
+        return EntityTypes.ATROCI_ENTITY.get().create(level);
     }
 
     @Override

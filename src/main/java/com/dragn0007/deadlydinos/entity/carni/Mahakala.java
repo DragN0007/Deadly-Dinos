@@ -1,7 +1,7 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
 import com.dragn0007.deadlydinos.client.model.MahakalaModel;
-import com.dragn0007.deadlydinos.entity.herbi.Ava;
+import com.dragn0007.deadlydinos.entity.herbi.*;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
@@ -152,6 +152,18 @@ public class Mahakala extends ShoulderRidingEntity implements IAnimatable {
                 if (livingEntity instanceof Car)
                     return false;
                 if (livingEntity instanceof CarFlipped)
+                    return false;
+                if (livingEntity instanceof Atroci)
+                    return false;
+                if (livingEntity instanceof Andal)
+                    return false;
+                if (livingEntity instanceof Grypo)
+                    return false;
+                if (livingEntity instanceof Amarga)
+                    return false;
+                if (livingEntity instanceof Ampelo)
+                    return false;
+                if (livingEntity instanceof Para)
                     return false;
 
                 //Vanilla

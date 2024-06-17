@@ -25,6 +25,10 @@
   "item.deadlydinos.archae_spawn_egg": "Archaeopteryx Spawn Egg",
   "item.deadlydinos.archaetrophy": "Archae Feather Trophy",
 
+  "entity.deadlydinos.atroci_entity": "Atrociraptor",
+  "item.deadlydinos.atroci_spawn_egg": "Atrociraptor Spawn Egg",
+  "item.deadlydinos.atrocitrophy": "Atrociraptor Claw Trophy",
+
   "entity.deadlydinos.australo_entity": "Australovenator",
   "item.deadlydinos.australo_spawn_egg": "Australovenator Spawn Egg",
   "item.deadlydinos.australotrophy": "Australo Claw Trophy",
@@ -151,6 +155,10 @@
   "entity.deadlydinos.ampelo_entity": "Ampelosaurus",
   "item.deadlydinos.ampelo_spawn_egg": "Ampelosaurus Spawn Egg",
   "item.deadlydinos.ampelotrophy": "Ampelo Spike Trophy",
+
+  "entity.deadlydinos.edmonto_entity": "Edmontosaurus",
+  "item.deadlydinos.edmonto_spawn_egg": "Edmontosaurus Spawn Egg",
+  "item.deadlydinos.edmontotrophy": "Edmonto Claw Trophy",
 
 
 

@@ -1,10 +1,7 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
 import com.dragn0007.deadlydinos.client.model.AndalModel;
-import com.dragn0007.deadlydinos.entity.herbi.Amarga;
-import com.dragn0007.deadlydinos.entity.herbi.Ampelo;
-import com.dragn0007.deadlydinos.entity.herbi.Ava;
-import com.dragn0007.deadlydinos.entity.herbi.Grypo;
+import com.dragn0007.deadlydinos.entity.herbi.*;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
@@ -82,6 +79,7 @@ public class Andal extends TamableAnimal implements IAnimatable {
                         || entitytype == EntityTypes.AMARGA_ENTITY.get()
                         || entitytype == EntityTypes.AMPELO_ENTITY.get()
                         || entitytype == EntityTypes.YUTY_ENTITY.get()
+                        || entitytype == EntityTypes.ATROCI_ENTITY.get()
                         || entitytype == EntityType.PLAYER
                         || entitytype == EntityType.CAT
                         || entitytype == EntityType.WOLF
@@ -213,6 +211,8 @@ public class Andal extends TamableAnimal implements IAnimatable {
                 if (livingEntity instanceof Chicken) //<- taken care of by the prey selector
                     return false;
                 if (livingEntity instanceof Pig) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Para)
                     return false;
                 return true;
             }

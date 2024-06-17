@@ -157,6 +157,12 @@ public class EntityTypes {
                     .sized(0.8f,1.8f)
                     .build(new ResourceLocation(MODID,"australo").toString()));
 
+    public static final RegistryObject<EntityType<Atroci>> ATROCI_ENTITY = ENTITY_TYPES.register("atroci_entity",
+            () -> EntityType.Builder.of(Atroci::new,
+                            MobCategory.CREATURE)
+                    .sized(0.5f,1f)
+                    .build(new ResourceLocation(MODID,"atroci").toString()));
+
 
 
 
@@ -239,6 +245,13 @@ public class EntityTypes {
                             MobCategory.CREATURE)
                     .sized(2f,2.5f)
                     .build(new ResourceLocation(MODID,"pachyr").toString()));
+
+    public static final RegistryObject<EntityType<Edmonto>> EDMONTO_ENTITY = ENTITY_TYPES.register("edmonto_entity",
+            () -> EntityType.Builder.of(Edmonto::new,
+                            MobCategory.CREATURE)
+                    .sized(2f,4.5f)
+                    .build(new ResourceLocation(MODID,"edmonto").toString()));
+
 
 
 
