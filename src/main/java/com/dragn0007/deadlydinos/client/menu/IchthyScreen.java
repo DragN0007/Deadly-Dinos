@@ -10,7 +10,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 public class IchthyScreen extends AbstractContainerScreen<IchthyMenu> {
-
     private static final ResourceLocation SADDLED = new ResourceLocation(DeadlyDinos.MODID, "textures/gui/grypo_gui.png");
     private static final ResourceLocation CHESTED = new ResourceLocation(DeadlyDinos.MODID, "textures/gui/ichthy_gui.png");
 
