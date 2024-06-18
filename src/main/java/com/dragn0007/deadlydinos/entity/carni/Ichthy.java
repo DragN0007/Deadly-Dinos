@@ -1,7 +1,10 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
+import com.dragn0007.deadlydinos.client.menu.IchthyMenu;
+import com.dragn0007.deadlydinos.client.menu.ParaMenu;
 import com.dragn0007.deadlydinos.client.model.IchthyModel;
 import com.dragn0007.deadlydinos.client.model.SpinoModel;
+import com.dragn0007.deadlydinos.entity.Chestable;
 import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
 import com.dragn0007.deadlydinos.entity.ai.DinoWeakMeleeGoal;
 import com.dragn0007.deadlydinos.entity.herbi.*;
@@ -14,16 +17,18 @@ import com.dragn0007.deadlydinos.util.DDDTags;
 import com.google.common.collect.Sets;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.*;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -49,6 +54,9 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.pathfinder.AmphibiousNodeEvaluator;
 import net.minecraft.world.level.pathfinder.PathFinder;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.items.wrapper.InvWrapper;
+import net.minecraftforge.network.NetworkHooks;
 import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -65,14 +73,20 @@ import java.util.Random;
 import java.util.Set;
 import java.util.function.Predicate;
 
-public class Ichthy extends TamableAnimal implements IAnimatable {
+public class Ichthy extends TamableAnimal implements ContainerListener, IAnimatable, Chestable {
 
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
     public Ichthy(EntityType<? extends Ichthy> entityType, Level level) {
         super(entityType, level);
         this.noCulling = true;
+        this.updateInventory();
     }
+
+    private static final EntityDataAccessor<Boolean> CHESTED = SynchedEntityData.defineId(Para.class, EntityDataSerializers.BOOLEAN);
+
+    public SimpleContainer inventory;
+    private LazyOptional<?> itemHandler = null;
 
     @Override
     public Vec3 getLeashOffset() {
@@ -98,6 +112,7 @@ public class Ichthy extends TamableAnimal implements IAnimatable {
     protected boolean canRandomSwim() {
         return true;
     }
+
     static class SpinoSwimGoal extends RandomSwimmingGoal {
         private final Ichthy spino;
         public SpinoSwimGoal(Ichthy p_27505_) {
@@ -251,6 +266,25 @@ public class Ichthy extends TamableAnimal implements IAnimatable {
 
                     this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
                     return InteractionResult.SUCCESS;
+
+                } else if(itemstack.is(Items.CHEST) && this.isChestable()) {
+                    // equip chest
+                    this.setChested(true);
+                    this.equipChest(SoundSource.NEUTRAL);
+                    this.updateInventory();
+                    return InteractionResult.sidedSuccess(this.level.isClientSide);
+
+                } else if(!this.level.isClientSide) {
+                    if (p_30412_.isShiftKeyDown()) {
+                        // open chest inventory
+                        NetworkHooks.openGui((ServerPlayer) p_30412_, new SimpleMenuProvider((containerId, inventory, serverPlayer) -> {
+                            return new IchthyMenu(containerId, inventory, this.inventory, this);
+                        }, this.getDisplayName()), (data) -> {
+                            data.writeInt(this.getInventorySize());
+                            data.writeInt(this.getId());
+                        });
+                        return InteractionResult.SUCCESS;
+                    }
                 }
 
                 if (!(item instanceof DyeItem)) {
@@ -388,12 +422,47 @@ public class Ichthy extends TamableAnimal implements IAnimatable {
         if(compoundNBT.contains("Variant")) {
             setVariant(compoundNBT.getInt("Variant"));
         }
+
+        if(compoundNBT.contains("Chested")) {
+            this.setChested(compoundNBT.getBoolean("Chested"));
+        }
+
+        this.updateInventory();
+        if(this.isChested()) {
+            ListTag listTag = compoundNBT.getList("Items", 10);
+
+            for(int i = 0; i < listTag.size(); i++) {
+                CompoundTag compoundTag = listTag.getCompound(i);
+                int j = compoundTag.getByte("Slot") & 255;
+                if(j < this.inventory.getContainerSize()) {
+                    this.inventory.setItem(j, ItemStack.of(compoundTag));
+                }
+            }
+        }
+
     }
 
     @Override
     public void addAdditionalSaveData(CompoundTag compoundNBT) {
         super.addAdditionalSaveData(compoundNBT);
         compoundNBT.putInt("Variant", getVariant());
+
+        compoundNBT.putBoolean("Chested", this.isChested());
+
+        if(this.isChested()) {
+            ListTag listTag = new ListTag();
+
+            for(int i = 0; i < this.inventory.getContainerSize(); i++) {
+                ItemStack itemStack = this.inventory.getItem(i);
+                if(!itemStack.isEmpty()) {
+                    CompoundTag compoundTag = new CompoundTag();
+                    compoundTag.putByte("Slot", (byte) i);
+                    itemStack.save(compoundTag);
+                    listTag.add(compoundTag);
+                }
+            }
+            compoundNBT.put("Items", listTag);
+        }
     }
 
 
@@ -406,17 +475,89 @@ public class Ichthy extends TamableAnimal implements IAnimatable {
         return super.finalizeSpawn(levelAccessor, difficultyInstance, mobSpawnType, spawnGroupData, compoundTag);
     }
 
-    @Nullable
-    @Override
-    public AgeableMob getBreedOffspring(ServerLevel p_241840_1_, AgeableMob p_241840_2_) {
-        return null;
+    public boolean canBeParent() {
+        return !this.isBaby() && this.getHealth() >= this.getMaxHealth() && this.isInLove();
     }
 
+    @Override
+    public boolean canMate(Animal animal) {
+        if (animal == this || !(animal instanceof Ichthy)) {
+            return false;
+        } else {
+            return this.canBeParent() && ((Ichthy)animal).canBeParent();
+        }
+    }
+
+    @Override
+    public Ichthy getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
+        return EntityTypes.ICHTHY_ENTITY.get().create(level);
+    }
 
     @Override
     protected void defineSynchedData(){
         super.defineSynchedData();
         this.entityData.define(VARIANT, 0);
+        this.entityData.define(CHESTED, false);
     }
 
+
+
+    @Override
+    public boolean isChestable() {
+        return this.isAlive() && !this.isBaby() && this.isTame();
+    }
+
+    @Override
+    public void equipChest(@Nullable SoundSource soundSource) {
+        if(soundSource != null) {
+            this.level.playSound(null, this, SoundEvents.MULE_CHEST, soundSource, 0.5f, 1f);
+        }
+    }
+
+    private int getInventorySize() {
+        return this.isChested() ? 51 : 1;
+    }
+
+    private void updateInventory() {
+        SimpleContainer tempInventory = this.inventory;
+        this.inventory = new SimpleContainer(this.getInventorySize());
+
+        if(tempInventory != null) {
+            tempInventory.removeListener(this);
+            int maxSize = Math.min(tempInventory.getContainerSize(), this.inventory.getContainerSize());
+
+            for(int i = 0; i < maxSize; i++) {
+                ItemStack itemStack = tempInventory.getItem(i);
+                if(!itemStack.isEmpty()) {
+                    this.inventory.setItem(i, itemStack.copy());
+                }
+            }
+        }
+        this.inventory.addListener(this);
+        this.itemHandler = LazyOptional.of(() -> new InvWrapper(this.inventory));
+    }
+
+    @Override
+    protected void dropEquipment() {
+        if(!this.level.isClientSide) {
+            super.dropEquipment();
+            if(this.isChested()) {
+                this.spawnAtLocation(Items.CHEST);
+            }
+            Containers.dropContents(this.level, this, this.inventory);
+        }
+    }
+
+    @Override
+    public boolean isChested() {
+        return this.entityData.get(CHESTED);
+    }
+
+    private void setChested(boolean chested) {
+        this.entityData.set(CHESTED, chested);
+    }
+
+    @Override
+    public void containerChanged(Container container) {
+    }
 }

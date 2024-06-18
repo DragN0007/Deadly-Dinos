@@ -6,6 +6,7 @@ import com.dragn0007.deadlydinos.block.DDDBlocksDataGen;
 import com.dragn0007.deadlydinos.client.gui.DDDMenuTypes;
 import com.dragn0007.deadlydinos.client.menu.AmargaScreen;
 import com.dragn0007.deadlydinos.client.menu.GrypoScreen;
+import com.dragn0007.deadlydinos.client.menu.IchthyScreen;
 import com.dragn0007.deadlydinos.client.menu.ParaScreen;
 import com.dragn0007.deadlydinos.client.render.*;
 import com.dragn0007.deadlydinos.entity.carni.*;
@@ -352,6 +353,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         MenuScreens.register(DDDMenuTypes.GRYPO_MENU.get(), GrypoScreen::new);
         MenuScreens.register(DDDMenuTypes.AMARGA_MENU.get(), AmargaScreen::new);
         MenuScreens.register(DDDMenuTypes.PARA_MENU.get(), ParaScreen::new);
+        MenuScreens.register(DDDMenuTypes.ICHTHY_MENU.get(), IchthyScreen::new);
     }
 }
 
