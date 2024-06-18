@@ -117,31 +117,8 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
         this.playSound(SoundEvents.POLAR_BEAR_STEP, 0.15F, 1.0F);
     }
 
-
-    public static final Predicate<LivingEntity> PREY_SELECTOR = (p_30437_) -> {
-        EntityType<?> entitytype = p_30437_.getType();
-        return
-                entitytype == EntityTypes.ARCHAE_ENTITY.get()
-                        || entitytype == EntityTypes.AVA_ENTITY.get()
-                        || entitytype == EntityTypes.ALLO_ENTITY.get()
-                        || entitytype == EntityTypes.ANDAL_ENTITY.get()
-                        || entitytype == EntityTypes.GRYPO_ENTITY.get()
-                        || entitytype == EntityTypes.AMARGA_ENTITY.get()
-                        || entitytype == EntityTypes.AMPELO_ENTITY.get()
-                        || entitytype == EntityTypes.YUTY_ENTITY.get()
-                        || entitytype == EntityTypes.PARA_ENTITY.get()
-                        || entitytype == EntityTypes.ATROCI_ENTITY.get()
-                        || entitytype == EntityType.PLAYER
-                        || entitytype == EntityType.CAT
-                        || entitytype == EntityType.WOLF
-                        || entitytype == EntityType.HORSE
-                        || entitytype == EntityType.MULE
-                        || entitytype == EntityType.DONKEY
-                        || entitytype == EntityType.SHEEP
-                        || entitytype == EntityType.COW
-                        || entitytype == EntityType.CHICKEN
-                        || entitytype == EntityType.PIG
-                ;
+    public static final Predicate<LivingEntity> PREY_SELECTOR = (entity) -> {
+        return !(entity instanceof TamableAnimal && ((TamableAnimal) entity).isTame()) && entity.getType() != EntityType.PLAYER;
     };
 
     protected void registerGoals() {
@@ -182,43 +159,7 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
                     return false;
                 if (livingEntity instanceof Dolphin)
                     return false;
-                if (livingEntity instanceof Yuty) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Player) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Ava) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Cerato) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Andal) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Grypo) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Amarga) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Ampelo) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Archae) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Cat) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Wolf) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Horse) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Mule) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Donkey) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Sheep) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Cow) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Chicken) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Pig) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Para)
+                if (livingEntity instanceof TamableAnimal) //<- taken care of by the prey selector
                     return false;
                 return true;
             }

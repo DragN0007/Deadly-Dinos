@@ -163,6 +163,12 @@ public class EntityTypes {
                     .sized(0.5f,1f)
                     .build(new ResourceLocation(MODID,"atroci").toString()));
 
+    public static final RegistryObject<EntityType<Ichthy>> ICHTHY_ENTITY = ENTITY_TYPES.register("ichthy_entity",
+            () -> EntityType.Builder.of(Ichthy::new,
+                            MobCategory.CREATURE)
+                    .sized(1.5f,2.5f)
+                    .build(new ResourceLocation(MODID,"ichthy").toString()));
+
 
 
 

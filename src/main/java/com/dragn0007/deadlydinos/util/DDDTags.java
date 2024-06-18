@@ -21,9 +21,14 @@ public class DDDTags {
 
         public static final TagKey<Item> MEATS = forgeTag("meats");
         public static final TagKey<Item> VEGETABLES = forgeTag("vegetables");
+        public static final TagKey<Item> FISH = forgeTag("fish");
 
         public static final TagKey<Item> BONES = forgeTag("bones");
         public static final TagKey<Item> DOUGH = forgeTag("dough");
+
+
+        public static final TagKey<Item> ICHTHY_FOOD = tag("ichthy_food");
+
 
 
         private static TagKey<Item> tag (String name) {
@@ -37,6 +42,7 @@ public class DDDTags {
 
         public static class Blocks {
             public static final TagKey<Block> DESERT_DINO_SPAWNABLE_ON = tag("desert_dino_spawnable_on");
+
 
 
             private static TagKey<Block> tag (String name) {

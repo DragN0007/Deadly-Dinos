@@ -27,10 +27,7 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.*;
 import net.minecraft.world.entity.animal.*;
 import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.entity.decoration.ArmorStand;
@@ -94,6 +91,10 @@ public class Mahakala extends ShoulderRidingEntity implements IAnimatable {
                 ;
     }
 
+    public static final Predicate<LivingEntity> PREY_SELECTOR = (entity) -> {
+        return !(entity instanceof TamableAnimal && ((TamableAnimal) entity).isTame()) && entity.getType() != EntityType.PLAYER;
+    };
+
     @Override
     public float getStepHeight() {
         return 1.6f;
@@ -111,6 +112,8 @@ public class Mahakala extends ShoulderRidingEntity implements IAnimatable {
         this.goalSelector.addGoal(3, new LeapAtTargetGoal(this, 0.7f));
         this.targetSelector.addGoal(0, new OwnerHurtByTargetGoal(this));
         this.targetSelector.addGoal(0, new OwnerHurtTargetGoal(this));
+
+        this.targetSelector.addGoal(1, new NonTameRandomTargetGoal<>(this, LivingEntity.class, false, PREY_SELECTOR));
 
         this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
@@ -153,17 +156,9 @@ public class Mahakala extends ShoulderRidingEntity implements IAnimatable {
                     return false;
                 if (livingEntity instanceof CarFlipped)
                     return false;
-                if (livingEntity instanceof Atroci)
+                if (livingEntity instanceof Player)
                     return false;
-                if (livingEntity instanceof Andal)
-                    return false;
-                if (livingEntity instanceof Grypo)
-                    return false;
-                if (livingEntity instanceof Amarga)
-                    return false;
-                if (livingEntity instanceof Ampelo)
-                    return false;
-                if (livingEntity instanceof Para)
+                if (livingEntity instanceof TamableAnimal) //<- taken care of by the prey selector
                     return false;
 
                 //Vanilla
