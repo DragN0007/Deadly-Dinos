@@ -36,6 +36,7 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> GALLI_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> GIGA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> GRYPO_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> ICHTHY_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> MAHAKALA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> MAJUNGA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> PACHYR_WEIGHT;
@@ -151,6 +152,9 @@ public class DeadlyDinosCommonConfig {
 
         GRYPO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
                 .define("GRYPO Spawn Weight", 2);
+
+        ICHTHY_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
+                .define("ICHTHY Spawn Weight", 1);
 
         MAHAKALA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 8.")
                 .define("MAHAKALA Spawn Weight", 8);

@@ -139,6 +139,13 @@ public class DinoSpawnGeneration {
                 Biomes.WINDSWEPT_GRAVELLY_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.STONY_PEAKS
         );
 
+        addEntityToSpecificBiomes(event, EntityTypes.ICHTHY_ENTITY.get(),
+                DeadlyDinosCommonConfig.ICHTHY_WEIGHT.get(), 1, 1,
+                Biomes.SWAMP,
+                Biomes.BEACH,
+                Biomes.RIVER
+        );
+
         addEntityToSpecificBiomes(event, EntityTypes.MAHAKALA_ENTITY.get(),
                 DeadlyDinosCommonConfig.MAHAKALA_WEIGHT.get(), 1, 3,
                 Biomes.TAIGA, Biomes.SNOWY_TAIGA,  Biomes.OLD_GROWTH_SPRUCE_TAIGA,

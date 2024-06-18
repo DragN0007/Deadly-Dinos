@@ -39,6 +39,8 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.ATROCI_SPAWN_EGG.get());
         simpleItem(DDDItems.EDMONTOTROPHY.get());
         simpleItem(DDDItems.EDMONTO_SPAWN_EGG.get());
+        simpleItem(DDDItems.ICHTHYTROPHY.get());
+        simpleItem(DDDItems.ICHTHY_SPAWN_EGG.get());
 
 //        simpleItem(DDDItems.ARCHAE_HARNESS.get());
         simpleItem(DDDItems.DINO_NUGGET_1.get());

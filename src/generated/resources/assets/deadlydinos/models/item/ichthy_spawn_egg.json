@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "deadlydinos:item/ichthy_spawn_egg"
+  }
+}

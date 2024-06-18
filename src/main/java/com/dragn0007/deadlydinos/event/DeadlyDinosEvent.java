@@ -71,6 +71,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         event.put(EntityTypes.AMPELO_ENTITY.get(), Ampelo.createAttributes().build());
         event.put(EntityTypes.PACHYR_ENTITY.get(), Pachyr.createAttributes().build());
         event.put(EntityTypes.EDMONTO_ENTITY.get(), Edmonto.createAttributes().build());
+        event.put(EntityTypes.ICHTHY_ENTITY.get(), Ichthy.createAttributes().build());
 
         event.put(EntityTypes.CAR_ENTITY.get(), Car.createAttributes().build());
         event.put(EntityTypes.CARSIDE_ENTITY.get(), CarSide.createAttributes().build());
@@ -198,6 +199,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
                         SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Atroci::checkAnimalSpawnRules);
 
+        SpawnPlacements.register
+                (EntityTypes.ICHTHY_ENTITY.get(),
+                        SpawnPlacements.Type.ON_GROUND,
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Ichthy::checkAnimalSpawnRules);
+
 
 
         SpawnPlacements.register
@@ -303,6 +309,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         EntityRenderers.register(EntityTypes.CRYO_ENTITY.get(), CryoRender::new);
         EntityRenderers.register(EntityTypes.AUSTRALO_ENTITY.get(), AustraloRender::new);
         EntityRenderers.register(EntityTypes.ATROCI_ENTITY.get(), AtrociRender::new);
+        EntityRenderers.register(EntityTypes.ICHTHY_ENTITY.get(), IchthyRender::new);
 
         EntityRenderers.register(EntityTypes.CROPSNAIL_ENTITY.get(), CropSnailRender::new);
         EntityRenderers.register(EntityTypes.AMARGA_ENTITY.get(), AmargaRender::new);

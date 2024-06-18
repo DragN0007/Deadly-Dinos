@@ -74,6 +74,8 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.AUSTRALO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> ATROCI_SPAWN_EGG = ITEMS.register("atroci_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.ATROCI_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> ICHTHY_SPAWN_EGG = ITEMS.register("ichthy_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.ICHTHY_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
     //HERBIVORE SPAWN EGGS
@@ -509,6 +511,11 @@ public class DDDItems {
                     new MobEffectInstance(MobEffects.REGENERATION, 2880, 3, true, false),
                     new MobEffectInstance(MobEffects.ABSORPTION, 2880, 3, true, false)
             ));
+    public static final RegistryObject<TrophyItem> ICHTHYTROPHY = ITEMS.register("ichthytrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2880, 1,true, false),
+                    new MobEffectInstance(MobEffects.WATER_BREATHING, 2880, 3, true, false)
+            ));
     public static final RegistryObject<TrophyItem> MAHAKALATROPHY = ITEMS.register("mahakalatrophy",
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.LUCK, 2880, 5,true, false),
@@ -550,8 +557,6 @@ public class DDDItems {
                     new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2880, 2,true, false),
                     new MobEffectInstance(MobEffects.ABSORPTION, 2880, 3, true, false)
             ));
-
-
     public static final RegistryObject<TrophyItem> AMARGATROPHY = ITEMS.register("amargatrophy",
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2880, 2,true, false),
