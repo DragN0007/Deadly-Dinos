@@ -33,6 +33,12 @@ public class YutyRender extends ExtendedGeoEntityRenderer<Yuty> {
             model.getBone("Saddle3").ifPresent(b -> b.setHidden(true));
         }
 
+        if(animatable.isChested()) {
+            model.getBone("Harness").ifPresent(b -> b.setHidden(false));
+        } else {
+            model.getBone("Harness").ifPresent(b -> b.setHidden(true));
+        }
+
         if(animatable.isBaby()) {
             poseStack.scale(0.5F, 0.5F, 0.5F);
         } else {
