@@ -76,7 +76,7 @@ public class Ichthy extends TamableAnimal implements ContainerListener, IAnimata
         this.updateInventory();
     }
 
-    private static final EntityDataAccessor<Boolean> CHESTED = SynchedEntityData.defineId(Para.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> CHESTED = SynchedEntityData.defineId(Ichthy.class, EntityDataSerializers.BOOLEAN);
 
     public SimpleContainer inventory;
     private LazyOptional<?> itemHandler = null;
