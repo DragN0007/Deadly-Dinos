@@ -260,6 +260,13 @@ public class DinoSpawnGeneration {
                 Biomes.RIVER
         );
 
+        addEntityToSpecificBiomes(event, EntityTypes.EDMONTO_ENTITY.get(),
+                DeadlyDinosCommonConfig.EDMONTO_WEIGHT.get(), 1, 3,
+                Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS,
+                Biomes.SWAMP,
+                Biomes.BEACH
+        );
+
         addEntityToSpecificBiomes(event, EntityTypes.GALLI_ENTITY.get(),
                 DeadlyDinosCommonConfig.GALLI_WEIGHT.get(), 2, 3,
                 Biomes.BADLANDS, Biomes.WOODED_BADLANDS,
@@ -277,11 +284,12 @@ public class DinoSpawnGeneration {
                 Biomes.SNOWY_PLAINS, Biomes.SNOWY_BEACH, Biomes.SNOWY_SLOPES
         );
 
-        addEntityToSpecificBiomes(event, EntityTypes.EDMONTO_ENTITY.get(),
-                DeadlyDinosCommonConfig.EDMONTO_WEIGHT.get(), 1, 3,
+        addEntityToSpecificBiomes(event, EntityTypes.IGUA_ENTITY.get(),
+                DeadlyDinosCommonConfig.IGUA_WEIGHT.get(), 1, 2,
                 Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS,
                 Biomes.SWAMP,
-                Biomes.BEACH
+                Biomes.BEACH,
+                Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU
         );
 
         addEntityToSpecificBiomes(event, EntityTypes.PACHYR_ENTITY.get(),

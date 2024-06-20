@@ -1,8 +1,6 @@
 package com.dragn0007.deadlydinos.client.render;
 
 import com.dragn0007.deadlydinos.client.model.IchthyModel;
-import com.dragn0007.deadlydinos.client.model.IchthyModel;
-import com.dragn0007.deadlydinos.entity.carni.Ichthy;
 import com.dragn0007.deadlydinos.entity.carni.Ichthy;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

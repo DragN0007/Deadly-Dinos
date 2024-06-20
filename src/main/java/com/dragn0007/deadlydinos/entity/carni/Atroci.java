@@ -1,8 +1,6 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
-import com.dragn0007.deadlydinos.client.model.ArchaeModel;
 import com.dragn0007.deadlydinos.client.model.AtrociModel;
-import com.dragn0007.deadlydinos.entity.herbi.*;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
@@ -29,10 +27,8 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.*;
-import net.minecraft.world.entity.animal.*;
-import net.minecraft.world.entity.animal.horse.Donkey;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.horse.Horse;
-import net.minecraft.world.entity.animal.horse.Mule;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeItem;

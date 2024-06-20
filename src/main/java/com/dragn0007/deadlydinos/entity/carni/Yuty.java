@@ -1,11 +1,9 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
-import com.dragn0007.deadlydinos.client.menu.ParaMenu;
 import com.dragn0007.deadlydinos.client.menu.YutyMenu;
 import com.dragn0007.deadlydinos.client.model.YutyModel;
 import com.dragn0007.deadlydinos.entity.Chestable;
 import com.dragn0007.deadlydinos.entity.ai.DinoWeakMeleeGoal;
-import com.dragn0007.deadlydinos.entity.herbi.*;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
@@ -30,10 +28,10 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.*;
-import net.minecraft.world.entity.animal.*;
-import net.minecraft.world.entity.animal.horse.Donkey;
-import net.minecraft.world.entity.animal.horse.Horse;
-import net.minecraft.world.entity.animal.horse.Mule;
+import net.minecraft.world.entity.animal.AbstractFish;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Dolphin;
+import net.minecraft.world.entity.animal.Squid;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.DismountHelper;

@@ -258,6 +258,12 @@ public class EntityTypes {
                     .sized(2f,4.5f)
                     .build(new ResourceLocation(MODID,"edmonto").toString()));
 
+    public static final RegistryObject<EntityType<Igua>> IGUA_ENTITY = ENTITY_TYPES.register("igua_entity",
+            () -> EntityType.Builder.of(Igua::new,
+                            MobCategory.CREATURE)
+                    .sized(2f,4f)
+                    .build(new ResourceLocation(MODID,"igua").toString()));
+
 
 
 

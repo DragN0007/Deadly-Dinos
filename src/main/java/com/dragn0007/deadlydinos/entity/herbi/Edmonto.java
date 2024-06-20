@@ -1,8 +1,6 @@
 package com.dragn0007.deadlydinos.entity.herbi;
 
 import com.dragn0007.deadlydinos.client.model.EdmontoModel;
-import com.dragn0007.deadlydinos.client.model.ShantModel;
-import com.dragn0007.deadlydinos.entity.ai.DestroyCropsGoal;
 import com.dragn0007.deadlydinos.entity.ai.DestroyWaterPlantsGoal;
 import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
 import net.minecraft.core.BlockPos;

@@ -53,6 +53,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         event.put(EntityTypes.CRYO_ENTITY.get(), Cryo.createAttributes().build());
         event.put(EntityTypes.AUSTRALO_ENTITY.get(), Australo.createAttributes().build());
         event.put(EntityTypes.ATROCI_ENTITY.get(), Atroci.createAttributes().build());
+        event.put(EntityTypes.ICHTHY_ENTITY.get(), Ichthy.createAttributes().build());
 
         event.put(EntityTypes.CROPSNAIL_ENTITY.get(), CropSnail.createAttributes().build());
         event.put(EntityTypes.AMARGA_ENTITY.get(), Amarga.createAttributes().build());
@@ -69,7 +70,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         event.put(EntityTypes.AMPELO_ENTITY.get(), Ampelo.createAttributes().build());
         event.put(EntityTypes.PACHYR_ENTITY.get(), Pachyr.createAttributes().build());
         event.put(EntityTypes.EDMONTO_ENTITY.get(), Edmonto.createAttributes().build());
-        event.put(EntityTypes.ICHTHY_ENTITY.get(), Ichthy.createAttributes().build());
+        event.put(EntityTypes.IGUA_ENTITY.get(), Igua.createAttributes().build());
 
         event.put(EntityTypes.CAR_ENTITY.get(), Car.createAttributes().build());
         event.put(EntityTypes.CARSIDE_ENTITY.get(), CarSide.createAttributes().build());
@@ -278,6 +279,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
                 (EntityTypes.EDMONTO_ENTITY.get(),
                         SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Edmonto::checkAnimalSpawnRules);
+
+        SpawnPlacements.register
+                (EntityTypes.IGUA_ENTITY.get(),
+                        SpawnPlacements.Type.ON_GROUND,
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Igua::checkAnimalSpawnRules);
     }
 
     @SubscribeEvent
@@ -324,6 +330,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         EntityRenderers.register(EntityTypes.AMPELO_ENTITY.get(), AmpeloRender::new);
         EntityRenderers.register(EntityTypes.PACHYR_ENTITY.get(), PachyrRender::new);
         EntityRenderers.register(EntityTypes.EDMONTO_ENTITY.get(), EdmontoRender::new);
+        EntityRenderers.register(EntityTypes.IGUA_ENTITY.get(), IguaRender::new);
 
         EntityRenderers.register(EntityTypes.CAR_ENTITY.get(), CarRender::new);
         EntityRenderers.register(EntityTypes.CARSIDE_ENTITY.get(), CarSideRender::new);
@@ -352,6 +359,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         MenuScreens.register(DDDMenuTypes.PARA_MENU.get(), ParaScreen::new);
         MenuScreens.register(DDDMenuTypes.ICHTHY_MENU.get(), IchthyScreen::new);
         MenuScreens.register(DDDMenuTypes.YUTY_MENU.get(), YutyScreen::new);
+        MenuScreens.register(DDDMenuTypes.IGUA_MENU.get(), IguaScreen::new);
     }
 }
 

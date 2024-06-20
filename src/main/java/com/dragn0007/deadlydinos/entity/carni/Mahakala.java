@@ -1,7 +1,7 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
 import com.dragn0007.deadlydinos.client.model.MahakalaModel;
-import com.dragn0007.deadlydinos.entity.herbi.*;
+import com.dragn0007.deadlydinos.entity.herbi.Ava;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
