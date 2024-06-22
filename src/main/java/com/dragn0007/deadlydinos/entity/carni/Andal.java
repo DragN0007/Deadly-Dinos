@@ -62,7 +62,16 @@ public class Andal extends TamableAnimal implements IAnimatable {
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
     public static final Predicate<LivingEntity> PREY_SELECTOR = (entity) -> {
-        return !(entity instanceof TamableAnimal && ((TamableAnimal) entity).isTame()) && entity.getType() != EntityType.PLAYER;
+        if (entity instanceof TamableAnimal && ((TamableAnimal) entity).isTame()) {
+            return false;
+        }
+        if (entity.getType() == EntityType.PLAYER) {
+            return false;
+        }
+        if (entity.getType() == EntityTypes.ANDAL_ENTITY.get()) {
+            return false;
+        }
+        return true;
     };
 
     public Andal(EntityType<? extends TamableAnimal> entityType, Level level) {
