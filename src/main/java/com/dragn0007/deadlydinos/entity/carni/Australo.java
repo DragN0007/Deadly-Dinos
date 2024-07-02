@@ -74,6 +74,8 @@ public class Australo extends Animal implements IAnimatable {
                 ;
     }
 
+
+
     @Override
     public float getStepHeight() {
         return 2f;

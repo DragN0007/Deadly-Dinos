@@ -27,7 +27,8 @@ public class DDDTags {
         public static final TagKey<Item> DOUGH = forgeTag("dough");
 
 
-        public static final TagKey<Item> ICHTHY_FOOD = tag("ichthy_food");
+        public static final TagKey<Item> SEMI_AQUATIC_FOOD = tag("semi_aquatic_food");
+        public static final TagKey<Item> HERBI_FOOD = tag("herbi_food");
 
 
 

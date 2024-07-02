@@ -7,7 +7,7 @@ modId="deadlydinos"
 version="${1.18.2-2.1}"
 displayName="DragN's Deadly Dinos"
 logoFile="ddd.png"
-credits="EvangeliX, code helper. Dominic, bone item artist. Emi, bug tester. Neko, criticism. I owe you guys the world." #optional
+credits="EvangeliX, code helper. Dominic, bone item artist. Emi, bug tester. Neko, criticism. I owe you guys the world."
 authors="DragN0007"
 description='''
 Adds aggressive, prehistoric creatures to your world. Build a strong base to survive.

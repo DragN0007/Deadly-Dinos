@@ -89,7 +89,7 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
 
     private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(Grypo.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> CHESTED = SynchedEntityData.defineId(Grypo.class, EntityDataSerializers.BOOLEAN);
-    private static final Ingredient FOOD_ITEMS = Ingredient.of(DDDTags.Items.VEGETABLES);
+    private static final Ingredient FOOD_ITEMS = Ingredient.of(DDDTags.Items.HERBI_FOOD);
 
     public SimpleContainer inventory;
     private LazyOptional<?> itemHandler = null;
@@ -235,8 +235,8 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
         } else if(this.isFood(itemStack) && !this.level.isClientSide) {
             this.usePlayerItem(player, hand, itemStack);
 
-            // try to tame (33% chance to succeed)
-            if(this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
+            // try to tame (20% chance to succeed)
+            if (this.random.nextInt(2) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
                 this.tame(player);
                 return InteractionResult.SUCCESS;
             }

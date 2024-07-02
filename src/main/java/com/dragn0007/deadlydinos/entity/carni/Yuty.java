@@ -77,7 +77,7 @@ public class Yuty extends TamableAnimal implements ContainerListener, Saddleable
 
     private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(Yuty.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> CHESTED = SynchedEntityData.defineId(Yuty.class, EntityDataSerializers.BOOLEAN);
-    private static final Ingredient FOOD_ITEMS = Ingredient.of(DDDTags.Items.MEATS);
+    private static final Ingredient FOOD_ITEMS = Ingredient.of(DDDTags.Items.RAW_DINO_MEATS);
 
     public SimpleContainer inventory;
     private LazyOptional<?> itemHandler = null;
@@ -278,8 +278,8 @@ public class Yuty extends TamableAnimal implements ContainerListener, Saddleable
         } else if(this.isFood(itemStack) && !this.level.isClientSide) {
             this.usePlayerItem(player, hand, itemStack);
 
-            // try to tame (33% chance to succeed)
-            if(this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
+            // try to tame (20% chance to succeed)
+            if (this.random.nextInt(2) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
                 this.tame(player);
                 return InteractionResult.SUCCESS;
             }

@@ -4,7 +4,6 @@ import com.dragn0007.deadlydinos.client.menu.IchthyMenu;
 import com.dragn0007.deadlydinos.client.model.IchthyModel;
 import com.dragn0007.deadlydinos.entity.Chestable;
 import com.dragn0007.deadlydinos.entity.ai.DinoWeakMeleeGoal;
-import com.dragn0007.deadlydinos.entity.herbi.Para;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
@@ -239,7 +238,7 @@ public class Ichthy extends TamableAnimal implements ContainerListener, IAnimata
 
     //Tameable Entity
     private static final Set<Item> TAME_FOOD = Sets.newHashSet(Items.TURTLE_EGG);
-    private static final Ingredient FOOD_ITEMS = Ingredient.of(DDDTags.Items.ICHTHY_FOOD);
+    private static final Ingredient FOOD_ITEMS = Ingredient.of(DDDTags.Items.SEMI_AQUATIC_FOOD);
 
     public boolean isFood(ItemStack p_28271_) {
         return FOOD_ITEMS.test(p_28271_);
@@ -300,7 +299,7 @@ public class Ichthy extends TamableAnimal implements ContainerListener, IAnimata
                     itemstack.shrink(1);
                 }
 
-                if (this.random.nextInt(3) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, p_30412_)) {
+                if (this.random.nextInt(2) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, p_30412_)) {
                     this.tame(p_30412_);
                     this.navigation.stop();
                     this.setTarget((LivingEntity)null);

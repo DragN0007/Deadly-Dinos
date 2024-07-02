@@ -163,8 +163,8 @@ public class Andal extends TamableAnimal implements IAnimatable {
 
 
     //Tameable Entity
-    private static final Set<Item> TAME_FOOD = Sets.newHashSet(Items.MUTTON, Items.PORKCHOP, Items.CHICKEN, Items.BEEF, Items.EGG, DDDItems.RAWSMALLMEAT.get(), DDDItems.RAWMEDIUMMEAT.get(), DDDItems.RAWLARGEMEAT.get());
-    private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.MUTTON, Items.PORKCHOP, Items.CHICKEN, Items.BEEF, Items.EGG, DDDItems.RAWSMALLMEAT.get(), DDDItems.RAWMEDIUMMEAT.get(), DDDItems.RAWLARGEMEAT.get());
+    private static final Set<Item> TAME_FOOD = Sets.newHashSet(Items.EGG);
+    private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.EGG);
     public boolean isFood(ItemStack p_28271_) {
         return FOOD_ITEMS.test(p_28271_);
     }
@@ -205,7 +205,7 @@ public class Andal extends TamableAnimal implements IAnimatable {
                     itemstack.shrink(1);
                 }
 
-                if (this.random.nextInt(3) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, p_30412_)) {
+                if (this.random.nextInt(2) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, p_30412_)) {
                     this.tame(p_30412_);
                     this.navigation.stop();
                     this.setTarget((LivingEntity)null);
