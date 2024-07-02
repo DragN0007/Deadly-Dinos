@@ -159,6 +159,8 @@ public class Atroci extends TamableAnimal implements IAnimatable {
                     return false;
                 if (livingEntity instanceof TamableAnimal) //<- taken care of by the prey selector
                     return false;
+                if (livingEntity instanceof Player) //<- taken care of by the prey selector
+                    return false;
                 return true;
             }
         }));

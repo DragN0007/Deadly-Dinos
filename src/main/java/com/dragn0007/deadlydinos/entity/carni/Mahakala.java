@@ -165,9 +165,9 @@ public class Mahakala extends ShoulderRidingEntity implements IAnimatable {
                     return false;
                 if (livingEntity instanceof CarFlipped)
                     return false;
-                if (livingEntity instanceof Player)
-                    return false;
                 if (livingEntity instanceof TamableAnimal) //<- taken care of by the prey selector
+                    return false;
+                if (livingEntity instanceof Player) //<- taken care of by the prey selector
                     return false;
 
                 //Vanilla
@@ -186,8 +186,6 @@ public class Mahakala extends ShoulderRidingEntity implements IAnimatable {
                 if (livingEntity instanceof Creeper)
                     return false;
                 if (livingEntity instanceof Skeleton)
-                    return false;
-                if (livingEntity instanceof Player)
                     return false;
                 if (livingEntity instanceof ArmorStand)
                     return false;
