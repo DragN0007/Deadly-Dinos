@@ -6,6 +6,7 @@ import com.dragn0007.deadlydinos.util.DDDTags;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -19,6 +20,28 @@ public class DDDRecipeMaker extends RecipeProvider implements IConditionBuilder 
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
+
+        ShapelessRecipeBuilder.shapeless(Items.BONE_MEAL, 4)
+                .requires(DDDTags.Items.LARGE_BONES)
+                .unlockedBy("has_bone", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(DDDTags.Items.LARGE_BONES)
+                        .build()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "large_bonemeal"));
+
+        ShapelessRecipeBuilder.shapeless(Items.BONE_MEAL, 3)
+                .requires(DDDTags.Items.MEDIUM_BONES)
+                .unlockedBy("has_bone", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(DDDTags.Items.MEDIUM_BONES)
+                        .build()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "medium_bonemeal"));
+
+        ShapelessRecipeBuilder.shapeless(Items.BONE_MEAL, 2)
+                .requires(DDDTags.Items.SMALL_BONES)
+                .unlockedBy("has_bone", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(DDDTags.Items.SMALL_BONES)
+                        .build()))
+                .save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "small_bonemeal"));
+
 
         ShapelessRecipeBuilder.shapeless(DDDItems.DINO_ROAST.get())
                 .requires(DDDTags.Items.MEATS)

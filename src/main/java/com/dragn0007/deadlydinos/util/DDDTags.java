@@ -30,6 +30,10 @@ public class DDDTags {
         public static final TagKey<Item> SEMI_AQUATIC_FOOD = tag("semi_aquatic_food");
         public static final TagKey<Item> HERBI_FOOD = tag("herbi_food");
 
+        public static final TagKey<Item> LARGE_BONES = tag("large_bones");
+        public static final TagKey<Item> MEDIUM_BONES = tag("medium_bones");
+        public static final TagKey<Item> SMALL_BONES = tag("small_bones");
+
 
 
         private static TagKey<Item> tag (String name) {

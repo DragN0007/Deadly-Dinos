@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "deadlydinos:medcarnitooth",
+    "deadlydinos:medcarniskull",
+    "deadlydinos:medcarniribs",
+    "deadlydinos:medcarniclaw",
+    "deadlydinos:medcarnitail",
+    "deadlydinos:medraptorclaw",
+    "deadlydinos:medcarnispine",
+    "deadlydinos:medcarnileg",
+
+    "deadlydinos:medherbitooth",
+    "deadlydinos:medherbiskull",
+    "deadlydinos:medherbiribs",
+    "deadlydinos:medherbiclaw",
+    "deadlydinos:medherbitail",
+    "deadlydinos:medherbispine",
+    "deadlydinos:medherbileg"
+  ]
+}

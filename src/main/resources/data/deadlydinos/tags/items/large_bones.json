@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "deadlydinos:largecarnitooth",
+    "deadlydinos:largecarniskull",
+    "deadlydinos:largecarniribs",
+    "deadlydinos:largecarniclaw",
+    "deadlydinos:largecarnitail",
+    "deadlydinos:largecarnispine",
+    "deadlydinos:largecarnileg",
+
+    "deadlydinos:largeherbitooth",
+    "deadlydinos:largeherbiskull",
+    "deadlydinos:largeherbiribs",
+    "deadlydinos:largeherbiclaw",
+    "deadlydinos:largeherbitail",
+    "deadlydinos:largeherbispine",
+    "deadlydinos:largeherbileg"
+  ]
+}
