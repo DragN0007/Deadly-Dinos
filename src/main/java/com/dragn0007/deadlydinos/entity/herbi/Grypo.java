@@ -530,7 +530,7 @@ public class Grypo extends TamableAnimal implements ContainerListener, Saddleabl
 
     @Nullable
     public Entity getControllingPassenger() {
-        return this.getFirstPassenger();
+        return this.getOwner();
     }
 
     @Nullable

@@ -352,29 +352,6 @@ public class Amarga extends TamableAnimal implements ContainerListener, Saddleab
     }
 
 
-    @Override
-    public void positionRider(Entity entity) {
-        if (this.hasPassenger(entity)) {
-
-            double offsetX = 0;
-            double offsetY = 3.4;
-            double offsetZ = -0.5;
-
-            double radYaw = Math.toRadians(this.getYRot());
-
-            double offsetXRotated = offsetX * Math.cos(radYaw) - offsetZ * Math.sin(radYaw);
-            double offsetYRotated = offsetY;
-            double offsetZRotated = offsetX * Math.sin(radYaw) + offsetZ * Math.cos(radYaw);
-
-            double x = this.getX() + offsetXRotated;
-            double y = this.getY() + offsetYRotated;
-            double z = this.getZ() + offsetZRotated;
-
-            entity.setPos(x, y, z);
-        }
-    }
-
-
     private int getInventorySize() {
         return this.isChested() ? 51 : 1;
     }
@@ -527,9 +504,40 @@ public class Amarga extends TamableAnimal implements ContainerListener, Saddleab
         }
     }
 
+    private Vec3 calcOffset ( double x, double y, double z){
+        double rad = this.getYRot() * Math.PI / 180;
+
+        double xOffset = this.position().x + (x * Math.cos(rad) - z * Math.sin(rad));
+        double yOffset = this.position().y + y;
+        double zOffset = this.position().z + (x * Math.sin(rad) + z * Math.cos(rad));
+
+        return new Vec3(xOffset, yOffset, zOffset);
+    }
+
+    @Override
+    protected boolean canAddPassenger(Entity entity) {
+        return this.getPassengers().size() < 3;
+    }
+
+    @Override
+    public void positionRider(Entity entity) {
+        int i = this.getPassengers().indexOf(entity);
+        switch (i) {
+            case 0:
+                entity.setPos(this.calcOffset(0, 3.4, -0.5));
+                break;
+            case 1:
+                entity.setPos(this.calcOffset(-1, 3, -2));
+                break;
+            case 2:
+                entity.setPos(this.calcOffset(1, 3, -2));
+                break;
+        }
+    }
+
     @Nullable
     public Entity getControllingPassenger() {
-        return this.getFirstPassenger();
+        return this.getOwner();
     }
 
     @Nullable

@@ -434,7 +434,7 @@ public class Ava extends TamableAnimal implements ContainerListener, Saddleable,
 
     @Nullable
     public Entity getControllingPassenger() {
-        return this.getFirstPassenger();
+        return this.getOwner();
     }
 
     @Nullable
