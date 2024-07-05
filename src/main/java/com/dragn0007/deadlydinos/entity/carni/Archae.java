@@ -120,7 +120,7 @@ public class Archae extends TamableAnimal implements IAnimatable {
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25D));
 
-        this.goalSelector.addGoal(0, new AvoidEntityGoal<>(this, LivingEntity.class, 15.0F, 2.0D, 2.0D, livingEntity
+        this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, LivingEntity.class, 15.0F, 2.0D, 2.0D, livingEntity
                 -> livingEntity instanceof Austro
                 || livingEntity instanceof Acro
                 || livingEntity instanceof Alberto
@@ -129,7 +129,7 @@ public class Archae extends TamableAnimal implements IAnimatable {
                 || livingEntity instanceof Spino
         ));
 
-        this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
                 if (livingEntity instanceof Archae)

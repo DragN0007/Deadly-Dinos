@@ -130,7 +130,7 @@ public class Atroci extends TamableAnimal implements IAnimatable {
                 || livingEntity instanceof Spino
         ));
 
-        this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
                 if (livingEntity instanceof Atroci)
