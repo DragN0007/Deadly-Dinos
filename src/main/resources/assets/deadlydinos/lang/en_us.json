@@ -15,10 +15,12 @@
 
   "entity.deadlydinos.allo_entity": "Allosaurus",
   "item.deadlydinos.allo_spawn_egg": "Allosaurus Spawn Egg",
+  "item.deadlydinos.allo_egg": "Allosaurus Egg",
   "item.deadlydinos.allotrophy": "Allo Crest Trophy",
 
   "entity.deadlydinos.andal_entity": "Andalgalornis",
   "item.deadlydinos.andal_spawn_egg": "Andalgalornis Spawn Egg",
+  "item.deadlydinos.andal_egg": "Andalgalornis Egg",
   "item.deadlydinos.andaltrophy": "Andal Claw Trophy",
 
   "entity.deadlydinos.archae_entity": "Archaeopteryx",
@@ -47,6 +49,7 @@
 
   "entity.deadlydinos.cerato_entity": "Ceratosaurus",
   "item.deadlydinos.cerato_spawn_egg": "Ceratosaurus Spawn Egg",
+  "item.deadlydinos.cerato_egg": "Ceratosaurus Egg",
   "item.deadlydinos.ceratotrophy": "Cerato Crest Trophy",
 
   "entity.deadlydinos.cryo_entity": "Cryolophosaurus",
@@ -71,6 +74,7 @@
 
   "entity.deadlydinos.ichthy_entity": "Ichthyovenator",
   "item.deadlydinos.ichthy_spawn_egg": "Ichthyovenator Spawn Egg",
+  "item.deadlydinos.ichthy_egg": "Ichthyovenator Egg",
   "item.deadlydinos.ichthytrophy": "Ichthy Tooth Trophy",
 
   "entity.deadlydinos.mahakala_entity": "Mahakala",
@@ -103,10 +107,12 @@
 
   "entity.deadlydinos.yuty_entity": "Yutyrannus",
   "item.deadlydinos.yuty_spawn_egg": "Yutyrannus Spawn Egg",
+  "item.deadlydinos.yuty_egg": "Yutyrannus Egg",
   "item.deadlydinos.yutytrophy": "Yuty Tooth Trophy",
 
   "entity.deadlydinos.amarga_entity": "Amargasaurus",
   "item.deadlydinos.amarga_spawn_egg": "Amargasaurus Spawn Egg",
+  "item.deadlydinos.amarga_egg": "Amargasaurus Egg",
   "item.deadlydinos.amargatrophy": "Amarga Spine Trophy",
 
   "entity.deadlydinos.cropsnail_entity": "Giant Crop Snail",
@@ -118,6 +124,7 @@
 
   "entity.deadlydinos.para_entity": "Parasaurolophus",
   "item.deadlydinos.para_spawn_egg": "Parasaurolophus Spawn Egg",
+  "item.deadlydinos.para_egg": "Parasaurolophus Egg",
   "item.deadlydinos.paratrophy": "Para Crest Trophy",
 
   "entity.deadlydinos.theri_entity": "Therizinosaurus",
@@ -154,10 +161,12 @@
 
   "entity.deadlydinos.grypo_entity": "Gryposaurus",
   "item.deadlydinos.grypo_spawn_egg": "Gryposaurus Spawn Egg",
+  "item.deadlydinos.grypo_egg": "Gryposaurus Egg",
   "item.deadlydinos.grypotrophy": "Grypo Crest Trophy",
 
   "entity.deadlydinos.ampelo_entity": "Ampelosaurus",
   "item.deadlydinos.ampelo_spawn_egg": "Ampelosaurus Spawn Egg",
+  "item.deadlydinos.ampelo_egg": "Ampelosaurus Egg",
   "item.deadlydinos.ampelotrophy": "Ampelo Spike Trophy",
 
   "entity.deadlydinos.edmonto_entity": "Edmontosaurus",
@@ -166,6 +175,7 @@
 
   "entity.deadlydinos.igua_entity": "Iguanodon",
   "item.deadlydinos.igua_spawn_egg": "Iguanodon Spawn Egg",
+  "item.deadlydinos.igua_egg": "Iguanodon Egg",
   "item.deadlydinos.iguatrophy": "Iguanodon Claw Trophy",
 
 

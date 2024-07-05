@@ -149,7 +149,7 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
 
         this.goalSelector.addGoal(1, new WaterAvoidingRandomStrollGoal(this, 1));
 
-        this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
                 if (livingEntity instanceof Mahakala)
@@ -268,10 +268,18 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
                 this.doPlayerRide(player);
                 return InteractionResult.SUCCESS;
             }
-        } else if (this.isFood(itemStack) && !this.level.isClientSide) {
-            // try to tame (20% chance to succeed)
-            if (this.random.nextInt(2) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
+        } else if (this.isFood(itemStack) && !this.level.isClientSide && this.isBaby()) {
+            this.usePlayerItem(player, hand, itemStack);
+            // try to tame (33% chance to succeed)
+            if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
                 this.tame(player);
+                return InteractionResult.SUCCESS;
+            }
+
+            if(this.isBaby()) {
+                // grow baby
+                this.ageUp(itemStack.getFoodProperties(this).getNutrition());
+                this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
                 return InteractionResult.SUCCESS;
             }
         }

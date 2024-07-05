@@ -44,6 +44,17 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.IGUATROPHY.get());
         simpleItem(DDDItems.IGUA_SPAWN_EGG.get());
 
+        simpleItem(DDDItems.IGUA_EGG.get());
+        simpleItem(DDDItems.ICHTHY_EGG.get());
+        simpleItem(DDDItems.GRYPO_EGG.get());
+        simpleItem(DDDItems.AMPELO_EGG.get());
+        simpleItem(DDDItems.AMARGA_EGG.get());
+        simpleItem(DDDItems.CERATO_EGG.get());
+        simpleItem(DDDItems.ALLO_EGG.get());
+        simpleItem(DDDItems.YUTY_EGG.get());
+        simpleItem(DDDItems.PARA_EGG.get());
+        simpleItem(DDDItems.ANDAL_EGG.get());
+
 //        simpleItem(DDDItems.ARCHAE_HARNESS.get());
         simpleItem(DDDItems.DINO_NUGGET_1.get());
         simpleItem(DDDItems.DINO_NUGGET_2.get());

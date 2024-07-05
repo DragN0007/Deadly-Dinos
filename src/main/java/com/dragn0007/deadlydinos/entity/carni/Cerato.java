@@ -270,12 +270,18 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
                 this.doPlayerRide(player);
                 return InteractionResult.SUCCESS;
             }
-        } else if (this.isFood(itemStack) && !this.level.isClientSide) {
+        } else if (this.isFood(itemStack) && !this.level.isClientSide && this.isBaby()) {
             this.usePlayerItem(player, hand, itemStack);
-
-            // try to tame (20% chance to succeed)
-            if (this.random.nextInt(2) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
+            // try to tame (33% chance to succeed)
+            if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
                 this.tame(player);
+                return InteractionResult.SUCCESS;
+            }
+
+            if(this.isBaby()) {
+                // grow baby
+                this.ageUp(itemStack.getFoodProperties(this).getNutrition());
+                this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
                 return InteractionResult.SUCCESS;
             }
         }

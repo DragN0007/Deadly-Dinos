@@ -47,6 +47,7 @@ import net.minecraft.world.level.pathfinder.AmphibiousNodeEvaluator;
 import net.minecraft.world.level.pathfinder.PathFinder;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.items.wrapper.InvWrapper;
 import net.minecraftforge.network.NetworkHooks;
 import software.bernie.geckolib3.core.AnimationState;
@@ -117,7 +118,16 @@ public class Ichthy extends TamableAnimal implements ContainerListener, IAnimata
     }
 
     public static final Predicate<LivingEntity> PREY_SELECTOR = (entity) -> {
-        return !(entity instanceof TamableAnimal && ((TamableAnimal) entity).isTame()) && entity.getType() != EntityType.PLAYER;
+        if (entity instanceof TamableAnimal && ((TamableAnimal) entity).isTame()) {
+            return false;
+        }
+        if (entity.getType() == EntityType.PLAYER) {
+            return false;
+        }
+        if (entity.getType() == EntityTypes.ICHTHY_ENTITY.get()) {
+            return false;
+        }
+        return true;
     };
 
     @Override
@@ -150,7 +160,7 @@ public class Ichthy extends TamableAnimal implements ContainerListener, IAnimata
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25D));
 
-        this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
                 if (livingEntity instanceof Mahakala)
@@ -244,17 +254,17 @@ public class Ichthy extends TamableAnimal implements ContainerListener, IAnimata
         return FOOD_ITEMS.test(p_28271_);
     }
 
-    public InteractionResult mobInteract(Player p_30412_, InteractionHand p_30413_) {
-        ItemStack itemstack = p_30412_.getItemInHand(p_30413_);
+    public InteractionResult mobInteract(Player player, InteractionHand hand) {
+        ItemStack itemstack = player.getItemInHand(hand);
         Item item = itemstack.getItem();
         if (this.level.isClientSide) {
-            boolean flag = this.isOwnedBy(p_30412_) || this.isTame() || TAME_FOOD.contains(itemstack.getItem()) && !this.isTame();
+            boolean flag = this.isOwnedBy(player) || this.isTame() || TAME_FOOD.contains(itemstack.getItem()) && !this.isTame();
             return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
         } else {
             if (this.isTame()) {
                 if (this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
                     this.heal((float)itemstack.getFoodProperties(this).getNutrition());
-                    if (!p_30412_.getAbilities().instabuild) {
+                    if (!player.getAbilities().instabuild) {
                         itemstack.shrink(1);
                     }
 
@@ -269,9 +279,9 @@ public class Ichthy extends TamableAnimal implements ContainerListener, IAnimata
                     return InteractionResult.sidedSuccess(this.level.isClientSide);
 
                 } else if(!this.level.isClientSide) {
-                    if (p_30412_.isShiftKeyDown()) {
+                    if (player.isShiftKeyDown()) {
                         // open chest inventory
-                        NetworkHooks.openGui((ServerPlayer) p_30412_, new SimpleMenuProvider((containerId, inventory, serverPlayer) -> {
+                        NetworkHooks.openGui((ServerPlayer) player, new SimpleMenuProvider((containerId, inventory, serverPlayer) -> {
                             return new IchthyMenu(containerId, inventory, this.inventory, this);
                         }, this.getDisplayName()), (data) -> {
                             data.writeInt(this.getInventorySize());
@@ -282,8 +292,8 @@ public class Ichthy extends TamableAnimal implements ContainerListener, IAnimata
                 }
 
                 if (!(item instanceof DyeItem)) {
-                    InteractionResult interactionresult = super.mobInteract(p_30412_, p_30413_);
-                    if ((!interactionresult.consumesAction() || this.isBaby()) && this.isOwnedBy(p_30412_)) {
+                    InteractionResult interactionresult = super.mobInteract(player, hand);
+                    if ((!interactionresult.consumesAction() || this.isBaby()) && this.isOwnedBy(player)) {
                         this.setOrderedToSit(!this.isOrderedToSit());
                         this.jumping = false;
                         this.navigation.stop();
@@ -294,25 +304,22 @@ public class Ichthy extends TamableAnimal implements ContainerListener, IAnimata
                     return interactionresult;
                 }
 
-            } else if (TAME_FOOD.contains(itemstack.getItem())) {
-                if (!p_30412_.getAbilities().instabuild) {
-                    itemstack.shrink(1);
+            } else if (this.isFood(itemstack) && !this.level.isClientSide && this.isBaby()) {
+                this.usePlayerItem(player, hand, itemstack);
+                // try to tame (33% chance to succeed)
+                if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
+                    this.tame(player);
+                    return InteractionResult.SUCCESS;
                 }
 
-                if (this.random.nextInt(2) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, p_30412_)) {
-                    this.tame(p_30412_);
-                    this.navigation.stop();
-                    this.setTarget((LivingEntity)null);
-                    this.setOrderedToSit(true);
-                    this.level.broadcastEntityEvent(this, (byte)7);
-                } else {
-                    this.level.broadcastEntityEvent(this, (byte)6);
+                if(this.isBaby()) {
+                    // grow baby
+                    this.ageUp(itemstack.getFoodProperties(this).getNutrition());
+                    this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
+                    return InteractionResult.SUCCESS;
                 }
-
-                return InteractionResult.SUCCESS;
             }
-
-            return super.mobInteract(p_30412_, p_30413_);
+            return InteractionResult.sidedSuccess(this.level.isClientSide);
         }
     }
 

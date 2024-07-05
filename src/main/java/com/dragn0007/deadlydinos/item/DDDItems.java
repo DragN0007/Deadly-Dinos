@@ -2,6 +2,7 @@ package com.dragn0007.deadlydinos.item;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
+import com.dragn0007.deadlydinos.item.custom.DinoEggItem;
 import com.dragn0007.deadlydinos.item.custom.SodaItem;
 import com.dragn0007.deadlydinos.item.custom.TrophyItem;
 import com.dragn0007.deadlydinos.item.util.DDDArmorMaterial;
@@ -22,6 +23,30 @@ public class DDDItems {
 
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, DeadlyDinos.MODID);
+
+    //EGGS
+    public static final RegistryObject<Item> CERATO_EGG = ITEMS.register("cerato_egg",
+            () -> new DinoEggItem(EntityTypes.CERATO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> YUTY_EGG = ITEMS.register("yuty_egg",
+            () -> new DinoEggItem(EntityTypes.YUTY_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> ALLO_EGG = ITEMS.register("allo_egg",
+            () -> new DinoEggItem(EntityTypes.ALLO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> ICHTHY_EGG = ITEMS.register("ichthy_egg",
+            () -> new DinoEggItem(EntityTypes.ICHTHY_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> ANDAL_EGG = ITEMS.register("andal_egg",
+            () -> new DinoEggItem(EntityTypes.ANDAL_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
+
+    public static final RegistryObject<Item> AMARGA_EGG = ITEMS.register("amarga_egg",
+            () -> new DinoEggItem(EntityTypes.AMARGA_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> AMPELO_EGG = ITEMS.register("ampelo_egg",
+            () -> new DinoEggItem(EntityTypes.AMPELO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> GRYPO_EGG = ITEMS.register("grypo_egg",
+            () -> new DinoEggItem(EntityTypes.GRYPO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> PARA_EGG = ITEMS.register("para_egg",
+            () -> new DinoEggItem(EntityTypes.PARA_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> IGUA_EGG = ITEMS.register("igua_egg",
+            () -> new DinoEggItem(EntityTypes.IGUA_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
+
 
 
 

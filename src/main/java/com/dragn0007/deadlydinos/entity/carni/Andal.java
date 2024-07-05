@@ -40,6 +40,7 @@ import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.ForgeEventFactory;
 import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -126,7 +127,7 @@ public class Andal extends TamableAnimal implements IAnimatable {
         this.goalSelector.addGoal(2, new BreedGoal(this, 1.0D));
         this.goalSelector.addGoal(4, new FollowParentGoal(this, 1.25D));
 
-        this.goalSelector.addGoal(0, new AvoidEntityGoal<>(this, LivingEntity.class, 15.0F, 2.0D, 2.0D, livingEntity
+        this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, LivingEntity.class, 15.0F, 2.0D, 2.0D, livingEntity
                 -> livingEntity instanceof Acro
                 || livingEntity instanceof Alberto
                 || livingEntity instanceof Giga
@@ -134,7 +135,7 @@ public class Andal extends TamableAnimal implements IAnimatable {
                 || livingEntity instanceof Spino
         ));
 
-        this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
                 if (livingEntity instanceof Andal)
@@ -169,17 +170,17 @@ public class Andal extends TamableAnimal implements IAnimatable {
         return FOOD_ITEMS.test(p_28271_);
     }
 
-    public InteractionResult mobInteract(Player p_30412_, InteractionHand p_30413_) {
-        ItemStack itemstack = p_30412_.getItemInHand(p_30413_);
+    public InteractionResult mobInteract(Player player, InteractionHand hand) {
+        ItemStack itemstack = player.getItemInHand(hand);
         Item item = itemstack.getItem();
         if (this.level.isClientSide) {
-            boolean flag = this.isOwnedBy(p_30412_) || this.isTame() || TAME_FOOD.contains(itemstack.getItem()) && !this.isTame();
+            boolean flag = this.isOwnedBy(player) || this.isTame() || TAME_FOOD.contains(itemstack.getItem()) && !this.isTame();
             return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
         } else {
             if (this.isTame()) {
                 if (this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
-                    this.heal((float)itemstack.getFoodProperties(this).getNutrition());
-                    if (!p_30412_.getAbilities().instabuild) {
+                    this.heal((float) itemstack.getFoodProperties(this).getNutrition());
+                    if (!player.getAbilities().instabuild) {
                         itemstack.shrink(1);
                     }
 
@@ -188,37 +189,34 @@ public class Andal extends TamableAnimal implements IAnimatable {
                 }
 
                 if (!(item instanceof DyeItem)) {
-                    InteractionResult interactionresult = super.mobInteract(p_30412_, p_30413_);
-                    if ((!interactionresult.consumesAction() || this.isBaby()) && this.isOwnedBy(p_30412_)) {
+                    InteractionResult interactionresult = super.mobInteract(player, hand);
+                    if ((!interactionresult.consumesAction() || this.isBaby()) && this.isOwnedBy(player)) {
                         this.setOrderedToSit(!this.isOrderedToSit());
                         this.jumping = false;
                         this.navigation.stop();
-                        this.setTarget((LivingEntity)null);
+                        this.setTarget((LivingEntity) null);
                         return InteractionResult.SUCCESS;
                     }
 
                     return interactionresult;
                 }
 
-            } else if (TAME_FOOD.contains(itemstack.getItem())) {
-                if (!p_30412_.getAbilities().instabuild) {
-                    itemstack.shrink(1);
+            } else if (this.isFood(itemstack) && !this.level.isClientSide && this.isBaby()) {
+                this.usePlayerItem(player, hand, itemstack);
+                // try to tame (33% chance to succeed)
+                if (this.random.nextInt(3) == 0 && !ForgeEventFactory.onAnimalTame(this, player)) {
+                    this.tame(player);
+                    return InteractionResult.SUCCESS;
                 }
 
-                if (this.random.nextInt(2) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, p_30412_)) {
-                    this.tame(p_30412_);
-                    this.navigation.stop();
-                    this.setTarget((LivingEntity)null);
-                    this.setOrderedToSit(true);
-                    this.level.broadcastEntityEvent(this, (byte)7);
-                } else {
-                    this.level.broadcastEntityEvent(this, (byte)6);
+                if (this.isBaby()) {
+                    // grow baby
+                    this.ageUp(itemstack.getFoodProperties(this).getNutrition());
+                    this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
+                    return InteractionResult.SUCCESS;
                 }
-
-                return InteractionResult.SUCCESS;
             }
-
-            return super.mobInteract(p_30412_, p_30413_);
+            return InteractionResult.sidedSuccess(this.level.isClientSide);
         }
     }
 
