@@ -1,0 +1,387 @@
+{
+  "French translation by Haseeb": "Thank You!",
+
+  "itemGroup.blockmodtab": "Bloques Deadly Dinos",
+  "itemGroup.foodmodtab": "Aliments Deadly Dinos",
+  "itemGroup.dinomodtab": "Entités Deadly Dinos",
+  "itemGroup.dddmodtab": "Articles Deadly Dinos",
+
+
+  "item.deadlydinos.acro_spawn_egg": "Œuf d'apparition d'Acrocanthosaure",
+  "entity.deadlydinos.acro_entity": "Acrocanthosaure",
+  "item.deadlydinos.acrotrophy": "Trophée Dent d'Acro", 
+
+  "entity.deadlydinos.alberto_entity": "Albertosaure",
+  "item.deadlydinos.alberto_spawn_egg": "Œuf d'apparition d'Albertosaure",
+  "item.deadlydinos.albertotrophy": "Trophée Dent d'Alberto",
+
+  "entity.deadlydinos.allo_entity": "Allosaure",
+  "item.deadlydinos.allo_spawn_egg": "Œuf d'apparition d'Allosaure",
+  "item.deadlydinos.allo_egg": "Œuf d'Allosaure",
+  "item.deadlydinos.allotrophy": "Trophée Poitrine d'Allosaure",
+
+  "entity.deadlydinos.andal_entity": "Andalgalornis",
+  "item.deadlydinos.andal_spawn_egg": "Œuf d'apparition d'Andalgalornis",
+  "item.deadlydinos.andal_egg": "Œuf d'Andalgalornis",
+  "item.deadlydinos.andaltrophy": "Trophée Griffe d'Andal",
+
+  "entity.deadlydinos.archae_entity": "Archéoptéryx",
+  "item.deadlydinos.archae_spawn_egg": "Œuf d'apparition d'Archéoptéryx",
+  "item.deadlydinos.archaetrophy": "Trophée Plume d'Arché",
+
+  "entity.deadlydinos.atroci_entity": "Atrociraptor",
+  "item.deadlydinos.atroci_spawn_egg": "Œuf d'apparition d'Atrociraptor",
+  "item.deadlydinos.atrocitrophy": "Trophée Griffe d'Atroci",
+
+  "entity.deadlydinos.australo_entity": "Australovenator",
+  "item.deadlydinos.australo_spawn_egg": "Œuf d'apparition d'Australovenator",
+  "item.deadlydinos.australotrophy": "Trophée Griffe d'Australo",
+
+  "entity.deadlydinos.austro_entity": "Austroraptor",
+  "item.deadlydinos.austro_spawn_egg": "Œuf d'apparition d'Austroraptor",
+  "item.deadlydinos.austrotrophy": "Trophée Griffe d'Austro",
+
+  "entity.deadlydinos.carchar_entity": "Carcharodontosaure",
+  "item.deadlydinos.carchar_spawn_egg": "Œuf d'apparition de Carcharodontosaure",
+  "item.deadlydinos.carchartrophy": "Trophée Dent de Carchar",
+
+  "entity.deadlydinos.carno_entity": "Carnotaure",
+  "item.deadlydinos.carno_spawn_egg": "Œuf d'apparition de Carnotaure",
+  "item.deadlydinos.carnotrophy": "Trophée Corne de Carno",
+
+  "entity.deadlydinos.cerato_entity": "Ceratosaure",
+  "item.deadlydinos.cerato_spawn_egg": "Œuf d'apparition de Ceratosaure",
+  "item.deadlydinos.cerato_egg": "Œuf de Ceratosaure",
+  "item.deadlydinos.ceratotrophy": "Trophée Crête de Cerato",
+
+  "entity.deadlydinos.cryo_entity": "Cryolophosaure",
+  "item.deadlydinos.cryo_spawn_egg": "Œuf d'apparition de Cryolophosaure",
+  "item.deadlydinos.cryotrophy": "Trophée Dent de Cryo",
+
+  "entity.deadlydinos.compy_entity": "Compsognathus",
+  "item.deadlydinos.compy_spawn_egg": "Œuf d'apparition de Compsognathus",
+  "item.deadlydinos.compytrophy": "Trophée Griffe de Compy",
+
+  "entity.deadlydinos.deinon_entity": "Deinonychus",
+  "item.deadlydinos.deinon_spawn_egg": "Œuf d'apparition de Deinonychus",
+  "item.deadlydinos.deinontrophy": "Trophée Griffe de Deino",
+
+  "entity.deadlydinos.dilo_entity": "Dilophosaure",
+  "item.deadlydinos.dilo_spawn_egg": "Œuf d'apparition de Dilophosaure",
+  "item.deadlydinos.dilotrophy": "Trophée Dent de Dilo",
+
+  "entity.deadlydinos.giga_entity": "Giganotosaure",
+  "item.deadlydinos.giga_spawn_egg": "Œuf d'apparition de Giganotosaure",
+  "item.deadlydinos.gigatrophy": "Trophée Dent de Giga",
+
+  "entity.deadlydinos.ichthy_entity": "Ichthyovenator",
+  "item.deadlydinos.ichthy_spawn_egg": "Œuf d'apparition d'Ichthyovenator",
+  "item.deadlydinos.ichthy_egg": "Œuf d'Ichthyovenator",
+  "item.deadlydinos.ichthytrophy": "Trophée Dent d'Ichthyo",
+
+  "entity.deadlydinos.mahakala_entity": "Mahakala",
+  "item.deadlydinos.mahakala_spawn_egg": "Œuf d'apparition de Mahakala",
+  "item.deadlydinos.mahakalatrophy": "Trophée Plume de Mahakala",
+
+  "entity.deadlydinos.majunga_entity": "Majungasaure",
+  "item.deadlydinos.majunga_spawn_egg": "Œuf d'apparition de Majungasaure",
+  "item.deadlydinos.majungatrophy": "Trophée Dent de Majunga",
+
+  "entity.deadlydinos.spino_entity": "Spinosaure",
+  "item.deadlydinos.spino_spawn_egg": "Œuf d'apparition de Spinosaure",
+  "item.deadlydinos.spinotrophy": "Trophée Voile d'Epine de Spino",
+
+  "entity.deadlydinos.tarbo_entity": "Tarbosaure",
+  "item.deadlydinos.tarbo_spawn_egg": "Œuf d'apparition de Tarbosaure",
+  "item.deadlydinos.tarbotrophy": "Trophée Dent de Tarbo",
+
+  "entity.deadlydinos.troodon_entity": "Troodon",
+  "item.deadlydinos.troodon_spawn_egg": "Œuf d'apparition de Troodon",
+  "item.deadlydinos.troodontrophy": "Trophée Griffe Troodon",
+
+  "entity.deadlydinos.rex_entity": "Tyrannosaurus",
+  "item.deadlydinos.rex_spawn_egg": "Œuf d'apparition de Tyrannosaurus",
+  "item.deadlydinos.rextrophy": "Trophée Dent de Rex",
+
+  "entity.deadlydinos.utah_entity": "Utahraptor",
+  "item.deadlydinos.utah_spawn_egg": "Œuf d'apparition d'Utahraptor",
+  "item.deadlydinos.utahtrophy": "Trophée Griffe d'Utah",
+
+  "entity.deadlydinos.yuty_entity": "Yutyrannus",
+  "item.deadlydinos.yuty_spawn_egg": "Œuf d'apparition de Yutyrannus",
+  "item.deadlydinos.yuty_egg": "Œuf de Yutyrannus",
+  "item.deadlydinos.yutytrophy": "Trophée Dent de Yuty",
+
+  "entity.deadlydinos.amarga_entity": "Amargasaure",
+  "item.deadlydinos.amarga_spawn_egg": "Œuf d'apparition d'Amargasaure",
+  "item.deadlydinos.amarga_egg": "Œuf d'Amargasaurus",
+  "item.deadlydinos.amargatrophy": "Trophée Épine d'Amarga",
+
+  "entity.deadlydinos.cropsnail_entity": "Escargot Africain Géant",
+  "item.deadlydinos.cropsnail_spawn_egg": "Œuf d'apparition d'Escargot Africain Géant",
+
+  "entity.deadlydinos.pachyr_entity": "Pachyrhinosaure",
+  "item.deadlydinos.pachyr_spawn_egg": "Œuf d'apparition de Pachyrhinosaure",
+  "item.deadlydinos.pachyrtrophy": "Trophée Corne de Pachyrhino",
+
+  "entity.deadlydinos.para_entity": "Parasaurolophus",
+  "item.deadlydinos.para_spawn_egg": "Œuf d'apparition de Parasaurolophus",
+  "item.deadlydinos.para_egg": "Œuf de Parasaurolophus",
+  "item.deadlydinos.paratrophy": "Trophée Crête Parasauro",
+
+  "entity.deadlydinos.theri_entity": "Therizinosaure",
+  "item.deadlydinos.theri_spawn_egg": "Œuf d'apparition de Therizinosaure",
+  "item.deadlydinos.theritrophy": "Trophée Griffe de Therizino",
+
+  "entity.deadlydinos.deinoch_entity": "Deinocherius",
+  "item.deadlydinos.deinoch_spawn_egg": "Œuf d'apparition de Deinocherius",
+  "item.deadlydinos.deinochtrophy": "Trophée Griffe de Deinoch",
+
+  "entity.deadlydinos.stego_entity": "Stegosaure",
+  "item.deadlydinos.stego_spawn_egg": "Œuf d'apparition de Stegosaure",
+  "item.deadlydinos.stegotrophy": "Trophée Plat de Stego",
+
+  "entity.deadlydinos.shant_entity": "Shantungosaure",
+  "item.deadlydinos.shant_spawn_egg": "Œuf d'apparition de Shantungosaure",
+  "item.deadlydinos.shanttrophy": "Trophée Épine de Shantu",
+
+  "entity.deadlydinos.galli_entity": "Gallimimus",
+  "item.deadlydinos.galli_spawn_egg": "Œuf d'apparition de Gallimimus",
+  "item.deadlydinos.gallitrophy": "Trophée Plume de Galli",
+
+  "entity.deadlydinos.sauro_entity": "Sauroposéidon",
+  "item.deadlydinos.sauro_spawn_egg": "Œuf d'apparition de Sauroposéidon",
+  "item.deadlydinos.saurotrophy": "Trophée Griffe de Sauro",
+
+  "entity.deadlydinos.anky_entity": "Ankylosaure",
+  "item.deadlydinos.anky_spawn_egg": "Œuf d'apparition d'Ankylosaure",
+  "item.deadlydinos.ankytrophy": "Trophée Armure d'Ankylo",
+
+  "entity.deadlydinos.ava_entity": "Avaceratops",
+  "item.deadlydinos.ava_spawn_egg": "Œuf d'apparition d'Avaceratops",
+  "item.deadlydinos.avatrophy": "Trophée Corne d'Ava",
+
+  "entity.deadlydinos.grypo_entity": "Gryposaure",
+  "item.deadlydinos.grypo_spawn_egg": "Œuf d'apparition de Gryposaure",
+  "item.deadlydinos.grypo_egg": "Œuf de Gryposaure",
+  "item.deadlydinos.grypotrophy": "Trophée Crête de Grypo",
+
+  "entity.deadlydinos.ampelo_entity": "Ampelosaure",
+  "item.deadlydinos.ampelo_spawn_egg": "Œuf d'apparition d'Ampelosaure",
+  "item.deadlydinos.ampelo_egg": "Œuf d'Ampelosaure",
+  "item.deadlydinos.ampelotrophy": "Trophée Pointe d'Ampelo",
+
+  "entity.deadlydinos.edmonto_entity": "Edmontosaure",
+  "item.deadlydinos.edmonto_spawn_egg": "Œuf d'apparition d'Edmontosaure",
+  "item.deadlydinos.edmontotrophy": "Trophée Griffe Edmonto",
+
+  "entity.deadlydinos.igua_entity": "Iguanodon",
+  "item.deadlydinos.igua_spawn_egg": "Œuf d'apparition d'Iguanodon",
+  "item.deadlydinos.igua_egg": "Œuf d'Iguanodon",
+  "item.deadlydinos.iguatrophy": "Trophée Griffe Iguanodon",
+
+
+
+  "item.deadlydinos.archae_harness": "Harnais d'Archéoptéryx avec Sac",
+
+
+
+  "item.deadlydinos.rawsmallmeat": "Petit Viande de Dino Crue",
+  "item.deadlydinos.cookedsmallmeat": "Petit Viande de Dino Cuite",
+  "item.deadlydinos.rawmediummeat": "Moyenne Viande de Dino Crue",
+  "item.deadlydinos.cookedmediummeat": "Moyenne Viande de Dino Cuite",
+  "item.deadlydinos.rawlargemeat": "Grande Viande de Dino Crue",
+  "item.deadlydinos.cookedlargemeat": "Grande Viande de Dino Cuite",
+  "item.deadlydinos.cracker": "Biscuit Salé",
+  "item.deadlydinos.cannedveggies": "Légumes en Conserve",
+  "item.deadlydinos.cannedmeat": "Viande en Conserve",
+  "item.deadlydinos.cannedstew": "Ragoût en Conserve",
+  "item.deadlydinos.dinosandwich": "Sandwich de Viande de Dino",
+  "item.deadlydinos.mre": "MRE Militaire",
+  "item.deadlydinos.soda": "Soda",
+  "item.deadlydinos.alcohol": "Alcool",
+  "item.deadlydinos.tiger_nuts": "Noix Tigrées",
+  "item.deadlydinos.yew_plum": "If Prune",
+  "item.deadlydinos.pbj": "Sandwich au Berre d'Arachides et Confiture Préhistorique",
+  "item.deadlydinos.tiger_nut_butter": "Beurre aux Noix Tigrées",
+  "item.deadlydinos.yew_plum_jam": "Confiture d'If Prune",
+  "item.deadlydinos.glazed_ribs": "Côtes Levées de Dino Glacées aux Prunes",
+  "item.deadlydinos.rawescargot": "Grand Escargot Cru",
+  "item.deadlydinos.cookedescargot": "Grand Escargot Cuit",
+  "item.deadlydinos.dino_nugget_1": "Pépite de Dinosaure Stegosaures",
+  "item.deadlydinos.dino_nugget_2": "Pépite de Dinosaure Sauroposéidon",
+  "item.deadlydinos.dino_nugget_3": "Pépite de Dinosaure T-rex",
+  "item.deadlydinos.smoothie": "Smoothie Préhistorique",
+  "item.deadlydinos.dino_dumpling": "Grand Boulette de Dino",
+  "item.deadlydinos.dino_roast": "Rôti de Viande de Dino",
+  "item.deadlydinos.bone_marrow": "Moelle",
+  "item.deadlydinos.dough": "Pâte à Blé Primitive",
+  "item.deadlydinos.broth": "Soupe Moelle",
+  "item.deadlydinos.chicken_noodle_soup": "Soupe Poulet et Nouilles",
+  "item.deadlydinos.hearty_salad": "Salade Feuillue",
+
+  
+  "item.deadlydinos.smallcarnitooth": "Petit Dent de Carni",
+  "item.deadlydinos.smallcarniskull": "Petite Crâne de Carni",
+  "item.deadlydinos.smallcarniribs": "Petites Côtées de Carni",
+  "item.deadlydinos.smallcarniclaw": "Petite Griffe de Carni",
+  "item.deadlydinos.smallcarnitail": "Petite Queue de Carni",
+  "item.deadlydinos.smallraptorclaw": "Petite Griffe de Raptor",
+  "item.deadlydinos.smallcarnispine": "Petit Épine de Carni",
+  "item.deadlydinos.smallcarnileg": "Petite Jambe de Carni",
+
+  "item.deadlydinos.medcarnitooth": "Moyen Dent de Carni",
+  "item.deadlydinos.medcarniskull": "Moyenne Crâne de Carni",
+  "item.deadlydinos.medcarniribs": "Moyennes Côtées de Carni",
+  "item.deadlydinos.medcarniclaw": "Moyenne Griffe de Carni",
+  "item.deadlydinos.medcarnitail": "Moyenne Queue de Carni",
+  "item.deadlydinos.medraptorclaw": "Moyenne Griffe de Raptor",
+  "item.deadlydinos.medcarnispine": "Moyen Épine de Carni",
+  "item.deadlydinos.medcarnileg": "Moyenne Jambe de Carni",
+
+  "item.deadlydinos.largecarnitooth": "Grand Dent de Carni",
+  "item.deadlydinos.largecarniskull": "Grande Crâne de Carni",
+  "item.deadlydinos.largecarniribs": "Grandes Côtées de Carni",
+  "item.deadlydinos.largecarniclaw": "Grande Griffe de Carni",
+  "item.deadlydinos.largecarnitail": "Grande Queue de Carni",
+  "item.deadlydinos.largeraptorclaw": "Grande Griffe de Raptor",
+  "item.deadlydinos.largecarnispine": "Grande Épine de Carni",
+  "item.deadlydinos.largecarnileg": "Grande Jambe de Carni",
+  
+  "item.deadlydinos.largecarnitooth": "Large Carni Tooth",
+  "item.deadlydinos.largecarniskull": "Large Carni Skull",
+  "item.deadlydinos.largecarniribs": "Large Carni Ribs",
+  "item.deadlydinos.largecarniclaw": "Large Carni Claw",
+  "item.deadlydinos.largecarnitail": "Large Carni Tail",
+  "item.deadlydinos.largecarnispine": "Large Carni Spine",
+  "item.deadlydinos.largecarnileg": "Large Carni Leg",
+
+
+  "item.deadlydinos.smallherbitooth": "Petit Dent d'Herbi",
+  "item.deadlydinos.smallherbiskull": "Petite Crâne d'Herbi",
+  "item.deadlydinos.smallherbiribs": "Petites Côtées d'Herbi",
+  "item.deadlydinos.smallherbiclaw": "Petite Griffe d'Herbi",
+  "item.deadlydinos.smallherbitail": "Petite Queue d'Herbi",
+  "item.deadlydinos.smallherbispine": "Petit Épine d'Herbi",
+  "item.deadlydinos.smallherbileg": "Petite Jambe d'Herbi",
+
+  "item.deadlydinos.medherbitooth": "Moyen Dent d'Herbi",
+  "item.deadlydinos.medherbiskull": "Moyenne Crâne d'Herbi",
+  "item.deadlydinos.medherbiribs": "Moyennes Côtées d'Herbi",
+  "item.deadlydinos.medherbiclaw": "Moyenne Griffe d'Herbi",
+  "item.deadlydinos.medherbitail": "Moyenne Queue d'Herbi",
+  "item.deadlydinos.medherbispine": "Moyen Épine d'Herbi",
+  "item.deadlydinos.medherbileg": "Moyenne Jambe d'Herbi",
+  
+  "item.deadlydinos.largeherbitooth": "Grand Dent d'Herbi",
+  "item.deadlydinos.largeherbiskull": "Grande Crâne d'Herbi",
+  "item.deadlydinos.largeherbiribs": "Grandes Côtées d'Herbi",
+  "item.deadlydinos.largeherbiclaw": "Grande Griffe d'Herbi",
+  "item.deadlydinos.largeherbitail": "Grande Queue d'Herbi",
+  "item.deadlydinos.largeherbispine": "Grand Épine d'Herbi",
+  "item.deadlydinos.largeherbileg": "Grande Jambe d'Herbi",
+  
+
+  "item.deadlydinos.smallbone_sword": "Petite Épée d'Os",
+  "item.deadlydinos.smallbone_pickaxe": "Petite Pioche d'Os",
+  "item.deadlydinos.smallbone_axe": "Petite Hache Small Bone Axe",
+  "item.deadlydinos.smallbone_shovel": "Petite Pelle d'Os Bone Shovel",
+  "item.deadlydinos.smallbone_hoe": "Petite Houe D'Os",
+
+  "item.deadlydinos.medbone_sword": "Moyenne Épée d'Os",
+  "item.deadlydinos.medbone_pickaxe": "Moyenne Pioche d'Os",
+  "item.deadlydinos.medbone_axe": "Moyenne Hache Small Bone Axe",
+  "item.deadlydinos.medbone_shovel": "Moyenne Pelle d'Os Bone Shovel",
+  "item.deadlydinos.medbone_hoe": "Moyenne Houe D'Os",	
+
+  "item.deadlydinos.largebone_sword": "Grande Épée d'Os",
+  "item.deadlydinos.largebone_pickaxe": "Grande Pioche d'Os",
+  "item.deadlydinos.largebone_axe": "Grande Hache Small Bone Axe",
+  "item.deadlydinos.largebone_shovel": "Grande Pelle d'Os Bone Shovel",
+  "item.deadlydinos.largebone_hoe": "Grande Houe D'Os",
+
+  "item.deadlydinos.bowie_knife": "Couteau Bowie",
+  "item.deadlydinos.crowbar": "Pied de Biche",
+
+  
+  "item.deadlydinos.bonenetherite_helmet": "Casque au Netherite Infusé d'Os",
+  "item.deadlydinos.bonenetherite_chestplate": "Plastron au Netherite Infusé d'Os",
+  "item.deadlydinos.bonenetherite_leggings": "Jambières au Netherite Infusé d'Os",
+  "item.deadlydinos.bonenetherite_boots": "Bottes au Netherite Infusé d'Os",
+
+
+  "item.deadlydinos.bonediamond_helmet": "Casque au Diamant Infusé d'Os",
+  "item.deadlydinos.bonediamond_chestplate": "Plastron au Diamant Infusé d'Os",
+  "item.deadlydinos.bonediamond_leggings": "Jambières au Diamant Infusé d'Os",
+  "item.deadlydinos.bonediamond_boots": "Bottes au Diamant Infusé d'Os",
+
+
+  "item.deadlydinos.bonegold_helmet": "Casque en Or Infusé d'Os",
+  "item.deadlydinos.bonegold_chestplate": "Plastron en Or Infusé d'Os",
+  "item.deadlydinos.bonegold_leggings": "Jambières en Or Infusé d'Os",
+  "item.deadlydinos.bonegold_boots": "Bottes en Or Infusé d'Os",
+
+
+  "item.deadlydinos.boneiron_helmet": "Casque au Fer Infusé d'Os",
+  "item.deadlydinos.boneiron_chestplate": "Plastron au Fer Infusé d'Os",
+  "item.deadlydinos.boneiron_leggings": "Jambières au Fer Infusé d'Os",
+  "item.deadlydinos.boneiron_boots": "Bottes au Fer Infusé d'Os",
+
+
+  "block.deadlydinos.dino_gift_box": "Boîte de Cadeau-Dino",
+  "block.deadlydinos.para_plushy_1": "Peluche Parasaurolophus Femme",
+  "block.deadlydinos.para_plushy_2": "Peluche Parasaurolophus Homme",
+  "block.deadlydinos.acro_plushy_1": "Peluche Acrocanthosaurus Femme",
+  "block.deadlydinos.acro_plushy_2": "Peluche Acrocanthosaurus Homme",
+
+
+  "block.deadlydinos.dino_nuggets_box": "Boîte de Pépites de Dino",
+
+  
+  "block.deadlydinos.sequoia_planks": "Planches de Grand Séquoia",
+  "block.deadlydinos.rsequoia_planks": "Planches de Grand Séquoia Renforcées",
+  "block.deadlydinos.sequoia_log": "Bûche en Grand Séquoia",
+  "block.deadlydinos.sequoia_stairs": "Escaliers en Grand Séquoia",
+  "block.deadlydinos.sequoia_slab": "Dalle en Séquoia",
+  "block.deadlydinos.sequoia_leaves": "Feuilles de Grand Séquoia",
+  "block.deadlydinos.sequoia_sapling": "Pousse de Grand Séquoia",
+  "block.deadlydinos.yew_planks": "Planches d'If",
+  "block.deadlydinos.ryew_planks": "Planches d'If Renforcés",
+  "block.deadlydinos.yew_log": "Bûche d'If Prune",
+  "block.deadlydinos.yew_stairs": "Escaliers en If Prune",
+  "block.deadlydinos.yew_slab": "Dalle en If Prune",
+  "block.deadlydinos.yew_leaves": "Feuilles d'If Prune",
+  "block.deadlydinos.yew_sapling": "Pousse d'If Prune",
+  "block.deadlydinos.conifer_planks": "Planches de Conifère",
+  "block.deadlydinos.rconifer_planks": "Planches de Conifère Renforcées",
+  "block.deadlydinos.conifer_log": "Bûche de Conifère",
+  "block.deadlydinos.conifer_stairs": "Escaliers en Conifère",
+  "block.deadlydinos.conifer_slab": "Dalle en Conifère",
+  "block.deadlydinos.conifer_leaves": "Feuilles de Conifère",
+  "block.deadlydinos.conifer_sapling": "Pousse de Conifère",
+  "block.deadlydinos.rglass": "Verre Renforcée",
+  "block.deadlydinos.rstonebricks": "Pierre Taillé Renforcées",
+  "block.deadlydinos.racacia_planks": "Planches en Acacia Renforcées",
+  "block.deadlydinos.rbirch_planks": "Planches de Bouleau Renforcées",
+  "block.deadlydinos.rcrimson_planks": "Planches Carmin Renforcées",
+  "block.deadlydinos.rdark_oak_planks": "Planches Chêne Foncé Renforcées",
+  "block.deadlydinos.rjungle_planks": "Planches en Acajou Renforcées",
+  "block.deadlydinos.roak_planks": "Planches en Chêne Renforcées",
+  "block.deadlydinos.rspruce_planks": "Planches en Sapin Renforcées",
+  "block.deadlydinos.rwarped_planks": "Planches en Biscornu Renforcées",
+  "block.deadlydinos.rcobblestone": "Pierres Renforcées",
+
+  
+  "block.deadlydinos.cycas": "Cycas",
+  "block.deadlydinos.cycads": "Cycadales",
+  "block.deadlydinos.zoster": "Zosterophyllum",
+  "block.deadlydinos.cyperus": "Cypérus",
+  "block.deadlydinos.cooksonia": "Cooksonia",
+  "block.deadlydinos.horsetail": "Prête",
+  "block.deadlydinos.asteroxylon": "Astéroxylon",
+  "block.deadlydinos.calamites": "Calamites",
+  
+  "entity.deadlydinos.car_entity": "Voiture",
+  "entity.deadlydinos.carside_entity": "Voiture",
+  "entity.deadlydinos.carflipped_entity": "Voiture"
+}

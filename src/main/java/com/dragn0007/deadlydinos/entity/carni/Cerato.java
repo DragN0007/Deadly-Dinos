@@ -368,7 +368,6 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
     }
 
 
-
     @Override
     public void positionRider(Entity entity) {
         if (this.hasPassenger(entity)) {
