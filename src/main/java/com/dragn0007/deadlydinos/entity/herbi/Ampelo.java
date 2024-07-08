@@ -381,17 +381,17 @@ public class Ampelo extends TamableAnimal implements ContainerListener, Saddleab
                 entity.setPos(this.calcOffset(0, 4.9, -0.5));
                 break;
             case 1:
-                entity.setPos(this.calcOffset(-1, 4, -2));
+                entity.setPos(this.calcOffset(-0.8, 4.3, -2));
                 break;
             case 2:
-                entity.setPos(this.calcOffset(1, 4, -2));
+                entity.setPos(this.calcOffset(0.8, 4.3, -2));
                 break;
         }
     }
 
     @Nullable
     public Entity getControllingPassenger() {
-        return this.getOwner();
+        return this.getOwner() == this.getFirstPassenger() ? this.getFirstPassenger() : null;
     }
 
 

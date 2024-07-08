@@ -533,17 +533,17 @@ public class Amarga extends TamableAnimal implements ContainerListener, Saddleab
                 entity.setPos(this.calcOffset(0, 3.4, -0.5));
                 break;
             case 1:
-                entity.setPos(this.calcOffset(-1, 3, -2));
+                entity.setPos(this.calcOffset(-0.4, 3, -1.4));
                 break;
             case 2:
-                entity.setPos(this.calcOffset(1, 3, -2));
+                entity.setPos(this.calcOffset(0.4, 3, -1.4));
                 break;
         }
     }
 
     @Nullable
     public Entity getControllingPassenger() {
-        return this.getOwner();
+        return this.getOwner() == this.getFirstPassenger() ? this.getFirstPassenger() : null;
     }
 
     @Nullable

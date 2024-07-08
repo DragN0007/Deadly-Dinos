@@ -504,7 +504,7 @@ public class Allo extends TamableAnimal implements ContainerListener, Saddleable
 
     @Nullable
     public Entity getControllingPassenger() {
-        return this.getOwner();
+        return this.getOwner() == this.getFirstPassenger() ? this.getFirstPassenger() : null;
     }
 
     @Nullable

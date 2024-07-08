@@ -383,6 +383,11 @@ public class Igua extends TamableAnimal implements ContainerListener, Saddleable
         }
     }
 
+    @Nullable
+    public Entity getControllingPassenger() {
+        return this.getOwner() == this.getFirstPassenger() ? this.getFirstPassenger() : null;
+    }
+
 
     private int getInventorySize() {
         return this.isChested() ? 51 : 1;
@@ -534,11 +539,6 @@ public class Igua extends TamableAnimal implements ContainerListener, Saddleable
             p_30634_.setXRot(this.getXRot());
             p_30634_.startRiding(this);
         }
-    }
-
-    @Nullable
-    public Entity getControllingPassenger() {
-        return this.getOwner();
     }
 
     @Nullable
