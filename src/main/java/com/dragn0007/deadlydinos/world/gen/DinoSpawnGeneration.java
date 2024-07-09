@@ -158,8 +158,15 @@ public class DinoSpawnGeneration {
                 Biomes.DESERT,
                 Biomes.ERODED_BADLANDS, Biomes.WOODED_BADLANDS,
                 Biomes.SPARSE_JUNGLE, Biomes.JUNGLE,
-                Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU,
-                Biomes.JUNGLE, Biomes.SPARSE_JUNGLE
+                Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU
+        );
+
+        addEntityToSpecificBiomes(event, EntityTypes.MEGARAP_ENTITY.get(),
+                DeadlyDinosCommonConfig.MEGARAP_WEIGHT.get(), 1, 2,
+                Biomes.DARK_FOREST, Biomes.MUSHROOM_FIELDS,
+                Biomes.WOODED_BADLANDS,
+                Biomes.SPARSE_JUNGLE, Biomes.JUNGLE,
+                Biomes.BIRCH_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST
         );
 
         addEntityToSpecificBiomes(event, EntityTypes.REX_ENTITY.get(),

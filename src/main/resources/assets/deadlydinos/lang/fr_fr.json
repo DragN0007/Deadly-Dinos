@@ -180,6 +180,15 @@
   "item.deadlydinos.igua_egg": "Œuf d'Iguanodon",
   "item.deadlydinos.iguatrophy": "Trophée Griffe Iguanodon",
 
+  "entity.minecraft.DeadlyDragons.trike_entity":"Tricératops",
+  "item.minecraft.DeadlyDragons.trike_spawn_egg":"Œuf d'Apparition de Tricératops",
+  "item.minecraft.DeadlyDragons.trike_egg":"Œuf de Tricératops",
+  "item.minecraft.DeadlyDragons.triketrophy":"Trophée Corne de Tricératops",
+
+  "entity.minecraft.DeadlyDragons.mega_entity":"Mégaraptor",
+  "item.minecraft.DeadlyDragons.megarap_spawn_egg":"Œuf d'Apparition de Mégaraptor",
+  "item.minecraft.DeadlyDragons.megaraptrophy":"Trophée Griffe de Mégaraptor",
+
 
 
   "item.deadlydinos.archae_harness": "Harnais d'Archéoptéryx avec Sac",

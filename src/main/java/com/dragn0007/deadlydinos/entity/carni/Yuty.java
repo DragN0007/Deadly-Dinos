@@ -95,6 +95,7 @@ public class Yuty extends TamableAnimal implements ContainerListener, Saddleable
                 .add(Attributes.ATTACK_KNOCKBACK, 2)
                 .add(Attributes.MOVEMENT_SPEED, 0.22)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.4)
+                .add(Attributes.ARMOR, 3)
                 ;
     }
 

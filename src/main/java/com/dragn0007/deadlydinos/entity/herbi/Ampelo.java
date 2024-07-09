@@ -85,6 +85,7 @@ public class Ampelo extends TamableAnimal implements ContainerListener, Saddleab
                 .add(Attributes.MOVEMENT_SPEED, 0.22)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1)
                 .add(Attributes.ARMOR_TOUGHNESS, 5)
+                .add(Attributes.ARMOR, 5)
                 ;
 
     }

@@ -169,6 +169,12 @@ public class EntityTypes {
                     .sized(1.5f,2.5f)
                     .build(new ResourceLocation(MODID,"ichthy").toString()));
 
+    public static final RegistryObject<EntityType<Megarap>> MEGARAP_ENTITY = ENTITY_TYPES.register("megarap_entity",
+            () -> EntityType.Builder.of(Megarap::new,
+                            MobCategory.CREATURE)
+                    .sized(1.5f,2.5f)
+                    .build(new ResourceLocation(MODID,"megarap").toString()));
+
 
 
 

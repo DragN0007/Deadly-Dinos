@@ -73,6 +73,7 @@ public class Acro extends Animal implements IAnimatable {
                 .add(Attributes.ATTACK_KNOCKBACK, 2)
                 .add(Attributes.MOVEMENT_SPEED, 0.26)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1)
+                .add(Attributes.ARMOR, 5)
     ;}
 
     protected SoundEvent getAmbientSound() {

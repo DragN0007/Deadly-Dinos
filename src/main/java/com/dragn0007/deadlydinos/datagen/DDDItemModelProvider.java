@@ -45,6 +45,8 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.IGUA_SPAWN_EGG.get());
         simpleItem(DDDItems.TRIKETROPHY.get());
         simpleItem(DDDItems.TRIKE_SPAWN_EGG.get());
+        simpleItem(DDDItems.MEGARAPTROPHY.get());
+        simpleItem(DDDItems.MEGARAP_SPAWN_EGG.get());
 
         simpleItem(DDDItems.IGUA_EGG.get());
         simpleItem(DDDItems.ICHTHY_EGG.get());

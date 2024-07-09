@@ -62,6 +62,7 @@ public class Anky extends Animal implements IAnimatable {
                 .add(Attributes.MOVEMENT_SPEED, 0.20)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1)
                 .add(Attributes.ARMOR_TOUGHNESS, 10)
+                .add(Attributes.ARMOR, 40)
                 ;
 
     }

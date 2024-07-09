@@ -54,6 +54,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         event.put(EntityTypes.AUSTRALO_ENTITY.get(), Australo.createAttributes().build());
         event.put(EntityTypes.ATROCI_ENTITY.get(), Atroci.createAttributes().build());
         event.put(EntityTypes.ICHTHY_ENTITY.get(), Ichthy.createAttributes().build());
+        event.put(EntityTypes.MEGARAP_ENTITY.get(), Megarap.createAttributes().build());
 
         event.put(EntityTypes.CROPSNAIL_ENTITY.get(), CropSnail.createAttributes().build());
         event.put(EntityTypes.AMARGA_ENTITY.get(), Amarga.createAttributes().build());
@@ -204,6 +205,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
                         SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Ichthy::checkAnimalSpawnRules);
 
+        SpawnPlacements.register
+                (EntityTypes.MEGARAP_ENTITY.get(),
+                        SpawnPlacements.Type.ON_GROUND,
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Megarap::checkAnimalSpawnRules);
+
 
 
         SpawnPlacements.register
@@ -320,6 +326,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         EntityRenderers.register(EntityTypes.AUSTRALO_ENTITY.get(), AustraloRender::new);
         EntityRenderers.register(EntityTypes.ATROCI_ENTITY.get(), AtrociRender::new);
         EntityRenderers.register(EntityTypes.ICHTHY_ENTITY.get(), IchthyRender::new);
+        EntityRenderers.register(EntityTypes.MEGARAP_ENTITY.get(), MegarapRender::new);
 
         EntityRenderers.register(EntityTypes.CROPSNAIL_ENTITY.get(), CropSnailRender::new);
         EntityRenderers.register(EntityTypes.AMARGA_ENTITY.get(), AmargaRender::new);
