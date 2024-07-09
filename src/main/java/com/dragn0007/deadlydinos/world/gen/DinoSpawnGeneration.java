@@ -340,6 +340,14 @@ public class DinoSpawnGeneration {
                 Biomes.JUNGLE, Biomes.SPARSE_JUNGLE
         );
 
+        addEntityToSpecificBiomes(event, EntityTypes.TRIKE_ENTITY.get(),
+                DeadlyDinosCommonConfig.TRIKE_WEIGHT.get(), 1, 2,
+                Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS,
+                Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU,
+                Biomes.SPARSE_JUNGLE,
+                Biomes.TAIGA, Biomes.SNOWY_TAIGA,  Biomes.OLD_GROWTH_SPRUCE_TAIGA
+        );
+
     }
 
     private static void addEntityToAllBiomesExceptThese(BiomeLoadingEvent event, EntityType<?> type,

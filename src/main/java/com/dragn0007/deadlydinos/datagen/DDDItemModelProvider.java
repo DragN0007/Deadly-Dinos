@@ -43,6 +43,8 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.ICHTHY_SPAWN_EGG.get());
         simpleItem(DDDItems.IGUATROPHY.get());
         simpleItem(DDDItems.IGUA_SPAWN_EGG.get());
+        simpleItem(DDDItems.TRIKETROPHY.get());
+        simpleItem(DDDItems.TRIKE_SPAWN_EGG.get());
 
         simpleItem(DDDItems.IGUA_EGG.get());
         simpleItem(DDDItems.ICHTHY_EGG.get());
@@ -54,6 +56,7 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.YUTY_EGG.get());
         simpleItem(DDDItems.PARA_EGG.get());
         simpleItem(DDDItems.ANDAL_EGG.get());
+        simpleItem(DDDItems.TRIKE_EGG.get());
 
 //        simpleItem(DDDItems.ARCHAE_HARNESS.get());
         simpleItem(DDDItems.DINO_NUGGET_1.get());

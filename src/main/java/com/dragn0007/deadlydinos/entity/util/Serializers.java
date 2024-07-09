@@ -11,9 +11,23 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class Serializers {
 
-    public static final DeferredRegister<DataSerializerEntry> RESOURCE_SERIALIZER_REGISTER = DeferredRegister.create(ForgeRegistries.Keys.DATA_SERIALIZERS, DeadlyDinos.MODID);
+    public static final DeferredRegister<DataSerializerEntry> SERIALIZERS = DeferredRegister.create(ForgeRegistries.Keys.DATA_SERIALIZERS, DeadlyDinos.MODID);
+    public static final RegistryObject<DataSerializerEntry> MODE_SERIALIZER = SERIALIZERS.register("mode_serializer", () -> new DataSerializerEntry(new EntityDataSerializer<Integer>() {
+        @Override
+        public void write(FriendlyByteBuf byteBuf, Integer integer) {
+            byteBuf.writeInt(integer);
+        }
+        @Override
+        public Integer read(FriendlyByteBuf byteBuf) {
+            return byteBuf.readInt();
+        }
+        @Override
+        public Integer copy(Integer integer) {
+            return integer;
+        }
+    }));
 
-    public static final RegistryObject<DataSerializerEntry> RESOURCE_SERIALIZER = RESOURCE_SERIALIZER_REGISTER.register("resource_serializer", () -> new DataSerializerEntry(new EntityDataSerializer<ResourceLocation>() {
+    public static final RegistryObject<DataSerializerEntry> RESOURCE_SERIALIZER = SERIALIZERS.register("resource_serializer", () -> new DataSerializerEntry(new EntityDataSerializer<ResourceLocation>() {
         @Override
         public void write(FriendlyByteBuf buffer, ResourceLocation resourceLocation) {
             buffer.writeResourceLocation(resourceLocation);

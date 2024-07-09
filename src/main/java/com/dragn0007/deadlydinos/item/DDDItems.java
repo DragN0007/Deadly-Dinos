@@ -46,7 +46,8 @@ public class DDDItems {
             () -> new DinoEggItem(EntityTypes.PARA_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> IGUA_EGG = ITEMS.register("igua_egg",
             () -> new DinoEggItem(EntityTypes.IGUA_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
-
+    public static final RegistryObject<Item> TRIKE_EGG = ITEMS.register("trike_egg",
+            () -> new DinoEggItem(EntityTypes.TRIKE_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
 
 
 
@@ -136,6 +137,8 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.EDMONTO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> IGUA_SPAWN_EGG = ITEMS.register("igua_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.IGUA_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> TRIKE_SPAWN_EGG = ITEMS.register("trike_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.TRIKE_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
 
@@ -654,6 +657,11 @@ public class DDDItems {
                     new MobEffectInstance(MobEffects.ABSORPTION, 2880, 3, true, false)
             ));
     public static final RegistryObject<TrophyItem> THERITROPHY = ITEMS.register("theritrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2880, 2,true, false),
+                    new MobEffectInstance(MobEffects.DIG_SPEED, 2880, 3, true, false)
+            ));
+    public static final RegistryObject<TrophyItem> TRIKETROPHY = ITEMS.register("triketrophy",
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2880, 2,true, false),
                     new MobEffectInstance(MobEffects.DIG_SPEED, 2880, 3, true, false)

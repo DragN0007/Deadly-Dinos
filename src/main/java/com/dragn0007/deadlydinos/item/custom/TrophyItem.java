@@ -20,7 +20,6 @@ import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class TrophyItem extends Item {

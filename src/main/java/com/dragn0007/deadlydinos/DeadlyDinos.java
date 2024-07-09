@@ -4,6 +4,7 @@ import com.dragn0007.deadlydinos.block.DDDBlocks;
 import com.dragn0007.deadlydinos.block.DDDBlocksDataGen;
 import com.dragn0007.deadlydinos.client.gui.DDDMenuTypes;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
+import com.dragn0007.deadlydinos.event.network.Network;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.util.config.DeadlyDinosCommonConfig;
 import com.mojang.logging.LogUtils;
@@ -24,7 +25,7 @@ import software.bernie.example.GeckoLibMod;
 import software.bernie.geckolib3.GeckoLib;
 
 import static com.dragn0007.deadlydinos.DeadlyDinos.MODID;
-import static com.dragn0007.deadlydinos.entity.util.Serializers.RESOURCE_SERIALIZER_REGISTER;
+import static com.dragn0007.deadlydinos.entity.util.Serializers.SERIALIZERS;
 
 @Mod(MODID)
 public class DeadlyDinos
@@ -35,14 +36,12 @@ public class DeadlyDinos
 
     public DeadlyDinos()
     {
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
 
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        eventBus.addListener(this::setup);
 
-        RESOURCE_SERIALIZER_REGISTER.register(eventBus);
+        SERIALIZERS.register(eventBus);
 
         DDDItems.register(eventBus);
         DDDBlocks.register(eventBus);
@@ -56,17 +55,12 @@ public class DeadlyDinos
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void setup(final FMLCommonSetupEvent event)
-    {
+    private void enqueueIMC(final InterModEnqueueEvent event) {
     }
 
-    private void enqueueIMC(final InterModEnqueueEvent event)
-    {
+    private void processIMC(final InterModProcessEvent event) {
     }
 
-    private void processIMC(final InterModProcessEvent event)
-    {
-    }
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents
     {

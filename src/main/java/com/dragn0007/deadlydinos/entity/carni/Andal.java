@@ -3,7 +3,6 @@ package com.dragn0007.deadlydinos.entity.carni;
 import com.dragn0007.deadlydinos.client.model.AndalModel;
 import com.dragn0007.deadlydinos.entity.herbi.Ava;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
-import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import com.google.common.collect.Sets;
 import net.minecraft.core.BlockPos;

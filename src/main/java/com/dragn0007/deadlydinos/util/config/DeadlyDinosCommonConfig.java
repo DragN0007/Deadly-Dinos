@@ -49,6 +49,7 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> STEGO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> TARBO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> THERI_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> TRIKE_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> TROODON_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> UTAH_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> YUTY_WEIGHT;
@@ -192,6 +193,9 @@ public class DeadlyDinosCommonConfig {
 
         THERI_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
                 .define("THERI Spawn Weight", 1);
+
+        TRIKE_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
+                .define("TRIKE Spawn Weight", 1);
 
         TROODON_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
                 .define("TROODON Spawn Weight", 2);

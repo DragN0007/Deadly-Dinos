@@ -2,18 +2,24 @@ package com.dragn0007.deadlydinos.event;
 
 
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
+import com.dragn0007.deadlydinos.event.network.Network;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 
 public class ForgeEvent {
+
+    @SubscribeEvent
+    public static void onFMLCommonSetupEvent(FMLCommonSetupEvent event) {
+        Network.init();
+    }
 
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void registerBiomes(BiomeLoadingEvent event) {

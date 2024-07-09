@@ -71,6 +71,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         event.put(EntityTypes.PACHYR_ENTITY.get(), Pachyr.createAttributes().build());
         event.put(EntityTypes.EDMONTO_ENTITY.get(), Edmonto.createAttributes().build());
         event.put(EntityTypes.IGUA_ENTITY.get(), Igua.createAttributes().build());
+        event.put(EntityTypes.TRIKE_ENTITY.get(), Trike.createAttributes().build());
 
         event.put(EntityTypes.CAR_ENTITY.get(), Car.createAttributes().build());
         event.put(EntityTypes.CARSIDE_ENTITY.get(), CarSide.createAttributes().build());
@@ -284,6 +285,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
                 (EntityTypes.IGUA_ENTITY.get(),
                         SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Igua::checkAnimalSpawnRules);
+
+        SpawnPlacements.register
+                (EntityTypes.TRIKE_ENTITY.get(),
+                        SpawnPlacements.Type.ON_GROUND,
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Trike::checkAnimalSpawnRules);
     }
 
     @SubscribeEvent
@@ -331,6 +337,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         EntityRenderers.register(EntityTypes.PACHYR_ENTITY.get(), PachyrRender::new);
         EntityRenderers.register(EntityTypes.EDMONTO_ENTITY.get(), EdmontoRender::new);
         EntityRenderers.register(EntityTypes.IGUA_ENTITY.get(), IguaRender::new);
+        EntityRenderers.register(EntityTypes.TRIKE_ENTITY.get(), TrikeRender::new);
 
         EntityRenderers.register(EntityTypes.CAR_ENTITY.get(), CarRender::new);
         EntityRenderers.register(EntityTypes.CARSIDE_ENTITY.get(), CarSideRender::new);
@@ -360,6 +367,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         MenuScreens.register(DDDMenuTypes.ICHTHY_MENU.get(), IchthyScreen::new);
         MenuScreens.register(DDDMenuTypes.YUTY_MENU.get(), YutyScreen::new);
         MenuScreens.register(DDDMenuTypes.IGUA_MENU.get(), IguaScreen::new);
+        MenuScreens.register(DDDMenuTypes.TRIKE_MENU.get(), TrikeScreen::new);
     }
 }
 

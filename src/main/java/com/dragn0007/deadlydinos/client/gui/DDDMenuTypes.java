@@ -17,6 +17,7 @@ public class DDDMenuTypes {
     public static final RegistryObject<MenuType<IchthyMenu>> ICHTHY_MENU = MENU_TYPES.register("ichthy_menu", () -> new MenuType<>(IchthyMenu.create()));
     public static final RegistryObject<MenuType<YutyMenu>> YUTY_MENU = MENU_TYPES.register("yuty_menu", () -> new MenuType<>(YutyMenu.create()));
     public static final RegistryObject<MenuType<IguaMenu>> IGUA_MENU = MENU_TYPES.register("igua_menu", () -> new MenuType<>(IguaMenu.create()));
+    public static final RegistryObject<MenuType<TrikeMenu>> TRIKE_MENU = MENU_TYPES.register("trike_menu", () -> new MenuType<>(TrikeMenu.create()));
 
     public static void register(IEventBus eventBus) {
         MENU_TYPES.register(eventBus);
