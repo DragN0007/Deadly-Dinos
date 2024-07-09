@@ -69,6 +69,7 @@ public class Tarbo extends Animal implements IAnimatable {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 75)
                 .add(Attributes.ATTACK_DAMAGE, 8)
+                .add(Attributes.ATTACK_KNOCKBACK, 2)
                 .add(Attributes.MOVEMENT_SPEED, 0.25)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1)
                 ;

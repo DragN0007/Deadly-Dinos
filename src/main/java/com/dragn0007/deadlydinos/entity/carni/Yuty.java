@@ -92,6 +92,7 @@ public class Yuty extends TamableAnimal implements ContainerListener, Saddleable
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 65)
                 .add(Attributes.ATTACK_DAMAGE, 6)
+                .add(Attributes.ATTACK_KNOCKBACK, 2)
                 .add(Attributes.MOVEMENT_SPEED, 0.22)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.4)
                 ;

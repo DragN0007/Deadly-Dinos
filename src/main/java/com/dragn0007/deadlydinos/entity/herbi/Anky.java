@@ -58,6 +58,7 @@ public class Anky extends Animal implements IAnimatable {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 150)
                 .add(Attributes.ATTACK_DAMAGE, 16)
+                .add(Attributes.ATTACK_KNOCKBACK, 5)
                 .add(Attributes.MOVEMENT_SPEED, 0.20)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1)
                 .add(Attributes.ARMOR_TOUGHNESS, 10)

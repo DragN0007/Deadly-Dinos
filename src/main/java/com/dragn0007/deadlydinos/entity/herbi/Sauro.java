@@ -58,6 +58,7 @@ public class Sauro extends Animal implements IAnimatable {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 400)
                 .add(Attributes.ATTACK_DAMAGE, 50)
+                .add(Attributes.ATTACK_KNOCKBACK, 5)
                 .add(Attributes.MOVEMENT_SPEED, 0.22)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1)
                 ;

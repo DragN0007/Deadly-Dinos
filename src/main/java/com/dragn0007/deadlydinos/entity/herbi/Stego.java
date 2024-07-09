@@ -57,6 +57,7 @@ public class Stego extends Animal implements IAnimatable {
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 120)
+                .add(Attributes.ATTACK_KNOCKBACK, 3)
                 .add(Attributes.ATTACK_DAMAGE, 14)
                 .add(Attributes.MOVEMENT_SPEED, 0.20)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1)

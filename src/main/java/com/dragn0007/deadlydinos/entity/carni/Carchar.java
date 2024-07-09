@@ -74,6 +74,7 @@ public class Carchar extends Animal implements IAnimatable {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 140)
                 .add(Attributes.ATTACK_DAMAGE, 16)
+                .add(Attributes.ATTACK_KNOCKBACK, 5)
                 .add(Attributes.MOVEMENT_SPEED, 0.26)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1)
                 ;

@@ -81,6 +81,7 @@ public class Ampelo extends TamableAnimal implements ContainerListener, Saddleab
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 125)
                 .add(Attributes.ATTACK_DAMAGE, 16)
+                .add(Attributes.ATTACK_KNOCKBACK, 3)
                 .add(Attributes.MOVEMENT_SPEED, 0.22)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1)
                 .add(Attributes.ARMOR_TOUGHNESS, 5)
