@@ -104,6 +104,8 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.ICHTHY_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> MEGARAP_SPAWN_EGG = ITEMS.register("megarap_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.MEGARAP_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> EOCARCHAR_SPAWN_EGG = ITEMS.register("eocarchar_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.EOCARCHAR_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
     //HERBIVORE SPAWN EGGS
@@ -535,6 +537,11 @@ public class DDDItems {
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.INVISIBILITY, 2880, 5,true, false),
                     new MobEffectInstance(MobEffects.LUCK, 2880, 2, true, false)
+            ));
+    public static final RegistryObject<TrophyItem> EOCARCHARTROPHY = ITEMS.register("eocarchartrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2880, 5,true, false),
+                    new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2880, 2, true, false)
             ));
     public static final RegistryObject<TrophyItem> GIGATROPHY = ITEMS.register("gigatrophy",
             () -> new TrophyItem(

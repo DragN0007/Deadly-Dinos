@@ -33,6 +33,7 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> DEINON_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> DILO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> EDMONTO_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> EOCARCHAR_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> GALLI_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> GIGA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> GRYPO_WEIGHT;
@@ -146,6 +147,9 @@ public class DeadlyDinosCommonConfig {
 
         EDMONTO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
                 .define("EDMONTO Spawn Weight", 1);
+
+        EOCARCHAR_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
+                .define("EOCARCHAR Spawn Weight", 1);
 
         GALLI_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
                 .define("GALLI Spawn Weight", 1);

@@ -175,6 +175,12 @@ public class EntityTypes {
                     .sized(1.5f,2.5f)
                     .build(new ResourceLocation(MODID,"megarap").toString()));
 
+    public static final RegistryObject<EntityType<Eocarchar>> EOCARCHAR_ENTITY = ENTITY_TYPES.register("eocarchar_entity",
+            () -> EntityType.Builder.of(Eocarchar::new,
+                            MobCategory.CREATURE)
+                    .sized(1.5f,2.5f)
+                    .build(new ResourceLocation(MODID,"eocarchar").toString()));
+
 
 
 

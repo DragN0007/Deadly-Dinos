@@ -68,6 +68,11 @@
   "item.deadlydinos.dilo_spawn_egg": "Dilophosaurus Spawn Egg",
   "item.deadlydinos.dilotrophy": "Dilophosaurus Tooth Trophy",
 
+  "entity.deadlydinos.eocarchar_entity": "Eocarcharia",
+  "item.deadlydinos.eocarchar_spawn_egg": "Eocarcharia Spawn Egg",
+  "item.deadlydinos.eocarchar_egg": "Eocarcharia Egg",
+  "item.deadlydinos.eocarchartrophy": "Eocarcharia Tooth Trophy",
+
   "entity.deadlydinos.giga_entity": "Giganotosaurus",
   "item.deadlydinos.giga_spawn_egg": "Giganotosaurus Spawn Egg",
   "item.deadlydinos.gigatrophy": "Giganotosaurus Tooth Trophy",

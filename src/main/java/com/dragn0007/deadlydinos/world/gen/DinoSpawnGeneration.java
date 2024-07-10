@@ -132,6 +132,14 @@ public class DinoSpawnGeneration {
                 Biomes.FOREST, Biomes.FLOWER_FOREST, Biomes.BIRCH_FOREST, Biomes.DARK_FOREST
         );
 
+        addEntityToSpecificBiomes(event, EntityTypes.EOCARCHAR_ENTITY.get(),
+                DeadlyDinosCommonConfig.EDMONTO_WEIGHT.get(), 1, 1,
+                Biomes.JUNGLE, Biomes.SPARSE_JUNGLE,
+                Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU,
+                Biomes.FOREST, Biomes.FLOWER_FOREST, Biomes.BIRCH_FOREST, Biomes.DARK_FOREST,
+                Biomes.WINDSWEPT_GRAVELLY_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.STONY_PEAKS
+        );
+
         addEntityToSpecificBiomes(event, EntityTypes.GIGA_ENTITY.get(),
                 DeadlyDinosCommonConfig.GIGA_WEIGHT.get(), 1, 1,
                 Biomes.BADLANDS, Biomes.WOODED_BADLANDS,
