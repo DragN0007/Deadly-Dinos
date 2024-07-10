@@ -4,7 +4,6 @@ import com.dragn0007.deadlydinos.block.DDDBlocks;
 import com.dragn0007.deadlydinos.block.DDDBlocksDataGen;
 import com.dragn0007.deadlydinos.client.gui.DDDMenuTypes;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
-import com.dragn0007.deadlydinos.event.network.Network;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.util.config.DeadlyDinosCommonConfig;
 import com.mojang.logging.LogUtils;
@@ -31,7 +30,7 @@ import static com.dragn0007.deadlydinos.entity.util.Serializers.SERIALIZERS;
 public class DeadlyDinos
 {
 
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
     public static final String MODID = "deadlydinos";
 
     public DeadlyDinos()
@@ -42,6 +41,7 @@ public class DeadlyDinos
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         SERIALIZERS.register(eventBus);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onFMLCommonSetupEvent);
 
         DDDItems.register(eventBus);
         DDDBlocks.register(eventBus);
@@ -53,6 +53,10 @@ public class DeadlyDinos
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, DeadlyDinosCommonConfig.SPEC, "deadlydinos-common.toml");
 
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    private void onFMLCommonSetupEvent(FMLCommonSetupEvent event) {
+        Network.init();
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {

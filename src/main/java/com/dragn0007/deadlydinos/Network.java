@@ -1,4 +1,4 @@
-package com.dragn0007.deadlydinos.event.network;
+package com.dragn0007.deadlydinos;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
 import com.dragn0007.deadlydinos.entity.herbi.Trike;
@@ -40,7 +40,7 @@ public class Network {
 
     public static final String PROTOCOL_VERSION = "1";
     public static final SimpleChannel INSTANCE = NetworkRegistry.newSimpleChannel(
-            new ResourceLocation(DeadlyDinos.MODID, "network"),
+            new ResourceLocation(DeadlyDinos.MODID, "ddd_network"),
             () -> PROTOCOL_VERSION,
             PROTOCOL_VERSION::equals,
             PROTOCOL_VERSION::equals

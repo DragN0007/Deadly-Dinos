@@ -9,7 +9,7 @@ import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
 import com.dragn0007.deadlydinos.entity.ai.TamableDestroyCropsGoal;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.entity.util.Serializers;
-import com.dragn0007.deadlydinos.event.network.Network;
+import com.dragn0007.deadlydinos.Network;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.KeyboardInput;
@@ -82,9 +82,8 @@ import java.util.Random;
 public class Trike extends TamableAnimal implements ContainerListener, Saddleable, IAnimatable, Chestable {
 
     enum Mode {
-        TILL(new ResourceLocation(DeadlyDinos.MODID, "textures/gui/tillmode.png")),
-        HARVEST(new ResourceLocation(DeadlyDinos.MODID, "textures/gui/harvestmode.png")),
-        NO(new ResourceLocation(DeadlyDinos.MODID, "textures/gui/nomode.png"));
+        HARVEST(new ResourceLocation(DeadlyDinos.MODID, "textures/gui/trike_harvestmode.png")),
+        NO(new ResourceLocation(DeadlyDinos.MODID, "textures/gui/trike_nomode.png"));
 
         public final ResourceLocation texture;
 
@@ -115,7 +114,7 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 100)
                 .add(Attributes.ATTACK_DAMAGE, 9)
-                .add(Attributes.MOVEMENT_SPEED, 0.21)
+                .add(Attributes.MOVEMENT_SPEED, 0.20)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1)
                 .add(Attributes.ARMOR_TOUGHNESS, 5)
                 .add(Attributes.ARMOR, 5)
@@ -344,14 +343,6 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
         }
     }
 
-    private void tillNewFarmland(BlockPos pos) {
-        pos = pos.below();
-        BlockState blockState = this.level.getBlockState(pos);
-        if (blockState.is(Blocks.DIRT) || blockState.is(Blocks.MYCELIUM) || blockState.is(Blocks.GRASS_BLOCK) || blockState.is(Blocks.PODZOL)) {
-            this.level.setBlockAndUpdate(pos, Blocks.FARMLAND.defaultBlockState());
-        }
-    }
-
     private Vec3 calcOffset(double x, double y, double z) {
         double rad = this.getYRot() * Math.PI / 180;
 
@@ -363,31 +354,14 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
     }
 
     public void harvest() {
-        Vec3 left = this.calcOffset(-1, 0.2, -1.65);
-        Vec3 mid = this.calcOffset(0, 0.2, -1.65);
-        Vec3 right = this.calcOffset(1, 0.2, -1.65);
+        Vec3 left = this.calcOffset(-0.5, 0.5, 1);
+        Vec3 right = this.calcOffset(0.5, 0.5, 1);
 
         BlockPos leftPos = new BlockPos(Math.floor(left.x), Math.floor(left.y), Math.floor(left.z));
-        BlockPos midPos = new BlockPos(Math.floor(mid.x), Math.floor(mid.y), Math.floor(mid.z));
         BlockPos rightPos = new BlockPos(Math.floor(right.x), Math.floor(right.y), Math.floor(right.z));
 
         this.harvestCrop(leftPos);
-        this.harvestCrop(midPos);
         this.harvestCrop(rightPos);
-    }
-
-    public void till() {
-        Vec3 left = this.calcOffset(-1, 0.2, -1.65);
-        Vec3 mid = this.calcOffset(0, 0.2, -1.65);
-        Vec3 right = this.calcOffset(1, 0.2, -1.65);
-
-        BlockPos leftPos = new BlockPos(Math.floor(left.x), Math.floor(left.y), Math.floor(left.z));
-        BlockPos midPos = new BlockPos(Math.floor(mid.x), Math.floor(mid.y), Math.floor(mid.z));
-        BlockPos rightPos = new BlockPos(Math.floor(right.x), Math.floor(right.y), Math.floor(right.z));
-
-        this.tillNewFarmland(leftPos);
-        this.tillNewFarmland(midPos);
-        this.tillNewFarmland(rightPos);
     }
 
 
@@ -418,9 +392,7 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
             Vec3 diff = this.lastServerPos.subtract(this.position());
             this.lastServerPos = this.position();
             if(this.isVehicle() && diff.length() != 0) {
-                if(this.mode() == Mode.TILL) {
-                    this.till();
-                } else if(this.mode() == Mode.HARVEST) {
+                if(this.mode() == Mode.HARVEST) {
                     this.harvest();
                 }
 
@@ -430,7 +402,7 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
             Vec3 pos = this.calcOffset(0.9, 3.7, 0.1);
             double yVel = this.random.nextDouble();
             if(yVel > 0.75) {
-                this.level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, pos.x, pos.y, pos.z, 0, yVel / 10, 0);
+                this.level.addParticle(ParticleTypes.COMPOSTER, pos.x, pos.y, pos.z, 0, yVel / 10, 0);
             }
         }
 
@@ -452,13 +424,11 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
     private int tillerCooldown = 0;
 
     private void handleInput(KeyboardInput input) {
-
         this.tillerCooldown = Math.max(this.tillerCooldown - 1, 0);
         if(input.jumping && this.tillerCooldown == 0) {
             Network.INSTANCE.sendToServer(new Network.ToggleTillerPowerRequest(this.getId()));
             this.tillerCooldown = 10;
         }
-
     }
 
 
@@ -674,7 +644,7 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
                 this.yBodyRot = this.getYRot();
                 this.yHeadRot = this.yBodyRot;
                 float f = livingentity.xxa * 0.4F; //Strafe moving speed
-                float f1 = livingentity.zza * 0.7F; //Foward moving speed
+                float f1 = livingentity.zza * 0.5F; //Foward moving speed
                 if (f1 <= 0.0F) {
                     f1 *= 0.25F;
                 }
