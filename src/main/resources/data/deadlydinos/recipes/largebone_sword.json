@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " C ",
+    " CD",
     " B ",
     " A "
   ],
@@ -14,6 +14,9 @@
     },
     "C": {
       "item": "deadlydinos:largecarniclaw"
+    },
+    "D": {
+      "item": "minecraft:diamond"
     }
 
   },
