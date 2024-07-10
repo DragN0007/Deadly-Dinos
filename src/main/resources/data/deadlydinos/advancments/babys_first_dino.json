@@ -1,0 +1,70 @@
+{
+  "display": {
+    "icon": {
+      "item": "deadlydinos:medcarniskull"
+    },
+    "title": "Baby's First Dinosaur",
+    "description": "Kill a Deadly Dino.",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:adventure/kill_a_mob",
+  "criteria": {
+    "killed_dinosaur": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": {
+            "values": [
+              "deadlydinos:acro_entity",
+              "deadlydinos:utah_entity",
+              "deadlydinos:cerato_entity",
+              "deadlydinos:giga_entity",
+              "deadlydinos:rex_entity",
+              "deadlydinos:spino_entity",
+              "deadlydinos:carno_entity",
+              "deadlydinos:compy_entity",
+              "deadlydinos:mahakala_entity",
+              "deadlydinos:austro_entity",
+              "deadlydinos:deinon_entity",
+              "deadlydinos:alberto_entity",
+              "deadlydinos:majunga_entity",
+              "deadlydinos:troodon_entity",
+              "deadlydinos:archae_entity",
+              "deadlydinos:tarbo_entity",
+              "deadlydinos:andal_entity",
+              "deadlydinos:carchar_entity",
+              "deadlydinos:allo_entity",
+              "deadlydinos:dilo_entity",
+              "deadlydinos:yuty_entity",
+              "deadlydinos:cryo_entity",
+              "deadlydinos:australo_entity",
+              "deadlydinos:atroci_entity",
+              "deadlydinos:ichthy_entity",
+              "deadlydinos:megarap_entity",
+              "deadlydinos:eocarchar_entity",
+              "deadlydinos:amarga_entity",
+              "deadlydinos:para_entity",
+              "deadlydinos:theri_entity",
+              "deadlydinos:deinoch_entity",
+              "deadlydinos:stego_entity",
+              "deadlydinos:shant_entity",
+              "deadlydinos:galli_entity",
+              "deadlydinos:sauro_entity",
+              "deadlydinos:anky_entity",
+              "deadlydinos:ava_entity",
+              "deadlydinos:grypo_entity",
+              "deadlydinos:ampelo_entity",
+              "deadlydinos:pachyr_entity",
+              "deadlydinos:edmonto_entity",
+              "deadlydinos:igua_entity",
+              "deadlydinos:trike_entity"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
