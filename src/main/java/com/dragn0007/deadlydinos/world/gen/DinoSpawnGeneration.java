@@ -133,7 +133,7 @@ public class DinoSpawnGeneration {
         );
 
         addEntityToSpecificBiomes(event, EntityTypes.EOCARCHAR_ENTITY.get(),
-                DeadlyDinosCommonConfig.EDMONTO_WEIGHT.get(), 1, 1,
+                DeadlyDinosCommonConfig.EOCARCHAR_WEIGHT.get(), 1, 1,
                 Biomes.JUNGLE, Biomes.SPARSE_JUNGLE,
                 Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU,
                 Biomes.FOREST, Biomes.FLOWER_FOREST, Biomes.BIRCH_FOREST, Biomes.DARK_FOREST,
