@@ -363,6 +363,18 @@ public class DinoSpawnGeneration {
                 Biomes.TAIGA, Biomes.SNOWY_TAIGA,  Biomes.OLD_GROWTH_SPRUCE_TAIGA
         );
 
+
+
+        addEntityToSpecificBiomes(event, EntityTypes.MOSA_ENTITY.get(),
+                DeadlyDinosCommonConfig.MOSA_WEIGHT.get(), 1, 1,
+                Biomes.DEEP_LUKEWARM_OCEAN, Biomes.DEEP_COLD_OCEAN, Biomes.DEEP_OCEAN
+        );
+
+        addEntityToSpecificBiomes(event, EntityTypes.HELI_ENTITY.get(),
+                DeadlyDinosCommonConfig.HELI_WEIGHT.get(), 1, 2,
+                Biomes.DEEP_LUKEWARM_OCEAN, Biomes.DEEP_COLD_OCEAN, Biomes.DEEP_OCEAN,  Biomes.LUKEWARM_OCEAN, Biomes.COLD_OCEAN, Biomes.OCEAN, Biomes.WARM_OCEAN
+        );
+
     }
 
     private static void addEntityToAllBiomesExceptThese(BiomeLoadingEvent event, EntityType<?> type,

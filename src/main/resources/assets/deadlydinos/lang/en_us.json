@@ -192,6 +192,14 @@
   "item.deadlydinos.megarap_spawn_egg": "Megaraptor Spawn Egg",
   "item.deadlydinos.megaraptrophy": "Megaraptor Claw Trophy",
 
+  "entity.deadlydinos.mosa_entity": "Mosasaurus",
+  "item.deadlydinos.mosa_spawn_egg": "Mosasaurus Spawn Egg",
+  "item.deadlydinos.mosatrophy": "Mosasaurus Tooth Trophy",
+
+  "entity.deadlydinos.heli_entity": "Helicoprion",
+  "item.deadlydinos.heli_spawn_egg": "Helicoprion Spawn Egg",
+  "item.deadlydinos.helitrophy": "Helicoprion Tooth Trophy",
+
 
 
 

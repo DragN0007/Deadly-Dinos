@@ -2,6 +2,8 @@ package com.dragn0007.deadlydinos.entity.util;
 
 import com.dragn0007.deadlydinos.entity.carni.*;
 import com.dragn0007.deadlydinos.entity.herbi.*;
+import com.dragn0007.deadlydinos.entity.marine.Heli;
+import com.dragn0007.deadlydinos.entity.marine.Mosa;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
@@ -284,6 +286,16 @@ public class EntityTypes {
 
 
 
+    public static final RegistryObject<EntityType<Mosa>> MOSA_ENTITY = ENTITY_TYPES.register("mosa_entity",
+            () -> EntityType.Builder.of(Mosa::new,
+                            MobCategory.WATER_CREATURE)
+                    .sized(3f,3f)
+                    .build(new ResourceLocation(MODID,"mosa").toString()));
+    public static final RegistryObject<EntityType<Heli>> HELI_ENTITY = ENTITY_TYPES.register("heli_entity",
+            () -> EntityType.Builder.of(Heli::new,
+                            MobCategory.WATER_CREATURE)
+                    .sized(2f,2f)
+                    .build(new ResourceLocation(MODID,"heli").toString()));
 
 
 

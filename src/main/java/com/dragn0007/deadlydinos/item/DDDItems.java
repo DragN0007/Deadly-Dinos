@@ -145,6 +145,13 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.TRIKE_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
+    //WATER SPAWN EGGS
+    public static final RegistryObject<Item> MOSA_SPAWN_EGG = ITEMS.register("mosa_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.MOSA_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> HELI_SPAWN_EGG = ITEMS.register("heli_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.HELI_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+
+
 
     //FOOD ITEMS
     public static final RegistryObject<Item> RAWSMALLMEAT = ITEMS.register("rawsmallmeat",
@@ -682,6 +689,16 @@ public class DDDItems {
             ));
 
 
+    public static final RegistryObject<TrophyItem> MOSATROPHY = ITEMS.register("mosatrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2880, 2,true, false),
+                    new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2880, 3, true, false)
+            ));
+    public static final RegistryObject<TrophyItem> HELITROPHY = ITEMS.register("helitrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.WATER_BREATHING, 2880, 2,true, false),
+                    new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2880, 3, true, false)
+            ));
 
 
 
