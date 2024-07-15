@@ -1,7 +1,6 @@
 package com.dragn0007.deadlydinos.entity.marine;
 
 import com.dragn0007.deadlydinos.client.model.HeliModel;
-import com.dragn0007.deadlydinos.client.model.MosaModel;
 import com.dragn0007.deadlydinos.entity.marine.base.AbstractMarineDino;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;

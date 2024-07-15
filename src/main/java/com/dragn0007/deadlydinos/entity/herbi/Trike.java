@@ -2,6 +2,7 @@ package com.dragn0007.deadlydinos.entity.herbi;
 
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
+import com.dragn0007.deadlydinos.Network;
 import com.dragn0007.deadlydinos.client.menu.TrikeMenu;
 import com.dragn0007.deadlydinos.client.model.TrikeModel;
 import com.dragn0007.deadlydinos.entity.Chestable;
@@ -9,7 +10,6 @@ import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
 import com.dragn0007.deadlydinos.entity.ai.TamableDestroyCropsGoal;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.entity.util.Serializers;
-import com.dragn0007.deadlydinos.Network;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.KeyboardInput;
@@ -48,7 +48,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;

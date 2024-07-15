@@ -1,6 +1,5 @@
 package com.dragn0007.deadlydinos;
 
-import com.dragn0007.deadlydinos.DeadlyDinos;
 import com.dragn0007.deadlydinos.entity.herbi.Trike;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;

@@ -1,6 +1,5 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
-import com.dragn0007.deadlydinos.client.model.AcroModel;
 import com.dragn0007.deadlydinos.client.model.EocarcharModel;
 import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
