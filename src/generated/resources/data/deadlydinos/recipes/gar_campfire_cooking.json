@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "item": "deadlydinos:gar"
+  },
+  "result": "deadlydinos:cooked_gar",
+  "experience": 0.35,
+  "cookingtime": 600
+}

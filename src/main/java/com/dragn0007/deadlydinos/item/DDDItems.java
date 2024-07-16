@@ -150,6 +150,8 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.MOSA_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> HELI_SPAWN_EGG = ITEMS.register("heli_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.HELI_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> GAR_SPAWN_EGG = ITEMS.register("gar_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.GAR_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
 
@@ -223,6 +225,10 @@ public class DDDItems {
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
     public static final RegistryObject<Item> DOUGH = ITEMS.register("dough",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> GAR = ITEMS.register("gar",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> COOKED_GAR = ITEMS.register("cooked_gar",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
 
 
 

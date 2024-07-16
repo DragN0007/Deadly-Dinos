@@ -8,6 +8,7 @@ import com.dragn0007.deadlydinos.client.menu.*;
 import com.dragn0007.deadlydinos.client.render.*;
 import com.dragn0007.deadlydinos.entity.carni.*;
 import com.dragn0007.deadlydinos.entity.herbi.*;
+import com.dragn0007.deadlydinos.entity.marine.Gar;
 import com.dragn0007.deadlydinos.entity.marine.Heli;
 import com.dragn0007.deadlydinos.entity.marine.Mosa;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
@@ -81,6 +82,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
         event.put(EntityTypes.MOSA_ENTITY.get(), Mosa.createAttributes().build());
         event.put(EntityTypes.HELI_ENTITY.get(), Heli.createAttributes().build());
+        event.put(EntityTypes.GAR_ENTITY.get(), Gar.createAttributes().build());
 
         event.put(EntityTypes.CAR_ENTITY.get(), Car.createAttributes().build());
         event.put(EntityTypes.CARSIDE_ENTITY.get(), CarSide.createAttributes().build());
@@ -321,6 +323,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
                 (EntityTypes.HELI_ENTITY.get(),
                         SpawnPlacements.Type.IN_WATER,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
+
+        SpawnPlacements.register
+                (EntityTypes.GAR_ENTITY.get(),
+                        SpawnPlacements.Type.IN_WATER,
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
     }
 
     @SubscribeEvent
@@ -374,6 +381,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
         EntityRenderers.register(EntityTypes.MOSA_ENTITY.get(), MosaRender::new);
         EntityRenderers.register(EntityTypes.HELI_ENTITY.get(), HeliRender::new);
+        EntityRenderers.register(EntityTypes.GAR_ENTITY.get(), GarRender::new);
 
         EntityRenderers.register(EntityTypes.CAR_ENTITY.get(), CarRender::new);
         EntityRenderers.register(EntityTypes.CARSIDE_ENTITY.get(), CarSideRender::new);

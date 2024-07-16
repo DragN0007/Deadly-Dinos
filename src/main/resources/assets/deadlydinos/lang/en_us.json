@@ -202,6 +202,10 @@
 
 
 
+  "entity.deadlydinos.gar_entity": "Alligator Gar",
+  "item.deadlydinos.gar_spawn_egg": "Alligator Gar Spawn Egg",
+
+
 
   "item.deadlydinos.archae_harness": "Archaeopteryx Pack Harness",
 
@@ -240,6 +244,8 @@
   "item.deadlydinos.broth": "Bone Marrow Broth",
   "item.deadlydinos.chicken_noodle_soup": "Chicken Noodle Soup",
   "item.deadlydinos.hearty_salad": "Leafy Salad",
+  "item.deadlydinos.gar": "Gar",
+  "item.deadlydinos.cooked_gar": "Cooked Gar",
 
   
   "item.deadlydinos.smallcarnitooth": "Small Carni Tooth",

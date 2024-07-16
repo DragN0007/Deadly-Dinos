@@ -9,6 +9,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 import java.util.function.Consumer;
@@ -20,6 +21,14 @@ public class DDDRecipeMaker extends RecipeProvider implements IConditionBuilder 
 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
+
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(DDDItems.GAR.get()), DDDItems.COOKED_GAR.get(), 0.35F, 200)
+                .unlockedBy("has_furnace", has(Blocks.FURNACE)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "gar_smelting"));
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(DDDItems.GAR.get()), DDDItems.COOKED_GAR.get(), 0.35F, 100)
+                .unlockedBy("has_smoker", has(Blocks.SMOKER)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "gar_smoking"));
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(DDDItems.GAR.get()), DDDItems.COOKED_GAR.get(), 0.35F, 600)
+                .unlockedBy("has_campfire", has(Blocks.CAMPFIRE)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "gar_campfire_cooking"));
+
 
         ShapelessRecipeBuilder.shapeless(Items.BONE_MEAL, 4)
                 .requires(DDDTags.Items.LARGE_BONES)

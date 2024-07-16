@@ -66,6 +66,8 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.ANDAL_EGG.get());
         simpleItem(DDDItems.TRIKE_EGG.get());
 
+        simpleItem(DDDItems.GAR_SPAWN_EGG.get());
+
 //        simpleItem(DDDItems.ARCHAE_HARNESS.get());
         simpleItem(DDDItems.DINO_NUGGET_1.get());
         simpleItem(DDDItems.DINO_NUGGET_2.get());
@@ -78,6 +80,8 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.BONE_MARROW.get());
         simpleItem(DDDItems.CHICKEN_NOODLE_SOUP.get());
         simpleItem(DDDItems.DINO_ROAST.get());
+        simpleItem(DDDItems.GAR.get());
+        simpleItem(DDDItems.COOKED_GAR.get());
 
         simpleSpriteBlockItem(DDDBlocksDataGen.ASTEROXYLON.get());
         simpleSpriteBlockItem(DDDBlocksDataGen.HORSETAIL.get());
