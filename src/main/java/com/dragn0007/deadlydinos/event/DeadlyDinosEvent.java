@@ -8,6 +8,7 @@ import com.dragn0007.deadlydinos.client.menu.*;
 import com.dragn0007.deadlydinos.client.render.*;
 import com.dragn0007.deadlydinos.entity.carni.*;
 import com.dragn0007.deadlydinos.entity.herbi.*;
+import com.dragn0007.deadlydinos.entity.marine.Dunkleo;
 import com.dragn0007.deadlydinos.entity.marine.Gar;
 import com.dragn0007.deadlydinos.entity.marine.Heli;
 import com.dragn0007.deadlydinos.entity.marine.Mosa;
@@ -83,6 +84,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         event.put(EntityTypes.MOSA_ENTITY.get(), Mosa.createAttributes().build());
         event.put(EntityTypes.HELI_ENTITY.get(), Heli.createAttributes().build());
         event.put(EntityTypes.GAR_ENTITY.get(), Gar.createAttributes().build());
+        event.put(EntityTypes.DUNKLEO_ENTITY.get(), Dunkleo.createAttributes().build());
 
         event.put(EntityTypes.CAR_ENTITY.get(), Car.createAttributes().build());
         event.put(EntityTypes.CARSIDE_ENTITY.get(), CarSide.createAttributes().build());
@@ -90,243 +92,150 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 
         //Spawn Placements
-        SpawnPlacements.register
-                (EntityTypes.ACRO_ENTITY.get(),
-                SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.ACRO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.UTAH_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.UTAH_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Utah::checkDesertDinoSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.CERATO_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.CERATO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Cerato::checkDesertDinoSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.GIGA_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.GIGA_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.REX_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.REX_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.CARNO_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.CARNO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Carno::checkDesertDinoSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.COMPY_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.COMPY_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.MAHAKALA_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.MAHAKALA_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.AUSTRO_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.AUSTRO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.DEINON_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.DEINON_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.ALBERTO_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.ALBERTO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Alberto::checkDesertDinoSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.MAJUNGA_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.MAJUNGA_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Majunga::checkDesertDinoSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.TROODON_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.TROODON_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.ARCHAE_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.ARCHAE_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.TARBO_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.TARBO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.ANDAL_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.ANDAL_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Andal::checkDesertDinoSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.SPINO_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.SPINO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.CARCHAR_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.CARCHAR_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Carchar::checkDesertDinoSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.ALLO_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.ALLO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Allo::checkDesertDinoSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.DILO_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.DILO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.YUTY_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.YUTY_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.CRYO_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.CRYO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.AUSTRALO_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.AUSTRALO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.ATROCI_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.ATROCI_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.ICHTHY_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.ICHTHY_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.MEGARAP_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.MEGARAP_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.EOCARCHAR_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.EOCARCHAR_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
 
-
-        SpawnPlacements.register
-                (EntityTypes.CROPSNAIL_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.CROPSNAIL_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.AMARGA_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.AMARGA_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.PARA_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.PARA_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.THERI_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.THERI_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.STEGO_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.STEGO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.SHANT_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.SHANT_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.GALLI_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.GALLI_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.SAURO_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.SAURO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.ANKY_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.ANKY_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.AVA_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.AVA_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.DEINOCH_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.DEINOCH_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.GRYPO_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.GRYPO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.AMPELO_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.AMPELO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.PACHYR_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.PACHYR_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.EDMONTO_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.EDMONTO_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.IGUA_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.IGUA_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.TRIKE_ENTITY.get(),
-                        SpawnPlacements.Type.ON_GROUND,
+        SpawnPlacements.register(EntityTypes.TRIKE_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
 
-
-        SpawnPlacements.register
-                (EntityTypes.MOSA_ENTITY.get(),
-                        SpawnPlacements.Type.IN_WATER,
+        SpawnPlacements.register(EntityTypes.MOSA_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.HELI_ENTITY.get(),
-                        SpawnPlacements.Type.IN_WATER,
+        SpawnPlacements.register(EntityTypes.HELI_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
 
-        SpawnPlacements.register
-                (EntityTypes.GAR_ENTITY.get(),
-                        SpawnPlacements.Type.IN_WATER,
+        SpawnPlacements.register(EntityTypes.GAR_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
+                        Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
+
+        SpawnPlacements.register(EntityTypes.DUNKLEO_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
     }
 
@@ -382,6 +291,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         EntityRenderers.register(EntityTypes.MOSA_ENTITY.get(), MosaRender::new);
         EntityRenderers.register(EntityTypes.HELI_ENTITY.get(), HeliRender::new);
         EntityRenderers.register(EntityTypes.GAR_ENTITY.get(), GarRender::new);
+        EntityRenderers.register(EntityTypes.DUNKLEO_ENTITY.get(), DunkleoRender::new);
 
         EntityRenderers.register(EntityTypes.CAR_ENTITY.get(), CarRender::new);
         EntityRenderers.register(EntityTypes.CARSIDE_ENTITY.get(), CarSideRender::new);

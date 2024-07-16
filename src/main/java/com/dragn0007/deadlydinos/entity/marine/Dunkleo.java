@@ -1,9 +1,8 @@
 package com.dragn0007.deadlydinos.entity.marine;
 
-import com.dragn0007.deadlydinos.client.model.GarModel;
+import com.dragn0007.deadlydinos.client.model.DunkleoModel;
 import com.dragn0007.deadlydinos.client.model.HeliModel;
 import com.dragn0007.deadlydinos.entity.marine.base.AbstractMarineDino;
-import com.dragn0007.deadlydinos.entity.marine.base.AbstractNeutralMarineDino;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
@@ -42,11 +41,11 @@ import java.util.Random;
 import java.util.function.Predicate;
 
 
-public class Gar extends AbstractNeutralMarineDino implements IAnimatable {
+public class Dunkleo extends AbstractMarineDino implements IAnimatable {
 
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
-    public Gar(EntityType<? extends Gar> entityType, Level level) {
+    public Dunkleo(EntityType<? extends Dunkleo> entityType, Level level) {
         super(entityType, level);
         this.noCulling = true;
     }
@@ -59,18 +58,40 @@ public class Gar extends AbstractNeutralMarineDino implements IAnimatable {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 30)
-                .add(Attributes.ATTACK_DAMAGE, 3)
-                .add(Attributes.ATTACK_KNOCKBACK, 2.5)
+                .add(Attributes.MAX_HEALTH, 160)
+                .add(Attributes.ATTACK_DAMAGE, 12)
+                .add(Attributes.ATTACK_KNOCKBACK, 3)
                 .add(Attributes.MOVEMENT_SPEED, 0.25)
-                .add(Attributes.KNOCKBACK_RESISTANCE, 0.4)
-                .add(Attributes.ARMOR, 6)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 1)
+                .add(Attributes.ARMOR, 15)
     ;}
 
     protected void registerGoals() {
         super.registerGoals();
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
-        }
+        this.goalSelector.addGoal(0, new NearestAttackableTargetGoal<Player>(this, Player.class, 35, true, true, LivingEntity::attackable));
+        this.goalSelector.addGoal(0, new MeleeAttackGoal(this, 2, true));
+        this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
+            @Override
+            public boolean test(@Nullable LivingEntity livingEntity) {
+                if (livingEntity instanceof Dunkleo)
+                    return false;
+                if (livingEntity instanceof CarSide)
+                    return false;
+                if (livingEntity instanceof Car)
+                    return false;
+                if (livingEntity instanceof CarFlipped)
+                    return false;
+                if (livingEntity instanceof ArmorStand)
+                    return false;
+                if (livingEntity instanceof AbstractFish)
+                    return false;
+                if (livingEntity instanceof Squid)
+                    return false;
+                return true;
+            }
+        }));
+    }
 
 
 
@@ -79,7 +100,7 @@ public class Gar extends AbstractNeutralMarineDino implements IAnimatable {
 
         if (event.isMoving()) {
             if (isAggressive() || isSprinting()) {
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("swim", ILoopType.EDefaultLoopTypes.LOOP));
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("swimfast", ILoopType.EDefaultLoopTypes.LOOP));
 
             } else
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("swim", ILoopType.EDefaultLoopTypes.LOOP));
@@ -115,11 +136,11 @@ public class Gar extends AbstractNeutralMarineDino implements IAnimatable {
     //Generates variant textures
 
     public ResourceLocation getTextureLocation() {
-        return GarModel.Variant.variantFromOrdinal(getVariant()).resourceLocation;
+        return DunkleoModel.Variant.variantFromOrdinal(getVariant()).resourceLocation;
     }
 
 
-    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Gar.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Dunkleo.class, EntityDataSerializers.INT);
 
     public int getVariant(){
         return this.entityData.get(VARIANT);
@@ -148,7 +169,7 @@ public class Gar extends AbstractNeutralMarineDino implements IAnimatable {
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor levelAccessor, DifficultyInstance difficultyInstance, MobSpawnType mobSpawnType, @Nullable SpawnGroupData spawnGroupData, @Nullable CompoundTag compoundTag) {
 
-        setVariant(new Random().nextInt(GarModel.Variant.values().length));
+        setVariant(new Random().nextInt(DunkleoModel.Variant.values().length));
 
         return super.finalizeSpawn(levelAccessor, difficultyInstance, mobSpawnType, spawnGroupData, compoundTag);
     }

@@ -59,7 +59,7 @@ public class Heli extends AbstractMarineDino implements IAnimatable {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 150)
                 .add(Attributes.ATTACK_DAMAGE, 10)
-                .add(Attributes.ATTACK_KNOCKBACK, 3)
+                .add(Attributes.ATTACK_KNOCKBACK, 3.3)
                 .add(Attributes.MOVEMENT_SPEED, 0.3)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1)
                 .add(Attributes.ARMOR, 6)

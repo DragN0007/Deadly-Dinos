@@ -53,6 +53,8 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.MOSA_SPAWN_EGG.get());
         simpleItem(DDDItems.HELITROPHY.get());
         simpleItem(DDDItems.HELI_SPAWN_EGG.get());
+        simpleItem(DDDItems.DUNKLEOTROPHY.get());
+        simpleItem(DDDItems.DUNKLEO_SPAWN_EGG.get());
 
         simpleItem(DDDItems.IGUA_EGG.get());
         simpleItem(DDDItems.ICHTHY_EGG.get());

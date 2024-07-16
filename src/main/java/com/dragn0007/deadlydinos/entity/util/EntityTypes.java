@@ -2,6 +2,7 @@ package com.dragn0007.deadlydinos.entity.util;
 
 import com.dragn0007.deadlydinos.entity.carni.*;
 import com.dragn0007.deadlydinos.entity.herbi.*;
+import com.dragn0007.deadlydinos.entity.marine.Dunkleo;
 import com.dragn0007.deadlydinos.entity.marine.Gar;
 import com.dragn0007.deadlydinos.entity.marine.Heli;
 import com.dragn0007.deadlydinos.entity.marine.Mosa;
@@ -304,6 +305,12 @@ public class EntityTypes {
                             MobCategory.WATER_CREATURE)
                     .sized(1f,2f)
                     .build(new ResourceLocation(MODID,"gar").toString()));
+
+    public static final RegistryObject<EntityType<Dunkleo>> DUNKLEO_ENTITY = ENTITY_TYPES.register("dunkleo_entity",
+            () -> EntityType.Builder.of(Dunkleo::new,
+                            MobCategory.WATER_CREATURE)
+                    .sized(2f,2f)
+                    .build(new ResourceLocation(MODID,"dunkleo").toString()));
 
 
 

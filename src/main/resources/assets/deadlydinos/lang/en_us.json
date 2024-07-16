@@ -200,6 +200,10 @@
   "item.deadlydinos.heli_spawn_egg": "Helicoprion Spawn Egg",
   "item.deadlydinos.helitrophy": "Helicoprion Tooth Trophy",
 
+  "entity.deadlydinos.dunkleo_entity": "Dunkleosteus",
+  "item.deadlydinos.dunkleo_spawn_egg": "Dunkleosteus Spawn Egg",
+  "item.deadlydinos.dunkleotrophy": "Dunkleosteus Tooth Trophy",
+
 
 
   "entity.deadlydinos.gar_entity": "Alligator Gar",
