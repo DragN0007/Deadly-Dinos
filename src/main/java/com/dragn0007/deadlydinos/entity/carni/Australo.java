@@ -35,6 +35,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import org.checkerframework.common.returnsreceiver.qual.UnknownThis;
 import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -93,28 +94,24 @@ public class Australo extends Animal implements IAnimatable {
         this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
-                if (livingEntity instanceof Australo)
+                if (livingEntity
+                        instanceof Australo
+                        || livingEntity instanceof Mahakala
+                        || livingEntity instanceof Deinon
+                        || livingEntity instanceof Archae
+                        || livingEntity instanceof Austro
+                        || livingEntity instanceof Megarap
+                        || livingEntity instanceof Utah
+                        || livingEntity instanceof CarSide
+                        || livingEntity instanceof Car
+                        || livingEntity instanceof CarFlipped
+                        || livingEntity instanceof ArmorStand
+                        || livingEntity instanceof AbstractFish
+                        || livingEntity instanceof Squid
+                        || livingEntity instanceof Dolphin
+                ){
                     return false;
-                if (livingEntity instanceof Austro)
-                    return false;
-                if (livingEntity instanceof Deinon)
-                    return false;
-                if (livingEntity instanceof Mahakala)
-                    return false;
-                if (livingEntity instanceof CarSide)
-                    return false;
-                if (livingEntity instanceof Car)
-                    return false;
-                if (livingEntity instanceof CarFlipped)
-                    return false;
-                if (livingEntity instanceof ArmorStand)
-                    return false;
-                if (livingEntity instanceof AbstractFish)
-                    return false;
-                if (livingEntity instanceof Squid)
-                    return false;
-                if (livingEntity instanceof Dolphin)
-                    return false;
+                }
                 return true;
             }
         }));

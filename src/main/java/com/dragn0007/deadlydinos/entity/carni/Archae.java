@@ -27,7 +27,11 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.*;
+import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Dolphin;
+import net.minecraft.world.entity.animal.Squid;
+import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeItem;
@@ -132,32 +136,28 @@ public class Archae extends TamableAnimal implements IAnimatable {
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
-                if (livingEntity instanceof Archae)
+                if (livingEntity
+                        instanceof Archae
+                        || livingEntity instanceof Mahakala
+                        || livingEntity instanceof CarSide
+                        || livingEntity instanceof Car
+                        || livingEntity instanceof CarFlipped
+                        || livingEntity instanceof ArmorStand
+                        || livingEntity instanceof AbstractFish
+                        || livingEntity instanceof Squid
+                        || livingEntity instanceof Dolphin
+                        || livingEntity instanceof Giga
+                        || livingEntity instanceof Rex
+                        || livingEntity instanceof Alberto
+                        || livingEntity instanceof Tarbo
+                        || livingEntity instanceof Carchar
+                        || livingEntity instanceof Acro
+                        || livingEntity instanceof Spino
+                        || livingEntity instanceof TamableAnimal
+                        || livingEntity instanceof Player
+                ){
                     return false;
-                if (livingEntity instanceof Acro)
-                    return false;
-                if (livingEntity instanceof Alberto)
-                    return false;
-                if (livingEntity instanceof Giga)
-                    return false;
-                if (livingEntity instanceof Rex)
-                    return false;
-                if (livingEntity instanceof Spino)
-                    return false;
-                if (livingEntity instanceof Mahakala)
-                    return false;
-                if (livingEntity instanceof CarSide)
-                    return false;
-                if (livingEntity instanceof Car)
-                    return false;
-                if (livingEntity instanceof CarFlipped)
-                    return false;
-                if (livingEntity instanceof Creeper)
-                    return false;
-                if (livingEntity instanceof TamableAnimal) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Player) //<- taken care of by the prey selector
-                    return false;
+                }
                 return true;
             }
         }));

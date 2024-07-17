@@ -6,6 +6,7 @@ import com.dragn0007.deadlydinos.entity.Chestable;
 import com.dragn0007.deadlydinos.entity.ai.DinoWeakMeleeGoal;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
+import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import com.google.common.collect.Sets;
@@ -29,6 +30,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.*;
 import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
+import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Dolphin;
 import net.minecraft.world.entity.animal.Squid;
@@ -163,24 +165,21 @@ public class Ichthy extends TamableAnimal implements ContainerListener, IAnimata
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
-                if (livingEntity instanceof Mahakala)
+                if (livingEntity
+                        instanceof Ichthy
+                        || livingEntity instanceof Mahakala
+                        || livingEntity instanceof CarSide
+                        || livingEntity instanceof Car
+                        || livingEntity instanceof CarFlipped
+                        || livingEntity instanceof ArmorStand
+                        || livingEntity instanceof AbstractFish
+                        || livingEntity instanceof Squid
+                        || livingEntity instanceof Dolphin
+                        || livingEntity instanceof TamableAnimal
+                        || livingEntity instanceof Player
+                ){
                     return false;
-                if (livingEntity instanceof Ichthy)
-                    return false;
-                if (livingEntity instanceof Car)
-                    return false;
-                if (livingEntity instanceof CarFlipped)
-                    return false;
-                if (livingEntity instanceof ArmorStand)
-                    return false;
-                if (livingEntity instanceof Squid)
-                    return false;
-                if (livingEntity instanceof Dolphin)
-                    return false;
-                if (livingEntity instanceof TamableAnimal) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Player) //<- taken care of by the prey selector
-                    return false;
+                }
                 return true;
             }
         }));

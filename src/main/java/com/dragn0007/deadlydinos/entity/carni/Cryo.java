@@ -112,28 +112,19 @@ public class Cryo extends Animal implements IAnimatable {
         this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
-                if (livingEntity instanceof Cryo)
+                if (livingEntity
+                        instanceof Cryo
+                        || livingEntity instanceof Mahakala
+                        || livingEntity instanceof CarSide
+                        || livingEntity instanceof Car
+                        || livingEntity instanceof CarFlipped
+                        || livingEntity instanceof ArmorStand
+                        || livingEntity instanceof AbstractFish
+                        || livingEntity instanceof Squid
+                        || livingEntity instanceof Dolphin
+                ){
                     return false;
-                if (livingEntity instanceof Austro)
-                    return false;
-                if (livingEntity instanceof Deinon)
-                    return false;
-                if (livingEntity instanceof Mahakala)
-                    return false;
-                if (livingEntity instanceof CarSide)
-                    return false;
-                if (livingEntity instanceof Car)
-                    return false;
-                if (livingEntity instanceof CarFlipped)
-                    return false;
-                if (livingEntity instanceof ArmorStand)
-                    return false;
-                if (livingEntity instanceof AbstractFish)
-                    return false;
-                if (livingEntity instanceof Squid)
-                    return false;
-                if (livingEntity instanceof Dolphin)
-                    return false;
+                }
                 return true;
             }
         }));

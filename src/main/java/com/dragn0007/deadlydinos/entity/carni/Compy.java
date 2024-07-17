@@ -24,7 +24,11 @@ import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Dolphin;
+import net.minecraft.world.entity.animal.Squid;
+import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
@@ -111,24 +115,18 @@ public class Compy extends Animal implements IAnimatable {
         this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
-                if (livingEntity instanceof Compy)
+                if (livingEntity
+                        instanceof Compy
+                        || livingEntity instanceof CarSide
+                        || livingEntity instanceof Car
+                        || livingEntity instanceof CarFlipped
+                        || livingEntity instanceof ArmorStand
+                        || livingEntity instanceof AbstractFish
+                        || livingEntity instanceof Squid
+                        || livingEntity instanceof Dolphin
+                ){
                     return false;
-                if (livingEntity instanceof Acro)
-                    return false;
-                if (livingEntity instanceof Alberto)
-                    return false;
-                if (livingEntity instanceof Giga)
-                    return false;
-                if (livingEntity instanceof Rex)
-                    return false;
-                if (livingEntity instanceof Spino)
-                    return false;
-                if (livingEntity instanceof CarSide)
-                    return false;
-                if (livingEntity instanceof Car)
-                    return false;
-                if (livingEntity instanceof CarFlipped)
-                    return false;
+                }
                 return true;
             }
         }));

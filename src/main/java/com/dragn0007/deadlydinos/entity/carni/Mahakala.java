@@ -131,70 +131,28 @@ public class Mahakala extends ShoulderRidingEntity implements IAnimatable {
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
-                if (livingEntity instanceof Mahakala)
+                if (livingEntity
+                        instanceof Mahakala
+                        || livingEntity instanceof Archae
+                        || livingEntity instanceof CarSide
+                        || livingEntity instanceof Car
+                        || livingEntity instanceof CarFlipped
+                        || livingEntity instanceof ArmorStand
+                        || livingEntity instanceof AbstractFish
+                        || livingEntity instanceof Squid
+                        || livingEntity instanceof Dolphin
+                        || livingEntity instanceof Giga
+                        || livingEntity instanceof Rex
+                        || livingEntity instanceof Alberto
+                        || livingEntity instanceof Tarbo
+                        || livingEntity instanceof Carchar
+                        || livingEntity instanceof Acro
+                        || livingEntity instanceof Spino
+                        || livingEntity instanceof TamableAnimal
+                        || livingEntity instanceof Player
+                ){
                     return false;
-                if (livingEntity instanceof Acro)
-                    return false;
-                if (livingEntity instanceof Ava)
-                    return false;
-                if (livingEntity instanceof Alberto)
-                    return false;
-                if (livingEntity instanceof Austro)
-                    return false;
-                if (livingEntity instanceof Carno)
-                    return false;
-                if (livingEntity instanceof Cerato)
-                    return false;
-                if (livingEntity instanceof Deinon)
-                    return false;
-                if (livingEntity instanceof Giga)
-                    return false;
-                if (livingEntity instanceof Majunga)
-                    return false;
-                if (livingEntity instanceof Rex)
-                    return false;
-                if (livingEntity instanceof Spino)
-                    return false;
-                if (livingEntity instanceof Utah)
-                    return false;
-                if (livingEntity instanceof Archae)
-                    return false;
-                if (livingEntity instanceof CarSide)
-                    return false;
-                if (livingEntity instanceof Car)
-                    return false;
-                if (livingEntity instanceof CarFlipped)
-                    return false;
-                if (livingEntity instanceof TamableAnimal) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Player) //<- taken care of by the prey selector
-                    return false;
-
-                //Vanilla
-                if (livingEntity instanceof Cow)
-                    return false;
-                if (livingEntity instanceof Horse)
-                    return false;
-                if (livingEntity instanceof Villager)
-                    return false;
-                if (livingEntity instanceof Pillager)
-                    return false;
-                if (livingEntity instanceof Sheep)
-                    return false;
-                if (livingEntity instanceof Zombie)
-                    return false;
-                if (livingEntity instanceof Creeper)
-                    return false;
-                if (livingEntity instanceof Skeleton)
-                    return false;
-                if (livingEntity instanceof ArmorStand)
-                    return false;
-                if (livingEntity instanceof AbstractFish)
-                    return false;
-                if (livingEntity instanceof Squid)
-                    return false;
-                if (livingEntity instanceof Dolphin)
-                    return false;
+                }
                 return true;
             }
         }));

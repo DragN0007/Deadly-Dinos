@@ -4,6 +4,7 @@ import com.dragn0007.deadlydinos.client.model.CeratoModel;
 import com.dragn0007.deadlydinos.entity.ai.DinoWeakMeleeGoal;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
+import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import net.minecraft.core.BlockPos;
@@ -151,26 +152,21 @@ public class Cerato extends TamableAnimal implements ContainerListener, Saddleab
         this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
-                if (livingEntity instanceof Mahakala)
+                if (livingEntity
+                        instanceof Cerato
+                        || livingEntity instanceof Mahakala
+                        || livingEntity instanceof CarSide
+                        || livingEntity instanceof Car
+                        || livingEntity instanceof CarFlipped
+                        || livingEntity instanceof ArmorStand
+                        || livingEntity instanceof AbstractFish
+                        || livingEntity instanceof Squid
+                        || livingEntity instanceof Dolphin
+                        || livingEntity instanceof TamableAnimal
+                        || livingEntity instanceof Player
+                ){
                     return false;
-                if (livingEntity instanceof Cerato)
-                    return false;
-                if (livingEntity instanceof Car)
-                    return false;
-                if (livingEntity instanceof CarFlipped)
-                    return false;
-                if (livingEntity instanceof ArmorStand)
-                    return false;
-                if (livingEntity instanceof AbstractFish)
-                    return false;
-                if (livingEntity instanceof Squid)
-                    return false;
-                if (livingEntity instanceof Dolphin)
-                    return false;
-                if (livingEntity instanceof TamableAnimal) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Player) //<- taken care of by the prey selector
-                    return false;
+                }
                 return true;
             }
         }));

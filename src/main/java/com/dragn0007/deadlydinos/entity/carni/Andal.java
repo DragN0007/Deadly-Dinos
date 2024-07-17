@@ -2,6 +2,9 @@ package com.dragn0007.deadlydinos.entity.carni;
 
 import com.dragn0007.deadlydinos.client.model.AndalModel;
 import com.dragn0007.deadlydinos.entity.herbi.Ava;
+import com.dragn0007.deadlydinos.entity.nonliving.Car;
+import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
+import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import com.google.common.collect.Sets;
@@ -24,7 +27,11 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.*;
+import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Dolphin;
+import net.minecraft.world.entity.animal.Squid;
+import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Item;
@@ -137,24 +144,28 @@ public class Andal extends TamableAnimal implements IAnimatable {
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
-                if (livingEntity instanceof Andal)
+                if (livingEntity
+                        instanceof Andal
+                        || livingEntity instanceof Mahakala
+                        || livingEntity instanceof CarSide
+                        || livingEntity instanceof Car
+                        || livingEntity instanceof CarFlipped
+                        || livingEntity instanceof ArmorStand
+                        || livingEntity instanceof AbstractFish
+                        || livingEntity instanceof Squid
+                        || livingEntity instanceof Dolphin
+                        || livingEntity instanceof Giga
+                        || livingEntity instanceof Rex
+                        || livingEntity instanceof Alberto
+                        || livingEntity instanceof Tarbo
+                        || livingEntity instanceof Carchar
+                        || livingEntity instanceof Acro
+                        || livingEntity instanceof Spino
+                        || livingEntity instanceof TamableAnimal
+                        || livingEntity instanceof Player
+                ){
                     return false;
-                if (livingEntity instanceof Acro)
-                    return false;
-                if (livingEntity instanceof Ava)
-                    return false;
-                if (livingEntity instanceof Alberto)
-                    return false;
-                if (livingEntity instanceof Giga)
-                    return false;
-                if (livingEntity instanceof Rex)
-                    return false;
-                if (livingEntity instanceof Spino)
-                    return false;
-                if (livingEntity instanceof TamableAnimal) //<- taken care of by the prey selector
-                    return false;
-                if (livingEntity instanceof Player) //<- taken care of by the prey selector
-                    return false;
+                }
                 return true;
             }
         }));

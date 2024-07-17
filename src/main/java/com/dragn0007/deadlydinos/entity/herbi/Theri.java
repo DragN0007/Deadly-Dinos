@@ -3,6 +3,8 @@ package com.dragn0007.deadlydinos.entity.herbi;
 import com.dragn0007.deadlydinos.client.model.TheriModel;
 import com.dragn0007.deadlydinos.entity.ai.DestroyCropsGoal;
 import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
+import com.dragn0007.deadlydinos.entity.carni.Cryo;
+import com.dragn0007.deadlydinos.entity.carni.Mahakala;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
@@ -26,7 +28,9 @@ import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.*;
+import net.minecraft.world.entity.animal.horse.Donkey;
 import net.minecraft.world.entity.animal.horse.Horse;
+import net.minecraft.world.entity.animal.horse.Mule;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -43,6 +47,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
+import software.bernie.shadowed.eliotlash.mclib.math.functions.classic.Pi;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -101,54 +106,47 @@ public class Theri extends Animal implements IAnimatable {
         this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
             @Override
             public boolean test(@Nullable LivingEntity livingEntity) {
-                if (livingEntity instanceof Theri)
+                if (livingEntity
+                        instanceof Theri
+                        || livingEntity instanceof Mahakala
+                        || livingEntity instanceof CarSide
+                        || livingEntity instanceof Car
+                        || livingEntity instanceof CarFlipped
+                        || livingEntity instanceof ArmorStand
+                        || livingEntity instanceof AbstractFish
+                        || livingEntity instanceof Squid
+                        || livingEntity instanceof Deinoch
+                        || livingEntity instanceof Ava
+                        || livingEntity instanceof Amarga
+                        || livingEntity instanceof Ampelo
+                        || livingEntity instanceof Anky
+                        || livingEntity instanceof CropSnail
+                        || livingEntity instanceof Edmonto
+                        || livingEntity instanceof Galli
+                        || livingEntity instanceof Grypo
+                        || livingEntity instanceof Igua
+                        || livingEntity instanceof Pachyr
+                        || livingEntity instanceof Para
+                        || livingEntity instanceof Sauro
+                        || livingEntity instanceof Shant
+                        || livingEntity instanceof Stego
+                        || livingEntity instanceof Trike
+                        || livingEntity instanceof Cow
+                        || livingEntity instanceof Chicken
+                        || livingEntity instanceof Pig
+                        || livingEntity instanceof Horse
+                        || livingEntity instanceof Donkey
+                        || livingEntity instanceof Mule
+                        || livingEntity instanceof Sheep
+                        || livingEntity instanceof Fox
+                        || livingEntity instanceof Wolf
+                        || livingEntity instanceof Cat
+                        || livingEntity instanceof Ocelot
+                        || livingEntity instanceof Parrot
+                        || livingEntity instanceof Panda
+                ){
                     return false;
-                if (livingEntity instanceof CarSide)
-                    return false;
-                if (livingEntity instanceof Car)
-                    return false;
-                if (livingEntity instanceof CarFlipped)
-                    return false;
-                if (livingEntity instanceof ArmorStand)
-                    return false;
-                if (livingEntity instanceof AbstractFish)
-                    return false;
-                if (livingEntity instanceof Squid)
-                    return false;
-                if (livingEntity instanceof Dolphin)
-                    return false;
-                if (livingEntity instanceof Amarga)
-                    return false;
-                if (livingEntity instanceof Para)
-                    return false;
-                if (livingEntity instanceof Stego)
-                    return false;
-                if (livingEntity instanceof CropSnail)
-                    return false;
-                if (livingEntity instanceof Cow)
-                    return false;
-                if (livingEntity instanceof Sheep)
-                    return false;
-                if (livingEntity instanceof Pig)
-                    return false;
-                if (livingEntity instanceof Parrot)
-                    return false;
-                if (livingEntity instanceof Horse)
-                    return false;
-                if (livingEntity instanceof Anky)
-                    return false;
-                if (livingEntity instanceof Ava)
-                    return false;
-                if (livingEntity instanceof Shant)
-                    return false;
-                if (livingEntity instanceof Sauro)
-                    return false;
-                if (livingEntity instanceof Galli)
-                    return false;
-                if (livingEntity instanceof Deinoch)
-                    return false;
-                if (livingEntity instanceof Rabbit)
-                    return false;
+                }
                 return true;
             }
         }));
