@@ -10,7 +10,8 @@ public class IguaModel extends AnimatedGeoModel<Igua> {
     public enum Variant {
         MALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/iguamale.png")),
         FEMALE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/iguafemale.png")),
-        PERIDOT(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/iguagold.png"));
+        PERIDOT(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/iguagold.png")),
+        BEE(new ResourceLocation(DeadlyDinos.MODID, "textures/entity/iguabee.png")); //Texture funded by BumbleBeez32
 
         public final ResourceLocation resourceLocation;
         Variant(ResourceLocation resourceLocation) {

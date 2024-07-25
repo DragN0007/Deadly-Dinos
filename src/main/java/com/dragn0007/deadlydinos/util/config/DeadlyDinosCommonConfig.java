@@ -7,8 +7,6 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec SPEC;
 
     public static final ForgeConfigSpec.ConfigValue<Integer> TROPHYITEM_DURABILITY;
-    public static final ForgeConfigSpec.ConfigValue<Integer> SPAWNCONFIGHELPER;
-//    public static final ForgeConfigSpec.ConfigValue<Boolean> DINO_GRIEFING_ENABLED;
     public static final ForgeConfigSpec.ConfigValue<Integer> BIG_DINO_BREAK_RADIUS;
     public static final ForgeConfigSpec.ConfigValue<Integer> SMALL_DINO_BREAK_RADIUS;
     public static final ForgeConfigSpec.ConfigValue<Integer> ACRO_WEIGHT;
@@ -61,17 +59,12 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> YUTY_WEIGHT;
 
 
-
-
-
     static {
         BUILDER.push("Configs for Deadly Dinos!");
 
-        TROPHYITEM_DURABILITY = BUILDER.comment("Amount of uses of Dino Trophies. Set to 0 for inifinite durability. Default is 10.")
+        TROPHYITEM_DURABILITY = BUILDER.comment("Amount of uses of Dino Trophies. Set to 0 for infinite durability. Default is 10.")
                 .define("How much durabiltiy should Dino Trophies have?", 10);
 
-//        DINO_GRIEFING_ENABLED = BUILDER.comment("Should Dinos be able to break blocks? True or False. Default: True")
-//                .define("Dino Grief", true);
 
         //Large Dinos - How many blocks should they break?
         BIG_DINO_BREAK_RADIUS = BUILDER.comment("What should the radius be that Large Deadly Dinos can destroy when attacking? 5 Blocks is Default.")
@@ -80,10 +73,6 @@ public class DeadlyDinosCommonConfig {
         //Small Dinos - How many blocks should they break?
         SMALL_DINO_BREAK_RADIUS = BUILDER.comment("What should the radius be that Small Deadly Dinos can destroy when attacking? 3 Blocks is Default.")
                 .define("Small Dino destroy radius", 3);
-
-
-        SPAWNCONFIGHELPER = BUILDER.comment("Dino spawn configs have 1 integer: Weight. You can play with this number to get the perfect spawn rate for you. Set it to 0 to stop a certain dino from spawning entirely.")
-                .define("<<SPAWN CONFIG HELPER>> - Look here ^ for help!", 7777);
 
 
         ACRO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
@@ -229,8 +218,6 @@ public class DeadlyDinosCommonConfig {
 
         YUTY_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
                 .define("YUTY Spawn Weight", 1);
-
-
 
         BUILDER.pop();
         SPEC = BUILDER.build();
