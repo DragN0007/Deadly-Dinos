@@ -363,7 +363,6 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
         this.harvestCrop(rightPos);
     }
 
-
     public Vec3 lastClientPos = Vec3.ZERO;
     public Vec3 lastServerPos = Vec3.ZERO;
     private int lerpSteps;
