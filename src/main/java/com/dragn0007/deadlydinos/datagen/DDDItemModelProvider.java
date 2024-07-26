@@ -67,10 +67,12 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.PARA_EGG.get());
         simpleItem(DDDItems.ANDAL_EGG.get());
         simpleItem(DDDItems.TRIKE_EGG.get());
+        simpleItem(DDDItems.EOCARCHAR_EGG.get());
 
         simpleItem(DDDItems.GAR_SPAWN_EGG.get());
 
 //        simpleItem(DDDItems.ARCHAE_HARNESS.get());
+        simpleItem(DDDItems.EOCARCHARIA_ARMOR.get());
         simpleItem(DDDItems.DINO_NUGGET_1.get());
         simpleItem(DDDItems.DINO_NUGGET_2.get());
         simpleItem(DDDItems.DINO_NUGGET_3.get());

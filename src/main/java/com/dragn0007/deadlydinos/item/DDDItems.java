@@ -48,6 +48,8 @@ public class DDDItems {
             () -> new DinoEggItem(EntityTypes.IGUA_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> TRIKE_EGG = ITEMS.register("trike_egg",
             () -> new DinoEggItem(EntityTypes.TRIKE_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> EOCARCHAR_EGG = ITEMS.register("eocarchar_egg",
+            () -> new DinoEggItem(EntityTypes.EOCARCHAR_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
 
 
 
@@ -468,6 +470,8 @@ public class DDDItems {
     //TODO;
 //    public static final RegistryObject<Item> ARCHAE_HARNESS = ITEMS.register("archae_harness",
 //            () -> new Item(new Item.Properties().tab(DDDItemGroup.DDD_GROUP)));
+    public static final RegistryObject<Item> EOCARCHARIA_ARMOR = ITEMS.register("eocarcharia_armor",
+            () -> new Item(new Item.Properties().stacksTo(1).tab(DDDItemGroup.DDD_GROUP)));
 
 
     //TROPHIES

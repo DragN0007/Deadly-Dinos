@@ -10,5 +10,4 @@ public interface Chestable {
     void equipChest(@Nullable SoundSource soundSource);
 
     boolean isChested();
-
 }

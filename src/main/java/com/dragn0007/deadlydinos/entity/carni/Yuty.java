@@ -28,7 +28,10 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.*;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.NonTameRandomTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
 import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Dolphin;
@@ -129,7 +132,6 @@ public class Yuty extends TamableAnimal implements ContainerListener, Saddleable
 
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(1, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(2, new BreakDoorGoal(this, (x) -> x == Difficulty.EASY || x == Difficulty.NORMAL || x == Difficulty.HARD));
         this.goalSelector.addGoal(3, new DinoWeakMeleeGoal(this, 1.8, true));
         this.goalSelector.addGoal(4, new FloatGoal(this));

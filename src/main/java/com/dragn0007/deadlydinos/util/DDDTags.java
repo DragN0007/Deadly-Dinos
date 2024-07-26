@@ -34,6 +34,8 @@ public class DDDTags {
         public static final TagKey<Item> MEDIUM_BONES = tag("medium_bones");
         public static final TagKey<Item> SMALL_BONES = tag("small_bones");
 
+        public static final TagKey<Item> BEDROLL_BEDS = forgeTag("bedroll_beds");
+
 
 
         private static TagKey<Item> tag (String name) {
