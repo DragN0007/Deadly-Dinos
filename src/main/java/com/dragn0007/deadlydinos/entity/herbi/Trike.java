@@ -383,7 +383,7 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
         super.tick();
         this.lastClientPos = this.position();
 
-        if(this.getControllingPassenger() instanceof LocalPlayer player) {
+        if(this.isControlledByLocalInstance() && this.getControllingPassenger() instanceof LocalPlayer player) {
             this.handleInput((KeyboardInput) player.input);
         }
 
