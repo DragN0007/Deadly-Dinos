@@ -46,7 +46,6 @@ public abstract class AbstractNeutralMarineDino extends WaterAnimal {
 
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new AbstractNeutralMarineDino.SharkMeleeAttackGoal());
-        this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, Dolphin.class, 8.0F, 1.6D, 1.4D, EntitySelector.NO_SPECTATORS::test));
         this.goalSelector.addGoal(4, new AbstractNeutralMarineDino.SharkSwimGoal(this));
         this.targetSelector.addGoal(1, new AbstractNeutralMarineDino.SharkHurtByTargetGoal());
         this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
