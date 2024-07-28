@@ -204,7 +204,9 @@
   "item.deadlydinos.dunkleo_spawn_egg": "Dunkleosteus Spawn Egg",
   "item.deadlydinos.dunkleotrophy": "Dunkleosteus Tooth Trophy",
 
-
+  "entity.deadlydinos.ichthyo_entity": "Ichthyosaurus",
+  "item.deadlydinos.ichthyo_spawn_egg": "Ichthyosaurus Spawn Egg",
+  "item.deadlydinos.ichthyotrophy": "Ichthyosaurus Fin Trophy",
 
   "entity.deadlydinos.gar_entity": "Alligator Gar",
   "item.deadlydinos.gar_spawn_egg": "Alligator Gar Spawn Egg",

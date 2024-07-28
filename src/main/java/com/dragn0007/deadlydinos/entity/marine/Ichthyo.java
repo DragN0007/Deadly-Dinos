@@ -1,26 +1,24 @@
 package com.dragn0007.deadlydinos.entity.marine;
 
-import com.dragn0007.deadlydinos.client.model.HeliModel;
-import com.dragn0007.deadlydinos.entity.marine.base.AbstractMarineDino;
-import com.dragn0007.deadlydinos.entity.nonliving.Car;
-import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
-import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
+import com.dragn0007.deadlydinos.client.model.GarModel;
+import com.dragn0007.deadlydinos.client.model.IchthyoModel;
+import com.dragn0007.deadlydinos.entity.marine.base.AbstractNeutralMarineDino;
+import com.dragn0007.deadlydinos.entity.marine.base.AbstractPassiveMarineDino;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.animal.AbstractFish;
-import net.minecraft.world.entity.animal.Squid;
-import net.minecraft.world.entity.decoration.ArmorStand;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.animal.Dolphin;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.Vec3;
@@ -37,14 +35,13 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
 import java.util.Random;
-import java.util.function.Predicate;
 
 
-public class Heli extends AbstractMarineDino implements IAnimatable {
+public class Ichthyo extends AbstractPassiveMarineDino implements IAnimatable {
 
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
-    public Heli(EntityType<? extends Heli> entityType, Level level) {
+    public Ichthyo(EntityType<? extends Ichthyo> entityType, Level level) {
         super(entityType, level);
         this.noCulling = true;
     }
@@ -57,39 +54,17 @@ public class Heli extends AbstractMarineDino implements IAnimatable {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 150)
-                .add(Attributes.ATTACK_DAMAGE, 10)
-                .add(Attributes.ATTACK_KNOCKBACK, 1)
-                .add(Attributes.MOVEMENT_SPEED, 0.3)
+                .add(Attributes.MAX_HEALTH, 75)
+                .add(Attributes.ATTACK_DAMAGE, 1)
+                .add(Attributes.MOVEMENT_SPEED, 0.2)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1)
     ;}
 
     protected void registerGoals() {
         super.registerGoals();
-        this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
-        this.goalSelector.addGoal(0, new NearestAttackableTargetGoal<Player>(this, Player.class, 35, true, true, LivingEntity::attackable));
-        this.goalSelector.addGoal(0, new MeleeAttackGoal(this, 2, true));
-        this.targetSelector.addGoal(0, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, true, new Predicate<LivingEntity>() {
-            @Override
-            public boolean test(@Nullable LivingEntity livingEntity) {
-                if (livingEntity instanceof Heli)
-                    return false;
-                if (livingEntity instanceof CarSide)
-                    return false;
-                if (livingEntity instanceof Car)
-                    return false;
-                if (livingEntity instanceof CarFlipped)
-                    return false;
-                if (livingEntity instanceof ArmorStand)
-                    return false;
-                if (livingEntity instanceof AbstractFish)
-                    return false;
-                if (livingEntity instanceof Squid)
-                    return false;
-                return true;
-            }
-        }));
-    }
+        this.goalSelector.addGoal(1, new AbstractPassiveMarineDino.DolphinSwimWithPlayerGoal(this, 4.0D));
+        this.goalSelector.addGoal(0, new PanicGoal(this, 2));
+        }
 
 
 
@@ -98,7 +73,7 @@ public class Heli extends AbstractMarineDino implements IAnimatable {
 
         if (event.isMoving()) {
             if (isAggressive() || isSprinting()) {
-                event.getController().setAnimation(new AnimationBuilder().addAnimation("swimfast", ILoopType.EDefaultLoopTypes.LOOP));
+                event.getController().setAnimation(new AnimationBuilder().addAnimation("swim", ILoopType.EDefaultLoopTypes.LOOP));
 
             } else
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("swim", ILoopType.EDefaultLoopTypes.LOOP));
@@ -134,11 +109,11 @@ public class Heli extends AbstractMarineDino implements IAnimatable {
     //Generates variant textures
 
     public ResourceLocation getTextureLocation() {
-        return HeliModel.Variant.variantFromOrdinal(getVariant()).resourceLocation;
+        return IchthyoModel.Variant.variantFromOrdinal(getVariant()).resourceLocation;
     }
 
 
-    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Heli.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Ichthyo.class, EntityDataSerializers.INT);
 
     public int getVariant(){
         return this.entityData.get(VARIANT);
@@ -167,7 +142,7 @@ public class Heli extends AbstractMarineDino implements IAnimatable {
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor levelAccessor, DifficultyInstance difficultyInstance, MobSpawnType mobSpawnType, @Nullable SpawnGroupData spawnGroupData, @Nullable CompoundTag compoundTag) {
 
-        setVariant(new Random().nextInt(HeliModel.Variant.values().length));
+        setVariant(new Random().nextInt(IchthyoModel.Variant.values().length));
 
         return super.finalizeSpawn(levelAccessor, difficultyInstance, mobSpawnType, spawnGroupData, compoundTag);
     }

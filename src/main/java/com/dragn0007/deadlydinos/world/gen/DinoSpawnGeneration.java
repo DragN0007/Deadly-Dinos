@@ -372,17 +372,25 @@ public class DinoSpawnGeneration {
 
         addEntityToSpecificBiomes(event, EntityTypes.HELI_ENTITY.get(),
                 DeadlyDinosCommonConfig.HELI_WEIGHT.get(), 1, 2,
-                Biomes.DEEP_LUKEWARM_OCEAN, Biomes.DEEP_COLD_OCEAN, Biomes.DEEP_OCEAN,  Biomes.LUKEWARM_OCEAN, Biomes.COLD_OCEAN, Biomes.OCEAN, Biomes.WARM_OCEAN
+                Biomes.DEEP_LUKEWARM_OCEAN, Biomes.DEEP_COLD_OCEAN, Biomes.DEEP_OCEAN,
+                Biomes.LUKEWARM_OCEAN, Biomes.COLD_OCEAN, Biomes.OCEAN, Biomes.WARM_OCEAN
         );
 
         addEntityToSpecificBiomes(event, EntityTypes.GAR_ENTITY.get(),
                 DeadlyDinosCommonConfig.GAR_WEIGHT.get(), 1, 2,
-                Biomes.RIVER, Biomes.BEACH, Biomes.SWAMP,  Biomes.LUSH_CAVES
+                Biomes.RIVER, Biomes.SWAMP,  Biomes.LUSH_CAVES
         );
 
         addEntityToSpecificBiomes(event, EntityTypes.DUNKLEO_ENTITY.get(),
-                DeadlyDinosCommonConfig.HELI_WEIGHT.get(), 1, 1,
-                Biomes.DEEP_LUKEWARM_OCEAN, Biomes.DEEP_COLD_OCEAN, Biomes.DEEP_OCEAN,  Biomes.LUKEWARM_OCEAN, Biomes.COLD_OCEAN, Biomes.OCEAN, Biomes.WARM_OCEAN, Biomes.DEEP_FROZEN_OCEAN,  Biomes.FROZEN_OCEAN
+                DeadlyDinosCommonConfig.DUNKLEO_WEIGHT.get(), 1, 1,
+                Biomes.DEEP_LUKEWARM_OCEAN, Biomes.DEEP_COLD_OCEAN, Biomes.DEEP_OCEAN,  Biomes.DEEP_FROZEN_OCEAN,
+                Biomes.LUKEWARM_OCEAN, Biomes.COLD_OCEAN, Biomes.OCEAN, Biomes.FROZEN_OCEAN, Biomes.WARM_OCEAN
+                );
+
+        addEntityToSpecificBiomes(event, EntityTypes.ICHTHYO_ENTITY.get(),
+                DeadlyDinosCommonConfig.ICHTHYO_WEIGHT.get(), 1, 3,
+                Biomes.LUKEWARM_OCEAN, Biomes.COLD_OCEAN, Biomes.OCEAN, Biomes.WARM_OCEAN,
+                Biomes.BEACH
         );
 
     }

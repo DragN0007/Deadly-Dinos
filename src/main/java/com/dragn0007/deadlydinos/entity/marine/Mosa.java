@@ -62,7 +62,7 @@ public class Mosa extends AbstractMarineDino implements IAnimatable {
                 .add(Attributes.ATTACK_KNOCKBACK, 2)
                 .add(Attributes.MOVEMENT_SPEED, 0.3)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1)
-                .add(Attributes.ARMOR, 6)
+                .add(Attributes.ARMOR, 4)
     ;}
 
     protected void registerGoals() {

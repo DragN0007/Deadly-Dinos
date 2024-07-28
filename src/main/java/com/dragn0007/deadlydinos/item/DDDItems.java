@@ -156,6 +156,8 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.GAR_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> DUNKLEO_SPAWN_EGG = ITEMS.register("dunkleo_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.DUNKLEO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> ICHTHYO_SPAWN_EGG = ITEMS.register("ichthyo_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.ICHTHYO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
 
@@ -714,6 +716,11 @@ public class DDDItems {
     public static final RegistryObject<TrophyItem> DUNKLEOTROPHY = ITEMS.register("dunkleotrophy",
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2880, 5,true, false),
+                    new MobEffectInstance(MobEffects.WATER_BREATHING, 2880, 2, true, false)
+            ));
+
+    public static final RegistryObject<TrophyItem> ICHTHYOTROPHY = ITEMS.register("ichthyotrophy",
+            () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.WATER_BREATHING, 2880, 2, true, false)
             ));
 

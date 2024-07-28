@@ -2,10 +2,7 @@ package com.dragn0007.deadlydinos.entity.util;
 
 import com.dragn0007.deadlydinos.entity.carni.*;
 import com.dragn0007.deadlydinos.entity.herbi.*;
-import com.dragn0007.deadlydinos.entity.marine.Dunkleo;
-import com.dragn0007.deadlydinos.entity.marine.Gar;
-import com.dragn0007.deadlydinos.entity.marine.Heli;
-import com.dragn0007.deadlydinos.entity.marine.Mosa;
+import com.dragn0007.deadlydinos.entity.marine.*;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
@@ -311,6 +308,12 @@ public class EntityTypes {
                             MobCategory.WATER_CREATURE)
                     .sized(2f,2f)
                     .build(new ResourceLocation(MODID,"dunkleo").toString()));
+
+    public static final RegistryObject<EntityType<Ichthyo>> ICHTHYO_ENTITY = ENTITY_TYPES.register("ichthyo_entity",
+            () -> EntityType.Builder.of(Ichthyo::new,
+                            MobCategory.WATER_CREATURE)
+                    .sized(2f,2f)
+                    .build(new ResourceLocation(MODID,"ichthyo").toString()));
 
 
 

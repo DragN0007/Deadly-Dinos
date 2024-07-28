@@ -61,10 +61,8 @@ public class Gar extends AbstractNeutralMarineDino implements IAnimatable {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 30)
                 .add(Attributes.ATTACK_DAMAGE, 3)
-                .add(Attributes.ATTACK_KNOCKBACK, 2.5)
                 .add(Attributes.MOVEMENT_SPEED, 0.25)
-                .add(Attributes.KNOCKBACK_RESISTANCE, 0.4)
-                .add(Attributes.ARMOR, 6)
+                .add(Attributes.KNOCKBACK_RESISTANCE, 1)
     ;}
 
     protected void registerGoals() {

@@ -55,6 +55,10 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.HELI_SPAWN_EGG.get());
         simpleItem(DDDItems.DUNKLEOTROPHY.get());
         simpleItem(DDDItems.DUNKLEO_SPAWN_EGG.get());
+        simpleItem(DDDItems.ICHTHYOTROPHY.get());
+        simpleItem(DDDItems.ICHTHYO_SPAWN_EGG.get());
+
+        simpleItem(DDDItems.GAR_SPAWN_EGG.get());
 
         simpleItem(DDDItems.IGUA_EGG.get());
         simpleItem(DDDItems.ICHTHY_EGG.get());
@@ -68,8 +72,6 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.ANDAL_EGG.get());
         simpleItem(DDDItems.TRIKE_EGG.get());
         simpleItem(DDDItems.EOCARCHAR_EGG.get());
-
-        simpleItem(DDDItems.GAR_SPAWN_EGG.get());
 
 //        simpleItem(DDDItems.ARCHAE_HARNESS.get());
         simpleItem(DDDItems.EOCARCHARIA_ARMOR.get());
