@@ -83,6 +83,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         event.put(EntityTypes.GAR_ENTITY.get(), Gar.createAttributes().build());
         event.put(EntityTypes.DUNKLEO_ENTITY.get(), Dunkleo.createAttributes().build());
         event.put(EntityTypes.ICHTHYO_ENTITY.get(), Ichthyo.createAttributes().build());
+        event.put(EntityTypes.LEED_ENTITY.get(), Leed.createAttributes().build());
 
         event.put(EntityTypes.CAR_ENTITY.get(), Car.createAttributes().build());
         event.put(EntityTypes.CARSIDE_ENTITY.get(), CarSide.createAttributes().build());
@@ -238,6 +239,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
         SpawnPlacements.register(EntityTypes.ICHTHYO_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
+
+        SpawnPlacements.register(EntityTypes.LEED_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
     }
 
     @SubscribeEvent
@@ -294,6 +298,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         EntityRenderers.register(EntityTypes.GAR_ENTITY.get(), GarRender::new);
         EntityRenderers.register(EntityTypes.DUNKLEO_ENTITY.get(), DunkleoRender::new);
         EntityRenderers.register(EntityTypes.ICHTHYO_ENTITY.get(), IchthyoRender::new);
+        EntityRenderers.register(EntityTypes.LEED_ENTITY.get(), LeedRender::new);
 
         EntityRenderers.register(EntityTypes.CAR_ENTITY.get(), CarRender::new);
         EntityRenderers.register(EntityTypes.CARSIDE_ENTITY.get(), CarSideRender::new);

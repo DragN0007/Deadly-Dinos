@@ -315,6 +315,12 @@ public class EntityTypes {
                     .sized(2f,2f)
                     .build(new ResourceLocation(MODID,"ichthyo").toString()));
 
+    public static final RegistryObject<EntityType<Leed>> LEED_ENTITY = ENTITY_TYPES.register("leed_entity",
+            () -> EntityType.Builder.of(Leed::new,
+                            MobCategory.WATER_CREATURE)
+                    .sized(5f,5f)
+                    .build(new ResourceLocation(MODID,"leed").toString()));
+
 
 
 

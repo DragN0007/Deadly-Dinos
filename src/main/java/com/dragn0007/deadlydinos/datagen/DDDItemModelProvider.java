@@ -57,6 +57,8 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.DUNKLEO_SPAWN_EGG.get());
         simpleItem(DDDItems.ICHTHYOTROPHY.get());
         simpleItem(DDDItems.ICHTHYO_SPAWN_EGG.get());
+        simpleItem(DDDItems.LEEDTROPHY.get());
+        simpleItem(DDDItems.LEED_SPAWN_EGG.get());
 
         simpleItem(DDDItems.GAR_SPAWN_EGG.get());
 

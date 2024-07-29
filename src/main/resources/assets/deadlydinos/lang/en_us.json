@@ -208,6 +208,10 @@
   "item.deadlydinos.ichthyo_spawn_egg": "Ichthyosaurus Spawn Egg",
   "item.deadlydinos.ichthyotrophy": "Ichthyosaurus Fin Trophy",
 
+  "entity.deadlydinos.leed_entity": "Leedsichthys",
+  "item.deadlydinos.leed_spawn_egg": "Leedsichthys Spawn Egg",
+  "item.deadlydinos.leedtrophy": "Leedsichthys Fin Trophy",
+
   "entity.deadlydinos.gar_entity": "Alligator Gar",
   "item.deadlydinos.gar_spawn_egg": "Alligator Gar Spawn Egg",
 
@@ -257,6 +261,7 @@
   "item.deadlydinos.cooked_shark": "Cooked Shark Fillet",
   "item.deadlydinos.large_fish": "Large Fish Fillet",
   "item.deadlydinos.cooked_large_fish": "Cooked Large Fish Fillet",
+  "item.deadlydinos.blubber": "Blubber",
 
   
   "item.deadlydinos.smallcarnitooth": "Small Carni Tooth",
