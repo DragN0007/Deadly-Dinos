@@ -335,6 +335,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         MenuScreens.register(DDDMenuTypes.IGUA_MENU.get(), IguaScreen::new);
         MenuScreens.register(DDDMenuTypes.TRIKE_MENU.get(), TrikeScreen::new);
         MenuScreens.register(DDDMenuTypes.EOCARCHAR_MENU.get(), EocarcharScreen::new);
+        MenuScreens.register(DDDMenuTypes.ANKY_MENU.get(), AnkyScreen::new);
     }
 }
 

@@ -158,6 +158,7 @@
 
   "entity.deadlydinos.anky_entity": "Ankylosaurus",
   "item.deadlydinos.anky_spawn_egg": "Ankylosaurus Spawn Egg",
+  "item.deadlydinos.anky_egg": "Ankylosaurus Egg",
   "item.deadlydinos.ankytrophy": "Ankylosaurus Armor Trophy",
 
   "entity.deadlydinos.ava_entity": "Avaceratops",
@@ -433,5 +434,8 @@
   
   "entity.deadlydinos.car_entity": "Car",
   "entity.deadlydinos.carside_entity": "Car",
-  "entity.deadlydinos.carflipped_entity": "Car"
+  "entity.deadlydinos.carflipped_entity": "Car",
+
+  "key.deadlydinos.swim_up": "Aquatic Dino: Swim Up",
+  "key.deadlydinos.swim_down": "Aquatic Dino: Swim Down"
 }

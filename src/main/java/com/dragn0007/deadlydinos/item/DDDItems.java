@@ -35,6 +35,8 @@ public class DDDItems {
             () -> new DinoEggItem(EntityTypes.ANDAL_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> BARY_EGG = ITEMS.register("bary_egg",
             () -> new DinoEggItem(EntityTypes.BARY_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> ANKY_EGG = ITEMS.register("anky_egg",
+            () -> new DinoEggItem(EntityTypes.ANKY_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
 
     public static final RegistryObject<Item> AMARGA_EGG = ITEMS.register("amarga_egg",
             () -> new DinoEggItem(EntityTypes.AMARGA_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));

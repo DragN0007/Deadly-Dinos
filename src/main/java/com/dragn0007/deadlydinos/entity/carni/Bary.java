@@ -1,9 +1,6 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
-import com.dragn0007.deadlydinos.client.menu.IchthyMenu;
 import com.dragn0007.deadlydinos.client.model.BaryModel;
-import com.dragn0007.deadlydinos.client.model.IchthyModel;
-import com.dragn0007.deadlydinos.entity.Chestable;
 import com.dragn0007.deadlydinos.entity.ai.DinoWeakMeleeGoal;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
@@ -12,17 +9,14 @@ import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import com.google.common.collect.Sets;
-import net.minecraft.client.player.KeyboardInput;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -41,7 +35,6 @@ import net.minecraft.world.entity.animal.Squid;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.DismountHelper;
-import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -58,8 +51,6 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.wrapper.InvWrapper;
-import net.minecraftforge.network.NetworkHooks;
 import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -367,6 +358,11 @@ public class Bary extends TamableAnimal implements ContainerListener, IAnimatabl
     }
 
     @Override
+    public float getStepHeight() {
+        return 1f;
+    }
+
+    @Override
     public void travel(Vec3 vec) {
         if (this.isAlive()) {
             if (this.isInWater()) {
@@ -384,9 +380,7 @@ public class Bary extends TamableAnimal implements ContainerListener, IAnimatabl
 
                     if (livingentity instanceof Player) {
                         Player player = (Player) livingentity;
-                        if (player.isInWater()) {
-                            verticalMovement = 0.0D; // Swim up, aka float automatically in water.
-                        } else if (player.isCrouching()) {
+                        if (player.isSprinting()) {
                             verticalMovement = -0.4D; // Swim down if CTRL is held
                         }
                     }
@@ -557,7 +551,7 @@ public class Bary extends TamableAnimal implements ContainerListener, IAnimatabl
                 offsetZ = 0.4;
             } else {
                 offsetX = 0;
-                offsetY = 1.3;
+                offsetY = 1.2;
                 offsetZ = 0.4;
             }
 
@@ -598,11 +592,6 @@ public class Bary extends TamableAnimal implements ContainerListener, IAnimatabl
             this.itemHandler = null;
             oldHandler.invalidate();
         }
-    }
-
-    @Override
-    public float getStepHeight() {
-        return 1f;
     }
 
     @Override
