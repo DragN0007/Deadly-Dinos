@@ -88,6 +88,12 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.DINO_ROAST.get());
         simpleItem(DDDItems.GAR.get());
         simpleItem(DDDItems.COOKED_GAR.get());
+        simpleItem(DDDItems.SHARK.get());
+        simpleItem(DDDItems.COOKED_SHARK.get());
+        simpleItem(DDDItems.LARGE_FISH.get());
+        simpleItem(DDDItems.COOKED_LARGE_FISH.get());
+
+        simpleItem(DDDItems.BLUBBER.get());
 
         simpleSpriteBlockItem(DDDBlocksDataGen.ASTEROXYLON.get());
         simpleSpriteBlockItem(DDDBlocksDataGen.HORSETAIL.get());

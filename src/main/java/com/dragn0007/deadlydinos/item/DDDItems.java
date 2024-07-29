@@ -2,6 +2,7 @@ package com.dragn0007.deadlydinos.item;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
+import com.dragn0007.deadlydinos.item.custom.BlubberItem;
 import com.dragn0007.deadlydinos.item.custom.DinoEggItem;
 import com.dragn0007.deadlydinos.item.custom.SodaItem;
 import com.dragn0007.deadlydinos.item.custom.TrophyItem;
@@ -186,8 +187,6 @@ public class DDDItems {
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
     public static final RegistryObject<Item> MRE = ITEMS.register("mre",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
-//    public static final RegistryObject<Item> ALCOHOL = ITEMS.register("alcohol",
-//            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(1).build()).tab(DDDItemGroup.FOOD_GROUP)));
     public static final RegistryObject<Item> SODA = ITEMS.register("soda",
         () -> new SodaItem(
                 new MobEffectInstance(MobEffects.DIG_SPEED, 2880, 1, true, false),
@@ -235,7 +234,17 @@ public class DDDItems {
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
     public static final RegistryObject<Item> COOKED_GAR = ITEMS.register("cooked_gar",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> SHARK = ITEMS.register("shark",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> COOKED_SHARK = ITEMS.register("cooked_shark",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(12).saturationMod(1).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> LARGE_FISH = ITEMS.register("large_fish",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> COOKED_LARGE_FISH = ITEMS.register("cooked_large_fish",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
 
+    public static final RegistryObject<Item> BLUBBER = ITEMS.register("blubber",
+            () -> new BlubberItem(new Item.Properties().tab(DDDItemGroup.DDD_GROUP)));
 
 
     //SMALL CARNI BONES

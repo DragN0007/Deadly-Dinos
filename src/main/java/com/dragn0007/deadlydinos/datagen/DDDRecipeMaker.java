@@ -22,6 +22,30 @@ public class DDDRecipeMaker extends RecipeProvider implements IConditionBuilder 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
 
+        ShapedRecipeBuilder.shaped(Items.CANDLE)
+                .define('A', Items.STRING)
+                .define('B', DDDItems.BLUBBER.get())
+                .pattern("A")
+                .pattern("B")
+                .unlockedBy("has_blubber", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(DDDItems.BLUBBER.get()).build()))
+                .save(pFinishedRecipeConsumer);
+
+
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(DDDItems.LARGE_FISH.get()), DDDItems.COOKED_LARGE_FISH.get(), 0.35F, 200)
+                .unlockedBy("has_furnace", has(Blocks.FURNACE)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "large_fish_smelting"));
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(DDDItems.LARGE_FISH.get()), DDDItems.COOKED_LARGE_FISH.get(), 0.35F, 100)
+                .unlockedBy("has_smoker", has(Blocks.SMOKER)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "large_fish_smoking"));
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(DDDItems.LARGE_FISH.get()), DDDItems.COOKED_LARGE_FISH.get(), 0.35F, 600)
+                .unlockedBy("has_campfire", has(Blocks.CAMPFIRE)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "large_fish_campfire_cooking"));
+
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(DDDItems.SHARK.get()), DDDItems.COOKED_SHARK.get(), 0.35F, 200)
+                .unlockedBy("has_furnace", has(Blocks.FURNACE)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "shark_smelting"));
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(DDDItems.SHARK.get()), DDDItems.COOKED_SHARK.get(), 0.35F, 100)
+                .unlockedBy("has_smoker", has(Blocks.SMOKER)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "shark_smoking"));
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(DDDItems.SHARK.get()), DDDItems.COOKED_SHARK.get(), 0.35F, 600)
+                .unlockedBy("has_campfire", has(Blocks.CAMPFIRE)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "shark_campfire_cooking"));
+
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(DDDItems.GAR.get()), DDDItems.COOKED_GAR.get(), 0.35F, 200)
                 .unlockedBy("has_furnace", has(Blocks.FURNACE)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "gar_smelting"));
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(DDDItems.GAR.get()), DDDItems.COOKED_GAR.get(), 0.35F, 100)

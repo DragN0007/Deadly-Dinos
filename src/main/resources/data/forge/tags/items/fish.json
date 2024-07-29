@@ -3,6 +3,9 @@
   "values": [
     "minecraft:salmon",
     "minecraft:cod",
-    "minecraft:tropical_fish"
+    "minecraft:tropical_fish",
+    "deadlydinos:gar",
+    "deadlydinos:shark",
+    "deadlydinos:large_fish"
   ]
 }

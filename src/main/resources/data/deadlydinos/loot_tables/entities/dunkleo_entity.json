@@ -10,124 +10,20 @@
             {
               "function": "minecraft:set_count",
               "count": {
-                "min": 1.0,
-                "max": 1.0,
+                "min": 5.0,
+                "max": 14.0,
                 "type": "minecraft:uniform"
               }
             },
             {
               "function": "minecraft:looting_enchant",
-              "count": {
-                "min": 0.0,
-                "max": 0.0
-              }
-            }
-          ],
-          "name": "deadlydinos:largecarniskull"
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1.0,
-                "max": 1.0,
-                "type": "minecraft:uniform"
-              }
-            },
-            {
-              "function": "minecraft:looting_enchant",
-              "count": {
-                "min": 0.0,
-                "max": 0.0
-              }
-            }
-          ],
-          "name": "deadlydinos:largecarnispine"
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1.0,
-                "max": 1.0,
-                "type": "minecraft:uniform"
-              }
-            },
-            {
-              "function": "minecraft:looting_enchant",
-              "count": {
-                "min": 0.0,
-                "max": 1.0
-              }
-            }
-          ],
-          "name": "deadlydinos:largecarniribs"
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1.0,
-                "max": 1.0,
-                "type": "minecraft:uniform"
-              }
-            },
-            {
-              "function": "minecraft:looting_enchant",
-              "count": {
-                "min": 0.0,
-                "max": 0.0
-              }
-            }
-          ],
-          "name": "deadlydinos:largecarnitail"
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
               "count": {
                 "min": 2.0,
-                "max": 4.0,
-                "type": "minecraft:uniform"
-              }
-            },
-            {
-              "function": "minecraft:looting_enchant",
-              "count": {
-                "min": 1.0,
-                "max": 2.0
+                "max": 5.0
               }
             }
           ],
-          "name": "deadlydinos:largecarnitooth"
+          "name": "minecraft:bone_meal"
         }
       ]
     },
@@ -140,34 +36,8 @@
             {
               "function": "minecraft:set_count",
               "count": {
-                "min": 2.0,
-                "max": 6.0,
-                "type": "minecraft:uniform"
-              }
-            },
-            {
-              "function": "minecraft:looting_enchant",
-              "count": {
-                "min": 1.0,
-                "max": 2.0
-              }
-            }
-          ],
-          "name": "minecraft:leather"
-        }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 2.0,
-                "max": 6.0,
+                "min": 4.0,
+                "max": 8.0,
                 "type": "minecraft:uniform"
               }
             },
@@ -189,11 +59,11 @@
               "function": "minecraft:looting_enchant",
               "count": {
                 "min": 0.0,
-                "max": 2.0
+                "max": 3.0
               }
             }
           ],
-          "name": "minecraft:cod"
+          "name": "deadlydinos:large_fish"
         }
       ]
     },

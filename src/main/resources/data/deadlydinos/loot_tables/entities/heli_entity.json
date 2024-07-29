@@ -23,7 +23,7 @@
               }
             }
           ],
-          "name": "minecraft:bonemeal"
+          "name": "minecraft:bone_meal"
         }
       ]
     },
@@ -36,7 +36,7 @@
             {
               "function": "minecraft:set_count",
               "count": {
-                "min": 2.0,
+                "min": 4.0,
                 "max": 6.0,
                 "type": "minecraft:uniform"
               }
@@ -59,11 +59,11 @@
               "function": "minecraft:looting_enchant",
               "count": {
                 "min": 0.0,
-                "max": 2.0
+                "max": 3.0
               }
             }
           ],
-          "name": "minecraft:cod"
+          "name": "deadlydinos:shark"
         }
       ]
     },
