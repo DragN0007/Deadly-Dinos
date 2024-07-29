@@ -1,12 +1,9 @@
 package com.dragn0007.deadlydinos.entity.herbi;
 
 import com.dragn0007.deadlydinos.client.menu.AnkyMenu;
-import com.dragn0007.deadlydinos.client.menu.ParaMenu;
 import com.dragn0007.deadlydinos.client.model.AnkyModel;
 import com.dragn0007.deadlydinos.entity.Chestable;
-import com.dragn0007.deadlydinos.entity.ai.DestroyCropsGoal;
 import com.dragn0007.deadlydinos.entity.ai.DinoExtremeMeleeGoal;
-import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
 import com.dragn0007.deadlydinos.entity.ai.TamableDestroyWaterPlantsGoal;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.util.DDDTags;

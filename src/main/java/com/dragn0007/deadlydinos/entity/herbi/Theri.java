@@ -3,7 +3,6 @@ package com.dragn0007.deadlydinos.entity.herbi;
 import com.dragn0007.deadlydinos.client.model.TheriModel;
 import com.dragn0007.deadlydinos.entity.ai.DestroyCropsGoal;
 import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
-import com.dragn0007.deadlydinos.entity.carni.Cryo;
 import com.dragn0007.deadlydinos.entity.carni.Mahakala;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
@@ -47,7 +46,6 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
-import software.bernie.shadowed.eliotlash.mclib.math.functions.classic.Pi;
 
 import javax.annotation.Nullable;
 import java.util.Random;

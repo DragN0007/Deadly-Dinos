@@ -1,9 +1,7 @@
 package com.dragn0007.deadlydinos.client.menu;
 
 import com.dragn0007.deadlydinos.client.gui.DDDMenuTypes;
-import com.dragn0007.deadlydinos.entity.Armorable;
 import com.dragn0007.deadlydinos.entity.carni.Eocarchar;
-import com.dragn0007.deadlydinos.entity.carni.Yuty;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import net.minecraft.world.Container;
@@ -12,11 +10,8 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.network.IContainerFactory;
 
 public class EocarcharMenu extends AbstractContainerMenu {

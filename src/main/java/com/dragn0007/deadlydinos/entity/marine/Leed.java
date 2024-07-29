@@ -1,6 +1,5 @@
 package com.dragn0007.deadlydinos.entity.marine;
 
-import com.dragn0007.deadlydinos.client.model.GarModel;
 import com.dragn0007.deadlydinos.client.model.LeedModel;
 import com.dragn0007.deadlydinos.entity.marine.base.AbstractNeutralMarineDino;
 import net.minecraft.nbt.CompoundTag;

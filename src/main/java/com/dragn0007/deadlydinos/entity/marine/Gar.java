@@ -1,28 +1,20 @@
 package com.dragn0007.deadlydinos.entity.marine;
 
 import com.dragn0007.deadlydinos.client.model.GarModel;
-import com.dragn0007.deadlydinos.client.model.HeliModel;
-import com.dragn0007.deadlydinos.entity.marine.base.AbstractMarineDino;
 import com.dragn0007.deadlydinos.entity.marine.base.AbstractNeutralMarineDino;
-import com.dragn0007.deadlydinos.entity.nonliving.Car;
-import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
-import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.animal.AbstractFish;
-import net.minecraft.world.entity.animal.Squid;
-import net.minecraft.world.entity.decoration.ArmorStand;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.Vec3;
@@ -39,7 +31,6 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
 import java.util.Random;
-import java.util.function.Predicate;
 
 
 public class Gar extends AbstractNeutralMarineDino implements IAnimatable {
