@@ -2,10 +2,7 @@ package com.dragn0007.deadlydinos.item;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
-import com.dragn0007.deadlydinos.item.custom.BlubberItem;
-import com.dragn0007.deadlydinos.item.custom.DinoEggItem;
-import com.dragn0007.deadlydinos.item.custom.SodaItem;
-import com.dragn0007.deadlydinos.item.custom.TrophyItem;
+import com.dragn0007.deadlydinos.item.custom.*;
 import com.dragn0007.deadlydinos.item.util.DDDArmorMaterial;
 import com.dragn0007.deadlydinos.item.util.DDDItemGroup;
 import com.dragn0007.deadlydinos.item.util.DDDItemTier;
@@ -425,6 +422,20 @@ public class DDDItems {
                     new Item.Properties().tab(DDDItemGroup.DDD_GROUP)));
 
 
+    public static final RegistryObject<Item> DUNKLEO_HELMET = ITEMS.register("dunkleo_helmet",
+            () -> new DunkleoArmorItem(DDDArmorMaterial.DUNKLEO, EquipmentSlot.HEAD,
+                    new Item.Properties().tab(DDDItemGroup.DDD_GROUP)));
+    public static final RegistryObject<Item> DUNKLEO_CHESTPLATE = ITEMS.register("dunkleo_chestplate",
+            () -> new DunkleoArmorItem(DDDArmorMaterial.DUNKLEO, EquipmentSlot.CHEST,
+                    new Item.Properties().tab(DDDItemGroup.DDD_GROUP)));
+    public static final RegistryObject<Item> DUNKLEO_LEGGINGS = ITEMS.register("dunkleo_leggings",
+            () -> new DunkleoArmorItem(DDDArmorMaterial.DUNKLEO, EquipmentSlot.LEGS,
+                    new Item.Properties().tab(DDDItemGroup.DDD_GROUP)));
+    public static final RegistryObject<Item> DUNKLEO_BOOTS = ITEMS.register("dunkleo_boots",
+            () -> new DunkleoArmorItem(DDDArmorMaterial.DUNKLEO, EquipmentSlot.FEET,
+                    new Item.Properties().tab(DDDItemGroup.DDD_GROUP)));
+
+
 
 
     //SMALL HERBI BONES
@@ -484,6 +495,8 @@ public class DDDItems {
 //    public static final RegistryObject<Item> ARCHAE_HARNESS = ITEMS.register("archae_harness",
 //            () -> new Item(new Item.Properties().tab(DDDItemGroup.DDD_GROUP)));
     public static final RegistryObject<Item> EOCARCHARIA_ARMOR = ITEMS.register("eocarcharia_armor",
+            () -> new Item(new Item.Properties().stacksTo(1).tab(DDDItemGroup.DDD_GROUP)));
+    public static final RegistryObject<Item> DUNKLEO_SKELETON = ITEMS.register("dunkleo_skeleton",
             () -> new Item(new Item.Properties().stacksTo(1).tab(DDDItemGroup.DDD_GROUP)));
 
 

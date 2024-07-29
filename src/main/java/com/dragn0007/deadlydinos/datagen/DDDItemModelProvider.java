@@ -75,7 +75,6 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.TRIKE_EGG.get());
         simpleItem(DDDItems.EOCARCHAR_EGG.get());
 
-//        simpleItem(DDDItems.ARCHAE_HARNESS.get());
         simpleItem(DDDItems.EOCARCHARIA_ARMOR.get());
         simpleItem(DDDItems.DINO_NUGGET_1.get());
         simpleItem(DDDItems.DINO_NUGGET_2.get());
@@ -96,6 +95,13 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.COOKED_LARGE_FISH.get());
 
         simpleItem(DDDItems.BLUBBER.get());
+
+        simpleItem(DDDItems.DUNKLEO_SKELETON.get());
+        simpleItem(DDDItems.DUNKLEO_HELMET.get());
+        simpleItem(DDDItems.DUNKLEO_CHESTPLATE.get());
+        simpleItem(DDDItems.DUNKLEO_LEGGINGS.get());
+        simpleItem(DDDItems.DUNKLEO_BOOTS.get());
+
 
         simpleSpriteBlockItem(DDDBlocksDataGen.ASTEROXYLON.get());
         simpleSpriteBlockItem(DDDBlocksDataGen.HORSETAIL.get());

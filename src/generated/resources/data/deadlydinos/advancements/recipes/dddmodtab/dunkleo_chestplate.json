@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "deadlydinos:dunkleo_chestplate"
+    ]
+  },
+  "criteria": {
+    "has_dunkleo_skeleton": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "deadlydinos:dunkleo_skeleton"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "deadlydinos:dunkleo_chestplate"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dunkleo_skeleton",
+      "has_the_recipe"
+    ]
+  ]
+}

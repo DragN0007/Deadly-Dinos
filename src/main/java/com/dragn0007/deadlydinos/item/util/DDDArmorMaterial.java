@@ -16,7 +16,7 @@ import java.util.function.Supplier;
 public enum DDDArmorMaterial implements ArmorMaterial {
 
     BONENETHERITE("bonenetherite", 50, new int[]{7, 10, 12, 7}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 5.0F, 0.3F, () -> {
-        return Ingredient.of(Items.DIAMOND);
+        return Ingredient.of(Items.NETHERITE_INGOT);
     }),
     BONEDIAMOND("bonediamond", 45, new int[]{5, 8, 10, 5}, 10, SoundEvents.ARMOR_EQUIP_DIAMOND, 4.0F, 0.2F, () -> {
         return Ingredient.of(Items.DIAMOND);
@@ -27,6 +27,10 @@ public enum DDDArmorMaterial implements ArmorMaterial {
 
     BONEIRON("boneiron", 25, new int[]{4, 7, 8, 4}, 9, SoundEvents.ARMOR_EQUIP_IRON, 2.0F, 0.1F, () -> {
         return Ingredient.of(Items.IRON_INGOT);
+    }),
+
+    DUNKLEO("dunkleo", 25, new int[]{4, 7, 8, 4}, 9, SoundEvents.ARMOR_EQUIP_IRON, 2.0F, 0.1F, () -> {
+        return Ingredient.of(Items.BONE_MEAL);
     });
 
 

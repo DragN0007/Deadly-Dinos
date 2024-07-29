@@ -22,6 +22,36 @@ public class DDDRecipeMaker extends RecipeProvider implements IConditionBuilder 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
 
+
+        ShapelessRecipeBuilder.shapeless(DDDItems.DUNKLEO_HELMET.get())
+                .requires(DDDItems.DUNKLEO_SKELETON.get())
+                .requires(Items.IRON_HELMET)
+                .unlockedBy("has_dunkleo_skeleton", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(DDDItems.DUNKLEO_SKELETON.get()).build()))
+                .save(pFinishedRecipeConsumer);
+
+        ShapelessRecipeBuilder.shapeless(DDDItems.DUNKLEO_CHESTPLATE.get())
+                .requires(DDDItems.DUNKLEO_SKELETON.get())
+                .requires(Items.IRON_CHESTPLATE)
+                .unlockedBy("has_dunkleo_skeleton", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(DDDItems.DUNKLEO_SKELETON.get()).build()))
+                .save(pFinishedRecipeConsumer);
+
+        ShapelessRecipeBuilder.shapeless(DDDItems.DUNKLEO_LEGGINGS.get())
+                .requires(DDDItems.DUNKLEO_SKELETON.get())
+                .requires(Items.IRON_LEGGINGS)
+                .unlockedBy("has_dunkleo_skeleton", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(DDDItems.DUNKLEO_SKELETON.get()).build()))
+                .save(pFinishedRecipeConsumer);
+
+        ShapelessRecipeBuilder.shapeless(DDDItems.DUNKLEO_BOOTS.get())
+                .requires(DDDItems.DUNKLEO_SKELETON.get())
+                .requires(Items.IRON_BOOTS)
+                .unlockedBy("has_dunkleo_skeleton", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(DDDItems.DUNKLEO_SKELETON.get()).build()))
+                .save(pFinishedRecipeConsumer);
+
+
         ShapedRecipeBuilder.shaped(Items.CANDLE)
                 .define('A', Items.STRING)
                 .define('B', DDDItems.BLUBBER.get())

@@ -219,6 +219,7 @@
 
   "item.deadlydinos.archae_harness": "Archaeopteryx Pack Harness",
   "item.deadlydinos.eocarcharia_armor": "Eocarcharia Armor",
+  "item.deadlydinos.dunkleo_skeleton": "Dunkleosteus Skeleton",
 
 
 
@@ -351,23 +352,25 @@
   "item.deadlydinos.bonenetherite_leggings": "Bone-Infused Netherite Leggings",
   "item.deadlydinos.bonenetherite_boots": "Bone-Infused Netherite Boots",
 
-
   "item.deadlydinos.bonediamond_helmet": "Bone-Infused Diamond Helmet",
   "item.deadlydinos.bonediamond_chestplate": "Bone-Infused Diamond Chestplate",
   "item.deadlydinos.bonediamond_leggings": "Bone-Infused Diamond Leggings",
   "item.deadlydinos.bonediamond_boots": "Bone-Infused Diamond Boots",
-
 
   "item.deadlydinos.bonegold_helmet": "Bone-Infused Gold Helmet",
   "item.deadlydinos.bonegold_chestplate": "Bone-Infused Gold Chestplate",
   "item.deadlydinos.bonegold_leggings": "Bone-Infused Gold Leggings",
   "item.deadlydinos.bonegold_boots": "Bone-Infused Gold Boots",
 
-
   "item.deadlydinos.boneiron_helmet": "Bone-Infused Iron Helmet",
   "item.deadlydinos.boneiron_chestplate": "Bone-Infused Iron Chestplate",
   "item.deadlydinos.boneiron_leggings": "Bone-Infused Iron Leggings",
   "item.deadlydinos.boneiron_boots": "Bone-Infused Iron Boots",
+
+  "item.deadlydinos.dunkleo_helmet": "Dunkleosteus Helmet",
+  "item.deadlydinos.dunkleo_chestplate": "Dunkleosteus Chestplate",
+  "item.deadlydinos.dunkleo_leggings": "Dunkleosteus Leggings",
+  "item.deadlydinos.dunkleo_boots": "Dunkleosteus Boots",
 
 
   "block.deadlydinos.dino_gift_box": "Dino Gift Box",

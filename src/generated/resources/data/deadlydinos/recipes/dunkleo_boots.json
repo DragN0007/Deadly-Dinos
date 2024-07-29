@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "deadlydinos:dunkleo_skeleton"
+    },
+    {
+      "item": "minecraft:iron_boots"
+    }
+  ],
+  "result": {
+    "item": "deadlydinos:dunkleo_boots"
+  }
+}
