@@ -33,6 +33,8 @@ public class DDDItems {
             () -> new DinoEggItem(EntityTypes.ICHTHY_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> ANDAL_EGG = ITEMS.register("andal_egg",
             () -> new DinoEggItem(EntityTypes.ANDAL_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> BARY_EGG = ITEMS.register("bary_egg",
+            () -> new DinoEggItem(EntityTypes.BARY_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
 
     public static final RegistryObject<Item> AMARGA_EGG = ITEMS.register("amarga_egg",
             () -> new DinoEggItem(EntityTypes.AMARGA_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
@@ -106,6 +108,8 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.MEGARAP_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> EOCARCHAR_SPAWN_EGG = ITEMS.register("eocarchar_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.EOCARCHAR_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> BARY_SPAWN_EGG = ITEMS.register("bary_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.BARY_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
     //HERBIVORE SPAWN EGGS
@@ -547,6 +551,11 @@ public class DDDItems {
                     new MobEffectInstance(MobEffects.LUCK, 2880, 5,true, false),
                     new MobEffectInstance(MobEffects.JUMP, 2880, 2, true, false)
 
+            ));
+    public static final RegistryObject<TrophyItem> BARYTROPHY = ITEMS.register("barytrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2880, 1,true, false),
+                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2880, 3, true, false)
             ));
     public static final RegistryObject<TrophyItem> CARCHARTROPHY = ITEMS.register("carchartrophy",
             () -> new TrophyItem(

@@ -21,6 +21,7 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> AUSTRALO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> AUSTRO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> AVA_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> BARY_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> CARCHAR_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> CARNO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> CERATO_WEIGHT;
@@ -112,6 +113,9 @@ public class DeadlyDinosCommonConfig {
 
         AVA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
                 .define("AVA Spawn Weight", 1);
+
+        BARY_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
+                .define("BARY Spawn Weight", 2);
 
         CARCHAR_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
                 .define("CARCHAR Spawn Weight", 3);

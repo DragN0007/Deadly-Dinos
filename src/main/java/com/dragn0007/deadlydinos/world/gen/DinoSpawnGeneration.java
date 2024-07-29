@@ -225,6 +225,14 @@ public class DinoSpawnGeneration {
                 Biomes.TAIGA, Biomes.SNOWY_TAIGA,  Biomes.OLD_GROWTH_SPRUCE_TAIGA
         );
 
+        addEntityToSpecificBiomes(event, EntityTypes.BARY_ENTITY.get(),
+                DeadlyDinosCommonConfig.BARY_WEIGHT.get(), 1, 2,
+                Biomes.SWAMP,
+                Biomes.BEACH,
+                Biomes.RIVER,
+                Biomes.LUSH_CAVES
+        );
+
 
 
         addEntityToSpecificBiomes(event, EntityTypes.AMARGA_ENTITY.get(),

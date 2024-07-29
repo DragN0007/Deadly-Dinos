@@ -58,7 +58,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         event.put(EntityTypes.ATROCI_ENTITY.get(), Atroci.createAttributes().build());
         event.put(EntityTypes.ICHTHY_ENTITY.get(), Ichthy.createAttributes().build());
         event.put(EntityTypes.MEGARAP_ENTITY.get(), Megarap.createAttributes().build());
-        event.put(EntityTypes.EOCARCHAR_ENTITY.get(), Megarap.createAttributes().build());
+        event.put(EntityTypes.EOCARCHAR_ENTITY.get(), Eocarchar.createAttributes().build());
+        event.put(EntityTypes.BARY_ENTITY.get(), Bary.createAttributes().build());
 
         event.put(EntityTypes.CROPSNAIL_ENTITY.get(), CropSnail.createAttributes().build());
         event.put(EntityTypes.AMARGA_ENTITY.get(), Amarga.createAttributes().build());
@@ -172,6 +173,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         SpawnPlacements.register(EntityTypes.EOCARCHAR_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
+        SpawnPlacements.register(EntityTypes.BARY_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+
 
         SpawnPlacements.register(EntityTypes.CROPSNAIL_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
@@ -274,6 +278,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         EntityRenderers.register(EntityTypes.ICHTHY_ENTITY.get(), IchthyRender::new);
         EntityRenderers.register(EntityTypes.MEGARAP_ENTITY.get(), MegarapRender::new);
         EntityRenderers.register(EntityTypes.EOCARCHAR_ENTITY.get(), EocarcharRender::new);
+        EntityRenderers.register(EntityTypes.BARY_ENTITY.get(), BaryRender::new);
 
         EntityRenderers.register(EntityTypes.CROPSNAIL_ENTITY.get(), CropSnailRender::new);
         EntityRenderers.register(EntityTypes.AMARGA_ENTITY.get(), AmargaRender::new);

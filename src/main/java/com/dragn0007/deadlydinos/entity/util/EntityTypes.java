@@ -182,6 +182,12 @@ public class EntityTypes {
                     .sized(1.5f,2.5f)
                     .build(new ResourceLocation(MODID,"eocarchar").toString()));
 
+    public static final RegistryObject<EntityType<Bary>> BARY_ENTITY = ENTITY_TYPES.register("bary_entity",
+            () -> EntityType.Builder.of(Bary::new,
+                            MobCategory.CREATURE)
+                    .sized(1.5f,2.5f)
+                    .build(new ResourceLocation(MODID,"bary").toString()));
+
 
 
 

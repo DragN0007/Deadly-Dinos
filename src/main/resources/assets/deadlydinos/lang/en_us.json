@@ -212,6 +212,11 @@
   "item.deadlydinos.leed_spawn_egg": "Leedsichthys Spawn Egg",
   "item.deadlydinos.leedtrophy": "Leedsichthys Fin Trophy",
 
+  "entity.deadlydinos.bary_entity": "Baryonyx",
+  "item.deadlydinos.bary_spawn_egg": "Baryonyx Spawn Egg",
+  "item.deadlydinos.bary_egg": "Baryonyx Egg",
+  "item.deadlydinos.barytrophy": "Baryonyx Tooth Trophy",
+
   "entity.deadlydinos.gar_entity": "Alligator Gar",
   "item.deadlydinos.gar_spawn_egg": "Alligator Gar Spawn Egg",
 
