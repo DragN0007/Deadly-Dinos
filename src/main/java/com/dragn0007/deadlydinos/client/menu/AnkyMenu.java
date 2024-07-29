@@ -18,7 +18,7 @@ public class AnkyMenu extends AbstractContainerMenu {
     public Anky para;
 
     public AnkyMenu(int containerId, Inventory inventory, Container container, Anky para) {
-        super(DDDMenuTypes.PARA_MENU.get(), containerId);
+        super(DDDMenuTypes.ANKY_MENU.get(), containerId);
         this.container = container;
         this.para = para;
 

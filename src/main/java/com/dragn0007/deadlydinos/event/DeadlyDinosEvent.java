@@ -78,6 +78,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         event.put(EntityTypes.EDMONTO_ENTITY.get(), Edmonto.createAttributes().build());
         event.put(EntityTypes.IGUA_ENTITY.get(), Igua.createAttributes().build());
         event.put(EntityTypes.TRIKE_ENTITY.get(), Trike.createAttributes().build());
+        event.put(EntityTypes.PACHY_ENTITY.get(), Pachy.createAttributes().build());
 
         event.put(EntityTypes.MOSA_ENTITY.get(), Mosa.createAttributes().build());
         event.put(EntityTypes.HELI_ENTITY.get(), Heli.createAttributes().build());
@@ -228,6 +229,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         SpawnPlacements.register(EntityTypes.TRIKE_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
 
+        SpawnPlacements.register(EntityTypes.PACHY_ENTITY.get(), SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Animal::checkAnimalSpawnRules);
+
 
         SpawnPlacements.register(EntityTypes.MOSA_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
                         Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
@@ -297,6 +301,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         EntityRenderers.register(EntityTypes.EDMONTO_ENTITY.get(), EdmontoRender::new);
         EntityRenderers.register(EntityTypes.IGUA_ENTITY.get(), IguaRender::new);
         EntityRenderers.register(EntityTypes.TRIKE_ENTITY.get(), TrikeRender::new);
+        EntityRenderers.register(EntityTypes.PACHY_ENTITY.get(), PachyRender::new);
 
         EntityRenderers.register(EntityTypes.MOSA_ENTITY.get(), MosaRender::new);
         EntityRenderers.register(EntityTypes.HELI_ENTITY.get(), HeliRender::new);

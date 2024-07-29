@@ -218,6 +218,11 @@
   "item.deadlydinos.bary_egg": "Baryonyx Egg",
   "item.deadlydinos.barytrophy": "Baryonyx Tooth Trophy",
 
+  "entity.deadlydinos.pachy_entity": "Pachycephalosaurus",
+  "item.deadlydinos.pachy_spawn_egg": "Pachycephalosaurus Spawn Egg",
+  "item.deadlydinos.pachy_egg": "Pachycephalosaurus Egg",
+  "item.deadlydinos.pachytrophy": "Pachycephalosaurus Crest Trophy",
+
   "entity.deadlydinos.gar_entity": "Alligator Gar",
   "item.deadlydinos.gar_spawn_egg": "Alligator Gar Spawn Egg",
 

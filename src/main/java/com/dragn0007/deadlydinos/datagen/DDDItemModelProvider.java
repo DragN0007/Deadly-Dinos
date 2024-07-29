@@ -61,6 +61,8 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.LEED_SPAWN_EGG.get());
         simpleItem(DDDItems.BARYTROPHY.get());
         simpleItem(DDDItems.BARY_SPAWN_EGG.get());
+        simpleItem(DDDItems.PACHYTROPHY.get());
+        simpleItem(DDDItems.PACHY_SPAWN_EGG.get());
 
         simpleItem(DDDItems.GAR_SPAWN_EGG.get());
 
@@ -78,6 +80,7 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.EOCARCHAR_EGG.get());
         simpleItem(DDDItems.BARY_EGG.get());
         simpleItem(DDDItems.ANKY_EGG.get());
+        simpleItem(DDDItems.PACHY_EGG.get());
 
         simpleItem(DDDItems.EOCARCHARIA_ARMOR.get());
         simpleItem(DDDItems.DINO_NUGGET_1.get());

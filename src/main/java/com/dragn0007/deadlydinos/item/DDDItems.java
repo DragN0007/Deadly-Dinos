@@ -37,6 +37,8 @@ public class DDDItems {
             () -> new DinoEggItem(EntityTypes.BARY_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> ANKY_EGG = ITEMS.register("anky_egg",
             () -> new DinoEggItem(EntityTypes.ANKY_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> PACHY_EGG = ITEMS.register("pachy_egg",
+            () -> new DinoEggItem(EntityTypes.PACHY_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
 
     public static final RegistryObject<Item> AMARGA_EGG = ITEMS.register("amarga_egg",
             () -> new DinoEggItem(EntityTypes.AMARGA_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
@@ -149,6 +151,8 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.IGUA_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> TRIKE_SPAWN_EGG = ITEMS.register("trike_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.TRIKE_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> PACHY_SPAWN_EGG = ITEMS.register("pachy_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.PACHY_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
     //WATER SPAWN EGGS
@@ -734,6 +738,11 @@ public class DDDItems {
     public static final RegistryObject<TrophyItem> TRIKETROPHY = ITEMS.register("triketrophy",
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2880, 2,true, false),
+                    new MobEffectInstance(MobEffects.DIG_SPEED, 2880, 3, true, false)
+            ));
+    public static final RegistryObject<TrophyItem> PACHYTROPHY = ITEMS.register("pachytrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 2880, 2,true, false),
                     new MobEffectInstance(MobEffects.DIG_SPEED, 2880, 3, true, false)
             ));
 

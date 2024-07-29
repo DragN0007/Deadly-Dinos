@@ -165,7 +165,7 @@ public class Anky extends TamableAnimal implements ContainerListener, Saddleable
     @Override
     public void registerControllers (AnimationData data){
         data.addAnimationController(new AnimationController(this, "controller", 3, this::predicate));
-        data.addAnimationController(new AnimationController(this, "attackController", 1, this::attackPredicate));
+        data.addAnimationController(new AnimationController(this, "attackController", 0, this::attackPredicate));
     }
 
     @Override
@@ -432,8 +432,8 @@ public class Anky extends TamableAnimal implements ContainerListener, Saddleable
                 this.setRot(this.getYRot(), this.getXRot());
                 this.yBodyRot = this.getYRot();
                 this.yHeadRot = this.yBodyRot;
-                float f = livingentity.xxa * 0.4F; //Strafe moving speed
-                float f1 = livingentity.zza * 0.7F; //Foward moving speed
+                float f = livingentity.xxa * 0.2F; //Strafe moving speed
+                float f1 = livingentity.zza * 0.4F; //Foward moving speed
                 if (f1 <= 0.0F) {
                     f1 *= 0.25F;
                 }
@@ -536,13 +536,13 @@ public class Anky extends TamableAnimal implements ContainerListener, Saddleable
         int i = this.getPassengers().indexOf(entity);
         switch (i) {
             case 0:
-                entity.setPos(this.calcOffset(0, 4.2, -0.8));
+                entity.setPos(this.calcOffset(0, 2.6, -0.8));
                 break;
             case 1:
-                entity.setPos(this.calcOffset(-0.4, 3.4, -2.3));
+                entity.setPos(this.calcOffset(-0.4, 1.8, -2.3));
                 break;
             case 2:
-                entity.setPos(this.calcOffset(0.4, 3.4, -2.3));
+                entity.setPos(this.calcOffset(0.4, 1.8, -2.3));
                 break;
         }
     }

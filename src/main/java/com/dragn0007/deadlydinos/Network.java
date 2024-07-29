@@ -1,5 +1,6 @@
 package com.dragn0007.deadlydinos;
 
+import com.dragn0007.deadlydinos.entity.herbi.Pachy;
 import com.dragn0007.deadlydinos.entity.herbi.Trike;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -8,6 +9,7 @@ import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 
+import javax.swing.text.html.parser.Entity;
 import java.util.function.Supplier;
 
 public class Network {
@@ -32,6 +34,8 @@ public class Network {
             if(player != null) {
                 if(player.level.getEntity(msg.id) instanceof Trike trike) {
                     trike.cycleMode();
+                } else if (player.level.getEntity(msg.id) instanceof Pachy pachy) {
+                    pachy.cycleMode();
                 }
             }
         }

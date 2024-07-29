@@ -4,6 +4,7 @@ package com.dragn0007.deadlydinos.entity.herbi;
 import com.dragn0007.deadlydinos.DeadlyDinos;
 import com.dragn0007.deadlydinos.Network;
 import com.dragn0007.deadlydinos.client.menu.TrikeMenu;
+import com.dragn0007.deadlydinos.client.model.PachyModel;
 import com.dragn0007.deadlydinos.client.model.TrikeModel;
 import com.dragn0007.deadlydinos.entity.Chestable;
 import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
@@ -48,12 +49,14 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.gui.IIngameOverlay;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.ForgeEventFactory;
@@ -78,11 +81,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
-public class Trike extends TamableAnimal implements ContainerListener, Saddleable, IAnimatable, Chestable {
+public class Pachy extends TamableAnimal implements ContainerListener, Saddleable, IAnimatable {
 
     enum Mode {
-        HARVEST(new ResourceLocation(DeadlyDinos.MODID, "textures/gui/trike_harvestmode.png")),
-        NO(new ResourceLocation(DeadlyDinos.MODID, "textures/gui/trike_nomode.png"));
+        SMASH(new ResourceLocation(DeadlyDinos.MODID, "textures/gui/pachy_smashmode.png")),
+        NO(new ResourceLocation(DeadlyDinos.MODID, "textures/gui/pachy_nomode.png"));
 
         public final ResourceLocation texture;
 
@@ -97,10 +100,9 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
 
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
-    public Trike(EntityType<? extends Trike> entityType, Level level) {
+    public Pachy(EntityType<? extends Pachy> entityType, Level level) {
         super(entityType, level);
         this.noCulling = true;
-        this.updateInventory();
     }
 
     @Override
@@ -111,18 +113,16 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 100)
-                .add(Attributes.ATTACK_DAMAGE, 9)
-                .add(Attributes.MOVEMENT_SPEED, 0.20)
+                .add(Attributes.MAX_HEALTH, 30)
+                .add(Attributes.ATTACK_DAMAGE, 10)
+                .add(Attributes.ATTACK_KNOCKBACK, 6)
+                .add(Attributes.MOVEMENT_SPEED, 0.23)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1)
-                .add(Attributes.ARMOR_TOUGHNESS, 5)
-                .add(Attributes.ARMOR, 5)
                 ;
 
     }
 
-    private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(Trike.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> CHESTED = SynchedEntityData.defineId(Trike.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> SADDLED = SynchedEntityData.defineId(Pachy.class, EntityDataSerializers.BOOLEAN);
     private static final Ingredient FOOD_ITEMS = Ingredient.of(DDDTags.Items.HERBI_FOOD);
 
     public SimpleContainer inventory;
@@ -243,25 +243,10 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
             } else if(itemStack.is(Items.SADDLE) && this.isSaddleable()) {
                 itemStack.interactLivingEntity(player, this, hand);
                 this.setSaddled(true);
-                this.updateInventory();
-                return InteractionResult.sidedSuccess(this.level.isClientSide);
-            } else if(itemStack.is(Items.CHEST) && this.isChestable()) {
-                // equip chest
-                this.setChested(true);
-                this.equipChest(SoundSource.NEUTRAL);
-                this.updateInventory();
                 return InteractionResult.sidedSuccess(this.level.isClientSide);
 
             } else if(!this.level.isClientSide) {
                 if(player.isShiftKeyDown()) {
-                    // open chest inventory
-                    NetworkHooks.openGui((ServerPlayer) player, new SimpleMenuProvider((containerId, inventory, serverPlayer) -> {
-                        return new TrikeMenu(containerId, inventory, this.inventory, this);
-                    }, this.getDisplayName()), (data) -> {
-                        data.writeInt(this.getInventorySize());
-                        data.writeInt(this.getId());
-                    });
-                    return InteractionResult.SUCCESS;
                 } else if(this.isSaddled() && !this.isOrderedToSit()) {
                     // hop on
                     this.doPlayerRide(player);
@@ -286,14 +271,14 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
         return InteractionResult.sidedSuccess(this.level.isClientSide);
     }
 
-    //Till
-     public static IIngameOverlay trikeHUD() {
+    //Smash
+     public static IIngameOverlay pachyHUD() {
             return (gui, poseStack, partialTick, width, height) -> {
             Minecraft minecraft = Minecraft.getInstance();
             Player player = (Player) minecraft.getCameraEntity();
 
-            if(!minecraft.options.hideGui && player instanceof LocalPlayer && player.getVehicle() instanceof Trike trike) {
-                Trike.Mode mode = trike.mode();
+            if(!minecraft.options.hideGui && player instanceof LocalPlayer && player.getVehicle() instanceof Pachy pachy) {
+                Pachy.Mode mode = pachy.mode();
                 ResourceLocation texture = mode.texture;
 
                 int x = (width / 2) + 92;
@@ -307,13 +292,13 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
 
     public static final String PROTOCOL_VERSION = "1";
     public static final SimpleChannel INSTANCE = NetworkRegistry.newSimpleChannel(
-            new ResourceLocation(DeadlyDinos.MODID, "trike_network"),
+            new ResourceLocation(DeadlyDinos.MODID, "pachy_network"),
             () -> PROTOCOL_VERSION,
             PROTOCOL_VERSION::equals,
             PROTOCOL_VERSION::equals
     );
 
-    private static final EntityDataAccessor<Integer> MODE = (EntityDataAccessor<Integer>) SynchedEntityData.defineId(Trike.class, Serializers.MODE_SERIALIZER.get().getSerializer());
+    private static final EntityDataAccessor<Integer> MODE = (EntityDataAccessor<Integer>) SynchedEntityData.defineId(Pachy.class, Serializers.MODE_SERIALIZER.get().getSerializer());
 
     public Mode mode() {
         return Mode.values() [this.entityData.get(MODE)];
@@ -323,23 +308,14 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
         this.entityData.set(MODE, this.mode().next().ordinal());
     }
 
-    private void harvestCrop(BlockPos pos) {
-        if(this.level.getBlockState(pos).getBlock() instanceof CropBlock cropBlock) {
-            BlockState blockState = this.level.getBlockState(pos);
-            if(cropBlock.isMaxAge(blockState)) {
+    private void smashStone(BlockPos pos) {
+        BlockState blockState = this.level.getBlockState(pos);
+        if (blockState.is(Tags.Blocks.STONE)) {
                 List<ItemStack> drops = Block.getDrops(blockState, (ServerLevel) this.level, pos, null);
-                drops.remove(new ItemStack(cropBlock.asItem()));
                 drops.forEach(itemStack -> {
-                    if(this.inventory.canAddItem(itemStack)) {
-                        this.inventory.addItem(itemStack);
-                    } else {
                         this.spawnAtLocation(itemStack);
-                    }
                 });
-
-                this.level.setBlockAndUpdate(pos, blockState.setValue(cropBlock.getAgeProperty(), 0));
             }
-        }
     }
 
     private Vec3 calcOffset(double x, double y, double z) {
@@ -352,15 +328,21 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
         return new Vec3(xOffset, yOffset, zOffset);
     }
 
-    public void harvest() {
+    public void smash() {
         Vec3 left = this.calcOffset(-0.5, 0.5, 1);
         Vec3 right = this.calcOffset(0.5, 0.5, 1);
+        Vec3 leftAbove = this.calcOffset(-0.5, 1.5, 1);
+        Vec3 rightAbove = this.calcOffset(0.5, 1.5, 1);
 
         BlockPos leftPos = new BlockPos(Math.floor(left.x), Math.floor(left.y), Math.floor(left.z));
         BlockPos rightPos = new BlockPos(Math.floor(right.x), Math.floor(right.y), Math.floor(right.z));
+        BlockPos leftAbovePos = new BlockPos(Math.floor(leftAbove.x), Math.floor(leftAbove.y), Math.floor(leftAbove.z));
+        BlockPos rightAbovePos = new BlockPos(Math.floor(rightAbove.x), Math.floor(rightAbove.y), Math.floor(rightAbove.z));
 
-        this.harvestCrop(leftPos);
-        this.harvestCrop(rightPos);
+        this.smashStone(leftPos);
+        this.smashStone(rightPos);
+        this.smashStone(leftAbovePos);
+        this.smashStone(rightAbovePos);
     }
 
     public Vec3 lastClientPos = Vec3.ZERO;
@@ -390,8 +372,8 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
             Vec3 diff = this.lastServerPos.subtract(this.position());
             this.lastServerPos = this.position();
             if(this.isVehicle() && diff.length() != 0) {
-                if(this.mode() == Mode.HARVEST) {
-                    this.harvest();
+                if(this.mode() == Mode.SMASH) {
+                    this.smash();
                 }
 
             }
@@ -433,11 +415,11 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
     //Generates variant textures
 
     public ResourceLocation getTextureLocation() {
-        return TrikeModel.Variant.variantFromOrdinal(getVariant()).resourceLocation;
+        return PachyModel.Variant.variantFromOrdinal(getVariant()).resourceLocation;
     }
 
 
-    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Trike.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Pachy.class, EntityDataSerializers.INT);
 
     public int getVariant(){
         return this.entityData.get(VARIANT);
@@ -458,23 +440,6 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
         if(tag.contains("Saddled")) {
             this.setSaddled(tag.getBoolean("Saddled"));
         }
-
-        if(tag.contains("Chested")) {
-            this.setChested(tag.getBoolean("Chested"));
-        }
-
-        this.updateInventory();
-        if(this.isChested()) {
-            ListTag listTag = tag.getList("Items", 10);
-
-            for(int i = 0; i < listTag.size(); i++) {
-                CompoundTag compoundTag = listTag.getCompound(i);
-                int j = compoundTag.getByte("Slot") & 255;
-                if(j < this.inventory.getContainerSize()) {
-                    this.inventory.setItem(j, ItemStack.of(compoundTag));
-                }
-            }
-        }
     }
 
     @Override
@@ -482,23 +447,7 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
         super.addAdditionalSaveData(tag);
         tag.putInt("Variant", getVariant());
         tag.putBoolean("Saddled", this.isSaddled());
-        tag.putBoolean("Chested", this.isChested());
         tag.putString("TillerOn", this.mode().toString());
-
-        if(this.isChested()) {
-            ListTag listTag = new ListTag();
-
-            for(int i = 0; i < this.inventory.getContainerSize(); i++) {
-                ItemStack itemStack = this.inventory.getItem(i);
-                if(!itemStack.isEmpty()) {
-                    CompoundTag compoundTag = new CompoundTag();
-                    compoundTag.putByte("Slot", (byte) i);
-                    itemStack.save(compoundTag);
-                    listTag.add(compoundTag);
-                }
-            }
-            tag.put("Items", listTag);
-        }
     }
 
     @Override
@@ -511,7 +460,7 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor levelAccessor, DifficultyInstance difficultyInstance, MobSpawnType mobSpawnType, @Nullable SpawnGroupData spawnGroupData, @Nullable CompoundTag compoundTag) {
 
-        setVariant(new Random().nextInt(TrikeModel.Variant.values().length));
+        setVariant(new Random().nextInt(PachyModel.Variant.values().length));
 
         return super.finalizeSpawn(levelAccessor, difficultyInstance, mobSpawnType, spawnGroupData, compoundTag);
     }
@@ -522,16 +471,16 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
 
     @Override
     public boolean canMate(Animal animal) {
-        if (animal == this || !(animal instanceof Trike)) {
+        if (animal == this || !(animal instanceof Pachy)) {
             return false;
         } else {
-            return this.canBeParent() && ((Trike)animal).canBeParent();
+            return this.canBeParent() && ((Pachy)animal).canBeParent();
         }
     }
 
     @Override
-    public Trike getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
-        return EntityTypes.TRIKE_ENTITY.get().create(level);
+    public Pachy getBreedOffspring(ServerLevel level, AgeableMob ageableMob) {
+        return EntityTypes.PACHY_ENTITY.get().create(level);
     }
 
 
@@ -540,7 +489,6 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
         super.defineSynchedData();
         this.entityData.define(VARIANT, 0);
         this.entityData.define(SADDLED, false);
-        this.entityData.define(CHESTED, false);
         this.entityData.define(MODE, Mode.NO.ordinal());
     }
 
@@ -550,8 +498,8 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
         if (this.hasPassenger(entity)) {
 
             double offsetX = 0;
-            double offsetY = 2.8;
-            double offsetZ = -0.3;
+            double offsetY = 1.0;
+            double offsetZ = 0.1;
 
             double radYaw = Math.toRadians(this.getYRot());
 
@@ -570,41 +518,6 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
     @Nullable
     public Entity getControllingPassenger() {
         return this.getOwner() == this.getFirstPassenger() ? this.getFirstPassenger() : null;
-    }
-
-
-    private int getInventorySize() {
-        return this.isChested() ? 51 : 1;
-    }
-
-    private void updateInventory() {
-        SimpleContainer tempInventory = this.inventory;
-        this.inventory = new SimpleContainer(this.getInventorySize());
-
-        if(tempInventory != null) {
-            tempInventory.removeListener(this);
-            int maxSize = Math.min(tempInventory.getContainerSize(), this.inventory.getContainerSize());
-
-            for(int i = 0; i < maxSize; i++) {
-                ItemStack itemStack = tempInventory.getItem(i);
-                if(!itemStack.isEmpty()) {
-                    this.inventory.setItem(i, itemStack.copy());
-                }
-            }
-        }
-        this.inventory.addListener(this);
-        this.itemHandler = LazyOptional.of(() -> new InvWrapper(this.inventory));
-    }
-
-    @Override
-    protected void dropEquipment() {
-        if(!this.level.isClientSide) {
-            super.dropEquipment();
-            if(this.isChested()) {
-                this.spawnAtLocation(Items.CHEST);
-            }
-            Containers.dropContents(this.level, this, this.inventory);
-        }
     }
 
     @Override
@@ -681,7 +594,6 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
 
     @Override
     public void equipSaddle(@Nullable SoundSource soundSource) {
-        this.inventory.setItem(0, new ItemStack(Items.SADDLE));
         if (soundSource != null) {
             this.level.playSound(null, this, SoundEvents.HORSE_SADDLE, soundSource, 0.5f, 1.0f);
         }
@@ -696,26 +608,6 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
         this.entityData.set(SADDLED, saddled);
     }
 
-    @Override
-    public boolean isChestable() {
-        return this.isAlive() && !this.isBaby() && this.isTame();
-    }
-
-    @Override
-    public void equipChest(@Nullable SoundSource soundSource) {
-        if(soundSource != null) {
-            this.level.playSound(null, this, SoundEvents.MULE_CHEST, soundSource, 0.5f, 1f);
-        }
-    }
-
-    @Override
-    public boolean isChested() {
-        return this.entityData.get(CHESTED);
-    }
-
-    private void setChested(boolean chested) {
-        this.entityData.set(CHESTED, chested);
-    }
 
     protected void doPlayerRide(Player p_30634_) {
         if (!this.level.isClientSide) {
@@ -776,9 +668,6 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
     @Override
     public void containerChanged(Container container) {
         boolean flag = this.isSaddled();
-        if(!this.level.isClientSide) {
-            this.setSaddled(!this.inventory.getItem(0).isEmpty());
-        }
         if(this.tickCount > 20 && !flag && this.isSaddleable()) {
             this.playSound(SoundEvents.HORSE_SADDLE, 0.5f, 1f);
         }

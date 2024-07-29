@@ -371,6 +371,15 @@ public class DinoSpawnGeneration {
                 Biomes.TAIGA, Biomes.SNOWY_TAIGA,  Biomes.OLD_GROWTH_SPRUCE_TAIGA
         );
 
+        addEntityToSpecificBiomes(event, EntityTypes.PACHY_ENTITY.get(),
+                DeadlyDinosCommonConfig.PACHY_WEIGHT.get(), 1, 2,
+                Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS,
+                Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU,
+                Biomes.SPARSE_JUNGLE, Biomes.JUNGLE,
+                Biomes.WOODED_BADLANDS,
+                Biomes.WINDSWEPT_GRAVELLY_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.STONY_PEAKS
+        );
+
 
 
         addEntityToSpecificBiomes(event, EntityTypes.MOSA_ENTITY.get(),
