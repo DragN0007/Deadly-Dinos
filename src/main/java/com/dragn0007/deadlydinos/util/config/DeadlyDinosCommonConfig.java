@@ -9,6 +9,7 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> TROPHYITEM_DURABILITY;
     public static final ForgeConfigSpec.ConfigValue<Integer> BIG_DINO_BREAK_RADIUS;
     public static final ForgeConfigSpec.ConfigValue<Integer> SMALL_DINO_BREAK_RADIUS;
+    public static final ForgeConfigSpec.ConfigValue<Integer> CAR_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ACRO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ALBERTO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ALLO_WEIGHT;
@@ -77,6 +78,9 @@ public class DeadlyDinosCommonConfig {
         //Small Dinos - How many blocks should they break?
         SMALL_DINO_BREAK_RADIUS = BUILDER.comment("What should the radius be that Small Deadly Dinos can destroy when attacking? 3 Blocks is Default.")
                 .define("Small Dino destroy radius", 3);
+
+        CAR_WEIGHT = BUILDER.comment("How often should Ruined Cars spawn? Default is 2.")
+                .define("Car Spawn Weight", 2);
 
 
         ACRO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 4.")
