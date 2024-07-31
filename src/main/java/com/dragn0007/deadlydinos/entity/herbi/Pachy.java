@@ -7,6 +7,7 @@ import com.dragn0007.deadlydinos.client.menu.TrikeMenu;
 import com.dragn0007.deadlydinos.client.model.PachyModel;
 import com.dragn0007.deadlydinos.client.model.TrikeModel;
 import com.dragn0007.deadlydinos.entity.Chestable;
+import com.dragn0007.deadlydinos.entity.ai.DinoExtremeMeleeGoal;
 import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
 import com.dragn0007.deadlydinos.entity.ai.TamableDestroyCropsGoal;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
@@ -148,7 +149,7 @@ public class Pachy extends TamableAnimal implements ContainerListener, Saddleabl
         this.goalSelector.addGoal(0, new HurtByTargetGoal(this));
         this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1));
         this.goalSelector.addGoal(2, new TamableDestroyCropsGoal(this, this));
-        this.goalSelector.addGoal(0, new DinoMeleeGoal(this, 1.6, true));
+        this.goalSelector.addGoal(0, new DinoExtremeMeleeGoal(this, 1.6, true));
         this.goalSelector.addGoal(4, new FloatGoal(this));
 
         this.goalSelector.addGoal(3, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
