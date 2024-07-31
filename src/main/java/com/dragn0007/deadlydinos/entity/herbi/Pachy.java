@@ -209,24 +209,22 @@ public class Pachy extends TamableAnimal implements ContainerListener, Saddleabl
     }
 
     public boolean hurt(DamageSource damageSource, float amount) {
-        if (damageSource.getEntity() instanceof Player player && player.isCrouching()) {
-            if (this.isOrderedToSit()) {
-                this.setOrderedToSit(false);
-            } else {
-                this.setOrderedToSit(true);
+        if (damageSource.getEntity() instanceof Player player && player.isShiftKeyDown()) {
+            if (!this.level.isClientSide && this.isTame() && this.isSaddled()) {
+                ItemStack saddle = new ItemStack(Items.SADDLE);
+                player.addItem(saddle);
+                this.setSaddled(false);
+                return false;
             }
-            return false;
         }
         return super.hurt(damageSource, amount);
     }
 
 
-    @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
-
-        if(this.isTame()) {
-            if(this.isFood(itemStack)) {
+        if (this.isTame()) {
+            if (this.isFood(itemStack)) {
                 if (this.getHealth() < this.getMaxHealth()) {
                     // heal
                     this.usePlayerItem(player, hand, itemStack);
@@ -240,18 +238,27 @@ public class Pachy extends TamableAnimal implements ContainerListener, Saddleabl
                     this.gameEvent(GameEvent.MOB_INTERACT, this.eyeBlockPosition());
                     return InteractionResult.SUCCESS;
                 }
-            } else if(itemStack.is(Items.SADDLE) && this.isSaddleable()) {
+            } else if (itemStack.is(Items.SADDLE) && this.isSaddleable()) {
                 itemStack.interactLivingEntity(player, this, hand);
                 this.setSaddled(true);
                 return InteractionResult.sidedSuccess(this.level.isClientSide);
-
-            } else if(!this.level.isClientSide) {
-                if(player.isShiftKeyDown()) {
-                } else if(this.isSaddled() && !this.isOrderedToSit()) {
-                    // hop on
-                    this.doPlayerRide(player);
-                    return InteractionResult.SUCCESS;
+            } else if (player.isCrouching()) {
+                // sit if crouch clicking
+                if (this.isOrderedToSit()) {
+                    this.setOrderedToSit(false);
+                } else {
+                    this.setOrderedToSit(true);
                 }
+                return InteractionResult.SUCCESS;
+            } else if (itemStack.is(Items.SADDLE) && this.isSaddleable()) {
+                // saddle up
+                itemStack.interactLivingEntity(player, this, hand);
+                this.setSaddled(true);
+                return InteractionResult.sidedSuccess(this.level.isClientSide);
+            } else if (this.isSaddled() && !this.isOrderedToSit()) {
+                // hop on
+                this.doPlayerRide(player);
+                return InteractionResult.SUCCESS;
             }
         } else if (this.isFood(itemStack) && !this.level.isClientSide && this.isBaby()) {
             this.usePlayerItem(player, hand, itemStack);
@@ -310,11 +317,13 @@ public class Pachy extends TamableAnimal implements ContainerListener, Saddleabl
 
     private void smashStone(BlockPos pos) {
         BlockState blockState = this.level.getBlockState(pos);
-        if (blockState.is(Tags.Blocks.STONE)) {
+        if (blockState.is(Tags.Blocks.STONE) || blockState.is(Tags.Blocks.COBBLESTONE) || blockState.is(Tags.Blocks.COBBLESTONE_DEEPSLATE) || blockState.is(Tags.Blocks.SANDSTONE)) {
                 List<ItemStack> drops = Block.getDrops(blockState, (ServerLevel) this.level, pos, null);
                 drops.forEach(itemStack -> {
                         this.spawnAtLocation(itemStack);
                 });
+                this.level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+                this.playSound(SoundEvents.STONE_BREAK, 1f, 1f);
             }
     }
 
@@ -329,20 +338,26 @@ public class Pachy extends TamableAnimal implements ContainerListener, Saddleabl
     }
 
     public void smash() {
-        Vec3 left = this.calcOffset(-0.5, 0.5, 1);
-        Vec3 right = this.calcOffset(0.5, 0.5, 1);
-        Vec3 leftAbove = this.calcOffset(-0.5, 1.5, 1);
-        Vec3 rightAbove = this.calcOffset(0.5, 1.5, 1);
+        Vec3 left = this.calcOffset(-0.5, 0.5, 1.5);
+        Vec3 right = this.calcOffset(0.5, 0.5, 1.5);
+        Vec3 leftAbove = this.calcOffset(-0.5, 1.5, 1.5);
+        Vec3 rightAbove = this.calcOffset(0.5, 1.5, 1.5);
+        Vec3 leftAbovePlayer = this.calcOffset(-0.5, 2.5, 1.5);
+        Vec3 rightAbovePlayer = this.calcOffset(0.5, 2.5, 1.5);
 
         BlockPos leftPos = new BlockPos(Math.floor(left.x), Math.floor(left.y), Math.floor(left.z));
         BlockPos rightPos = new BlockPos(Math.floor(right.x), Math.floor(right.y), Math.floor(right.z));
         BlockPos leftAbovePos = new BlockPos(Math.floor(leftAbove.x), Math.floor(leftAbove.y), Math.floor(leftAbove.z));
         BlockPos rightAbovePos = new BlockPos(Math.floor(rightAbove.x), Math.floor(rightAbove.y), Math.floor(rightAbove.z));
+        BlockPos leftAbovePlayerPos = new BlockPos(Math.floor(leftAbovePlayer.x), Math.floor(leftAbovePlayer.y), Math.floor(leftAbovePlayer.z));
+        BlockPos rightAbovePlayerPos = new BlockPos(Math.floor(rightAbovePlayer.x), Math.floor(rightAbovePlayer.y), Math.floor(rightAbovePlayer.z));
 
         this.smashStone(leftPos);
         this.smashStone(rightPos);
         this.smashStone(leftAbovePos);
         this.smashStone(rightAbovePos);
+        this.smashStone(leftAbovePlayerPos);
+        this.smashStone(rightAbovePlayerPos);
     }
 
     public Vec3 lastClientPos = Vec3.ZERO;
@@ -379,10 +394,10 @@ public class Pachy extends TamableAnimal implements ContainerListener, Saddleabl
             }
 
         } else if(this.mode() != Mode.NO) {
-            Vec3 pos = this.calcOffset(0.9, 3.7, 0.1);
+            Vec3 pos = this.calcOffset(0.0, 2.0, 0.0);
             double yVel = this.random.nextDouble();
             if(yVel > 0.75) {
-                this.level.addParticle(ParticleTypes.COMPOSTER, pos.x, pos.y, pos.z, 0, yVel / 10, 0);
+                this.level.addParticle(ParticleTypes.CRIT, pos.x, pos.y, pos.z, 0, yVel / 10, 0);
             }
         }
 

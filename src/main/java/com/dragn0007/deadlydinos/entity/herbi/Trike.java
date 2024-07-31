@@ -397,7 +397,7 @@ public class Trike extends TamableAnimal implements ContainerListener, Saddleabl
             }
 
         } else if(this.mode() != Mode.NO) {
-            Vec3 pos = this.calcOffset(0.9, 3.7, 0.1);
+            Vec3 pos = this.calcOffset(0.0, 2.0, 0.0);
             double yVel = this.random.nextDouble();
             if(yVel > 0.75) {
                 this.level.addParticle(ParticleTypes.COMPOSTER, pos.x, pos.y, pos.z, 0, yVel / 10, 0);
