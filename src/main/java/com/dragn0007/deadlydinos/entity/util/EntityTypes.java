@@ -333,6 +333,12 @@ public class EntityTypes {
                     .sized(5f,5f)
                     .build(new ResourceLocation(MODID,"leed").toString()));
 
+    public static final RegistryObject<EntityType<Basilo>> BASILO_ENTITY = ENTITY_TYPES.register("basilo_entity",
+            () -> EntityType.Builder.of(Basilo::new,
+                            MobCategory.WATER_CREATURE)
+                    .sized(2f,2f)
+                    .build(new ResourceLocation(MODID,"basilo").toString()));
+
 
 
 

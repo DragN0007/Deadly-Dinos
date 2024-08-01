@@ -415,6 +415,11 @@ public class DinoSpawnGeneration {
                 Biomes.DEEP_LUKEWARM_OCEAN, Biomes.DEEP_COLD_OCEAN, Biomes.DEEP_OCEAN, Biomes.DEEP_FROZEN_OCEAN
         );
 
+        addEntityToSpecificBiomes(event, EntityTypes.BASILO_ENTITY.get(),
+                DeadlyDinosCommonConfig.BASILO_WEIGHT.get(), 1, 2,
+                Biomes.DEEP_COLD_OCEAN, Biomes.DEEP_OCEAN, Biomes.DEEP_FROZEN_OCEAN, Biomes.COLD_OCEAN, Biomes.FROZEN_OCEAN
+        );
+
     }
 
     private static void addEntityToAllBiomesExceptThese(BiomeLoadingEvent event, EntityType<?> type,

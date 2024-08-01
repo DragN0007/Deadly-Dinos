@@ -223,6 +223,11 @@
   "item.deadlydinos.pachy_egg": "Pachycephalosaurus Egg",
   "item.deadlydinos.pachytrophy": "Pachycephalosaurus Crest Trophy",
 
+  "entity.deadlydinos.basilo_entity": "Basilosaurus",
+  "item.deadlydinos.basilo_spawn_egg": "Basilosaurus Spawn Egg",
+  "item.deadlydinos.basilo_egg": "Basilosaurus Egg",
+  "item.deadlydinos.basilotrophy": "Basilosaurus Tooth Trophy",
+
   "entity.deadlydinos.gar_entity": "Alligator Gar",
   "item.deadlydinos.gar_spawn_egg": "Alligator Gar Spawn Egg",
 

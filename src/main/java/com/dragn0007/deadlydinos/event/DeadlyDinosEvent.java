@@ -9,6 +9,7 @@ import com.dragn0007.deadlydinos.client.render.*;
 import com.dragn0007.deadlydinos.entity.carni.*;
 import com.dragn0007.deadlydinos.entity.herbi.*;
 import com.dragn0007.deadlydinos.entity.marine.*;
+import com.dragn0007.deadlydinos.entity.marine.base.AbstractTamableMarineDino;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
 import com.dragn0007.deadlydinos.entity.nonliving.CarFlipped;
 import com.dragn0007.deadlydinos.entity.nonliving.CarSide;
@@ -86,6 +87,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         event.put(EntityTypes.DUNKLEO_ENTITY.get(), Dunkleo.createAttributes().build());
         event.put(EntityTypes.ICHTHYO_ENTITY.get(), Ichthyo.createAttributes().build());
         event.put(EntityTypes.LEED_ENTITY.get(), Leed.createAttributes().build());
+        event.put(EntityTypes.BASILO_ENTITY.get(), Basilo.createAttributes().build());
 
         event.put(EntityTypes.CAR_ENTITY.get(), Car.createAttributes().build());
         event.put(EntityTypes.CARSIDE_ENTITY.get(), CarSide.createAttributes().build());
@@ -250,6 +252,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
         SpawnPlacements.register(EntityTypes.LEED_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
+
+        SpawnPlacements.register(EntityTypes.BASILO_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AbstractTamableMarineDino::checkSurfaceWaterAnimalSpawnRules);
     }
 
     @SubscribeEvent
@@ -309,6 +314,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         EntityRenderers.register(EntityTypes.DUNKLEO_ENTITY.get(), DunkleoRender::new);
         EntityRenderers.register(EntityTypes.ICHTHYO_ENTITY.get(), IchthyoRender::new);
         EntityRenderers.register(EntityTypes.LEED_ENTITY.get(), LeedRender::new);
+        EntityRenderers.register(EntityTypes.BASILO_ENTITY.get(), BasiloRender::new);
 
         EntityRenderers.register(EntityTypes.CAR_ENTITY.get(), CarRender::new);
         EntityRenderers.register(EntityTypes.CARSIDE_ENTITY.get(), CarSideRender::new);
@@ -341,6 +347,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         MenuScreens.register(DDDMenuTypes.TRIKE_MENU.get(), TrikeScreen::new);
         MenuScreens.register(DDDMenuTypes.EOCARCHAR_MENU.get(), EocarcharScreen::new);
         MenuScreens.register(DDDMenuTypes.ANKY_MENU.get(), AnkyScreen::new);
+        MenuScreens.register(DDDMenuTypes.BASILO_MENU.get(), BasiloScreen::new);
     }
 }
 

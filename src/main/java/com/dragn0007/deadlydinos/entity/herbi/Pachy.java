@@ -3,12 +3,8 @@ package com.dragn0007.deadlydinos.entity.herbi;
 
 import com.dragn0007.deadlydinos.DeadlyDinos;
 import com.dragn0007.deadlydinos.Network;
-import com.dragn0007.deadlydinos.client.menu.TrikeMenu;
 import com.dragn0007.deadlydinos.client.model.PachyModel;
-import com.dragn0007.deadlydinos.client.model.TrikeModel;
-import com.dragn0007.deadlydinos.entity.Chestable;
 import com.dragn0007.deadlydinos.entity.ai.DinoExtremeMeleeGoal;
-import com.dragn0007.deadlydinos.entity.ai.DinoMeleeGoal;
 import com.dragn0007.deadlydinos.entity.ai.TamableDestroyCropsGoal;
 import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.entity.util.Serializers;
@@ -20,7 +16,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -28,7 +23,6 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -51,7 +45,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
@@ -62,8 +55,6 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.wrapper.InvWrapper;
-import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 import org.jetbrains.annotations.NotNull;
@@ -129,7 +120,6 @@ public class Pachy extends TamableAnimal implements ContainerListener, Saddleabl
     public SimpleContainer inventory;
     private LazyOptional<?> itemHandler = null;
 
-
     protected SoundEvent getAmbientSound() {
         return SoundEvents.HORSE_BREATHE;
     }
@@ -142,7 +132,6 @@ public class Pachy extends TamableAnimal implements ContainerListener, Saddleabl
     protected void playStepSound(BlockPos p_180429_1_, BlockState p_180429_2_) {
         this.playSound(SoundEvents.POLAR_BEAR_STEP, 0.15F, 0.5F);
     }
-
 
     protected void registerGoals() {
         super.registerGoals();
@@ -203,7 +192,6 @@ public class Pachy extends TamableAnimal implements ContainerListener, Saddleabl
         return factory;
     }
 
-
     @Override
     public boolean isFood(ItemStack itemStack) {
         return FOOD_ITEMS.test(itemStack);
@@ -220,7 +208,6 @@ public class Pachy extends TamableAnimal implements ContainerListener, Saddleabl
         }
         return super.hurt(damageSource, amount);
     }
-
 
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
@@ -434,7 +421,6 @@ public class Pachy extends TamableAnimal implements ContainerListener, Saddleabl
         return PachyModel.Variant.variantFromOrdinal(getVariant()).resourceLocation;
     }
 
-
     private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Pachy.class, EntityDataSerializers.INT);
 
     public int getVariant(){
@@ -507,7 +493,6 @@ public class Pachy extends TamableAnimal implements ContainerListener, Saddleabl
         this.entityData.define(SADDLED, false);
         this.entityData.define(MODE, Mode.NO.ordinal());
     }
-
 
     @Override
     public void positionRider(Entity entity) {

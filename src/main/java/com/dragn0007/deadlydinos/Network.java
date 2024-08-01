@@ -9,7 +9,6 @@ import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.function.Supplier;
 
 public class Network {

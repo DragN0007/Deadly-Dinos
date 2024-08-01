@@ -55,6 +55,9 @@ public class DDDItems {
     public static final RegistryObject<Item> EOCARCHAR_EGG = ITEMS.register("eocarchar_egg",
             () -> new DinoEggItem(EntityTypes.EOCARCHAR_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
 
+    public static final RegistryObject<Item> BASILO_EGG = ITEMS.register("basilo_egg",
+            () -> new DinoEggItem(EntityTypes.BASILO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(1).tab(DDDItemGroup.DINO_GROUP)));
+
 
 
     //CARNIVORE SPAWN EGGS
@@ -168,6 +171,8 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.ICHTHYO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> LEED_SPAWN_EGG = ITEMS.register("leed_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.LEED_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> BASILO_SPAWN_EGG = ITEMS.register("basilo_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.BASILO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
 
@@ -770,9 +775,15 @@ public class DDDItems {
 
     public static final RegistryObject<TrophyItem> LEEDTROPHY = ITEMS.register("leedtrophy",
             () -> new TrophyItem(
-                    new MobEffectInstance(MobEffects.WATER_BREATHING, 2880, 2,true, false),
+                    new MobEffectInstance(MobEffects.CONDUIT_POWER, 2880, 2,true, false),
                     new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2880, 3, true, false),
                     new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2880, 3, true, false)
+            ));
+
+    public static final RegistryObject<TrophyItem> BASILOTROPHY = ITEMS.register("basilotrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.WATER_BREATHING, 2880, 2,true, false),
+                    new MobEffectInstance(MobEffects.CONDUIT_POWER, 2880, 3, true, false)
             ));
 
 
