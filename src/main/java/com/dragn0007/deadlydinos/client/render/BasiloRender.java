@@ -30,7 +30,7 @@ public class BasiloRender extends ExtendedGeoEntityRenderer<Basilo> {
             model.getBone("SaddleBags2").ifPresent(b -> b.setHidden(false));
         } else {
             model.getBone("SaddleBags").ifPresent(b -> b.setHidden(true));
-            model.getBone("SaddleBag2").ifPresent(b -> b.setHidden(true));
+            model.getBone("SaddleBags2").ifPresent(b -> b.setHidden(true));
         }
 
         if(animatable.isSaddled()) {
