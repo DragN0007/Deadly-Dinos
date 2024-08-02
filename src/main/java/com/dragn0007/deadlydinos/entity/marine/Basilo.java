@@ -87,7 +87,7 @@ public class Basilo extends AbstractTamableMarineDino implements IAnimatable, Sa
                 .add(Attributes.MAX_HEALTH, 250)
                 .add(Attributes.ATTACK_DAMAGE, 6)
                 .add(Attributes.ATTACK_KNOCKBACK, 3)
-                .add(Attributes.MOVEMENT_SPEED, 0.25)
+                .add(Attributes.MOVEMENT_SPEED, 0.26)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 1)
                 .add(Attributes.ARMOR, 6)
     ;}

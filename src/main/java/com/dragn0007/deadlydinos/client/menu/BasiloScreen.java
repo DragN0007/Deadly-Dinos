@@ -11,8 +11,8 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class BasiloScreen extends AbstractContainerScreen<BasiloMenu> {
 
-    private static final ResourceLocation SADDLED = new ResourceLocation(DeadlyDinos.MODID, "textures/gui/basilo_gui.png");
-    private static final ResourceLocation CHESTED = new ResourceLocation(DeadlyDinos.MODID, "textures/gui/basilo_chested_gui.png");
+    private static final ResourceLocation SADDLED = new ResourceLocation(DeadlyDinos.MODID, "textures/gui/grypo_gui.png");
+    private static final ResourceLocation CHESTED = new ResourceLocation(DeadlyDinos.MODID, "textures/gui/grypo_chested_gui.png");
 
 
     private final ResourceLocation texture;

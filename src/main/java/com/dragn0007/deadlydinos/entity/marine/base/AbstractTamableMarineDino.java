@@ -22,6 +22,7 @@ import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
+import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -29,6 +30,7 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.fluids.FluidAttributes;
 
@@ -62,30 +64,10 @@ public abstract class AbstractTamableMarineDino extends TamableAnimal  {
         return 1 + this.level.random.nextInt(3);
     }
 
-    protected void handleAirSupply(int p_30344_) {
-        if (this.isAlive() && !this.isInWaterOrBubble()) {
-            this.setAirSupply(p_30344_ - 1);
-            if (this.getAirSupply() == -20) {
-                this.setAirSupply(0);
-                this.hurt(DamageSource.DROWN, 2.0F);
-            }
-        } else {
-            this.setAirSupply(300);
-        }
-
-    }
-
     @Override
     public boolean canBeRiddenInWater(Entity rider) {
         return true;
     }
-
-    public void baseTick() {
-        int i = this.getAirSupply();
-        super.baseTick();
-        this.handleAirSupply(i);
-    }
-
 
     public boolean canBeLeashed(Player p_30346_) {
         return false;
@@ -106,11 +88,10 @@ public abstract class AbstractTamableMarineDino extends TamableAnimal  {
         this.goalSelector.addGoal(4, new AbstractTamableMarineDino.SharkSwimGoal(this));
         this.targetSelector.addGoal(1, new AbstractTamableMarineDino.SharkHurtByTargetGoal());
         this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
-        this.goalSelector.addGoal(1, new RandomSwimmingGoal(this, 1.0D, 10));
     }
 
-    protected PathNavigation createNavigation(Level p_27480_) {
-        return new WaterBoundPathNavigation(this, p_27480_);
+    protected PathNavigation createNavigation(Level level) {
+        return new WaterBoundPathNavigation(this, level);
     }
 
     public void tick() {
@@ -139,16 +120,16 @@ public abstract class AbstractTamableMarineDino extends TamableAnimal  {
                 this.setRot(this.getYRot(), this.getXRot());
                 this.yBodyRot = this.getYRot();
                 this.yHeadRot = this.yBodyRot;
-                float f = livingentity.xxa * 0.5F; // Strafe moving speed
-                float f1 = livingentity.zza * 0.9F; // Forward moving speed
+                float f = livingentity.xxa * 0.2F; // Strafe moving speed
+                float f1 = livingentity.zza * 0.5F; // Forward moving speed
                 double verticalMovement = vec.y;
 
                 if (livingentity instanceof Player) {
                     Player player = (Player) livingentity;
-                    if (player.isVehicle()) {    //IM GOING TO LOSE MY MIND RAHH HRAHHH WHY DOESNT PLAYER HAVE A JUMPINH CONTROL IM GOJNA CHEW MY OWN SKIN OFF RAHHHH
-                        verticalMovement = 0.2D; // Swim up if holding Space
-                    } else if (player.isSprinting()) {
-                        verticalMovement = -0.4D; // Swim down if holding CTRL
+                    if (player.isInWater()) {    //IM GOING TO LOSE MY MIND RAHH HRAHHH WHY DOESNT PLAYER HAVE A JUMPINH CONTROL IM GOJNA CHEW MY OWN SKIN OFF RAHHHH
+                        verticalMovement = -0.1D; // Swim up if holding Space
+                    } else if (player.isSprinting() && this.isInWater()) {
+                        verticalMovement = 0.4D; // Swim down if holding CTRL
                     }
                 }
 
@@ -169,18 +150,15 @@ public abstract class AbstractTamableMarineDino extends TamableAnimal  {
                 this.calculateEntityAnimation(this, false);
                 this.tryCheckInsideBlocks();
             } else {
-                this.moveRelative(0.02F, vec);
-                this.move(MoverType.SELF, this.getDeltaMovement());
-                this.setDeltaMovement(this.getDeltaMovement().scale(0.8D));
-                if (this.getTarget() == null) {
-                    this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.005D, 0.0D));
-                } else {
-                    if (this.getTarget().isAlive() && this.canAttack(this.getTarget())) {
-                        Vec3 targetPos = new Vec3(this.getTarget().getX(), this.getTarget().getY(), this.getTarget().getZ());
-                        this.moveTowardsTarget(targetPos);
-                    } else {
-                        this.setTarget(null);
+                if (this.isEffectiveAi() && this.isInWater()) {
+                    this.moveRelative(0.7F, vec);
+                    this.move(MoverType.SELF, this.getDeltaMovement());
+                    this.setDeltaMovement(this.getDeltaMovement().scale(0D));
+                    if (this.getTarget() == null) {
+                        this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.005D, 0.0D));
                     }
+                } else {
+                    super.travel(vec);
                 }
             }
         }
@@ -267,7 +245,7 @@ public abstract class AbstractTamableMarineDino extends TamableAnimal  {
                 this.shark.setDeltaMovement(this.shark.getDeltaMovement().add(0.0D, 0.005D, 0.0D));
             }
 
-            if (this.operation == Operation.MOVE_TO && !this.shark.getNavigation().isDone()) {
+            if (this.operation == MoveControl.Operation.MOVE_TO && !this.shark.getNavigation().isDone()) {
                 float f = (float)(this.speedModifier * this.shark.getAttributeValue(Attributes.MOVEMENT_SPEED));
                 this.shark.setSpeed(Mth.lerp(0.125F, this.shark.getSpeed(), f));
                 double d0 = this.wantedX - this.shark.getX();

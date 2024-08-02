@@ -51,7 +51,6 @@ public abstract class AbstractPassiveMarineDino extends WaterAnimal {
     protected void registerGoals() {
         this.goalSelector.addGoal(4, new AbstractPassiveMarineDino.SharkSwimGoal(this));
         this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
-        this.goalSelector.addGoal(1, new RandomSwimmingGoal(this, 1.0D, 10));
     }
 
     protected PathNavigation createNavigation(Level p_27480_) {
