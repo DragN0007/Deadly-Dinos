@@ -145,8 +145,8 @@ public abstract class AbstractTamableMarineDino extends TamableAnimal  {
 
                 if (livingentity instanceof Player) {
                     Player player = (Player) livingentity;
-                    if (player.isInWater()) {    //IM GOING TO LOSE MY MIND RAHH HRAHHH WHY DOESNT PLAYER HAVE A JUMPINH CONTROL IM GOJNA CHEW MY OWN SKIN OFF RAHHHH
-                        verticalMovement = 0.4D; // Swim up if holding Space
+                    if (player.isVehicle()) {    //IM GOING TO LOSE MY MIND RAHH HRAHHH WHY DOESNT PLAYER HAVE A JUMPINH CONTROL IM GOJNA CHEW MY OWN SKIN OFF RAHHHH
+                        verticalMovement = 0.2D; // Swim up if holding Space
                     } else if (player.isSprinting()) {
                         verticalMovement = -0.4D; // Swim down if holding CTRL
                     }

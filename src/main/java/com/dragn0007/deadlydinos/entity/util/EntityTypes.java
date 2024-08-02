@@ -339,6 +339,12 @@ public class EntityTypes {
                     .sized(2f,2f)
                     .build(new ResourceLocation(MODID,"basilo").toString()));
 
+    public static final RegistryObject<EntityType<Meg>> MEG_ENTITY = ENTITY_TYPES.register("meg_entity",
+            () -> EntityType.Builder.of(Meg::new,
+                            MobCategory.WATER_CREATURE)
+                    .sized(2f,2f)
+                    .build(new ResourceLocation(MODID,"meg").toString()));
+
 
 
 

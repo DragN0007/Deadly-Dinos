@@ -380,8 +380,10 @@ public class Bary extends TamableAnimal implements ContainerListener, IAnimatabl
 
                     if (livingentity instanceof Player) {
                         Player player = (Player) livingentity;
-                        if (player.isSprinting()) {
-                            verticalMovement = -0.4D; // Swim down if CTRL is held
+                        if (player.isInWater()) {    //IM GOING TO LOSE MY MIND RAHH HRAHHH WHY DOESNT PLAYER HAVE A JUMPINH CONTROL IM GOJNA CHEW MY OWN SKIN OFF RAHHHH
+                            verticalMovement = 0.1D; // Swim up if holding Space
+                        } else if (player.isSprinting()) {
+                            verticalMovement = -0.4D; // Swim down if holding CTRL
                         }
                     }
 

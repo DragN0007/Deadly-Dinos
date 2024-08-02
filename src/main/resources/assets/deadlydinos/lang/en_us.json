@@ -228,6 +228,10 @@
   "item.deadlydinos.basilo_egg": "Basilosaurus Egg",
   "item.deadlydinos.basilotrophy": "Basilosaurus Tooth Trophy",
 
+  "entity.deadlydinos.meg_entity": "Megalodon",
+  "item.deadlydinos.meg_spawn_egg": "Megalodon Spawn Egg",
+  "item.deadlydinos.megtrophy": "Megalodon Tooth Trophy",
+
   "entity.deadlydinos.gar_entity": "Alligator Gar",
   "item.deadlydinos.gar_spawn_egg": "Alligator Gar Spawn Egg",
 

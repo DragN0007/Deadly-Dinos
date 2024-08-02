@@ -88,6 +88,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         event.put(EntityTypes.ICHTHYO_ENTITY.get(), Ichthyo.createAttributes().build());
         event.put(EntityTypes.LEED_ENTITY.get(), Leed.createAttributes().build());
         event.put(EntityTypes.BASILO_ENTITY.get(), Basilo.createAttributes().build());
+        event.put(EntityTypes.MEG_ENTITY.get(), Meg.createAttributes().build());
 
         event.put(EntityTypes.CAR_ENTITY.get(), Car.createAttributes().build());
         event.put(EntityTypes.CARSIDE_ENTITY.get(), CarSide.createAttributes().build());
@@ -255,6 +256,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
         SpawnPlacements.register(EntityTypes.BASILO_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, AbstractTamableMarineDino::checkSurfaceWaterAnimalSpawnRules);
+
+        SpawnPlacements.register(EntityTypes.MEG_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
     }
 
     @SubscribeEvent
@@ -315,6 +319,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         EntityRenderers.register(EntityTypes.ICHTHYO_ENTITY.get(), IchthyoRender::new);
         EntityRenderers.register(EntityTypes.LEED_ENTITY.get(), LeedRender::new);
         EntityRenderers.register(EntityTypes.BASILO_ENTITY.get(), BasiloRender::new);
+        EntityRenderers.register(EntityTypes.MEG_ENTITY.get(), MegRender::new);
 
         EntityRenderers.register(EntityTypes.CAR_ENTITY.get(), CarRender::new);
         EntityRenderers.register(EntityTypes.CARSIDE_ENTITY.get(), CarSideRender::new);

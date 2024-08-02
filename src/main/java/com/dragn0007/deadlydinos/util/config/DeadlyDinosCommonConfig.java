@@ -47,6 +47,7 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> LEED_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> MAHAKALA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> MAJUNGA_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> MEG_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> MEGARAP_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> MOSA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> PACHY_WEIGHT;
@@ -197,6 +198,9 @@ public class DeadlyDinosCommonConfig {
 
         MEGARAP_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
                 .define("MEGARAP Spawn Weight", 3);
+
+        MEG_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
+                .define("MEG Spawn Weight", 2);
 
         MOSA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
                 .define("MOSA Spawn Weight", 1);

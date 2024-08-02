@@ -173,6 +173,8 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.LEED_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> BASILO_SPAWN_EGG = ITEMS.register("basilo_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.BASILO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> MEG_SPAWN_EGG = ITEMS.register("meg_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.MEG_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
 
@@ -755,7 +757,8 @@ public class DDDItems {
     public static final RegistryObject<TrophyItem> MOSATROPHY = ITEMS.register("mosatrophy",
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2880, 2,true, false),
-                    new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2880, 3, true, false)
+                    new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2880, 3, true, false),
+                    new MobEffectInstance(MobEffects.CONDUIT_POWER, 2880, 2,true, false)
             ));
     public static final RegistryObject<TrophyItem> HELITROPHY = ITEMS.register("helitrophy",
             () -> new TrophyItem(
@@ -784,6 +787,12 @@ public class DDDItems {
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.WATER_BREATHING, 2880, 2,true, false),
                     new MobEffectInstance(MobEffects.CONDUIT_POWER, 2880, 3, true, false)
+            ));
+
+    public static final RegistryObject<TrophyItem> MEGTROPHY = ITEMS.register("megtrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2880, 2,true, false),
+                    new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2880, 3, true, false)
             ));
 
 
