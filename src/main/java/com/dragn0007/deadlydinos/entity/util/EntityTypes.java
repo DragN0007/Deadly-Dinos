@@ -188,12 +188,6 @@ public class EntityTypes {
                     .sized(1.5f,2.5f)
                     .build(new ResourceLocation(MODID,"bary").toString()));
 
-    public static final RegistryObject<EntityType<Pachy>> PACHY_ENTITY = ENTITY_TYPES.register("pachy_entity",
-            () -> EntityType.Builder.of(Pachy::new,
-                            MobCategory.CREATURE)
-                    .sized(1f,2f)
-                    .build(new ResourceLocation(MODID,"pachy").toString()));
-
 
 
 
@@ -294,6 +288,13 @@ public class EntityTypes {
                             MobCategory.CREATURE)
                     .sized(2f,4f)
                     .build(new ResourceLocation(MODID,"trike").toString()));
+
+    public static final RegistryObject<EntityType<Pachy>> PACHY_ENTITY = ENTITY_TYPES.register("pachy_entity",
+            () -> EntityType.Builder.of(Pachy::new,
+                            MobCategory.CREATURE)
+                    .sized(1f,2f)
+                    .build(new ResourceLocation(MODID,"pachy").toString()));
+
 
 
 

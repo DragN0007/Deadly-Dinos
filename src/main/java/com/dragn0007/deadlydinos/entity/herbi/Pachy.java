@@ -285,14 +285,6 @@ public class Pachy extends TamableAnimal implements ContainerListener, Saddleabl
         };
      }
 
-    public static final String PROTOCOL_VERSION = "1";
-    public static final SimpleChannel INSTANCE = NetworkRegistry.newSimpleChannel(
-            new ResourceLocation(DeadlyDinos.MODID, "pachy_network"),
-            () -> PROTOCOL_VERSION,
-            PROTOCOL_VERSION::equals,
-            PROTOCOL_VERSION::equals
-    );
-
     private static final EntityDataAccessor<Integer> MODE = (EntityDataAccessor<Integer>) SynchedEntityData.defineId(Pachy.class, Serializers.MODE_SERIALIZER.get().getSerializer());
 
     public Mode mode() {
