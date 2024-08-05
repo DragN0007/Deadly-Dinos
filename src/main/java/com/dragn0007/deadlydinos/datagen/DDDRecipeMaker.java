@@ -22,6 +22,15 @@ public class DDDRecipeMaker extends RecipeProvider implements IConditionBuilder 
     @Override
     protected void buildCraftingRecipes(Consumer<FinishedRecipe> pFinishedRecipeConsumer) {
 
+        ShapedRecipeBuilder.shaped(DDDItems.EOCARCHARIA_ARMOR.get())
+                .define('A', Items.LEATHER)
+                .define('B', Items.IRON_BLOCK)
+                .pattern("BBB")
+                .pattern("BA ")
+                .unlockedBy("has_iron", inventoryTrigger(ItemPredicate.Builder.item()
+                        .of(Items.IRON_BLOCK).build()))
+                .save(pFinishedRecipeConsumer);
+
 
         ShapelessRecipeBuilder.shapeless(DDDItems.DUNKLEO_HELMET.get())
                 .requires(DDDItems.DUNKLEO_SKELETON.get())
