@@ -193,6 +193,17 @@
   "item.deadlydinos.megarap_spawn_egg": "Megaraptor Spawn Egg",
   "item.deadlydinos.megaraptrophy": "Megaraptor Claw Trophy",
 
+  "entity.deadlydinos.bary_entity": "Baryonyx",
+  "item.deadlydinos.bary_spawn_egg": "Baryonyx Spawn Egg",
+  "item.deadlydinos.bary_egg": "Baryonyx Egg",
+  "item.deadlydinos.barytrophy": "Baryonyx Tooth Trophy",
+
+  "entity.deadlydinos.pachy_entity": "Pachycephalosaurus",
+  "item.deadlydinos.pachy_spawn_egg": "Pachycephalosaurus Spawn Egg",
+  "item.deadlydinos.pachy_egg": "Pachycephalosaurus Egg",
+  "item.deadlydinos.pachytrophy": "Pachycephalosaurus Crest Trophy",
+
+
   "entity.deadlydinos.mosa_entity": "Mosasaurus",
   "item.deadlydinos.mosa_spawn_egg": "Mosasaurus Spawn Egg",
   "item.deadlydinos.mosatrophy": "Mosasaurus Tooth Trophy",
@@ -212,16 +223,6 @@
   "entity.deadlydinos.leed_entity": "Leedsichthys",
   "item.deadlydinos.leed_spawn_egg": "Leedsichthys Spawn Egg",
   "item.deadlydinos.leedtrophy": "Leedsichthys Fin Trophy",
-
-  "entity.deadlydinos.bary_entity": "Baryonyx",
-  "item.deadlydinos.bary_spawn_egg": "Baryonyx Spawn Egg",
-  "item.deadlydinos.bary_egg": "Baryonyx Egg",
-  "item.deadlydinos.barytrophy": "Baryonyx Tooth Trophy",
-
-  "entity.deadlydinos.pachy_entity": "Pachycephalosaurus",
-  "item.deadlydinos.pachy_spawn_egg": "Pachycephalosaurus Spawn Egg",
-  "item.deadlydinos.pachy_egg": "Pachycephalosaurus Egg",
-  "item.deadlydinos.pachytrophy": "Pachycephalosaurus Crest Trophy",
 
   "entity.deadlydinos.basilo_entity": "Basilosaurus",
   "item.deadlydinos.basilo_spawn_egg": "Basilosaurus Spawn Egg",
@@ -243,11 +244,11 @@
 
 
 
-  "item.deadlydinos.rawsmallmeat": "Raw Small Dino Meat",
+  "item.deadlydinos.rawsmallmeat": "Small Dino Meat",
   "item.deadlydinos.cookedsmallmeat": "Cooked Small Dino Meat",
-  "item.deadlydinos.rawmediummeat": "Raw Medium Dino Meat",
+  "item.deadlydinos.rawmediummeat": "Medium Dino Meat",
   "item.deadlydinos.cookedmediummeat": "Cooked Medium Dino Meat",
-  "item.deadlydinos.rawlargemeat": "Raw Large Dino Meat",
+  "item.deadlydinos.rawlargemeat": "Large Dino Meat",
   "item.deadlydinos.cookedlargemeat": "Cooked Large Dino Meat",
   "item.deadlydinos.cracker": "Cracker",
   "item.deadlydinos.cannedveggies": "Canned Veggies",
