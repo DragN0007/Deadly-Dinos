@@ -112,7 +112,7 @@ public class Dunkleo extends AbstractMarineDino implements IAnimatable {
     private PlayState attackPredicate(AnimationEvent event) {
         if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
             event.getController().markNeedsReload();
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("attack", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("bite", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
             this.swinging = false;
         }
 

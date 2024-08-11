@@ -79,9 +79,9 @@ public abstract class AbstractMarineDino extends WaterAnimal {
     }
 
     static class FishMoveControl extends MoveControl {
-        private final AbstractNeutralMarineDino shark;
+        private final AbstractMarineDino shark;
 
-        FishMoveControl(AbstractNeutralMarineDino p_27501_) {
+        FishMoveControl(AbstractMarineDino p_27501_) {
             super(p_27501_);
             this.shark = p_27501_;
         }
