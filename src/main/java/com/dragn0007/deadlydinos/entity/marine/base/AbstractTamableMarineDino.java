@@ -1,17 +1,13 @@
 package com.dragn0007.deadlydinos.entity.marine.base;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.player.KeyboardInput;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.util.Mth;
-import net.minecraft.util.TimeUtil;
-import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -24,7 +20,6 @@ import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
-import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -32,15 +27,11 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
-import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.fluids.FluidAttributes;
 
 import java.util.Random;
 
 public abstract class AbstractTamableMarineDino extends TamableAnimal  {
-    private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 50);
-    private int remainingPersistentAngerTime;
 
     protected AbstractTamableMarineDino(EntityType<? extends AbstractTamableMarineDino> entityType, Level level) {
         super(entityType, level);
@@ -126,7 +117,7 @@ public abstract class AbstractTamableMarineDino extends TamableAnimal  {
                 float f1 = livingentity.zza * 0.5F; // Forward moving speed
                 double verticalMovement = vec.y;
 
-                if (livingentity instanceof Player) {
+                if (livingentity instanceof Player && this.isInWater()) {
                     Player player = (Player) livingentity;
                     Minecraft game = Minecraft.getInstance();
                     LocalPlayer localPlayer = game.player;
@@ -166,20 +157,6 @@ public abstract class AbstractTamableMarineDino extends TamableAnimal  {
                 }
             }
         }
-    }
-
-    private void moveTowardsTarget(Vec3 targetPos) {
-        double dx = targetPos.x - this.getX();
-        double dy = targetPos.y - this.getY();
-        double dz = targetPos.z - this.getZ();
-
-        double distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
-        double speed = 0.1;
-        dx /= distance;
-        dy /= distance;
-        dz /= distance;
-
-        this.setDeltaMovement(dx * speed, dy * speed, dz * speed);
     }
 
     public void aiStep() {
@@ -314,7 +291,6 @@ public abstract class AbstractTamableMarineDino extends TamableAnimal  {
 
         }
     }
-
 
     static class SharkSwimGoal extends RandomSwimmingGoal {
         public final AbstractTamableMarineDino fish;

@@ -1,6 +1,5 @@
 package com.dragn0007.deadlydinos.entity.marine;
 
-import com.dragn0007.deadlydinos.client.model.DunkleoModel;
 import com.dragn0007.deadlydinos.client.model.MegModel;
 import com.dragn0007.deadlydinos.entity.marine.base.AbstractMarineDino;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;

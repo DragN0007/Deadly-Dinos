@@ -6,8 +6,6 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
-import net.minecraft.util.TimeUtil;
-import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -34,8 +32,6 @@ import javax.annotation.Nullable;
 import java.util.EnumSet;
 
 public abstract class AbstractPassiveMarineDino extends WaterAnimal {
-    private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 50);
-    private int remainingPersistentAngerTime;
 
     public AbstractPassiveMarineDino(EntityType<? extends AbstractPassiveMarineDino> entityType, Level level) {
         super(entityType, level);
@@ -70,36 +66,6 @@ public abstract class AbstractPassiveMarineDino extends WaterAnimal {
         }
     }
 
-    public void tick() {
-        super.tick();
-            if (this.level.isClientSide && this.isInWater() && this.getDeltaMovement().lengthSqr() > 0.03D) {
-                Vec3 vec3 = this.getViewVector(0.0F);
-                float f = Mth.cos(this.getYRot() * ((float)Math.PI / 180F)) * 0.3F;
-                float f1 = Mth.sin(this.getYRot() * ((float)Math.PI / 180F)) * 0.3F;
-                float f2 = 1.2F - this.random.nextFloat() * 0.7F;
-
-                for(int i = 0; i < 2; ++i) {
-                    this.level.addParticle(ParticleTypes.DOLPHIN, this.getX() - vec3.x * (double)f2 + (double)f, this.getY() - vec3.y, this.getZ() - vec3.z * (double)f2 + (double)f1, 0.0D, 0.0D, 0.0D);
-                    this.level.addParticle(ParticleTypes.DOLPHIN, this.getX() - vec3.x * (double)f2 - (double)f, this.getY() - vec3.y, this.getZ() - vec3.z * (double)f2 - (double)f1, 0.0D, 0.0D, 0.0D);
-                }
-            }
-    }
-
-    @Override
-    public boolean isPushedByFluid() {
-        return false;
-    }
-
-    @Override
-    public boolean isSwimming() {
-        return true;
-    }
-
-    @Override
-    public boolean canBreatheUnderwater() {
-        return true;
-    }
-
     public void aiStep() {
         if (!this.isInWater() && this.onGround && this.verticalCollision) {
             this.setDeltaMovement(this.getDeltaMovement().add((double)((this.random.nextFloat() * 2.0F - 1.0F) * 0.05F), (double)0.4F, (double)((this.random.nextFloat() * 2.0F - 1.0F) * 0.05F)));
@@ -109,34 +75,6 @@ public abstract class AbstractPassiveMarineDino extends WaterAnimal {
         }
 
         super.aiStep();
-    }
-
-    protected SoundEvent getAmbientSound() {
-        return null;
-    }
-
-    protected SoundEvent getDeathSound() {
-        return null;
-    }
-
-    protected SoundEvent getHurtSound(DamageSource p_184601_1_) {
-        return SoundEvents.RAVAGER_HURT;
-    }
-
-    protected SoundEvent getFlopSound() {
-        return SoundEvents.ELDER_GUARDIAN_FLOP;
-    }
-
-    protected boolean canRandomSwim() {
-        return true;
-    }
-
-
-    protected SoundEvent getSwimSound() {
-        return SoundEvents.FISH_SWIM;
-    }
-
-    protected void playStepSound(BlockPos p_27482_, BlockState p_27483_) {
     }
 
     static class FishMoveControl extends MoveControl {
@@ -175,6 +113,64 @@ public abstract class AbstractPassiveMarineDino extends WaterAnimal {
         }
     }
 
+    public void tick() {
+        super.tick();
+            if (this.level.isClientSide && this.isInWater() && this.getDeltaMovement().lengthSqr() > 0.03D) {
+                Vec3 vec3 = this.getViewVector(0.0F);
+                float f = Mth.cos(this.getYRot() * ((float)Math.PI / 180F)) * 0.3F;
+                float f1 = Mth.sin(this.getYRot() * ((float)Math.PI / 180F)) * 0.3F;
+                float f2 = 1.2F - this.random.nextFloat() * 0.7F;
+
+                for(int i = 0; i < 2; ++i) {
+                    this.level.addParticle(ParticleTypes.DOLPHIN, this.getX() - vec3.x * (double)f2 + (double)f, this.getY() - vec3.y, this.getZ() - vec3.z * (double)f2 + (double)f1, 0.0D, 0.0D, 0.0D);
+                    this.level.addParticle(ParticleTypes.DOLPHIN, this.getX() - vec3.x * (double)f2 - (double)f, this.getY() - vec3.y, this.getZ() - vec3.z * (double)f2 - (double)f1, 0.0D, 0.0D, 0.0D);
+                }
+            }
+    }
+
+    @Override
+    public boolean isPushedByFluid() {
+        return false;
+    }
+
+    @Override
+    public boolean isSwimming() {
+        return true;
+    }
+
+    @Override
+    public boolean canBreatheUnderwater() {
+        return true;
+    }
+
+    protected SoundEvent getAmbientSound() {
+        return null;
+    }
+
+    protected SoundEvent getDeathSound() {
+        return null;
+    }
+
+    protected SoundEvent getHurtSound(DamageSource p_184601_1_) {
+        return SoundEvents.RAVAGER_HURT;
+    }
+
+    protected SoundEvent getFlopSound() {
+        return SoundEvents.ELDER_GUARDIAN_FLOP;
+    }
+
+    protected boolean canRandomSwim() {
+        return true;
+    }
+
+
+    protected SoundEvent getSwimSound() {
+        return SoundEvents.FISH_SWIM;
+    }
+
+    protected void playStepSound(BlockPos p_27482_, BlockState p_27483_) {
+    }
+
     public boolean doHurtTarget(Entity p_29522_) {
         boolean flag = p_29522_.hurt(DamageSource.mobAttack(this), (float)((int)this.getAttributeValue(Attributes.ATTACK_DAMAGE)));
         if (flag) {
@@ -183,7 +179,6 @@ public abstract class AbstractPassiveMarineDino extends WaterAnimal {
 
         return flag;
     }
-
 
     static class SharkSwimGoal extends RandomSwimmingGoal {
         public final AbstractPassiveMarineDino fish;

@@ -380,7 +380,7 @@ public class Bary extends TamableAnimal implements ContainerListener, IAnimatabl
                     float f1 = livingentity.zza * 0.8F; // Forward moving speed
                     double verticalMovement = vec.y;
 
-                    if (livingentity instanceof Player) {
+                    if (livingentity instanceof Player && this.isInWater()) {
                         Player player = (Player) livingentity;
                         Minecraft game = Minecraft.getInstance();
                         LocalPlayer localPlayer = game.player;

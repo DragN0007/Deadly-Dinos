@@ -1,10 +1,6 @@
 {
   "replace": false,
   "values": [
-    "deadlydinos:wire_fence_1",
-    "deadlydinos:wire_fence_2",
-    "deadlydinos:wire_fence_3",
-    "deadlydinos:wire_fence_4",
     "deadlydinos:rstonebricks",
     "deadlydinos:rcobblestone",
     "deadlydinos:rglass"

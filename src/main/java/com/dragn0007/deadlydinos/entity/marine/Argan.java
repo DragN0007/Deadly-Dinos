@@ -1,7 +1,6 @@
 package com.dragn0007.deadlydinos.entity.marine;
 
 import com.dragn0007.deadlydinos.client.model.ArganModel;
-import com.dragn0007.deadlydinos.client.model.GarModel;
 import com.dragn0007.deadlydinos.entity.marine.base.AbstractPassiveMarineDino;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;

@@ -1,8 +1,6 @@
 package com.dragn0007.deadlydinos.entity.marine;
 
-import com.dragn0007.deadlydinos.client.model.GarModel;
 import com.dragn0007.deadlydinos.client.model.HyneriaModel;
-import com.dragn0007.deadlydinos.entity.marine.base.AbstractNeutralMarineDino;
 import com.dragn0007.deadlydinos.entity.marine.base.AbstractPassiveMarineDino;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -16,7 +14,6 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.Vec3;
