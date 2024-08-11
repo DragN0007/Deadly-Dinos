@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "deadlydinos:arganodus"
+  },
+  "result": "deadlydinos:cooked_arganodus",
+  "experience": 0.35,
+  "cookingtime": 100
+}
