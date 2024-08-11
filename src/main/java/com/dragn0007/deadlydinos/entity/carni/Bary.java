@@ -9,6 +9,8 @@ import com.dragn0007.deadlydinos.entity.util.EntityTypes;
 import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import com.google.common.collect.Sets;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -380,8 +382,10 @@ public class Bary extends TamableAnimal implements ContainerListener, IAnimatabl
 
                     if (livingentity instanceof Player) {
                         Player player = (Player) livingentity;
-                        if (player.isInWater()) {    //IM GOING TO LOSE MY MIND RAHH HRAHHH WHY DOESNT PLAYER HAVE A JUMPINH CONTROL IM GOJNA CHEW MY OWN SKIN OFF RAHHHH
-                            verticalMovement = 0.1D; // Swim up if holding Space
+                        Minecraft game = Minecraft.getInstance();
+                        LocalPlayer localPlayer = game.player;
+                        if (localPlayer !=null && localPlayer.input.jumping) {
+                            verticalMovement = 0.4D; // Swim up if holding Space
                         } else if (player.isSprinting()) {
                             verticalMovement = -0.4D; // Swim down if holding CTRL
                         }
