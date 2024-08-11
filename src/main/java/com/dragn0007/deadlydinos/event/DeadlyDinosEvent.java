@@ -89,6 +89,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         event.put(EntityTypes.LEED_ENTITY.get(), Leed.createAttributes().build());
         event.put(EntityTypes.BASILO_ENTITY.get(), Basilo.createAttributes().build());
         event.put(EntityTypes.MEG_ENTITY.get(), Meg.createAttributes().build());
+        event.put(EntityTypes.LIVY_ENTITY.get(), Livy.createAttributes().build());
+        event.put(EntityTypes.STETH_ENTITY.get(), Steth.createAttributes().build());
 
         event.put(EntityTypes.CAR_ENTITY.get(), Car.createAttributes().build());
         event.put(EntityTypes.CARSIDE_ENTITY.get(), CarSide.createAttributes().build());
@@ -259,6 +261,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
         SpawnPlacements.register(EntityTypes.MEG_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
+
+        SpawnPlacements.register(EntityTypes.LIVY_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
+
+        SpawnPlacements.register(EntityTypes.STETH_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
     }
 
     @SubscribeEvent
@@ -320,6 +328,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         EntityRenderers.register(EntityTypes.LEED_ENTITY.get(), LeedRender::new);
         EntityRenderers.register(EntityTypes.BASILO_ENTITY.get(), BasiloRender::new);
         EntityRenderers.register(EntityTypes.MEG_ENTITY.get(), MegRender::new);
+        EntityRenderers.register(EntityTypes.LIVY_ENTITY.get(), LivyRender::new);
+        EntityRenderers.register(EntityTypes.STETH_ENTITY.get(), StethRender::new);
 
         EntityRenderers.register(EntityTypes.CAR_ENTITY.get(), CarRender::new);
         EntityRenderers.register(EntityTypes.CARSIDE_ENTITY.get(), CarSideRender::new);

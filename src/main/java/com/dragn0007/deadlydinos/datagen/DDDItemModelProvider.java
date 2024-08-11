@@ -67,6 +67,10 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.BASILO_SPAWN_EGG.get());
         simpleItem(DDDItems.MEGTROPHY.get());
         simpleItem(DDDItems.MEG_SPAWN_EGG.get());
+        simpleItem(DDDItems.LIVYTROPHY.get());
+        simpleItem(DDDItems.LIVY_SPAWN_EGG.get());
+        simpleItem(DDDItems.STETHTROPHY.get());
+        simpleItem(DDDItems.STETH_SPAWN_EGG.get());
 
         simpleItem(DDDItems.GAR_SPAWN_EGG.get());
 

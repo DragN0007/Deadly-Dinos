@@ -23,7 +23,6 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> AUSTRO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> AVA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> BARY_WEIGHT;
-    public static final ForgeConfigSpec.ConfigValue<Integer> BASILO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> CARCHAR_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> CARNO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> CERATO_WEIGHT;
@@ -33,23 +32,16 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> DEINOCH_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> DEINON_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> DILO_WEIGHT;
-    public static final ForgeConfigSpec.ConfigValue<Integer> DUNKLEO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> EDMONTO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> EOCARCHAR_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> GALLI_WEIGHT;
-    public static final ForgeConfigSpec.ConfigValue<Integer> GAR_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> GIGA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> GRYPO_WEIGHT;
-    public static final ForgeConfigSpec.ConfigValue<Integer> HELI_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ICHTHY_WEIGHT;
-    public static final ForgeConfigSpec.ConfigValue<Integer> ICHTHYO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> IGUA_WEIGHT;
-    public static final ForgeConfigSpec.ConfigValue<Integer> LEED_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> MAHAKALA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> MAJUNGA_WEIGHT;
-    public static final ForgeConfigSpec.ConfigValue<Integer> MEG_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> MEGARAP_WEIGHT;
-    public static final ForgeConfigSpec.ConfigValue<Integer> MOSA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> PACHY_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> PACHYR_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> PARA_WEIGHT;
@@ -64,6 +56,17 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> TROODON_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> UTAH_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> YUTY_WEIGHT;
+
+    public static final ForgeConfigSpec.ConfigValue<Integer> BASILO_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> DUNKLEO_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> GAR_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> HELI_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> ICHTHYO_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> LEED_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> LIVY_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> MEG_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> MOSA_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> STETH_WEIGHT;
 
 
     static {
@@ -190,6 +193,9 @@ public class DeadlyDinosCommonConfig {
         LEED_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
                 .define("LEED Spawn Weight", 1);
 
+        LIVY_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
+                .define("LIVY Spawn Weight", 2);
+
         MAHAKALA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 6.")
                 .define("MAHAKALA Spawn Weight", 6);
 
@@ -228,6 +234,9 @@ public class DeadlyDinosCommonConfig {
 
         STEGO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
                 .define("STEGO Spawn Weight", 3);
+
+        STETH_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
+                .define("STETH Spawn Weight", 3);
 
         TARBO_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
                 .define("TARBO Spawn Weight", 1);

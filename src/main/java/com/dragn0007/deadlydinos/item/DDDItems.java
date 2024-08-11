@@ -175,6 +175,10 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.BASILO_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> MEG_SPAWN_EGG = ITEMS.register("meg_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.MEG_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> LIVY_SPAWN_EGG = ITEMS.register("livy_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.LIVY_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> STETH_SPAWN_EGG = ITEMS.register("steth_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.STETH_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
 
@@ -792,6 +796,19 @@ public class DDDItems {
     public static final RegistryObject<TrophyItem> MEGTROPHY = ITEMS.register("megtrophy",
             () -> new TrophyItem(
                     new MobEffectInstance(MobEffects.DAMAGE_BOOST, 2880, 2,true, false),
+                    new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2880, 3, true, false)
+            ));
+
+    public static final RegistryObject<TrophyItem> LIVYTROPHY = ITEMS.register("livytrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.ABSORPTION, 2880, 2,true, false),
+                    new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2880, 3, true, false),
+                    new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 2880, 3, true, false)
+            ));
+
+    public static final RegistryObject<TrophyItem> STETHTROPHY = ITEMS.register("stethtrophy",
+            () -> new TrophyItem(
+                    new MobEffectInstance(MobEffects.DIG_SPEED, 2880, 2,true, false),
                     new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 2880, 3, true, false)
             ));
 

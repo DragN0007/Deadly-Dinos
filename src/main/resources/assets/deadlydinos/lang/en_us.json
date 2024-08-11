@@ -233,6 +233,14 @@
   "item.deadlydinos.meg_spawn_egg": "Megalodon Spawn Egg",
   "item.deadlydinos.megtrophy": "Megalodon Tooth Trophy",
 
+  "entity.deadlydinos.livy_entity": "Livyatan",
+  "item.deadlydinos.livy_spawn_egg": "Livyatan Spawn Egg",
+  "item.deadlydinos.livytrophy": "Livyatan Tooth Trophy",
+
+  "entity.deadlydinos.steth_entity": "Stethacanthus",
+  "item.deadlydinos.steth_spawn_egg": "Stethacanthus Spawn Egg",
+  "item.deadlydinos.stethtrophy": "Stethacanthus Fin Trophy",
+
   "entity.deadlydinos.gar_entity": "Alligator Gar",
   "item.deadlydinos.gar_spawn_egg": "Alligator Gar Spawn Egg",
 

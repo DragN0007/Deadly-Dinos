@@ -346,6 +346,18 @@ public class EntityTypes {
                     .sized(2f,2f)
                     .build(new ResourceLocation(MODID,"meg").toString()));
 
+    public static final RegistryObject<EntityType<Livy>> LIVY_ENTITY = ENTITY_TYPES.register("livy_entity",
+            () -> EntityType.Builder.of(Livy::new,
+                            MobCategory.WATER_CREATURE)
+                    .sized(5f,5f)
+                    .build(new ResourceLocation(MODID,"livy").toString()));
+
+    public static final RegistryObject<EntityType<Steth>> STETH_ENTITY = ENTITY_TYPES.register("steth_entity",
+            () -> EntityType.Builder.of(Steth::new,
+                            MobCategory.WATER_CREATURE)
+                    .sized(1f,2f)
+                    .build(new ResourceLocation(MODID,"steth").toString()));
+
 
 
 
