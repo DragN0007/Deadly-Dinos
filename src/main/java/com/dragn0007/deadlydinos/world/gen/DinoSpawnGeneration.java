@@ -442,6 +442,11 @@ public class DinoSpawnGeneration {
                 Biomes.RIVER, Biomes.SWAMP,  Biomes.LUSH_CAVES
         );
 
+        addEntityToSpecificBiomes(event, EntityTypes.LIVY_ENTITY.get(),
+                DeadlyDinosCommonConfig.LIVY_WEIGHT.get(), 1, 1,
+                Biomes.DEEP_LUKEWARM_OCEAN, Biomes.DEEP_COLD_OCEAN, Biomes.DEEP_OCEAN, Biomes.DEEP_FROZEN_OCEAN
+        );
+
     }
 
     private static void addEntityToAllBiomesExceptThese(BiomeLoadingEvent event, EntityType<?> type,
