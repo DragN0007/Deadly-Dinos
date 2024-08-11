@@ -73,6 +73,8 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.STETH_SPAWN_EGG.get());
 
         simpleItem(DDDItems.GAR_SPAWN_EGG.get());
+        simpleItem(DDDItems.HYNERIA_SPAWN_EGG.get());
+        simpleItem(DDDItems.ARGAN_SPAWN_EGG.get());
 
         simpleItem(DDDItems.IGUA_EGG.get());
         simpleItem(DDDItems.ICHTHY_EGG.get());
@@ -109,6 +111,10 @@ public class DDDItemModelProvider extends ItemModelProvider {
         simpleItem(DDDItems.COOKED_SHARK.get());
         simpleItem(DDDItems.LARGE_FISH.get());
         simpleItem(DDDItems.COOKED_LARGE_FISH.get());
+        simpleItem(DDDItems.ARGANODUS.get());
+        simpleItem(DDDItems.COOKED_ARGANODUS.get());
+        simpleItem(DDDItems.HYNERIA.get());
+        simpleItem(DDDItems.COOKED_HYNERIA.get());
 
         simpleItem(DDDItems.BLUBBER.get());
 

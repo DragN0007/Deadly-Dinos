@@ -358,6 +358,18 @@ public class EntityTypes {
                     .sized(1f,2f)
                     .build(new ResourceLocation(MODID,"steth").toString()));
 
+    public static final RegistryObject<EntityType<Hyneria>> HYNERIA_ENTITY = ENTITY_TYPES.register("hyneria_entity",
+            () -> EntityType.Builder.of(Hyneria::new,
+                            MobCategory.WATER_CREATURE)
+                    .sized(1f,1f)
+                    .build(new ResourceLocation(MODID,"hyneria").toString()));
+
+    public static final RegistryObject<EntityType<Argan>> ARGAN_ENTITY = ENTITY_TYPES.register("argan_entity",
+            () -> EntityType.Builder.of(Argan::new,
+                            MobCategory.WATER_CREATURE)
+                    .sized(1f,1f)
+                    .build(new ResourceLocation(MODID,"argan").toString()));
+
 
 
 

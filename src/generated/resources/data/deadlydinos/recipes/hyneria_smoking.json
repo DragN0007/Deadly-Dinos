@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "deadlydinos:hyneria"
+  },
+  "result": "deadlydinos:cooked_hyneria",
+  "experience": 0.35,
+  "cookingtime": 100
+}

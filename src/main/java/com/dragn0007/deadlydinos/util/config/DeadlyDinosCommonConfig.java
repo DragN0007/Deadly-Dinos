@@ -57,10 +57,12 @@ public class DeadlyDinosCommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> UTAH_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> YUTY_WEIGHT;
 
+    public static final ForgeConfigSpec.ConfigValue<Integer> ARGAN_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> BASILO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> DUNKLEO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> GAR_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> HELI_WEIGHT;
+    public static final ForgeConfigSpec.ConfigValue<Integer> HYNERIA_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> ICHTHYO_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> LEED_WEIGHT;
     public static final ForgeConfigSpec.ConfigValue<Integer> LIVY_WEIGHT;
@@ -111,6 +113,9 @@ public class DeadlyDinosCommonConfig {
 
         ARCHAE_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
                 .define("ARCHAE Spawn Weight", 3);
+
+        ARGAN_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 3.")
+                .define("ARGAN Spawn Weight", 3);
 
         ATROCI_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
                 .define("ATROCI Spawn Weight", 2);
@@ -180,6 +185,9 @@ public class DeadlyDinosCommonConfig {
 
         HELI_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
                 .define("HELI Spawn Weight", 2);
+
+        HYNERIA_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 2.")
+                .define("HYNERIA Spawn Weight", 2);
 
         ICHTHY_WEIGHT = BUILDER.comment("How often should this dino spawn? Default is 1.")
                 .define("ICHTHY Spawn Weight", 1);

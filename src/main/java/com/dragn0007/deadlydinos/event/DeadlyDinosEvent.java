@@ -26,6 +26,7 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import org.codehaus.plexus.util.cli.Arg;
 
 
 @Mod.EventBusSubscriber(modid = DeadlyDinos.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -91,6 +92,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         event.put(EntityTypes.MEG_ENTITY.get(), Meg.createAttributes().build());
         event.put(EntityTypes.LIVY_ENTITY.get(), Livy.createAttributes().build());
         event.put(EntityTypes.STETH_ENTITY.get(), Steth.createAttributes().build());
+        event.put(EntityTypes.ARGAN_ENTITY.get(), Argan.createAttributes().build());
+        event.put(EntityTypes.HYNERIA_ENTITY.get(), Hyneria.createAttributes().build());
 
         event.put(EntityTypes.CAR_ENTITY.get(), Car.createAttributes().build());
         event.put(EntityTypes.CARSIDE_ENTITY.get(), CarSide.createAttributes().build());
@@ -267,6 +270,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
         SpawnPlacements.register(EntityTypes.STETH_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
+
+        SpawnPlacements.register(EntityTypes.HYNERIA_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
+
+        SpawnPlacements.register(EntityTypes.ARGAN_ENTITY.get(), SpawnPlacements.Type.IN_WATER,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, WaterAnimal::checkSurfaceWaterAnimalSpawnRules);
     }
 
     @SubscribeEvent
@@ -330,6 +339,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
         EntityRenderers.register(EntityTypes.MEG_ENTITY.get(), MegRender::new);
         EntityRenderers.register(EntityTypes.LIVY_ENTITY.get(), LivyRender::new);
         EntityRenderers.register(EntityTypes.STETH_ENTITY.get(), StethRender::new);
+        EntityRenderers.register(EntityTypes.ARGAN_ENTITY.get(), ArganRender::new);
+        EntityRenderers.register(EntityTypes.HYNERIA_ENTITY.get(), HyneriaRender::new);
 
         EntityRenderers.register(EntityTypes.CAR_ENTITY.get(), CarRender::new);
         EntityRenderers.register(EntityTypes.CARSIDE_ENTITY.get(), CarSideRender::new);

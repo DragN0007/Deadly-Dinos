@@ -244,6 +244,12 @@
   "entity.deadlydinos.gar_entity": "Alligator Gar",
   "item.deadlydinos.gar_spawn_egg": "Alligator Gar Spawn Egg",
 
+  "entity.deadlydinos.hyneria_entity": "Hyneria",
+  "item.deadlydinos.hyneria_spawn_egg": "Hyneria Spawn Egg",
+
+  "entity.deadlydinos.argan_entity": "Arganodus",
+  "item.deadlydinos.argan_spawn_egg": "Arganodus Spawn Egg",
+
 
 
   "item.deadlydinos.archae_harness": "Archaeopteryx Pack Harness",
@@ -287,6 +293,10 @@
   "item.deadlydinos.hearty_salad": "Leafy Salad",
   "item.deadlydinos.gar": "Gar",
   "item.deadlydinos.cooked_gar": "Cooked Gar",
+  "item.deadlydinos.arganodus": "Arganodus",
+  "item.deadlydinos.cooked_arganodus": "Cooked Arganodus",
+  "item.deadlydinos.hyneria": "Hyneria",
+  "item.deadlydinos.cooked_hyneria": "Cooked Hyneria",
   "item.deadlydinos.shark": "Shark Fillet",
   "item.deadlydinos.cooked_shark": "Cooked Shark Fillet",
   "item.deadlydinos.large_fish": "Large Fish Fillet",

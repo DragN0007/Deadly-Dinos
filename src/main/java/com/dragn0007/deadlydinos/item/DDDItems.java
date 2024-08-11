@@ -179,6 +179,10 @@ public class DDDItems {
             () -> new ForgeSpawnEggItem(EntityTypes.LIVY_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
     public static final RegistryObject<Item> STETH_SPAWN_EGG = ITEMS.register("steth_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityTypes.STETH_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> HYNERIA_SPAWN_EGG = ITEMS.register("hyneria_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.HYNERIA_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
+    public static final RegistryObject<Item> ARGAN_SPAWN_EGG = ITEMS.register("argan_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityTypes.ARGAN_ENTITY, 0x00FFFFFF, 0x00FFFFFF, new Item.Properties().stacksTo(64).tab(DDDItemGroup.DINO_GROUP)));
 
 
 
@@ -261,6 +265,14 @@ public class DDDItems {
     public static final RegistryObject<Item> LARGE_FISH = ITEMS.register("large_fish",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
     public static final RegistryObject<Item> COOKED_LARGE_FISH = ITEMS.register("cooked_large_fish",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> ARGANODUS = ITEMS.register("arganodus",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> COOKED_ARGANODUS = ITEMS.register("cooked_arganodus",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> HYNERIA = ITEMS.register("hyneria",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
+    public static final RegistryObject<Item> COOKED_HYNERIA = ITEMS.register("cooked_hyneria",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(10).saturationMod(1).meat().build()).tab(DDDItemGroup.FOOD_GROUP)));
 
     public static final RegistryObject<Item> BLUBBER = ITEMS.register("blubber",

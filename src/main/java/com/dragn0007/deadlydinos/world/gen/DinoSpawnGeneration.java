@@ -432,6 +432,16 @@ public class DinoSpawnGeneration {
                 Biomes.LUKEWARM_OCEAN, Biomes.OCEAN, Biomes.WARM_OCEAN
         );
 
+        addEntityToSpecificBiomes(event, EntityTypes.HYNERIA_ENTITY.get(),
+                DeadlyDinosCommonConfig.HYNERIA_WEIGHT.get(), 1, 2,
+                Biomes.RIVER, Biomes.SWAMP,  Biomes.LUSH_CAVES
+        );
+
+        addEntityToSpecificBiomes(event, EntityTypes.ARGAN_ENTITY.get(),
+                DeadlyDinosCommonConfig.ARGAN_WEIGHT.get(), 1, 2,
+                Biomes.RIVER, Biomes.SWAMP,  Biomes.LUSH_CAVES
+        );
+
     }
 
     private static void addEntityToAllBiomesExceptThese(BiomeLoadingEvent event, EntityType<?> type,

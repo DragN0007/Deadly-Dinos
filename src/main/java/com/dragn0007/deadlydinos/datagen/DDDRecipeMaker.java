@@ -71,6 +71,21 @@ public class DDDRecipeMaker extends RecipeProvider implements IConditionBuilder 
                 .save(pFinishedRecipeConsumer);
 
 
+
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(DDDItems.HYNERIA.get()), DDDItems.COOKED_HYNERIA.get(), 0.35F, 200)
+                .unlockedBy("has_furnace", has(Blocks.FURNACE)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "hyneria_smelting"));
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(DDDItems.HYNERIA.get()), DDDItems.COOKED_HYNERIA.get(), 0.35F, 100)
+                .unlockedBy("has_smoker", has(Blocks.SMOKER)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "hyneria_smoking"));
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(DDDItems.HYNERIA.get()), DDDItems.COOKED_HYNERIA.get(), 0.35F, 600)
+                .unlockedBy("has_campfire", has(Blocks.CAMPFIRE)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "hyneria_campfire_cooking"));
+
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(DDDItems.ARGANODUS.get()), DDDItems.COOKED_ARGANODUS.get(), 0.35F, 200)
+                .unlockedBy("has_furnace", has(Blocks.FURNACE)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "argan_smelting"));
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(DDDItems.ARGANODUS.get()), DDDItems.COOKED_ARGANODUS.get(), 0.35F, 100)
+                .unlockedBy("has_smoker", has(Blocks.SMOKER)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "argan_smoking"));
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(DDDItems.ARGANODUS.get()), DDDItems.COOKED_ARGANODUS.get(), 0.35F, 600)
+                .unlockedBy("has_campfire", has(Blocks.CAMPFIRE)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "argan_campfire_cooking"));
+
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(DDDItems.LARGE_FISH.get()), DDDItems.COOKED_LARGE_FISH.get(), 0.35F, 200)
                 .unlockedBy("has_furnace", has(Blocks.FURNACE)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "large_fish_smelting"));
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(DDDItems.LARGE_FISH.get()), DDDItems.COOKED_LARGE_FISH.get(), 0.35F, 100)
@@ -91,6 +106,7 @@ public class DDDRecipeMaker extends RecipeProvider implements IConditionBuilder 
                 .unlockedBy("has_smoker", has(Blocks.SMOKER)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "gar_smoking"));
         SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(DDDItems.GAR.get()), DDDItems.COOKED_GAR.get(), 0.35F, 600)
                 .unlockedBy("has_campfire", has(Blocks.CAMPFIRE)).save(pFinishedRecipeConsumer, new ResourceLocation("deadlydinos", "gar_campfire_cooking"));
+
 
 
         ShapelessRecipeBuilder.shapeless(Items.BONE_MEAL, 4)
