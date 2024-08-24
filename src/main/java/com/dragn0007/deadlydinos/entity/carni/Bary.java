@@ -1,5 +1,6 @@
 package com.dragn0007.deadlydinos.entity.carni;
 
+import com.dragn0007.deadlydinos.Network;
 import com.dragn0007.deadlydinos.client.model.BaryModel;
 import com.dragn0007.deadlydinos.entity.ai.DinoWeakMeleeGoal;
 import com.dragn0007.deadlydinos.entity.nonliving.Car;
@@ -10,6 +11,7 @@ import com.dragn0007.deadlydinos.item.DDDItems;
 import com.dragn0007.deadlydinos.util.DDDTags;
 import com.google.common.collect.Sets;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.player.KeyboardInput;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -380,19 +382,22 @@ public class Bary extends TamableAnimal implements ContainerListener, IAnimatabl
                     float f1 = livingentity.zza * 0.8F; // Forward moving speed
                     double verticalMovement = vec.y;
 
-                    if (livingentity instanceof Player && this.isInWater()) {
-                        Player player = (Player) livingentity;
-                        Minecraft game = Minecraft.getInstance();
-                        LocalPlayer localPlayer = game.player;
-                        if (localPlayer !=null && localPlayer.input.jumping) {
-                            verticalMovement = 0.4D; // Swim up if holding Space
-                        } else if (player.isSprinting()) {
-                            verticalMovement = -0.4D; // Swim down if holding CTRL
-                        }
-                    }
-
                     if (f1 <= 0.0F) {
                         f1 = 0.25F;
+                    }
+
+                    if(this.isControlledByLocalInstance() && this.getControllingPassenger() instanceof LocalPlayer localPlayer1) {
+                        this.handleInput((KeyboardInput) localPlayer1.input);
+                        if (livingentity instanceof Player && this.isInWater()) {
+                            Player player = (Player) livingentity;
+                            Minecraft game = Minecraft.getInstance();
+                            LocalPlayer localPlayer = game.player;
+                            if (localPlayer != null && localPlayer.input.jumping) {
+                                verticalMovement = 0.4D; // Swim up if holding Space
+                            } else if (player.isSprinting()) {
+                                verticalMovement = -0.4D; // Swim down if holding CTRL
+                            }
+                        }
                     }
 
                     this.flyingSpeed = (float) this.getAttributeValue(Attributes.MOVEMENT_SPEED);
@@ -452,6 +457,12 @@ public class Bary extends TamableAnimal implements ContainerListener, IAnimatabl
                     super.travel(vec);
                 }
             }
+        }
+    }
+
+    private void handleInput(KeyboardInput input) {
+        if(input.jumping) {
+            Network.INSTANCE.sendToServer(new Network.ToggleTillerPowerRequest(this.getId()));
         }
     }
 
